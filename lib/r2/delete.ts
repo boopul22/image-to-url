@@ -11,15 +11,19 @@ const r2Client = new S3Client({
 
 export async function deleteFromR2(r2Key: string): Promise<boolean> {
   try {
+    console.log(`[R2 Delete] Attempting to delete: ${r2Key}`)
+
     await r2Client.send(
       new DeleteObjectCommand({
         Bucket: process.env.R2_BUCKET_NAME!,
         Key: r2Key,
       })
     )
+
+    console.log(`[R2 Delete] Successfully deleted: ${r2Key}`)
     return true
   } catch (error) {
-    console.error(`Failed to delete ${r2Key} from R2:`, error)
+    console.error(`[R2 Delete] Failed to delete ${r2Key} from R2:`, error)
     return false
   }
 }
