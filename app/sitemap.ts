@@ -6,11 +6,19 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://imagetourl.cloud'
 // Define all public routes that should be indexed
 const publicRoutes = [
     '', // Homepage
-    '/privacy',
-    '/terms',
-    '/cookies',
-    '/about',
-    '/pricing',
+    // Tool pages
+    '/tools/jpg-to-url',
+    '/tools/png-to-url',
+    '/tools/gif-to-url',
+    '/tools/svg-to-url',
+    '/tools/base64-to-url',
+    '/tools/bulk-upload',
+    '/tools/qr-to-url',
+    // Use case pages
+    '/use-cases/discord',
+    '/use-cases/html',
+    '/use-cases/fantasy-sports',
+    '/use-cases/minecraft',
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {

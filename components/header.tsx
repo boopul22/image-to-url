@@ -2,20 +2,28 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu } from "lucide-react"
+import { Menu, ChevronDown } from "lucide-react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from "@/components/ui/sheet"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import type { Locale } from "@/lib/i18n/config"
 import { cn } from "@/lib/utils"
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 interface NavDict {
+    home?: string
     documentation: string
     api: string
     pricing: string
     signIn: string
     dashboard?: string
+    tools?: string
 }
 
 interface HeaderProps {
@@ -26,8 +34,17 @@ interface HeaderProps {
 
 const navLinks = [
     { key: "home", href: "" },
-    { key: "documentation", href: "/about" },
     { key: "pricing", href: "/pricing" },
+] as const
+
+const toolLinks = [
+    { name: "PNG to URL", href: "/tools/png-to-url" },
+    { name: "JPG to URL", href: "/tools/jpg-to-url" },
+    { name: "SVG to URL", href: "/tools/svg-to-url" },
+    { name: "GIF to URL", href: "/tools/gif-to-url" },
+    { name: "QR to URL", href: "/tools/qr-to-url" },
+    { name: "Base64 to URL", href: "/tools/base64-to-url" },
+    { name: "Bulk Upload", href: "/tools/bulk-upload" },
 ] as const
 
 export function Header({ locale, dict, children }: HeaderProps) {
@@ -61,9 +78,30 @@ export function Header({ locale, dict, children }: HeaderProps) {
                             href={`/${locale}${link.href}`}
                             className="nav-link text-sm font-medium text-zinc-400 hover:text-white transition-colors relative"
                         >
-                            {dict[link.key as keyof NavDict]}
+                            {dict[link.key as keyof NavDict] || (link.key === "home" ? "Home" : link.key)}
                         </Link>
                     ))}
+
+                    {/* Tools Dropdown */}
+                    <DropdownMenu>
+                        <DropdownMenuTrigger className="nav-link text-sm font-medium text-zinc-400 hover:text-white transition-colors relative flex items-center gap-1 outline-none">
+                            {dict.tools || "Tools"}
+                            <ChevronDown className="h-4 w-4" />
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent className="bg-dark border border-white/10 min-w-[180px]">
+                            {toolLinks.map((tool) => (
+                                <DropdownMenuItem key={tool.href} asChild>
+                                    <Link
+                                        href={`/${locale}${tool.href}`}
+                                        className="text-zinc-300 hover:text-white cursor-pointer"
+                                    >
+                                        {tool.name}
+                                    </Link>
+                                </DropdownMenuItem>
+                            ))}
+                        </DropdownMenuContent>
+                    </DropdownMenu>
+
                     {isDashboard && dict.dashboard && (
                         <Link
                             href={`/${locale}/dashboard`}
@@ -122,7 +160,7 @@ export function Header({ locale, dict, children }: HeaderProps) {
                             </div>
 
                             {/* Mobile Menu Links */}
-                            <div className="flex flex-col p-4 gap-1">
+                            <div className="flex flex-col p-4 gap-1 overflow-y-auto max-h-[calc(100vh-200px)]">
                                 {navLinks.map((link) => (
                                     <Link
                                         key={link.key}
@@ -130,14 +168,32 @@ export function Header({ locale, dict, children }: HeaderProps) {
                                         onClick={() => setIsOpen(false)}
                                         className="flex items-center px-3 py-3 rounded-lg text-zinc-400 hover:text-white hover:bg-white/5 transition-all"
                                     >
-                                        {dict[link.key as keyof NavDict]}
+                                        {dict[link.key as keyof NavDict] || (link.key === "home" ? "Home" : link.key)}
                                     </Link>
                                 ))}
+
+                                {/* Tools Section */}
+                                <div className="mt-2 pt-2 border-t border-white/5">
+                                    <div className="px-3 py-2 text-xs font-medium text-zinc-500 uppercase tracking-wider">
+                                        {dict.tools || "Tools"}
+                                    </div>
+                                    {toolLinks.map((tool) => (
+                                        <Link
+                                            key={tool.href}
+                                            href={`/${locale}${tool.href}`}
+                                            onClick={() => setIsOpen(false)}
+                                            className="flex items-center px-3 py-2.5 rounded-lg text-zinc-400 hover:text-white hover:bg-white/5 transition-all text-sm"
+                                        >
+                                            {tool.name}
+                                        </Link>
+                                    ))}
+                                </div>
+
                                 <Link
                                     href={`/${locale}/dashboard`}
                                     onClick={() => setIsOpen(false)}
                                     className={cn(
-                                        "flex items-center px-3 py-3 rounded-lg transition-all",
+                                        "flex items-center px-3 py-3 rounded-lg transition-all mt-2 pt-2 border-t border-white/5",
                                         pathname.includes("/dashboard")
                                             ? "text-brand bg-brand/10"
                                             : "text-zinc-400 hover:text-white hover:bg-white/5"

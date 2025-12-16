@@ -166,3 +166,97 @@ export function FAQJsonLd({ items }: { items: FAQItem[] }) {
         />
     )
 }
+
+// SoftwareApplication Schema for tool pages
+interface SoftwareApplicationProps {
+    locale: string
+    name: string
+    description: string
+    url: string
+    featureList: string[]
+    keywords?: string[]
+}
+
+export function SoftwareApplicationJsonLd({
+    locale,
+    name,
+    description,
+    url,
+    featureList,
+    keywords,
+}: SoftwareApplicationProps) {
+    const schema = {
+        '@context': 'https://schema.org',
+        '@type': 'SoftwareApplication',
+        name: name,
+        description: description,
+        url: `${BASE_URL}${url}`,
+        applicationCategory: 'UtilitiesApplication',
+        applicationSubCategory: 'Image Converter',
+        operatingSystem: 'Any',
+        browserRequirements: 'Requires JavaScript. Requires HTML5.',
+        offers: {
+            '@type': 'Offer',
+            price: '0',
+            priceCurrency: 'USD',
+            availability: 'https://schema.org/InStock',
+        },
+        featureList: featureList,
+        keywords: keywords?.join(', '),
+        author: {
+            '@type': 'Organization',
+            name: 'ImageToURL',
+            url: BASE_URL,
+        },
+        provider: {
+            '@type': 'Organization',
+            name: 'ImageToURL',
+            url: BASE_URL,
+        },
+        inLanguage: locale,
+        isAccessibleForFree: true,
+    }
+
+    return (
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+    )
+}
+
+// HowTo Schema for use-case pages
+interface HowToStep {
+    name: string
+    text: string
+}
+
+export function HowToJsonLd({
+    name,
+    description,
+    steps,
+}: {
+    name: string
+    description: string
+    steps: HowToStep[]
+}) {
+    const schema = {
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: name,
+        description: description,
+        step: steps.map((step, index) => ({
+            '@type': 'HowToStep',
+            position: index + 1,
+            name: step.name,
+            text: step.text,
+        })),
+    }
+
+    return (
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+    )
+}
