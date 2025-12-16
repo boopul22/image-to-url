@@ -84,8 +84,8 @@ const dictionaries = {
     meta: {
       title: "Free Image to URL Converter - Instant Shareable Photo Links | ImageToURL",
       description:
-        "Convert any image to a shareable URL instantly. 100% free image hosting with no signup required. Upload JPG, PNG, GIF up to 10MB and get instant links powered by global CDN.",
-      keywords: "image to url, free image hosting, image link generator, photo upload get link, convert image to url, instant image sharing, free photo hosting, image url converter",
+        "Convert any image to URL instantly. Free image hosting with no signup. Upload JPG, PNG, GIF, SVG, WebP up to 10MB. Best free image to URL converter online with global CDN delivery.",
+      keywords: "image to url, convert image to url, free image hosting, image link generator, photo to url, upload image get link, jpg to url, png to url, gif to url, image url converter, base64 image to url, copy image to url, image to link, instant image sharing, free photo hosting, image to url converter free, image to url online",
     },
     faq: {
       title: "Frequently Asked Questions",
@@ -100,7 +100,7 @@ const dictionaries = {
         },
         {
           question: "What image formats are supported?",
-          answer: "We support all popular image formats including JPG/JPEG, PNG, GIF, SVG, and WebP. Each file can be up to 10MB in size."
+          answer: "We support all popular image formats including JPG/JPEG, PNG, GIF, SVG, and WebP. Each file can be up to 10MB in size. You can convert any of these formats to a shareable URL instantly."
         },
         {
           question: "How long are my images stored?",
@@ -109,6 +109,38 @@ const dictionaries = {
         {
           question: "Is my data secure?",
           answer: "Yes, all uploads are encrypted in transit using HTTPS. Images are stored on enterprise-grade cloud infrastructure with 99.9% uptime. We do not sell or share your data with third parties."
+        },
+        {
+          question: "How do I copy an image URL?",
+          answer: "After uploading your image, click the 'Copy' button next to the generated URL. The link is automatically copied to your clipboard and ready to paste anywhere - websites, emails, social media, or documents."
+        },
+        {
+          question: "Can I convert a base64 image to URL?",
+          answer: "Yes! Use our Base64 to URL converter tool to transform base64-encoded images into shareable URLs. Simply paste your base64 string and get an instant image link hosted on our global CDN."
+        },
+        {
+          question: "How do I get an image URL for Discord?",
+          answer: "Upload your image to ImageToURL and copy the generated link. You can paste this URL directly in Discord chats, embed it in bots, or use it for custom emojis and server icons. Our URLs work perfectly with Discord's image embedding."
+        },
+        {
+          question: "Is there an API for image to URL conversion?",
+          answer: "Yes, we provide a simple API for developers to programmatically upload images and receive URLs. Check our API documentation for integration details, code examples in JavaScript, Python, and more."
+        },
+        {
+          question: "How do I bulk upload images and get URLs?",
+          answer: "Use our Bulk Upload tool to upload multiple images at once. Simply drag and drop up to 20 images simultaneously and receive shareable URLs for each one. Perfect for batch image hosting needs."
+        },
+        {
+          question: "Can I use ImageToURL for fantasy football team logos?",
+          answer: "Absolutely! ImageToURL is perfect for creating custom team logos for ESPN, Yahoo, or any fantasy sports platform. Upload your logo image, copy the URL, and paste it in your fantasy league settings."
+        },
+        {
+          question: "How do I make an image into a short URL?",
+          answer: "Our image URLs are already optimized for sharing. When you upload an image, we generate a clean, short URL that's easy to share and remember. The link leads directly to your hosted image."
+        },
+        {
+          question: "What's the difference between image URL and base64?",
+          answer: "An image URL is a web link that points to your hosted image, while base64 is the image encoded as text data. URLs are better for sharing and web use as they're shorter and more efficient. Use our tools to convert between formats."
         }
       ]
     },
