@@ -10,6 +10,7 @@ const dictionaries = {
       signIn: "Sign In",
       signOut: "Sign Out",
       dashboard: "Dashboard",
+      tools: "Tools",
     },
     auth: {
       signIn: "Sign In",
@@ -217,10 +218,12 @@ const dictionaries = {
   },
   zh: {
     nav: {
+      home: "首页",
       documentation: "文档",
       api: "API",
       pricing: "价格",
       signIn: "登录",
+      tools: "工具",
     },
     hero: {
       badge: "v2.0 现已可用",
@@ -286,10 +289,12 @@ const dictionaries = {
   },
   hi: {
     nav: {
+      home: "होम",
       documentation: "दस्तावेज़ीकरण",
       api: "API",
       pricing: "मूल्य निर्धारण",
       signIn: "साइन इन करें",
+      tools: "उपकरण",
     },
     hero: {
       badge: "v2.0 अब उपलब्ध",
@@ -357,10 +362,12 @@ const dictionaries = {
   },
   es: {
     nav: {
+      home: "Inicio",
       documentation: "Documentación",
       api: "API",
       pricing: "Precios",
       signIn: "Iniciar Sesión",
+      tools: "Herramientas",
     },
     hero: {
       badge: "v2.0 Ya Disponible",
@@ -428,10 +435,12 @@ const dictionaries = {
   },
   ar: {
     nav: {
+      home: "الرئيسية",
       documentation: "التوثيق",
       api: "واجهة برمجية",
       pricing: "التسعير",
       signIn: "تسجيل الدخول",
+      tools: "أدوات",
     },
     hero: {
       badge: "v2.0 متاح الآن",
@@ -474,10 +483,12 @@ const dictionaries = {
   },
   fr: {
     nav: {
+      home: "Accueil",
       documentation: "Documentation",
       api: "API",
       pricing: "Tarifs",
       signIn: "Se Connecter",
+      tools: "Outils",
     },
     hero: {
       badge: "v2.0 Maintenant Disponible",
@@ -520,10 +531,12 @@ const dictionaries = {
   },
   bn: {
     nav: {
+      home: "হোম",
       documentation: "ডকুমেন্টেশন",
       api: "API",
       pricing: "মূল্য",
       signIn: "সাইন ইন",
+      tools: "টুলস",
     },
     hero: {
       badge: "v2.0 এখন উপলব্ধ",
@@ -566,10 +579,12 @@ const dictionaries = {
   },
   pt: {
     nav: {
+      home: "Início",
       documentation: "Documentação",
       api: "API",
       pricing: "Preços",
       signIn: "Entrar",
+      tools: "Ferramentas",
     },
     hero: {
       badge: "v2.0 Agora Disponível",
@@ -612,10 +627,12 @@ const dictionaries = {
   },
   ru: {
     nav: {
+      home: "Главная",
       documentation: "Документация",
       api: "API",
       pricing: "Цены",
       signIn: "Войти",
+      tools: "Инструменты",
     },
     hero: {
       badge: "v2.0 Теперь Доступно",
@@ -658,10 +675,12 @@ const dictionaries = {
   },
   ur: {
     nav: {
+      home: "ہوم",
       documentation: "دستاویزات",
       api: "API",
       pricing: "قیمتیں",
       signIn: "سائن ان کریں",
+      tools: "ٹولز",
     },
     hero: {
       badge: "v2.0 اب دستیاب ہے",
@@ -704,10 +723,12 @@ const dictionaries = {
   },
   id: {
     nav: {
+      home: "Beranda",
       documentation: "Dokumentasi",
       api: "API",
       pricing: "Harga",
       signIn: "Masuk",
+      tools: "Alat",
     },
     hero: {
       badge: "v2.0 Sekarang Tersedia",
@@ -750,10 +771,12 @@ const dictionaries = {
   },
   de: {
     nav: {
+      home: "Startseite",
       documentation: "Dokumentation",
       api: "API",
       pricing: "Preise",
       signIn: "Anmelden",
+      tools: "Werkzeuge",
     },
     hero: {
       badge: "v2.0 Jetzt Verfügbar",
@@ -796,10 +819,12 @@ const dictionaries = {
   },
   ja: {
     nav: {
+      home: "ホーム",
       documentation: "ドキュメント",
       api: "API",
       pricing: "料金",
       signIn: "サインイン",
+      tools: "ツール",
     },
     hero: {
       badge: "v2.0 利用可能",
@@ -842,10 +867,12 @@ const dictionaries = {
   },
   sw: {
     nav: {
+      home: "Nyumbani",
       documentation: "Nyaraka",
       api: "API",
       pricing: "Bei",
       signIn: "Ingia",
+      tools: "Zana",
     },
     hero: {
       badge: "v2.0 Inapatikana Sasa",
@@ -888,10 +915,12 @@ const dictionaries = {
   },
   mr: {
     nav: {
+      home: "होम",
       documentation: "दस्तऐवजीकरण",
       api: "API",
       pricing: "किंमत",
       signIn: "साइन इन करा",
+      tools: "साधने",
     },
     hero: {
       badge: "v2.0 आता उपलब्ध",
@@ -934,10 +963,12 @@ const dictionaries = {
   },
   te: {
     nav: {
+      home: "హోమ్",
       documentation: "డాక్యుమెంటేషన్",
       api: "API",
       pricing: "ధరలు",
       signIn: "సైన్ ఇన్",
+      tools: "టూల్స్",
     },
     hero: {
       badge: "v2.0 ఇప్పుడు అందుబాటులో ఉంది",
@@ -980,10 +1011,12 @@ const dictionaries = {
   },
   tr: {
     nav: {
+      home: "Ana Sayfa",
       documentation: "Dokümantasyon",
       api: "API",
       pricing: "Fiyatlandırma",
       signIn: "Giriş Yap",
+      tools: "Araçlar",
     },
     hero: {
       badge: "v2.0 Şimdi Mevcut",
@@ -1026,10 +1059,12 @@ const dictionaries = {
   },
   ta: {
     nav: {
+      home: "ஹோம்",
       documentation: "ஆவணமாக்கல்",
       api: "API",
       pricing: "விலை நிர்ணயம்",
       signIn: "உள்நுழைக",
+      tools: "கருவிகள்",
     },
     hero: {
       badge: "v2.0 இப்போது கிடைக்கிறது",
@@ -1072,10 +1107,12 @@ const dictionaries = {
   },
   vi: {
     nav: {
+      home: "Trang chủ",
       documentation: "Tài Liệu",
       api: "API",
       pricing: "Giá Cả",
       signIn: "Đăng Nhập",
+      tools: "Công cụ",
     },
     hero: {
       badge: "v2.0 Hiện Có Sẵn",
@@ -1118,10 +1155,12 @@ const dictionaries = {
   },
   ko: {
     nav: {
+      home: "홈",
       documentation: "문서",
       api: "API",
       pricing: "가격",
       signIn: "로그인",
+      tools: "도구",
     },
     hero: {
       badge: "v2.0 현재 사용 가능",
@@ -1164,10 +1203,12 @@ const dictionaries = {
   },
   it: {
     nav: {
+      home: "Home",
       documentation: "Documentazione",
       api: "API",
       pricing: "Prezzi",
       signIn: "Accedi",
+      tools: "Strumenti",
     },
     hero: {
       badge: "v2.0 Ora Disponibile",
@@ -1210,10 +1251,12 @@ const dictionaries = {
   },
   th: {
     nav: {
+      home: "หน้าแรก",
       documentation: "เอกสาร",
       api: "API",
       pricing: "ราคา",
       signIn: "เข้าสู่ระบบ",
+      tools: "เครื่องมือ",
     },
     hero: {
       badge: "v2.0 พร้อมใช้งานแล้ว",
@@ -1254,10 +1297,12 @@ const dictionaries = {
   },
   gu: {
     nav: {
+      home: "હોમ",
       documentation: "દસ્તાવેજીકરણ",
       api: "API",
       pricing: "કિંમતો",
       signIn: "સાઇન ઇન કરો",
+      tools: "સાધનો",
     },
     hero: {
       badge: "v2.0 હવે ઉપલબ્ધ",
@@ -1300,10 +1345,12 @@ const dictionaries = {
   },
   pl: {
     nav: {
+      home: "Strona główna",
       documentation: "Dokumentacja",
       api: "API",
       pricing: "Cennik",
       signIn: "Zaloguj się",
+      tools: "Narzędzia",
     },
     hero: {
       badge: "v2.0 Teraz Dostępne",
@@ -1346,10 +1393,12 @@ const dictionaries = {
   },
   uk: {
     nav: {
+      home: "Головна",
       documentation: "Документація",
       api: "API",
       pricing: "Ціни",
       signIn: "Увійти",
+      tools: "Інструменти",
     },
     hero: {
       badge: "v2.0 Тепер Доступно",
@@ -1392,10 +1441,12 @@ const dictionaries = {
   },
   fa: {
     nav: {
+      home: "خانه",
       documentation: "مستندات",
       api: "API",
       pricing: "قیمت‌گذاری",
       signIn: "ورود",
+      tools: "ابزارها",
     },
     hero: {
       badge: "v2.0 اکنون موجود است",
@@ -1438,10 +1489,12 @@ const dictionaries = {
   },
   ml: {
     nav: {
+      home: "ഹോം",
       documentation: "ഡോക്യുമെന്റേഷൻ",
       api: "API",
       pricing: "വിലനിർണ്ണയം",
       signIn: "സൈൻ ഇൻ ചെയ്യുക",
+      tools: "ടൂളുകൾ",
     },
     hero: {
       badge: "v2.0 ഇപ്പോൾ ലഭ്യമാണ്",
@@ -1484,10 +1537,12 @@ const dictionaries = {
   },
   kn: {
     nav: {
+      home: "ಹೋಮ್",
       documentation: "ದಾಖಲಾತಿ",
       api: "API",
       pricing: "ಬೆಲೆ",
       signIn: "ಸೈನ್ ಇನ್ ಮಾಡಿ",
+      tools: "ಉಪಕರಣಗಳು",
     },
     hero: {
       badge: "v2.0 ಈಗ ಲಭ್ಯವಿದೆ",
@@ -1530,10 +1585,12 @@ const dictionaries = {
   },
   or: {
     nav: {
+      home: "ହୋମ",
       documentation: "ଡକ୍ୟୁମେଣ୍ଟେସନ୍",
       api: "API",
       pricing: "ମୂଲ୍ୟ",
       signIn: "ସାଇନ୍ ଇନ୍ କରନ୍ତୁ",
+      tools: "ଟୁଲ୍ସ",
     },
     hero: {
       badge: "v2.0 ବର୍ତ୍ତମାନ ଉପଲବ୍ଧ",
@@ -1576,10 +1633,12 @@ const dictionaries = {
   },
   my: {
     nav: {
+      home: "ပင်မ",
       documentation: "စာရွက်စာတမ်းများ",
       api: "API",
       pricing: "စျေးနှုန်း",
       signIn: "အကောင့်ဝင်ရန်",
+      tools: "ကိရိယာများ",
     },
     hero: {
       badge: "v2.0 ယခုရရှိနိုင်ပါပြီ",
