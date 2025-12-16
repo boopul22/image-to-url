@@ -6,6 +6,11 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://imagetourl.cloud'
 // Define all public routes that should be indexed
 const publicRoutes = [
     '', // Homepage
+    '/privacy',
+    '/terms',
+    '/cookies',
+    '/about',
+    '/pricing',
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {

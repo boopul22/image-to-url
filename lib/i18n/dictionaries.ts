@@ -3,6 +3,7 @@ import type { Locale } from "./config"
 const dictionaries = {
   en: {
     nav: {
+      home: "Home",
       documentation: "Documentation",
       api: "API",
       pricing: "Pricing",
@@ -74,7 +75,7 @@ const dictionaries = {
       latency: "Latency",
     },
     footer: {
-      copyright: "© 2023 ImageToURL Cloud. All rights reserved.",
+      copyright: "© 2024 ImageToURL Cloud. All rights reserved.",
       privacy: "Privacy",
       terms: "Terms",
       cookies: "Cookies",
@@ -109,6 +110,109 @@ const dictionaries = {
           answer: "Yes, all uploads are encrypted in transit using HTTPS. Images are stored on enterprise-grade cloud infrastructure with 99.9% uptime. We do not sell or share your data with third parties."
         }
       ]
+    },
+    pages: {
+      privacy: {
+        metaTitle: "Privacy Policy | ImageToURL",
+        metaDescription: "Learn how ImageToURL collects, uses, and protects your personal information.",
+        title: "Privacy Policy",
+        lastUpdated: "Last updated: December 2024",
+        sections: [
+          { title: "Information We Collect", content: "We collect information you provide directly, such as your email address when you sign in. We also automatically collect certain information when you use our service, including your IP address and browser type." },
+          { title: "How We Use Your Information", content: "We use the information we collect to provide and improve our image hosting service, communicate with you about your account, and ensure the security of our platform." },
+          { title: "Data Storage", content: "Your uploaded images are stored on enterprise-grade cloud infrastructure with encryption. Anonymous uploads are automatically deleted after 30 days. Signed-in users can manage their upload retention settings." },
+          { title: "Cookies", content: "We use essential cookies to enable core functionality like user authentication. We do not use tracking cookies for advertising purposes." },
+          { title: "Third-Party Services", content: "We use Cloudflare for CDN and security services, and Supabase for authentication. These services have their own privacy policies." },
+          { title: "Your Rights", content: "You can request access to, correction of, or deletion of your personal data at any time by contacting us." },
+          { title: "Contact", content: "If you have questions about this Privacy Policy, please contact us at privacy@imagetourl.cloud" }
+        ]
+      },
+      terms: {
+        metaTitle: "Terms of Service | ImageToURL",
+        metaDescription: "Read the terms and conditions for using ImageToURL image hosting service.",
+        title: "Terms of Service",
+        lastUpdated: "Last updated: December 2024",
+        sections: [
+          { title: "Acceptance of Terms", content: "By accessing or using ImageToURL, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our service." },
+          { title: "Service Description", content: "ImageToURL provides free image hosting and URL generation services. We reserve the right to modify, suspend, or discontinue any part of the service at any time." },
+          { title: "User Responsibilities", content: "You are responsible for all content you upload. You must not upload illegal content, malware, or content that infringes on others' intellectual property rights." },
+          { title: "Prohibited Content", content: "The following content is strictly prohibited: illegal material, malware or viruses, content that infringes copyrights, adult content involving minors, content promoting violence or hate." },
+          { title: "Account Termination", content: "We reserve the right to terminate accounts that violate these terms, upload prohibited content, or abuse the service in any way." },
+          { title: "Limitation of Liability", content: "ImageToURL is provided 'as is' without warranties. We are not liable for any data loss, service interruptions, or damages arising from your use of the service." },
+          { title: "Changes to Terms", content: "We may update these terms from time to time. Continued use of the service after changes constitutes acceptance of the new terms." }
+        ]
+      },
+      cookies: {
+        metaTitle: "Cookie Policy | ImageToURL",
+        metaDescription: "Learn about how ImageToURL uses cookies on our website.",
+        title: "Cookie Policy",
+        lastUpdated: "Last updated: December 2024",
+        intro: "This Cookie Policy explains how ImageToURL uses cookies and similar technologies when you visit our website.",
+        sections: [
+          { title: "What Are Cookies?", content: "Cookies are small text files stored on your device when you visit a website. They help websites remember your preferences and improve your experience." },
+          { title: "Essential Cookies", content: "We use essential cookies that are necessary for the website to function properly. These include authentication cookies to keep you signed in and security cookies to protect against threats." },
+          { title: "Functional Cookies", content: "We use functional cookies to remember your preferences, such as your selected language and theme (light/dark mode)." },
+          { title: "Analytics", content: "We use Vercel Analytics to understand how visitors interact with our website. This helps us improve the user experience. These analytics are privacy-focused and do not use cookies for tracking." },
+          { title: "Third-Party Cookies", content: "We do not use third-party advertising cookies. Our authentication service (Supabase) may set cookies for session management." },
+          { title: "Managing Cookies", content: "You can control cookies through your browser settings. Note that disabling essential cookies may affect the functionality of the website." }
+        ]
+      },
+      about: {
+        metaTitle: "About ImageToURL - Free Image Hosting Service",
+        metaDescription: "Learn about ImageToURL, the free image hosting platform that provides instant shareable links powered by a global CDN.",
+        title: "About ImageToURL",
+        subtitle: "Free, Fast, and Reliable Image Hosting",
+        mission: { title: "Our Mission", content: "We believe sharing images should be simple, fast, and free. ImageToURL was built to provide developers, designers, and everyday users with an effortless way to upload images and get instant shareable links." },
+        features: [
+          { icon: "globe", title: "Global CDN", description: "Images are served from edge locations worldwide for lightning-fast delivery anywhere." },
+          { icon: "zap", title: "Instant Links", description: "Upload any image and get a shareable URL in seconds. No waiting, no complexity." },
+          { icon: "shield", title: "Secure & Private", description: "All uploads are encrypted. We don't sell your data or track you with ads." },
+          { icon: "clock", title: "Flexible Retention", description: "Sign in to manage how long your images are stored, from 1 hour to forever." }
+        ],
+        team: { title: "Built with Care", content: "ImageToURL is an indie project focused on simplicity and user experience. We're constantly improving based on user feedback." },
+        contact: { title: "Get in Touch", content: "Have questions, feedback, or partnership inquiries? We'd love to hear from you.", email: "contact@imagetourl.cloud" }
+      },
+      pricing: {
+        metaTitle: "Pricing & Features - ImageToURL",
+        metaDescription: "Discover ImageToURL features. Free image hosting with unlimited uploads for signed-in users.",
+        title: "Simple, Transparent Pricing",
+        subtitle: "Start free, stay free. ImageToURL is built to be accessible to everyone.",
+        plans: [
+          {
+            name: "Anonymous",
+            price: "Free",
+            description: "No account needed",
+            features: [
+              { text: "5 uploads per day", included: true },
+              { text: "Up to 10MB per file", included: true },
+              { text: "30-day retention", included: true },
+              { text: "Global CDN delivery", included: true },
+              { text: "Manage uploads", included: false },
+              { text: "Custom expiration", included: false }
+            ],
+            cta: "Start Uploading",
+            ctaLink: "/",
+            highlighted: false
+          },
+          {
+            name: "Signed In",
+            price: "Free",
+            description: "Create a free account",
+            features: [
+              { text: "Unlimited uploads", included: true },
+              { text: "Up to 10MB per file", included: true },
+              { text: "Custom retention (1hr - forever)", included: true },
+              { text: "Global CDN delivery", included: true },
+              { text: "Manage all uploads", included: true },
+              { text: "Dashboard access", included: true }
+            ],
+            cta: "Sign Up Free",
+            ctaLink: "/auth/login",
+            highlighted: true
+          }
+        ],
+        faq: { title: "Questions?", content: "Have questions about our features? Check out our FAQ on the home page or contact us." }
+      }
     },
   },
   zh: {

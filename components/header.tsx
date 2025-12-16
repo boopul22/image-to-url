@@ -25,9 +25,9 @@ interface HeaderProps {
 }
 
 const navLinks = [
-    { key: "documentation", href: "#features" },
-    { key: "api", href: "#features" },
-    { key: "pricing", href: "#pricing" },
+    { key: "home", href: "" },
+    { key: "documentation", href: "/about" },
+    { key: "pricing", href: "/pricing" },
 ] as const
 
 export function Header({ locale, dict, children }: HeaderProps) {

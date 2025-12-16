@@ -20,6 +20,12 @@ export function Footer({ locale, dict }: FooterProps) {
                 <p className="text-zinc-500 text-xs">{dict.copyright}</p>
                 <div className="flex items-center gap-6">
                     <Link
+                        href={`/${locale}/about`}
+                        className="text-zinc-500 hover:text-brand text-xs transition-colors"
+                    >
+                        About
+                    </Link>
+                    <Link
                         href={`/${locale}/privacy`}
                         className="text-zinc-500 hover:text-brand text-xs transition-colors"
                     >
