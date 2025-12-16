@@ -3,6 +3,8 @@ import { getOrCreateSessionId } from "@/lib/auth/session"
 import { checkAnonymousUploadLimit } from "@/lib/auth/upload-limiter"
 import { createClient } from "@/lib/supabase/server"
 
+export const dynamic = 'force-dynamic'
+
 export async function GET() {
   try {
     const supabase = await createClient()

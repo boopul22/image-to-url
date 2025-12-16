@@ -80,10 +80,35 @@ const dictionaries = {
       cookies: "Cookies",
     },
     meta: {
-      title: "ImageToURL - Instant Image Hosting",
+      title: "Free Image to URL Converter - Instant Shareable Photo Links | ImageToURL",
       description:
-        "Upload images and get instant shareable links. Fast, secure, and reliable image hosting powered by a global CDN network.",
-      keywords: "image hosting, image upload, cdn, instant links, image sharing",
+        "Convert any image to a shareable URL instantly. 100% free image hosting with no signup required. Upload JPG, PNG, GIF up to 10MB and get instant links powered by global CDN.",
+      keywords: "image to url, free image hosting, image link generator, photo upload get link, convert image to url, instant image sharing, free photo hosting, image url converter",
+    },
+    faq: {
+      title: "Frequently Asked Questions",
+      items: [
+        {
+          question: "How do I convert an image to a URL?",
+          answer: "Simply drag and drop your image onto our upload zone or click to select a file. Your image will be instantly uploaded to our global CDN, and you'll receive a shareable URL that you can copy and use anywhere."
+        },
+        {
+          question: "Is ImageToURL completely free to use?",
+          answer: "Yes, ImageToURL is 100% free for basic use. You can upload images up to 10MB without creating an account. Sign in for additional features like managing your uploads and setting custom expiration times."
+        },
+        {
+          question: "What image formats are supported?",
+          answer: "We support all popular image formats including JPG/JPEG, PNG, GIF, SVG, and WebP. Each file can be up to 10MB in size."
+        },
+        {
+          question: "How long are my images stored?",
+          answer: "Anonymous uploads are stored for 30 days by default. Signed-in users can set custom expiration times or keep images indefinitely. All images are served through our global CDN for fast delivery worldwide."
+        },
+        {
+          question: "Is my data secure?",
+          answer: "Yes, all uploads are encrypted in transit using HTTPS. Images are stored on enterprise-grade cloud infrastructure with 99.9% uptime. We do not sell or share your data with third parties."
+        }
+      ]
     },
   },
   zh: {
@@ -125,9 +150,34 @@ const dictionaries = {
       cookies: "Cookies",
     },
     meta: {
-      title: "ImageToURL - 即时图片托管",
-      description: "上传图片并即时获取可共享链接。由全球CDN网络提供支持的快速、安全、可靠的图片托管。",
-      keywords: "图片托管, 图片上传, cdn, 即时链接, 图片分享",
+      title: "免费图片转URL转换器 - 即时获取可分享链接 | ImageToURL",
+      description: "将任何图片即时转换为可分享的URL。100%免费图片托管，无需注册。上传JPG、PNG、GIF（最大10MB），通过全球CDN即时获取链接。",
+      keywords: "图片转url, 免费图片托管, 图片链接生成器, 图片上传获取链接, 图片转换器, 即时图片分享, 免费照片托管",
+    },
+    faq: {
+      title: "常见问题",
+      items: [
+        {
+          question: "如何将图片转换为URL？",
+          answer: "只需将图片拖放到我们的上传区域或点击选择文件。您的图片将立即上传到我们的全球CDN，您将获得一个可分享的URL，可以随时随地使用。"
+        },
+        {
+          question: "ImageToURL完全免费吗？",
+          answer: "是的，ImageToURL基本使用完全免费。您可以无需创建账户上传最大10MB的图片。登录后可享受额外功能，如管理上传和设置自定义过期时间。"
+        },
+        {
+          question: "支持哪些图片格式？",
+          answer: "我们支持所有流行的图片格式，包括JPG/JPEG、PNG、GIF、SVG和WebP。每个文件最大可达10MB。"
+        },
+        {
+          question: "我的图片会存储多长时间？",
+          answer: "匿名上传默认存储30天。登录用户可以设置自定义过期时间或永久保存图片。所有图片通过我们的全球CDN提供快速分发。"
+        },
+        {
+          question: "我的数据安全吗？",
+          answer: "是的，所有上传都通过HTTPS加密传输。图片存储在企业级云基础设施上，正常运行时间达99.9%。我们不会向第三方出售或分享您的数据。"
+        }
+      ]
     },
   },
   hi: {
@@ -170,10 +220,35 @@ const dictionaries = {
       cookies: "कुकीज़",
     },
     meta: {
-      title: "ImageToURL - तत्काल छवि होस्टिंग",
+      title: "मुफ्त इमेज से URL कनवर्टर - तुरंत शेयर करने योग्य फोटो लिंक | ImageToURL",
       description:
-        "छवियां अपलोड करें और तुरंत साझा करने योग्य लिंक प्राप्त करें। वैश्विक CDN नेटवर्क द्वारा संचालित तेज़, सुरक्षित और विश्वसनीय छवि होस्टिंग।",
-      keywords: "छवि होस्टिंग, छवि अपलोड, cdn, तत्काल लिंक, छवि साझाकरण",
+        "किसी भी इमेज को तुरंत शेयर करने योग्य URL में बदलें। 100% मुफ्त इमेज होस्टिंग, साइनअप की जरूरत नहीं। JPG, PNG, GIF (10MB तक) अपलोड करें और ग्लोबल CDN द्वारा तुरंत लिंक पाएं।",
+      keywords: "इमेज से url, मुफ्त इमेज होस्टिंग, इमेज लिंक जनरेटर, फोटो अपलोड लिंक पाएं, इमेज कनवर्टर, तुरंत इमेज शेयरिंग",
+    },
+    faq: {
+      title: "अक्सर पूछे जाने वाले प्रश्न",
+      items: [
+        {
+          question: "मैं इमेज को URL में कैसे बदलूं?",
+          answer: "बस अपनी इमेज को हमारे अपलोड जोन पर ड्रैग और ड्रॉप करें या फाइल चुनने के लिए क्लिक करें। आपकी इमेज तुरंत हमारे ग्लोबल CDN पर अपलोड हो जाएगी, और आपको एक शेयर करने योग्य URL मिलेगा।"
+        },
+        {
+          question: "क्या ImageToURL पूरी तरह से मुफ्त है?",
+          answer: "हां, ImageToURL बेसिक उपयोग के लिए 100% मुफ्त है। आप बिना अकाउंट बनाए 10MB तक की इमेज अपलोड कर सकते हैं।"
+        },
+        {
+          question: "कौन से इमेज फॉर्मेट सपोर्टेड हैं?",
+          answer: "हम सभी लोकप्रिय इमेज फॉर्मेट को सपोर्ट करते हैं जिसमें JPG/JPEG, PNG, GIF, SVG और WebP शामिल हैं। प्रत्येक फाइल 10MB तक हो सकती है।"
+        },
+        {
+          question: "मेरी इमेज कितने समय तक स्टोर रहती हैं?",
+          answer: "एनोनिमस अपलोड डिफ़ॉल्ट रूप से 30 दिनों के लिए स्टोर होते हैं। साइन इन किए हुए यूजर कस्टम एक्सपायरी टाइम सेट कर सकते हैं।"
+        },
+        {
+          question: "क्या मेरा डेटा सुरक्षित है?",
+          answer: "हां, सभी अपलोड HTTPS का उपयोग करके एन्क्रिप्टेड होते हैं। इमेज एंटरप्राइज-ग्रेड क्लाउड इंफ्रास्ट्रक्चर पर स्टोर होती हैं जिसकी 99.9% अपटाइम है।"
+        }
+      ]
     },
   },
   es: {
@@ -216,10 +291,35 @@ const dictionaries = {
       cookies: "Cookies",
     },
     meta: {
-      title: "ImageToURL - Alojamiento Instantáneo de Imágenes",
+      title: "Convertidor de Imagen a URL Gratis - Enlaces de Fotos Compartibles | ImageToURL",
       description:
-        "Sube imágenes y obtén enlaces compartibles al instante. Alojamiento de imágenes rápido, seguro y confiable impulsado por una red CDN global.",
-      keywords: "alojamiento de imágenes, subir imagen, cdn, enlaces instantáneos, compartir imágenes",
+        "Convierte cualquier imagen a URL compartible al instante. Alojamiento de imágenes 100% gratis sin registro. Sube JPG, PNG, GIF hasta 10MB y obtén enlaces instantáneos con CDN global.",
+      keywords: "imagen a url, alojamiento de imágenes gratis, generador de enlaces de imagen, subir foto obtener enlace, convertidor de imagen, compartir imagen instantáneo",
+    },
+    faq: {
+      title: "Preguntas Frecuentes",
+      items: [
+        {
+          question: "¿Cómo convierto una imagen a URL?",
+          answer: "Simplemente arrastra y suelta tu imagen en nuestra zona de carga o haz clic para seleccionar un archivo. Tu imagen se subirá instantáneamente a nuestro CDN global y recibirás una URL compartible."
+        },
+        {
+          question: "¿Es ImageToURL completamente gratis?",
+          answer: "Sí, ImageToURL es 100% gratis para uso básico. Puedes subir imágenes de hasta 10MB sin crear una cuenta."
+        },
+        {
+          question: "¿Qué formatos de imagen son compatibles?",
+          answer: "Soportamos todos los formatos populares incluyendo JPG/JPEG, PNG, GIF, SVG y WebP. Cada archivo puede ser de hasta 10MB."
+        },
+        {
+          question: "¿Cuánto tiempo se almacenan mis imágenes?",
+          answer: "Las cargas anónimas se almacenan por 30 días por defecto. Los usuarios registrados pueden establecer tiempos de expiración personalizados."
+        },
+        {
+          question: "¿Están seguros mis datos?",
+          answer: "Sí, todas las cargas están cifradas usando HTTPS. Las imágenes se almacenan en infraestructura de nube empresarial con 99.9% de tiempo de actividad."
+        }
+      ]
     },
   },
   ar: {

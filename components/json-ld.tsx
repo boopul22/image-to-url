@@ -18,12 +18,30 @@ export function WebApplicationJsonLd({ locale, title, description }: JsonLdProps
         url: `${BASE_URL}/${locale}`,
         applicationCategory: 'UtilitiesApplication',
         operatingSystem: 'Any',
+        browserRequirements: 'Requires JavaScript. Requires HTML5.',
+        softwareVersion: '2.0',
         offers: {
             '@type': 'Offer',
             price: '0',
             priceCurrency: 'USD',
+            availability: 'https://schema.org/InStock',
         },
+        featureList: [
+            'Free image hosting',
+            'No signup required',
+            'Global CDN delivery',
+            'Support for JPG, PNG, GIF, SVG, WebP',
+            'Up to 10MB file size',
+            'Instant shareable links',
+            'Custom expiration times',
+            '99.9% uptime guarantee',
+        ],
         author: {
+            '@type': 'Organization',
+            name: 'ImageToURL',
+            url: BASE_URL,
+        },
+        provider: {
             '@type': 'Organization',
             name: 'ImageToURL',
             url: BASE_URL,
@@ -45,11 +63,46 @@ export function OrganizationJsonLd() {
         '@context': 'https://schema.org',
         '@type': 'Organization',
         name: 'ImageToURL',
+        alternateName: 'ImageToURL Cloud',
         url: BASE_URL,
-        logo: `${BASE_URL}/android-chrome-512x512.png`,
+        logo: {
+            '@type': 'ImageObject',
+            url: `${BASE_URL}/android-chrome-512x512.png`,
+            width: 512,
+            height: 512,
+        },
+        description: 'Free image hosting service that converts images to shareable URLs instantly. Powered by global CDN for fast, secure, and reliable image delivery.',
+        foundingDate: '2023',
         sameAs: [
             // Add social media profiles here when available
         ],
+    }
+
+    return (
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+    )
+}
+
+// WebSite Schema for site-level information
+export function WebSiteJsonLd({ locale }: { locale: string }) {
+    const schema = {
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'ImageToURL',
+        alternateName: 'Image to URL Converter',
+        url: BASE_URL,
+        inLanguage: locale,
+        potentialAction: {
+            '@type': 'SearchAction',
+            target: {
+                '@type': 'EntryPoint',
+                urlTemplate: `${BASE_URL}/${locale}?q={search_term_string}`,
+            },
+            'query-input': 'required name=search_term_string',
+        },
     }
 
     return (
