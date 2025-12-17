@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@/components/theme-provider'
+import { CookieConsentWrapper } from '@/components/cookie-consent-wrapper'
 import './globals.css'
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
@@ -35,9 +35,10 @@ export default function RootLayout({
     <html lang="en" className="dark" suppressHydrationWarning>
       <body className={`${inter.variable} font-sans antialiased selection:bg-brand selection:text-white overflow-x-hidden`}>
         <ThemeProvider defaultTheme="dark" storageKey="imagetourl-theme">
-          {children}
+          <CookieConsentWrapper>
+            {children}
+          </CookieConsentWrapper>
         </ThemeProvider>
-        <Analytics />
       </body>
     </html>
   )
