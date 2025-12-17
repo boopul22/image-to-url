@@ -42,7 +42,7 @@ export default function RootLayout({
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7803867089582138"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
         />
         <ThemeProvider defaultTheme="dark" storageKey="imagetourl-theme">
           <CookieConsentWrapper>
