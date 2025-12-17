@@ -1,5 +1,6 @@
 import Link from "next/link"
 import type { Locale } from "@/lib/i18n/config"
+import { Github, Instagram, Mail } from "lucide-react"
 
 interface FooterDict {
     copyright: string
@@ -81,6 +82,14 @@ export function Footer({ locale, dict }: FooterProps) {
                                     Home
                                 </Link>
                             </li>
+                            <li>
+                                <Link
+                                    href={`/${locale}/about`}
+                                    className="text-zinc-500 hover:text-brand text-xs transition-colors"
+                                >
+                                    About
+                                </Link>
+                            </li>
                         </ul>
                     </div>
 
@@ -116,9 +125,40 @@ export function Footer({ locale, dict }: FooterProps) {
                     </div>
                 </div>
 
+                {/* Social Links */}
+                <div className="border-t border-white/5 pt-6 pb-4">
+                    <div className="flex items-center justify-center gap-6">
+                        <a
+                            href="https://github.com/boopul22"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-zinc-500 hover:text-white transition-colors"
+                            aria-label="GitHub"
+                        >
+                            <Github className="w-5 h-5" />
+                        </a>
+                        <a
+                            href="https://www.instagram.com/no.code_boopul"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-zinc-500 hover:text-pink-400 transition-colors"
+                            aria-label="Instagram"
+                        >
+                            <Instagram className="w-5 h-5" />
+                        </a>
+                        <a
+                            href="mailto:blog.boopul@gmail.com"
+                            className="text-zinc-500 hover:text-brand transition-colors"
+                            aria-label="Email"
+                        >
+                            <Mail className="w-5 h-5" />
+                        </a>
+                    </div>
+                </div>
+
                 {/* Bottom Bar */}
                 <div className="border-t border-white/5 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-                    <p className="text-zinc-500 text-xs">{dict.copyright}</p>
+                    <p className="text-zinc-500 text-xs">© 2025 ImageToURL. All rights reserved.</p>
                     <p className="text-zinc-600 text-xs">
                         Free image to URL converter powered by global CDN
                     </p>
