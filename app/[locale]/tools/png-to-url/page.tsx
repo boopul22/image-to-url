@@ -14,15 +14,18 @@ export async function generateMetadata({
   const { locale } = await params
 
   return {
-    title: "PNG to URL Converter - Free Online Tool | ImageToURL",
-    description: "Convert PNG images to shareable URLs instantly. Free online PNG to URL converter with transparent image support. No signup required.",
-    keywords: "png to url, convert png to url, png image to url converter, png link generator, transparent png hosting",
+    title: "PNG to URL Converter – Free Transparent Image Hosting | ImageToURL",
+    description:
+      "Upload PNG images and convert them into shareable URLs instantly. Free PNG to URL converter with full transparency support, fast CDN hosting, and no signup required.",
+    keywords:
+      "png to url, png image to url, convert png to link, transparent png url, png hosting online, png link generator, upload png get url",
     alternates: {
       canonical: `/${locale}/tools/png-to-url`,
     },
     openGraph: {
-      title: "PNG to URL Converter - Free Online Tool",
-      description: "Convert PNG images to shareable URLs instantly with transparent image support.",
+      title: "PNG to URL Converter – Free Online Tool",
+      description:
+        "Convert PNG images into fast, shareable URLs with full transparency preserved. Free, secure, and instant.",
       url: `/${locale}/tools/png-to-url`,
       siteName: "ImageToURL",
       locale: locale,
@@ -33,69 +36,78 @@ export async function generateMetadata({
 
 const defaultToolContent = {
   title: "PNG to URL Converter",
-  subtitle: "Free Online PNG Image Hosting with Transparency Support",
-  description: "Convert your PNG images to shareable URLs instantly. Perfect for logos, icons, and images with transparent backgrounds.",
+  subtitle: "Free Online PNG to URL Tool with Transparency Support",
+  description:
+    "Easily convert PNG images into shareable URLs in seconds. Ideal for logos, icons, UI assets, and transparent background images. No registration required.",
   features: {
-    title: "Why Use Our PNG to URL Converter?",
+    title: "Why Choose Our PNG to URL Converter?",
     items: [
-      "Full transparency support preserved",
-      "100% free with no hidden costs",
-      "No account or signup required",
-      "High-quality PNG compression",
-      "Files up to 10MB supported",
-      "Instant shareable links",
-      "Global CDN for fast delivery",
-      "Perfect for logos and icons",
+      "Preserves PNG transparency perfectly",
+      "Free online PNG hosting with no signup",
+      "Instant URL generation after upload",
+      "Optimized high-quality PNG compression",
+      "Supports PNG files up to 10MB",
+      "Fast global CDN delivery",
+      "Secure and private image handling",
+      "Perfect for logos, icons, and web assets",
     ],
   },
   howItWorks: {
-    title: "How to Convert PNG to URL",
+    title: "How to Convert PNG to URL Online",
     steps: [
       {
-        title: "Upload Your PNG",
-        description: "Drag and drop your PNG file or click to browse. Transparency is fully preserved.",
+        title: "Upload Your PNG Image",
+        description:
+          "Drag and drop your PNG file or select it from your device. Transparent backgrounds are fully supported.",
       },
       {
-        title: "Get Your URL",
-        description: "Your PNG is instantly uploaded to our global CDN. A shareable URL is generated automatically.",
+        title: "Automatic URL Generation",
+        description:
+          "Your image is uploaded instantly and hosted on our high-speed CDN with a unique shareable URL.",
       },
       {
-        title: "Share Anywhere",
-        description: "Use the URL in websites, apps, or documents. Transparent backgrounds work perfectly.",
+        title: "Use or Share the Link",
+        description:
+          "Embed the PNG URL in websites, apps, HTML, CSS, emails, or share it anywhere online.",
       },
     ],
   },
   faq: {
-    title: "Frequently Asked Questions",
+    title: "PNG to URL – Frequently Asked Questions",
     items: [
       {
-        question: "Does the PNG to URL converter preserve transparency?",
-        answer: "Yes! Our converter fully preserves PNG transparency. Your transparent backgrounds will remain intact in the hosted image.",
+        question: "Does this PNG to URL converter keep transparency?",
+        answer:
+          "Yes. PNG transparency is fully preserved. Transparent backgrounds remain intact when you use the generated URL.",
       },
       {
-        question: "Is this PNG to URL converter free?",
-        answer: "Yes, our PNG to URL converter is 100% free. Upload PNG images up to 10MB without creating an account.",
+        question: "Is the PNG to URL tool completely free?",
+        answer:
+          "Yes, this tool is 100% free. You can upload PNG images up to 10MB without signing up or creating an account.",
       },
       {
-        question: "Can I use PNG URLs for my website logo?",
-        answer: "Absolutely! PNG URLs work great for logos, icons, and any images that need transparent backgrounds in HTML or CSS.",
+        question: "Can I use the PNG URL for websites and apps?",
+        answer:
+          "Absolutely. The generated PNG URLs work perfectly for websites, mobile apps, HTML, CSS, emails, and design tools.",
       },
       {
-        question: "What's the maximum PNG file size?",
-        answer: "You can upload PNG files up to 10MB. For larger files, consider compressing them first.",
+        question: "What is the maximum PNG file size allowed?",
+        answer:
+          "You can upload PNG files up to 10MB. For larger images, we recommend compressing them before upload.",
       },
       {
-        question: "How long will my PNG URL stay active?",
-        answer: "Anonymous uploads are stored for 30 days. Sign in for free to keep your images indefinitely.",
+        question: "How long will my PNG image URL remain active?",
+        answer:
+          "Anonymous uploads are stored for up to 30 days. Free accounts can keep PNG URLs active for longer periods.",
       },
     ],
   },
   relatedTools: {
-    title: "Related Tools",
+    title: "Related Image Tools",
     tools: [
-      { name: "JPG to URL", href: "/tools/jpg-to-url", description: "Convert JPG images to URLs" },
-      { name: "SVG to URL", href: "/tools/svg-to-url", description: "Convert SVG files to URLs" },
-      { name: "Bulk Upload", href: "/tools/bulk-upload", description: "Upload multiple images at once" },
+      { name: "JPG to URL", href: "/tools/jpg-to-url", description: "Convert JPG images into shareable URLs" },
+      { name: "SVG to URL", href: "/tools/svg-to-url", description: "Upload SVG files and generate URLs" },
+      { name: "Bulk Image Upload", href: "/tools/bulk-upload", description: "Upload multiple images and get URLs at once" },
     ],
   },
 }
@@ -114,17 +126,22 @@ export default async function PngToUrlPage({
       <SoftwareApplicationJsonLd
         locale={locale}
         name="PNG to URL Converter"
-        description="Convert PNG images to shareable URLs with full transparency support. Free online image hosting."
+        description="Free online tool to convert PNG images into shareable URLs with full transparency and fast CDN hosting."
         url={`/${locale}/tools/png-to-url`}
         featureList={[
-          "Free PNG to URL conversion",
-          "Full transparency support",
-          "No signup required",
-          "Up to 10MB file size",
-          "Instant shareable links",
-          "Global CDN delivery",
+          "Convert PNG to URL online",
+          "Full transparency preserved",
+          "No signup or login required",
+          "Supports PNG files up to 10MB",
+          "Instant shareable image links",
+          "Global CDN for fast loading",
         ]}
-        keywords={["png to url", "convert png to url", "png hosting", "transparent png url"]}
+        keywords={[
+          "png to url",
+          "png image hosting",
+          "transparent png url",
+          "convert png to link",
+        ]}
       />
       <FAQJsonLd items={toolDict.faq.items} />
       <BreadcrumbJsonLd

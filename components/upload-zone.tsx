@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState, useRef, useCallback, useEffect } from "react"
-import { Upload, Link2, Check, AlertCircle, Shield, Zap, FileImage, X, Download } from "lucide-react"
+import { Upload, Link2, Check, AlertCircle, Shield, Zap, FileImage, X, Download, Code } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import type { Dictionary } from "@/lib/i18n/dictionaries"
@@ -34,6 +34,7 @@ export function UploadZone({ dict }: { dict: Dictionary }) {
   const [uploadedFiles, setUploadedFiles] = useState<UploadedFile[]>([])
   const [error, setError] = useState("")
   const [copiedUrl, setCopiedUrl] = useState("")
+  const [copiedEmbed, setCopiedEmbed] = useState("")
   const [uploadLimit, setUploadLimit] = useState<UploadLimitStatus | null>(null)
   const [showLoginDialog, setShowLoginDialog] = useState(false)
   const fileInputRef = useRef<HTMLInputElement>(null)
@@ -210,7 +211,16 @@ export function UploadZone({ dict }: { dict: Dictionary }) {
   const handleCopy = useCallback(async (url: string) => {
     await navigator.clipboard.writeText(url)
     setCopiedUrl(url)
+    setCopiedEmbed("") // Clear embed copied state
     setTimeout(() => setCopiedUrl(""), 2000)
+  }, [])
+
+  const handleCopyEmbed = useCallback(async (url: string, fileName: string) => {
+    const embedCode = `<a href="https://imagetourl.cloud" target="_blank" rel="noopener"><img src="${url}" alt="${fileName} - Hosted on ImageToURL" /></a>`
+    await navigator.clipboard.writeText(embedCode)
+    setCopiedEmbed(url)
+    setCopiedUrl("") // Clear URL copied state
+    setTimeout(() => setCopiedEmbed(""), 2000)
   }, [])
 
   const handleRemove = useCallback((url: string) => {
@@ -416,6 +426,7 @@ export function UploadZone({ dict }: { dict: Dictionary }) {
                                 ? "bg-brand hover:bg-brand-dim text-white"
                                 : "bg-white hover:bg-zinc-200 text-dark"
                                 }`}
+                              title="Copy direct image URL"
                             >
                               {copiedUrl === uploadedFile.url ? (
                                 <>
@@ -423,7 +434,32 @@ export function UploadZone({ dict }: { dict: Dictionary }) {
                                   {dict.upload.copied}
                                 </>
                               ) : (
-                                dict.upload.copy
+                                <>
+                                  <Link2 size={14} className="mr-1" />
+                                  {dict.upload.copy}
+                                </>
+                              )}
+                            </Button>
+                            <Button
+                              onClick={() => handleCopyEmbed(uploadedFile.url, uploadedFile.fileName)}
+                              size="sm"
+                              variant="outline"
+                              className={`h-9 px-3 text-xs transition-all ${copiedEmbed === uploadedFile.url
+                                ? "bg-brand hover:bg-brand-dim text-white border-brand"
+                                : "bg-transparent border-white/10 hover:border-brand/50 hover:bg-brand/5 text-zinc-300"
+                                }`}
+                              title="Copy HTML embed code with attribution"
+                            >
+                              {copiedEmbed === uploadedFile.url ? (
+                                <>
+                                  <Check size={14} className="mr-1" />
+                                  Copied
+                                </>
+                              ) : (
+                                <>
+                                  <Code size={14} className="mr-1" />
+                                  Embed
+                                </>
                               )}
                             </Button>
                             <Button
@@ -431,6 +467,7 @@ export function UploadZone({ dict }: { dict: Dictionary }) {
                               variant="outline"
                               size="sm"
                               className="h-9 w-9 p-0 bg-transparent border-white/10 hover:border-brand/50 hover:bg-brand/5"
+                              title="Download image"
                             >
                               <a href={uploadedFile.url} target="_blank" rel="noopener noreferrer" download>
                                 <Download size={14} />

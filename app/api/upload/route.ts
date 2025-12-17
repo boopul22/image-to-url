@@ -79,11 +79,14 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "File too large. Maximum size is 10MB." }, { status: 400 })
     }
 
-    // Generate unique file name
+    // Generate unique file name with imagetourl.cloud branding for SEO backlinks
     const timestamp = Date.now()
     const randomString = Math.random().toString(36).substring(2, 8)
     const fileExtension = file.name.split(".").pop()
-    const uniqueFileName = `${timestamp}-${randomString}.${fileExtension}`
+    // Get original filename without extension, sanitize it
+    const originalName = file.name.replace(/\.[^/.]+$/, "").replace(/[^a-zA-Z0-9-_]/g, "-").substring(0, 50)
+    // Add imagetourl.cloud branding to filename for SEO backlinks
+    const uniqueFileName = `${originalName}-imagetourl.cloud-${timestamp}-${randomString}.${fileExtension}`
 
     // Add folder prefix for organized storage
     const folderPath = "Image_to_url_V2"

@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next'
+import Script from 'next/script'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/theme-provider'
 import { CookieConsentWrapper } from '@/components/cookie-consent-wrapper'
@@ -33,6 +34,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7803867089582138"
+        crossOrigin="anonymous"
+        strategy="afterInteractive"
+      />
       <body className={`${inter.variable} font-sans antialiased selection:bg-brand selection:text-white overflow-x-hidden`}>
         <ThemeProvider defaultTheme="dark" storageKey="imagetourl-theme">
           <CookieConsentWrapper>
