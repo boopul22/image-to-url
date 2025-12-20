@@ -1,1 +1,9 @@
-{}
+{
+    "buildCommand": "TURBOPACK_ENABLE_SOURCE_TRACING=1 TURBO_TASKS_MEMORY_ONLY=0 next build",
+    "build": {
+        "env": {
+            "TURBOPACK_ENABLE_SOURCE_TRACING": "1",
+            "TURBO_TASKS_MEMORY_ONLY": "0"
+        }
+    }
+}
