@@ -9,6 +9,8 @@ import { Input } from "@/components/ui/input"
 import type { Dictionary } from "@/lib/i18n/dictionaries"
 import { UploadLimitBanner } from "@/components/upload-limit-banner"
 import { LoginDialog } from "@/components/auth/login-dialog"
+import { BookmarkBanner } from "@/components/bookmark-banner"
+import { LoginFeatureTooltip } from "@/components/login-feature-tooltip"
 
 interface UploadedFile {
   url: string
@@ -37,12 +39,32 @@ export function UploadZone({ dict }: { dict: Dictionary }) {
   const [copiedEmbed, setCopiedEmbed] = useState("")
   const [uploadLimit, setUploadLimit] = useState<UploadLimitStatus | null>(null)
   const [showLoginDialog, setShowLoginDialog] = useState(false)
+  const [showBookmarkBanner, setShowBookmarkBanner] = useState(false)
+  const [currentTipIndex, setCurrentTipIndex] = useState(0)
   const fileInputRef = useRef<HTMLInputElement>(null)
+
+  // Login benefits for rotating tooltip
+  const loginBenefits = [
+    { icon: "📊", text: "Track all your uploads" },
+    { icon: "♾️", text: "Unlimited uploads" },
+    { icon: "🔒", text: "Secure storage" },
+    { icon: "📱", text: "Access from anywhere" },
+  ]
 
   // Check upload limit on component mount
   useEffect(() => {
     checkUploadLimit()
   }, [])
+
+  // Rotate login benefits while uploading
+  useEffect(() => {
+    if (isUploading && uploadLimit && !uploadLimit.authenticated) {
+      const interval = setInterval(() => {
+        setCurrentTipIndex((prev) => (prev + 1) % loginBenefits.length)
+      }, 2000) // Change tip every 2 seconds
+      return () => clearInterval(interval)
+    }
+  }, [isUploading, uploadLimit])
 
   const checkUploadLimit = async () => {
     try {
@@ -159,6 +181,11 @@ export function UploadZone({ dict }: { dict: Dictionary }) {
 
         setUploadedFiles((prev) => [uploadedFile, ...prev])
 
+        // Show bookmark banner after successful upload
+        setTimeout(() => {
+          setShowBookmarkBanner(true)
+        }, 1200)
+
         // Reset upload state after brief delay
         setTimeout(() => {
           setFile(null)
@@ -209,18 +236,52 @@ export function UploadZone({ dict }: { dict: Dictionary }) {
   )
 
   const handleCopy = useCallback(async (url: string) => {
-    await navigator.clipboard.writeText(url)
-    setCopiedUrl(url)
-    setCopiedEmbed("") // Clear embed copied state
-    setTimeout(() => setCopiedUrl(""), 2000)
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(url)
+      } else {
+        // Fallback for browsers that don't support clipboard API
+        const textArea = document.createElement("textarea")
+        textArea.value = url
+        textArea.style.position = "fixed"
+        textArea.style.left = "-999999px"
+        document.body.appendChild(textArea)
+        textArea.select()
+        document.execCommand("copy")
+        document.body.removeChild(textArea)
+      }
+      setCopiedUrl(url)
+      setCopiedEmbed("") // Clear embed copied state
+      setTimeout(() => setCopiedUrl(""), 2000)
+      // Show bookmark banner after copying link
+      setShowBookmarkBanner(true)
+    } catch (err) {
+      console.error("Failed to copy:", err)
+    }
   }, [])
 
   const handleCopyEmbed = useCallback(async (url: string, fileName: string) => {
-    const embedCode = `<a href="https://imagetourl.cloud" target="_blank" rel="noopener"><img src="${url}" alt="${fileName} - Hosted on ImageToURL" /></a>`
-    await navigator.clipboard.writeText(embedCode)
-    setCopiedEmbed(url)
-    setCopiedUrl("") // Clear URL copied state
-    setTimeout(() => setCopiedEmbed(""), 2000)
+    try {
+      const embedCode = `<a href="https://imagetourl.cloud" target="_blank" rel="noopener"><img src="${url}" alt="${fileName} - Hosted on ImageToURL" /></a>`
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(embedCode)
+      } else {
+        // Fallback for browsers that don't support clipboard API
+        const textArea = document.createElement("textarea")
+        textArea.value = embedCode
+        textArea.style.position = "fixed"
+        textArea.style.left = "-999999px"
+        document.body.appendChild(textArea)
+        textArea.select()
+        document.execCommand("copy")
+        document.body.removeChild(textArea)
+      }
+      setCopiedEmbed(url)
+      setCopiedUrl("") // Clear URL copied state
+      setTimeout(() => setCopiedEmbed(""), 2000)
+    } catch (err) {
+      console.error("Failed to copy embed code:", err)
+    }
   }, [])
 
   const handleRemove = useCallback((url: string) => {
@@ -251,6 +312,7 @@ export function UploadZone({ dict }: { dict: Dictionary }) {
   return (
     <>
       <LoginDialog open={showLoginDialog} onOpenChange={setShowLoginDialog} />
+      <BookmarkBanner show={showBookmarkBanner} onDismiss={() => setShowBookmarkBanner(false)} />
 
       <div className="w-full max-w-4xl animate-slide-up" style={{ animationDelay: "100ms" }}>
         <div className="bg-surface rounded-2xl p-2 shadow-2xl shadow-black/50 border border-white/5 relative overflow-hidden">
@@ -292,16 +354,29 @@ export function UploadZone({ dict }: { dict: Dictionary }) {
                     <img src={preview || "/placeholder.svg"} alt="Preview" className="w-full h-full object-cover" />
 
                     {isUploading && (
-                      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center flex-col">
-                        <div className="relative w-16 h-16 mb-3">
-                          <div className="absolute inset-0 border-4 border-zinc-800 rounded-full" />
-                          <div
-                            className="absolute inset-0 border-4 border-brand rounded-full border-t-transparent animate-spin"
-                            style={{ animationDuration: "0.8s" }}
-                          />
+                      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center flex-col px-8">
+                        {/* Progress Bar */}
+                        <div className="w-full max-w-[180px] mb-4">
+                          <div className="h-1.5 bg-zinc-800 rounded-full overflow-hidden">
+                            <div
+                              className="h-full bg-gradient-to-r from-brand to-brand-dim transition-all duration-300 ease-out"
+                              style={{ width: `${progress}%` }}
+                            />
+                          </div>
                         </div>
+
                         <span className="text-sm font-bold text-white mb-1">{Math.round(progress)}%</span>
-                        <span className="text-xs text-zinc-400">Uploading to R2...</span>
+                        <span className="text-xs text-zinc-400 mb-4">Uploading to R2...</span>
+
+                        {/* Rotating login benefits for anonymous users */}
+                        {uploadLimit && !uploadLimit.authenticated && (
+                          <div className="mt-2 px-4 py-2 bg-zinc-900/80 rounded-lg border border-zinc-700/50 animate-fade-in">
+                            <div className="flex items-center gap-2 text-xs text-zinc-300">
+                              <span className="text-sm">{loginBenefits[currentTipIndex].icon}</span>
+                              <span>Sign in to: {loginBenefits[currentTipIndex].text}</span>
+                            </div>
+                          </div>
+                        )}
                       </div>
                     )}
 
@@ -359,6 +434,9 @@ export function UploadZone({ dict }: { dict: Dictionary }) {
                   <h3 className="text-white font-semibold text-lg flex items-center gap-2">
                     <FileImage size={20} className="text-brand" />
                     Uploaded Files ({uploadedFiles.length})
+                    {uploadLimit && !uploadLimit.authenticated && (
+                      <LoginFeatureTooltip variant="icon" />
+                    )}
                   </h3>
                   <Button
                     variant="ghost"
