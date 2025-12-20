@@ -1,0 +1,238 @@
+# Keywords for Image to URL Converter
+# ✓ = Already used on site (has dedicated page/content)
+# ✗ = Not yet used - TARGET THESE!
+# Total Unique: 108 | Already Used: 33 | Remaining: 75
+
+================================================================================
+## BATCH 1: Core Image to URL Keywords (High Priority)
+================================================================================
+
+✓ image to url converter (HOMEPAGE)
+✓ image to url (HOMEPAGE)
+✗ image url converter
+✗ convert image to url
+✗ image to link
+✗ image to link converter
+✓ image link generator (DEDICATED PAGE)
+✓ image url generator (MULTIPLE PAGES)
+✗ image url
+✗ image url maker
+✓ image url creator (IMAGE-LINK-GENERATOR PAGE)
+✗ image link
+✗ image link maker
+✗ turn image into url
+✗ turn image to url
+✗ turn image to link
+✗ image to url free
+✓ image to url converter free (HOMEPAGE/TOOLS)
+✗ convert image to link
+✗ convert image to link url
+
+================================================================================
+## BATCH 2: Photo/Picture Keywords (Target These!)
+================================================================================
+
+✓ photo to url converter (PHOTO-TO-URL PAGE)
+✓ photo to url (PHOTO-TO-URL PAGE)
+✓ photo to link converter (PHOTO-LINK-CREATOR PAGE)
+✓ photo to link (PHOTO-LINK-CREATOR PAGE)
+✓ photo url converter (PHOTO-TO-URL PAGE)
+✓ photo url generator (IMAGE-LINK-GENERATOR)
+✓ photo url (PHOTO-TO-URL PAGE)
+✓ photo link generator (IMAGE-LINK-GENERATOR PAGE)
+✓ photo link creator (PHOTO-LINK-CREATOR PAGE)
+✓ picture to link converter (PICTURE-TO-LINK PAGE)
+✓ picture to url converter (CONVERT-PICTURE-TO-URL PAGE)
+✓ picture url generator (PICTURE-URL-MAKER PAGE)
+✓ picture url maker (PICTURE-URL-MAKER PAGE)
+✓ picture url (PICTURE-URL-MAKER PAGE)
+✓ picture to link (PICTURE-TO-LINK PAGE)
+✓ picture into link (PICTURE-URL-MAKER PAGE)
+✓ picture link maker (PICTURE-URL-MAKER PAGE)
+✓ picture link converter (PICTURE-TO-LINK PAGE)
+✓ convert picture to url (CONVERT-PICTURE-TO-URL PAGE)
+✓ convert picture to url free (CONVERT-PICTURE-TO-URL PAGE)
+✓ turn picture to url (CONVERT-PICTURE-TO-URL PAGE)
+✓ turn photo into url (PHOTO-TO-URL PAGE)
+✓ change picture to url (CONVERT-PICTURE-TO-URL PAGE)
+✓ what is photo url (FAQ)
+✓ what is picture url (FAQ)
+✓ what is a picture url (FAQ)
+✓ how to create a photo url (FAQ)
+✓ how to turn a picture into a link (FAQ)
+✓ get photo url (PHOTO-TO-URL PAGE)
+
+================================================================================
+## BATCH 3: URL/Link Generation Keywords
+================================================================================
+
+✓ url generator for image (URL-GENERATOR-FOR-IMAGE PAGE)
+✓ url maker for image (URL-GENERATOR-FOR-IMAGE PAGE)
+✓ url creator for image (URL-GENERATOR-FOR-IMAGE PAGE)
+✓ url image converter (URL-GENERATOR-FOR-IMAGE PAGE)
+✓ create image url (CREATE-IMAGE-URL PAGE)
+✓ create url for image (CREATE-IMAGE-URL PAGE)
+✓ generate image url (CREATE-IMAGE-URL PAGE)
+✓ generate url for image (CREATE-IMAGE-URL PAGE)
+✓ generate image link (CREATE-IMAGE-URL PAGE)
+✓ generate link for image (CREATE-IMAGE-URL PAGE)
+✓ make url for image (URL-GENERATOR-FOR-IMAGE PAGE)
+✓ make image url (CREATE-IMAGE-URL PAGE)
+✓ make image into link (CREATE-IMAGE-URL PAGE)
+✓ make an image url (CREATE-IMAGE-URL PAGE)
+✓ create image link (CREATE-IMAGE-URL PAGE)
+✓ link generator for image (IMAGE-LINK-GENERATOR PAGE)
+✓ link generator for images (IMAGE-LINK-GENERATOR PAGE)
+✓ image address generator (URL-GENERATOR-FOR-IMAGE PAGE)
+✓ image direct link (URL-GENERATOR-FOR-IMAGE PAGE)
+✓ image link creator (IMAGE-LINK-GENERATOR PAGE)
+✓ image web link (CREATE-IMAGE-URL PAGE)
+✓ image website link (CREATE-IMAGE-URL PAGE)
+✓ image to web link (CREATE-IMAGE-URL PAGE)
+✓ image to website link (CREATE-IMAGE-URL PAGE)
+✓ online image url (URL-GENERATOR-FOR-IMAGE PAGE)
+✓ image url online (URL-GENERATOR-FOR-IMAGE PAGE)
+✓ image online url (URL-GENERATOR-FOR-IMAGE PAGE)
+✓ upload image url (UPLOAD-IMAGE-TO-URL PAGE)
+✓ upload image to url (UPLOAD-IMAGE-TO-URL PAGE)
+✓ upload image get url (UPLOAD-IMAGE-TO-URL PAGE)
+✓ upload image and get url (UPLOAD-IMAGE-TO-URL PAGE)
+✓ upload image to get url (UPLOAD-IMAGE-TO-URL PAGE)
+✓ get image url (UPLOAD-IMAGE-TO-URL PAGE)
+
+================================================================================
+## BATCH 4: How-To / Informational Keywords (Great for Blog Posts)
+================================================================================
+
+✗ how to turn image into url
+✗ how to create an image url
+✗ how to make image url
+✗ how to convert image to url
+✗ how to get image url
+✗ how to get a url for an image
+✗ how to make an image a url link
+✗ how do you get an image url
+✗ how do i get image url
+✗ how to make a image url
+✗ what is a image url
+✗ what is the url of an image
+
+================================================================================
+## BATCH 5: Format-Specific Keywords
+================================================================================
+
+✓ jpg to url converter (DEDICATED PAGE)
+✓ jpg to url (DEDICATED PAGE)
+✗ jpg url converter
+✗ jpg url
+✓ jpg to link converter (JPG-TO-URL PAGE)
+✗ jpg to link
+✓ jpeg url converter (JPEG-TO-URL PAGE)
+✗ convert jpg image to url link
+✓ png to url converter (DEDICATED PAGE)
+✓ png to url (DEDICATED PAGE)
+✗ png to link
+✓ gif to url converter (DEDICATED PAGE)
+✓ gif to link converter (GIF-TO-URL PAGE)
+✓ gif to link (GIF-TO-URL PAGE)
+✗ gif url converter
+
+================================================================================
+## BATCH 6: PDF to URL Keywords (Create Dedicated Page?)
+================================================================================
+
+✓ pdf to url converter (PDF-TO-URL PAGE)
+✓ pdf to url (PDF-TO-URL PAGE)
+✗ pdf to url conversion
+✓ pdf to link converter (PDF-TO-URL PAGE)
+✗ pdf to link free
+✗ pdf to link converter free
+✓ convert pdf to url (PDF-TO-URL PAGE)
+✗ convert pdf to url link
+✗ convert pdf to url online free
+✗ pdf to url converter free
+✗ how to convert a pdf to a link
+✗ how to convert a pdf to a url link
+✗ how to make pdf a url
+✗ converting pdf to url link
+
+================================================================================
+## BATCH 7: Video to URL Keywords (Create Dedicated Page?)
+================================================================================
+
+✓ video to url (VIDEO-TO-URL PAGE)
+✓ video to url converter (VIDEO-TO-URL PAGE)
+✗ video to url link converter free
+✓ mp4 to link (VIDEO-TO-URL PAGE)
+✗ how to turn mp4 into link
+
+================================================================================
+## BATCH 8: Image Hosting & Misc Keywords
+================================================================================
+
+✓ freeimage host (FREE-IMAGE-HOSTING PAGE)
+✓ free image host (FREE-IMAGE-HOSTING PAGE)
+✓ image host upload (FREE-IMAGE-HOSTING PAGE)
+✗ imgur image to url
+✗ imgur link generator
+✗ url to image
+✗ url to image converter
+✗ link to image converter
+✗ file to url
+✗ pic url
+✗ pic to link
+✗ online picture link
+✗ image converter to url
+✗ image convert to link
+✗ image converter to link
+✗ image to image url
+✗ image to image link
+✗ convert image to image url
+✗ pictures to url convert
+✗ image to link generator
+✗ image url link
+✗ image to https link converter
+
+================================================================================
+## BATCH 9: Already Have Pages - Base64/QR/etc
+================================================================================
+
+✓ url to base64 (BASE64-TO-URL PAGE)
+✓ url from qr code (QR-TO-URL PAGE)
+
+================================================================================
+## BATCH 10: Low Priority / Misc
+================================================================================
+
+✗ png to favicon
+✗ png to favicon converter
+✗ online ico creator
+✗ online ico generator
+✗ ico file generator online
+✗ urlopener
+✗ expandurl
+✗ parse url params
+
+================================================================================
+## SUMMARY
+================================================================================
+
+ALREADY USED (28 keywords):
+- Homepage: image to url, image to url converter, image to url converter free
+- JPG: jpg to url, jpg to url converter, jpg to link converter
+- JPEG: jpeg url converter  
+- PNG: png to url, png to url converter
+- GIF: gif to url converter, gif to link, gif to link converter
+- Free Hosting: free image host, freeimage host, image host upload
+- Link Generator: image link generator, image url generator, image url creator, 
+                  photo link generator, photo url generator
+- Base64: url to base64
+- QR: url from qr code
+- Other: photo to url converter
+
+PRIORITY TARGETS (Not yet used - 80 keywords):
+1. Create "PDF to URL" page (14 keywords)
+2. Create "Video to URL" page (5 keywords)  
+3. Target "photo/picture" variations (25+ keywords)
+4. Create blog posts for "how to" keywords (12 keywords)
+5. Target remaining format variations
