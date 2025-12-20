@@ -154,6 +154,16 @@ export function Footer({ locale, dict }: FooterProps) {
                             <Mail className="w-5 h-5" />
                         </a>
                     </div>
+
+                    {/* Fazier Badges */}
+                    <div className="flex items-center justify-center gap-3 mt-4">
+                        <a href="https://fazier.com/launches/www.imagetourl.cloud" target="_blank" rel="noopener noreferrer">
+                            <img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=light" width={80} alt="Fazier badge" />
+                        </a>
+                        <a href="https://fazier.com/launches/www.imagetourl.cloud" target="_blank" rel="noopener noreferrer">
+                            <img src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=featured&theme=light" width={150} alt="Fazier badge" />
+                        </a>
+                    </div>
                 </div>
 
                 {/* Bottom Bar */}
