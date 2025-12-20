@@ -1,256 +1,217 @@
-<p align="center">
-  <img src="public/logo.svg" alt="ImageToURL Logo" width="120" height="120" />
-</p>
+<div align="center">
 
-<h1 align="center">ImageToURL</h1>
+# 🖼️ ImageToURL
 
-<p align="center">
-  <strong>🚀 Free & Fast Image Hosting with Instant URL Generation</strong>
-</p>
+### **Transform Images into Shareable Links in Seconds**
 
-<p align="center">
-  <a href="https://imagetourl.cloud">🌐 Live Demo</a> •
-  <a href="#features">✨ Features</a> •
-  <a href="#getting-started">🛠️ Getting Started</a> •
-  <a href="#tech-stack">💻 Tech Stack</a> •
-  <a href="#contributing">🤝 Contributing</a>
-</p>
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-imagetourl.cloud-00D4FF?style=for-the-badge)](https://imagetourl.cloud)
+[![GitHub Stars](https://img.shields.io/github/stars/boopul22/image-to-url?style=for-the-badge&logo=github&color=yellow)](https://github.com/boopul22/image-to-url/stargazers)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js" alt="Next.js 16" />
-  <img src="https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Tailwind-4.0-38B2AC?style=for-the-badge&logo=tailwind-css" alt="Tailwind CSS" />
-  <img src="https://img.shields.io/badge/Supabase-Auth-3ECF8E?style=for-the-badge&logo=supabase" alt="Supabase" />
-  <img src="https://img.shields.io/badge/Cloudflare-R2-F38020?style=for-the-badge&logo=cloudflare" alt="Cloudflare R2" />
-</p>
+<br/>
+
+<img src="https://img.shields.io/badge/Next.js_16-black?style=flat-square&logo=next.js" alt="Next.js" />
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+<img src="https://img.shields.io/badge/Tailwind_CSS_4-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white" alt="Tailwind" />
+<img src="https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white" alt="Supabase" />
+<img src="https://img.shields.io/badge/Cloudflare_R2-F38020?style=flat-square&logo=cloudflare&logoColor=white" alt="Cloudflare" />
+<img src="https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white" alt="Vercel" />
+
+<br/><br/>
+
+[**🚀 Try it Now**](https://imagetourl.cloud) &nbsp;•&nbsp; [**📖 Documentation**](https://imagetourl.cloud/api-docs) &nbsp;•&nbsp; [**🐛 Report Bug**](https://github.com/boopul22/image-to-url/issues)
+
+<br/>
 
 ---
 
-## 🌟 Overview
+</div>
 
-**[ImageToURL](https://imagetourl.cloud)** is a modern, free image hosting platform that lets you upload images and instantly get shareable URLs. Built with performance and user experience in mind, it provides lightning-fast uploads with global CDN delivery through Cloudflare R2.
+## � What is ImageToURL?
 
-Whether you need to share images on forums, embed them in markdown, or generate social media-ready links — ImageToURL has you covered with 26+ specialized tools.
+**[ImageToURL](https://imagetourl.cloud)** is a **free, lightning-fast image hosting platform** that instantly converts your images into shareable URLs. Perfect for developers, content creators, and anyone who needs quick image sharing.
+
+<div align="center">
+
+| ⚡ **<50ms Latency** | 🌍 **Global CDN** | 🔒 **Secure Storage** | 📱 **Mobile Ready** |
+|:---:|:---:|:---:|:---:|
+| Lightning fast uploads | Cloudflare R2 powered | Enterprise security | Fully responsive |
+
+</div>
 
 ---
 
 ## ✨ Features
 
-### 🖼️ Core Features
-- **Instant Image Upload** — Drag & drop or click to upload images
-- **Free Forever** — No subscription required for basic usage
-- **Lightning Fast** — <50ms latency with global CDN
-- **99.9% Uptime** — Enterprise-grade reliability
-- **Multiple Format Support** — JPG, PNG, WebP, GIF, SVG, and more
+<table>
+<tr>
+<td width="50%">
 
-### 🛠️ 26+ Conversion Tools
-| Tool | Description |
-|------|-------------|
-| **Image to URL** | Convert any image to a shareable URL |
-| **JPG to URL** | Specifically optimized for JPEG images |
-| **PNG to URL** | Preserve transparency with PNG support |
-| **WebP to URL** | Next-gen format with superior compression |
-| **GIF to URL** | Animated image support |
-| **SVG to URL** | Vector graphics hosting |
-| **PDF to URL** | Document to link conversion |
-| **Base64 to URL** | Convert encoded images to URLs |
-| **Bulk Upload** | Upload multiple images at once |
-| **QR to URL** | Generate QR codes for your images |
-| **Image to Short URL** | Shortened links for easy sharing |
-| **Image Embed Code** | Generate HTML embed snippets |
-| ... and many more! |
+### 🖼️ Image Hosting
+- ✅ Drag & drop upload
+- ✅ Multi-format support (JPG, PNG, WebP, GIF, SVG)
+- ✅ Bulk upload capability
+- ✅ Instant URL generation
+- ✅ Forever free tier
+
+</td>
+<td width="50%">
+
+### 🛠️ 26+ Tools
+- 🔗 Image to URL converter
+- 📄 PDF to URL generator
+- 🎨 Base64 to URL decoder
+- 📱 QR code generator
+- ✂️ Image embed code creator
+
+</td>
+</tr>
+<tr>
+<td width="50%">
 
 ### 🎨 User Experience
-- **Dark Mode Default** — Beautiful, eye-friendly dark theme
-- **Multi-Language Support** — Internationalization ready
-- **Mobile Responsive** — Works perfectly on all devices
-- **SEO Optimized** — Rich structured data and meta tags
-- **Cookie Consent** — GDPR compliant
+- 🌙 Beautiful dark mode
+- 🌐 Multi-language support
+- 📊 User dashboard
+- 🍪 GDPR compliant
+- ♿ Accessible design
 
-### 🔐 Security & Authentication
-- **Supabase Auth** — Secure user authentication
-- **Dashboard Access** — Manage your uploaded images
-- **API Access** — Programmatic image uploads
+</td>
+<td width="50%">
 
----
+### ⚙️ Developer Features
+- 🔐 Supabase authentication
+- 📡 RESTful API access
+- 🔄 Webhook support
+- 📈 Analytics integration
+- 🚀 Edge-optimized delivery
 
-## 💻 Tech Stack
-
-| Category | Technology |
-|----------|------------|
-| **Framework** | [Next.js 16](https://nextjs.org/) with App Router |
-| **Language** | [TypeScript 5](https://www.typescriptlang.org/) |
-| **Styling** | [Tailwind CSS 4](https://tailwindcss.com/) |
-| **UI Components** | [Radix UI](https://www.radix-ui.com/) + [shadcn/ui](https://ui.shadcn.com/) |
-| **Authentication** | [Supabase Auth](https://supabase.com/auth) |
-| **Storage** | [Cloudflare R2](https://www.cloudflare.com/r2/) |
-| **Database** | [Supabase (PostgreSQL)](https://supabase.com/) |
-| **Deployment** | [Vercel](https://vercel.com/) |
-| **Analytics** | [Vercel Analytics](https://vercel.com/analytics) |
+</td>
+</tr>
+</table>
 
 ---
 
-## 🛠️ Getting Started
+## �️ Tech Stack
 
-### Prerequisites
+<div align="center">
 
-- Node.js 18+ 
-- npm, yarn, or pnpm
-- Supabase account
-- Cloudflare R2 account
+| Layer | Technology |
+|:---:|:---|
+| **Frontend** | ![Next.js](https://img.shields.io/badge/Next.js_16-000?logo=next.js) ![React](https://img.shields.io/badge/React_19-61DAFB?logo=react&logoColor=black) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white) |
+| **Styling** | ![Tailwind](https://img.shields.io/badge/Tailwind_4-38B2AC?logo=tailwind-css&logoColor=white) ![Radix UI](https://img.shields.io/badge/Radix_UI-161618?logo=radix-ui) |
+| **Backend** | ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?logo=supabase&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white) |
+| **Storage** | ![Cloudflare](https://img.shields.io/badge/Cloudflare_R2-F38020?logo=cloudflare&logoColor=white) |
+| **Deployment** | ![Vercel](https://img.shields.io/badge/Vercel-000?logo=vercel) |
 
-### Installation
+</div>
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/boopul22/image-to-url.git
-   cd image-to-url
-   ```
+---
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   # or
-   yarn install
-   # or
-   pnpm install
-   ```
+## � Quick Start
 
-3. **Set up environment variables**
-   
-   Copy the example environment file:
-   ```bash
-   cp .env.example .env.local
-   ```
-   
-   Fill in your credentials:
-   ```env
-   # Site Configuration
-   NEXT_PUBLIC_SITE_URL=https://imagetourl.cloud
-   
-   # Supabase Configuration
-   NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
-   SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
-   
-   # Cloudflare R2 Configuration
-   R2_ACCOUNT_ID=your-r2-account-id
-   R2_ACCESS_KEY_ID=your-r2-access-key-id
-   R2_SECRET_ACCESS_KEY=your-r2-secret-access-key
-   R2_BUCKET_NAME=your-r2-bucket-name
-   
-   # Google Configuration (Optional)
-   NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION=your-google-verification-code
-   ```
+```bash
+# 1. Clone the repository
+git clone https://github.com/boopul22/image-to-url.git
+cd image-to-url
 
-4. **Run the development server**
-   ```bash
-   npm run dev
-   ```
-   
-   Open [http://localhost:3000](http://localhost:3000) to see the app.
+# 2. Install dependencies
+npm install
 
-### Database Setup
+# 3. Set up environment variables
+cp .env.example .env.local
 
-Set up your Supabase database using the provided SQL files:
-- `setup-admin.sql` — Admin configuration
-- `check-anonymous.sql` — Anonymous user checks
+# 4. Run development server
+npm run dev
+```
+
+<details>
+<summary>📋 <strong>Environment Variables</strong></summary>
+
+```env
+# Site Configuration
+NEXT_PUBLIC_SITE_URL=https://imagetourl.cloud
+
+# Supabase
+NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+
+# Cloudflare R2
+R2_ACCOUNT_ID=your-account-id
+R2_ACCESS_KEY_ID=your-access-key
+R2_SECRET_ACCESS_KEY=your-secret-key
+R2_BUCKET_NAME=your-bucket-name
+```
+
+</details>
 
 ---
 
 ## 📁 Project Structure
 
 ```
-image-to-url/
-├── app/                    # Next.js App Router
-│   ├── [locale]/          # Internationalized routes
-│   │   ├── about/         # About page
-│   │   ├── auth/          # Authentication pages
-│   │   ├── dashboard/     # User dashboard
-│   │   ├── pricing/       # Pricing page
-│   │   ├── tools/         # 26+ conversion tools
-│   │   └── use-cases/     # Use case pages
-│   ├── api/               # API routes
-│   └── layout.tsx         # Root layout
-├── components/            # Reusable UI components
-├── hooks/                 # Custom React hooks
-├── lib/                   # Utilities & configurations
-├── public/                # Static assets
-├── styles/                # Global styles
-└── types/                 # TypeScript definitions
+📦 image-to-url
+├── 📂 app/                 # Next.js App Router
+│   ├── 📂 [locale]/        # i18n routes
+│   │   ├── 📂 tools/       # 26+ conversion tools
+│   │   ├── 📂 dashboard/   # User dashboard
+│   │   └── 📄 page.tsx     # Homepage
+│   └── 📂 api/             # API endpoints
+├── 📂 components/          # React components
+├── 📂 lib/                 # Utilities
+└── 📂 public/              # Static assets
 ```
 
 ---
 
-## 🚀 Deployment
+## 🌐 Deploy Your Own
 
-### Deploy to Vercel (Recommended)
+<div align="center">
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/boopul22/image-to-url)
 
-1. Click the button above
-2. Configure environment variables in Vercel dashboard
-3. Deploy!
-
-### Other Platforms
-
-The app can be deployed to any platform that supports Next.js:
-- Netlify
-- AWS Amplify
-- Railway
-- Docker
+</div>
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Here's how you can help:
+Contributions are **always welcome**!
 
-1. **Fork the repository**
-2. **Create a feature branch**
-   ```bash
-   git checkout -b feature/amazing-feature
-   ```
-3. **Commit your changes**
-   ```bash
-   git commit -m 'Add amazing feature'
-   ```
-4. **Push to the branch**
-   ```bash
-   git push origin feature/amazing-feature
-   ```
-5. **Open a Pull Request**
+```bash
+# Fork → Clone → Branch → Code → Push → PR
+git checkout -b feature/amazing-feature
+git commit -m "Add amazing feature"
+git push origin feature/amazing-feature
+```
 
 ---
 
-## 📄 License
+## �‍💻 Author
 
-This project is open source and available under the [MIT License](LICENSE).
+<div align="center">
 
----
+**Boopul** — *AI-powered creator & no-code explorer*
 
-## 👨‍💻 Author
+[![GitHub](https://img.shields.io/badge/GitHub-@boopul22-181717?style=for-the-badge&logo=github)](https://github.com/boopul22)
+[![Instagram](https://img.shields.io/badge/Instagram-@no.code__boopul-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/no.code_boopul)
+[![Email](https://img.shields.io/badge/Email-blog.boopul@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:blog.boopul@gmail.com)
 
-**Boopul** — AI-powered creator, no-code explorer, and disciplined builder
-
-- 💻 GitHub: [@boopul22](https://github.com/boopul22)
-- 📸 Instagram: [@no.code_boopul](https://www.instagram.com/no.code_boopul)
-- ✉️ Email: blog.boopul@gmail.com
+</div>
 
 ---
 
-## 🔗 Links
+<div align="center">
 
-- **Website**: [https://imagetourl.cloud](https://imagetourl.cloud)
-- **Documentation**: [API Docs](https://imagetourl.cloud/api-docs)
-- **Report Issues**: [GitHub Issues](https://github.com/boopul22/image-to-url/issues)
+### 🔗 Quick Links
+
+[🌐 Website](https://imagetourl.cloud) &nbsp;•&nbsp; [📚 API Docs](https://imagetourl.cloud/api-docs) &nbsp;•&nbsp; [💬 Issues](https://github.com/boopul22/image-to-url/issues) &nbsp;•&nbsp; [📄 License](LICENSE)
 
 ---
 
-<p align="center">
-  <strong>⭐ If this project helped you, consider giving it a star!</strong>
-</p>
+**⭐ Star this repo if it helped you!**
 
-<p align="center">
-  Made with ❤️ by <a href="https://github.com/boopul22">Boopul</a>
-</p>
+<sub>Made with ❤️ by <a href="https://github.com/boopul22">Boopul</a> • Powered by <a href="https://imagetourl.cloud">ImageToURL</a></sub>
+
+</div>
