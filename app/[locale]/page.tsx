@@ -6,7 +6,8 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Suspense } from "react"
 import { Button } from "@/components/ui/button"
-import { WebApplicationJsonLd, OrganizationJsonLd } from "@/components/json-ld"
+import { WebApplicationJsonLd, OrganizationJsonLd, FAQJsonLd, BreadcrumbJsonLd, WebSiteJsonLd } from "@/components/json-ld"
+import { FAQSection } from "@/components/faq-section"
 
 export default async function HomePage({
   params,
@@ -19,12 +20,19 @@ export default async function HomePage({
   return (
     <>
       {/* Structured Data for SEO */}
+      <WebSiteJsonLd locale={locale} />
       <WebApplicationJsonLd
         locale={locale}
         title={dict.meta.title}
         description={dict.meta.description}
       />
       <OrganizationJsonLd />
+      {dict.faq && <FAQJsonLd items={dict.faq.items} />}
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://imagetourl.cloud"}/${locale}` }
+        ]}
+      />
 
       <div className="bg-dark text-zinc-300 min-h-screen flex flex-col">
         {/* Ambient Glow Background */}
@@ -91,6 +99,11 @@ export default async function HomePage({
             </div>
           </div>
         </main>
+
+        {/* FAQ Section */}
+        {dict.faq && (
+          <FAQSection title={dict.faq.title} items={dict.faq.items} />
+        )}
 
         {/* Footer */}
         <Footer locale={locale} dict={dict.footer} />
