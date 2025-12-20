@@ -82,7 +82,7 @@ const dictionaries = {
     meta: {
       title: "ImageToURL - Instant Image Hosting",
       description:
-        "Upload images and get instant shareable links. Fast, secure, and reliable image hosting powered by a global CDN network.",
+        "Upload images instantly and get shareable CDN-powered links in seconds. Free, secure, and lightning-fast image hosting with global delivery. Start sharing now!",
       keywords: "image hosting, image upload, cdn, instant links, image sharing",
     },
   },
@@ -126,7 +126,7 @@ const dictionaries = {
     },
     meta: {
       title: "ImageToURL - 即时图片托管",
-      description: "上传图片并即时获取可共享链接。由全球CDN网络提供支持的快速、安全、可靠的图片托管。",
+      description: "即时上传图片并在几秒钟内获取可共享的CDN链接。免费、安全、超快速的全球图片托管服务。立即开始分享您的图片！",
       keywords: "图片托管, 图片上传, cdn, 即时链接, 图片分享",
     },
   },
@@ -172,7 +172,7 @@ const dictionaries = {
     meta: {
       title: "ImageToURL - तत्काल छवि होस्टिंग",
       description:
-        "छवियां अपलोड करें और तुरंत साझा करने योग्य लिंक प्राप्त करें। वैश्विक CDN नेटवर्क द्वारा संचालित तेज़, सुरक्षित और विश्वसनीय छवि होस्टिंग।",
+        "तुरंत छवियां अपलोड करें और सेकंड में साझा करने योग्य CDN-संचालित लिंक प्राप्त करें। मुफ्त, सुरक्षित और वैश्विक वितरण के साथ बिजली-तेज़ छवि होस्टिंग। अभी साझा करना शुरू करें!",
       keywords: "छवि होस्टिंग, छवि अपलोड, cdn, तत्काल लिंक, छवि साझाकरण",
     },
   },
@@ -218,7 +218,7 @@ const dictionaries = {
     meta: {
       title: "ImageToURL - Alojamiento Instantáneo de Imágenes",
       description:
-        "Sube imágenes y obtén enlaces compartibles al instante. Alojamiento de imágenes rápido, seguro y confiable impulsado por una red CDN global.",
+        "Sube imágenes al instante y obtén enlaces CDN compartibles en segundos. Alojamiento de imágenes gratuito, seguro y ultrarrápido con entrega global. ¡Empieza a compartir ahora!",
       keywords: "alojamiento de imágenes, subir imagen, cdn, enlaces instantáneos, compartir imágenes",
     },
   },
@@ -264,7 +264,7 @@ const dictionaries = {
     meta: {
       title: "ImageToURL - استضافة الصور الفورية",
       description:
-        "قم بتحميل الصور واحصل على روابط قابلة للمشاركة على الفور. استضافة صور سريعة وآمنة وموثوقة مدعومة بشبكة CDN عالمية.",
+        "قم بتحميل الصور فوراً واحصل على روابط CDN قابلة للمشاركة في ثوانٍ. استضافة صور مجانية وآمنة وفائقة السرعة مع التوصيل العالمي. ابدأ المشاركة الآن!",
       keywords: "استضافة الصور, تحميل الصور, cdn, روابط فورية, مشاركة الصور",
     },
   },
@@ -310,7 +310,7 @@ const dictionaries = {
     meta: {
       title: "ImageToURL - Hébergement d'Images Instantané",
       description:
-        "Téléchargez des images et obtenez des liens partageables instantanément. Hébergement d'images rapide, sécurisé et fiable propulsé par un réseau CDN mondial.",
+        "Téléchargez des images instantanément et obtenez des liens CDN partageables en secondes. Hébergement d'images gratuit, sécurisé et ultra-rapide avec livraison mondiale. Commencez à partager maintenant!",
       keywords: "hébergement d'images, télécharger image, cdn, liens instantanés, partage d'images",
     },
   },
@@ -356,7 +356,7 @@ const dictionaries = {
     meta: {
       title: "ImageToURL - তাৎক্ষণিক ছবি হোস্টিং",
       description:
-        "ছবি আপলোড করুন এবং তাৎক্ষণিকভাবে শেয়ারযোগ্য লিঙ্ক পান। একটি বৈশ্বিক CDN নেটওয়ার্ক দ্বারা চালিত দ্রুত, সুরক্ষিত এবং নির্ভরযোগ্য ছবি হোস্টিং।",
+        "তাৎক্ষণিকভাবে ছবি আপলোড করুন এবং সেকেন্ডের মধ্যে শেয়ারযোগ্য CDN লিঙ্ক পান। বিনামূল্যে, সুরক্ষিত এবং বৈশ্বিক ডেলিভারি সহ বিদ্যুৎ-দ্রুত ছবি হোস্টিং। এখনই শেয়ার করা শুরু করুন!",
       keywords: "ছবি হোস্টিং, ছবি আপলোড, cdn, তাৎক্ষণিক লিঙ্ক, ছবি শেয়ারিং",
     },
   },
@@ -402,7 +402,7 @@ const dictionaries = {
     meta: {
       title: "ImageToURL - Hospedagem Instantânea de Imagens",
       description:
-        "Envie imagens e obtenha links compartilháveis instantaneamente. Hospedagem de imagens rápida, segura e confiável alimentada por uma rede CDN global.",
+        "Envie imagens instantaneamente e obtenha links CDN compartilháveis em segundos. Hospedagem de imagens gratuita, segura e ultrarrápida com entrega global. Comece a compartilhar agora!",
       keywords: "hospedagem de imagens, envio de imagem, cdn, links instantâneos, compartilhamento de imagens",
     },
   },
@@ -448,7 +448,7 @@ const dictionaries = {
     meta: {
       title: "ImageToURL - Мгновенный Хостинг Изображений",
       description:
-        "Загружайте изображения и мгновенно получайте общедоступные ссылки. Быстрый, безопасный и надежный хостинг изображений на базе глобальной CDN-сети.",
+        "Загружайте изображения мгновенно и получайте общедоступные CDN-ссылки за секунды. Бесплатный, безопасный и молниеносный хостинг изображений с глобальной доставкой. Начните делиться сейчас!",
       keywords: "хостинг изображений, загрузка изображений, cdn, мгновенные ссылки, обмен изображениями",
     },
   },
@@ -494,7 +494,7 @@ const dictionaries = {
     meta: {
       title: "ImageToURL - فوری تصویر ہوسٹنگ",
       description:
-        "تصاویر اپ لوڈ کریں اور فوری طور پر قابل اشتراک لنکس حاصل کریں۔ عالمی CDN نیٹ ورک سے تقویت یافتہ تیز، محفوظ اور قابل اعتماد تصویر ہوسٹنگ۔",
+        "فوری طور پر تصاویر اپ لوڈ کریں اور سیکنڈوں میں قابل اشتراک CDN لنکس حاصل کریں۔ مفت، محفوظ اور عالمی ڈیلیوری کے ساتھ بجلی کی تیز رفتار تصویر ہوسٹنگ۔ ابھی شیئرنگ شروع کریں!",
       keywords: "تصویر ہوسٹنگ، تصویر اپ لوڈ، cdn، فوری لنکس، تصویر کی شراکت",
     },
   },
@@ -540,7 +540,7 @@ const dictionaries = {
     meta: {
       title: "ImageToURL - Hosting Gambar Instan",
       description:
-        "Unggah gambar dan dapatkan tautan yang dapat dibagikan secara instan. Hosting gambar cepat, aman, dan andal yang didukung oleh jaringan CDN global.",
+        "Unggah gambar secara instan dan dapatkan tautan CDN yang dapat dibagikan dalam hitungan detik. Hosting gambar gratis, aman, dan sangat cepat dengan pengiriman global. Mulai berbagi sekarang!",
       keywords: "hosting gambar, unggah gambar, cdn, tautan instan, berbagi gambar",
     },
   },
@@ -586,7 +586,7 @@ const dictionaries = {
     meta: {
       title: "ImageToURL - Sofortiges Bild-Hosting",
       description:
-        "Laden Sie Bilder hoch und erhalten Sie sofort teilbare Links. Schnelles, sicheres und zuverlässiges Bild-Hosting, betrieben von einem globalen CDN-Netzwerk.",
+        "Laden Sie Bilder sofort hoch und erhalten Sie in Sekunden teilbare CDN-Links. Kostenloses, sicheres und blitzschnelles Bild-Hosting mit globaler Lieferung. Jetzt mit dem Teilen beginnen!",
       keywords: "Bild-Hosting, Bild hochladen, cdn, sofortige Links, Bilder teilen",
     },
   },
@@ -632,7 +632,7 @@ const dictionaries = {
     meta: {
       title: "ImageToURL - 即座の画像ホスティング",
       description:
-        "画像をアップロードして、即座に共有可能なリンクを取得します。グローバルCDNネットワークによる高速、安全、信頼性の高い画像ホスティング。",
+        "画像を即座にアップロードし、数秒で共有可能なCDNリンクを取得。無料、安全、超高速のグローバル配信を備えた画像ホスティング。今すぐ共有を開始！",
       keywords: "画像ホスティング, 画像アップロード, cdn, 即座のリンク, 画像共有",
     },
   },
@@ -678,7 +678,7 @@ const dictionaries = {
     meta: {
       title: "ImageToURL - Upakiaji wa Picha Papo Hapo",
       description:
-        "Pakia picha na upate viungo vinavyoweza kushirikiwa papo hapo. Upakiaji wa picha wa haraka, salama na wa kuaminika unaendeshwa na mtandao wa CDN wa kimataifa.",
+        "Pakia picha papo hapo na upate viungo vya CDN vinavyoweza kushirikiwa kwa sekunde. Upakiaji wa picha wa bure, salama na wa haraka sana na utoaji wa kimataifa. Anza kushiriki sasa!",
       keywords: "upakiaji wa picha, pakia picha, cdn, viungo vya papo hapo, kushiriki picha",
     },
   },
@@ -724,7 +724,7 @@ const dictionaries = {
     meta: {
       title: "ImageToURL - त्वरित प्रतिमा होस्टिंग",
       description:
-        "प्रतिमा अपलोड करा आणि त्वरित शेअर करण्यायोग्य दुवे मिळवा. जागतिक CDN नेटवर्कद्वारे समर्थित जलद, सुरक्षित आणि विश्वसनीय प्रतिमा होस्टिंग.",
+        "त्वरित प्रतिमा अपलोड करा आणि सेकंदात शेअर करण्यायोग्य CDN दुवे मिळवा। जागतिक वितरणासह मोफत, सुरक्षित आणि जलद प्रतिमा होस्टिंग। आताच सामायिकरण सुरू करा!",
       keywords: "प्रतिमा होस्टिंग, प्रतिमा अपलोड, cdn, त्वरित दुवे, प्रतिमा सामायिकरण",
     },
   },
@@ -770,7 +770,7 @@ const dictionaries = {
     meta: {
       title: "ImageToURL - తక్షణ చిత్ర హోస్టింగ్",
       description:
-        "చిత్రాలను అప్‌లోడ్ చేయండి మరియు తక్షణమే షేర్ చేయగల లింక్‌లను పొందండి. గ్లోబల్ CDN నెట్‌వర్క్ ద్వారా శక్తివంతంగా ఉండే వేగవంతమైన, సురక్షితమైన మరియు నమ్మదగిన చిత్ర హోస్టింగ్.",
+        "తక్షణమే చిత్రాలను అప్‌లోడ్ చేయండి మరియు సెకన్లలో CDN షేర్ చేయగల లింక్‌లను పొందండి। గ్లోబల్ డెలివరీతో ఉచిత, సురక్షితమైన మరియు వేగవంతమైన చిత్ర హోస్టింగ్। ఇప్పుడే షేరింగ్ ప్రారంభించండి!",
       keywords: "చిత్ర హోస్టింగ్, చిత్ర అప్‌లోడ్, cdn, తక్షణ లింక్‌లు, చిత్ర షేరింగ్",
     },
   },
@@ -786,7 +786,7 @@ const dictionaries = {
       title: "Görselleri yükleyin,",
       titleGradient: "anında bağlantılar alın.",
       description:
-        "Anında paylaşılabilir bir URL oluşturmak için dosyalarınızı sürükleyip bırakın. Şimşek hızında teslimat için küresel bir edge ağı tarafından desteklenmektedir.",
+        "Görselleri anlık yükleyin ve saniyeler içinde paylaşılabilir CDN bağlantıları edinin. Küresel teslimatla ücretsiz, güvenli ve şimşek hızında görsel hosting. Şimdi paylaşmaya başlayın!",
     },
     upload: {
       clickToUpload: "Yüklemek için tıklayın veya sürükleyip bırakın",
@@ -814,10 +814,10 @@ const dictionaries = {
       cookies: "Çerezler",
     },
     meta: {
-      title: "ImageToURL - Anında Görsel Barındırma",
+      title: "ImageToURL - Anlık Görsel Hosting",
       description:
-        "Görselleri yükleyin ve anında paylaşılabilir bağlantılar alın. Küresel bir CDN ağı tarafından desteklenen hızlı, güvenli ve güvenilir görsel barındırma.",
-      keywords: "görsel barındırma, görsel yükleme, cdn, anında bağlantılar, görsel paylaşımı",
+        "Görselleri anlık yükleyin ve saniyeler içinde paylaşılabilir CDN bağlantıları edinin. Küresel teslimatla ücretsiz, güvenli ve şimşek hızında görsel hosting. Şimdi paylaşmaya başlayın!",
+      keywords: "görsel hosting, görsel yükleme, cdn, anlık bağlantılar, görsel paylaşımı",
     },
   },
   ta: {

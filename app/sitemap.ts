@@ -5,7 +5,8 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://imagetourl.cloud'
 
 // Define all public routes that should be indexed
 const publicRoutes = [
-    '', // Homepage
+    { path: '', priority: 1.0, changeFrequency: 'daily' as const }, // Homepage
+    { path: '/dashboard', priority: 0.7, changeFrequency: 'weekly' as const }, // Dashboard
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -14,21 +15,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Generate entries for each route and locale
     for (const route of publicRoutes) {
         for (const locale of locales) {
-            const url = `${BASE_URL}/${locale}${route}`
+            const url = `${BASE_URL}/${locale}${route.path}`
 
             // Create language alternates for this route
             const languages: Record<string, string> = {}
             for (const altLocale of locales) {
-                languages[altLocale] = `${BASE_URL}/${altLocale}${route}`
+                languages[altLocale] = `${BASE_URL}/${altLocale}${route.path}`
             }
             // Add x-default pointing to default locale
-            languages['x-default'] = `${BASE_URL}/${defaultLocale}${route}`
+            languages['x-default'] = `${BASE_URL}/${defaultLocale}${route.path}`
 
             entries.push({
                 url,
                 lastModified: new Date(),
-                changeFrequency: 'weekly',
-                priority: locale === defaultLocale ? 1.0 : 0.8,
+                changeFrequency: route.changeFrequency,
+                priority: locale === defaultLocale ? route.priority : route.priority * 0.8,
                 alternates: {
                     languages,
                 },
