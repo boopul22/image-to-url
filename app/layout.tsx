@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from 'next'
+import Script from 'next/script'
 import { Inter } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@/components/theme-provider'
+import { CookieConsentWrapper } from '@/components/cookie-consent-wrapper'
 import './globals.css'
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
@@ -24,6 +25,9 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   manifest: '/site.webmanifest',
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+  },
 }
 
 export default function RootLayout({
@@ -34,10 +38,17 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body className={`${inter.variable} font-sans antialiased selection:bg-brand selection:text-white overflow-x-hidden`}>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7803867089582138"
+          crossOrigin="anonymous"
+          strategy="beforeInteractive"
+        />
         <ThemeProvider defaultTheme="dark" storageKey="imagetourl-theme">
-          {children}
+          <CookieConsentWrapper>
+            {children}
+          </CookieConsentWrapper>
         </ThemeProvider>
-        <Analytics />
       </body>
     </html>
   )

@@ -3,12 +3,14 @@ import type { Locale } from "./config"
 const dictionaries = {
   en: {
     nav: {
+      home: "Home",
       documentation: "Documentation",
       api: "API",
       pricing: "Pricing",
       signIn: "Sign In",
       signOut: "Sign Out",
       dashboard: "Dashboard",
+      tools: "Tools",
     },
     auth: {
       signIn: "Sign In",
@@ -74,24 +76,186 @@ const dictionaries = {
       latency: "Latency",
     },
     footer: {
-      copyright: "© 2023 ImageToURL Cloud. All rights reserved.",
+      copyright: "© 2024 ImageToURL Cloud. All rights reserved.",
       privacy: "Privacy",
       terms: "Terms",
       cookies: "Cookies",
     },
     meta: {
-      title: "ImageToURL - Instant Image Hosting",
+      title: "Free Image to URL Converter - Instant Shareable Photo Links | ImageToURL",
       description:
-        "Upload images instantly and get shareable CDN-powered links in seconds. Free, secure, and lightning-fast image hosting with global delivery. Start sharing now!",
-      keywords: "image hosting, image upload, cdn, instant links, image sharing",
+        "Convert any image to URL instantly. Free image hosting with no signup. Upload JPG, PNG, GIF, SVG, WebP up to 10MB. Best free image to URL converter online with global CDN delivery.",
+      keywords: "image to url, convert image to url, free image hosting, image link generator, photo to url, upload image get link, jpg to url, png to url, gif to url, image url converter, base64 image to url, copy image to url, image to link, instant image sharing, free photo hosting, image to url converter free, image to url online",
+    },
+    faq: {
+      title: "Frequently Asked Questions",
+      items: [
+        {
+          question: "How do I convert an image to a URL?",
+          answer: "Simply drag and drop your image onto our upload zone or click to select a file. Your image will be instantly uploaded to our global CDN, and you'll receive a shareable URL that you can copy and use anywhere."
+        },
+        {
+          question: "Is ImageToURL completely free to use?",
+          answer: "Yes, ImageToURL is 100% free for basic use. You can upload images up to 10MB without creating an account. Sign in for additional features like managing your uploads and setting custom expiration times."
+        },
+        {
+          question: "What image formats are supported?",
+          answer: "We support all popular image formats including JPG/JPEG, PNG, GIF, SVG, and WebP. Each file can be up to 10MB in size. You can convert any of these formats to a shareable URL instantly."
+        },
+        {
+          question: "How long are my images stored?",
+          answer: "Anonymous uploads are stored for 30 days by default. Signed-in users can set custom expiration times or keep images indefinitely. All images are served through our global CDN for fast delivery worldwide."
+        },
+        {
+          question: "Is my data secure?",
+          answer: "Yes, all uploads are encrypted in transit using HTTPS. Images are stored on enterprise-grade cloud infrastructure with 99.9% uptime. We do not sell or share your data with third parties."
+        },
+        {
+          question: "How do I copy an image URL?",
+          answer: "After uploading your image, click the 'Copy' button next to the generated URL. The link is automatically copied to your clipboard and ready to paste anywhere - websites, emails, social media, or documents."
+        },
+        {
+          question: "Can I convert a base64 image to URL?",
+          answer: "Yes! Use our Base64 to URL converter tool to transform base64-encoded images into shareable URLs. Simply paste your base64 string and get an instant image link hosted on our global CDN."
+        },
+        {
+          question: "How do I get an image URL for Discord?",
+          answer: "Upload your image to ImageToURL and copy the generated link. You can paste this URL directly in Discord chats, embed it in bots, or use it for custom emojis and server icons. Our URLs work perfectly with Discord's image embedding."
+        },
+        {
+          question: "Is there an API for image to URL conversion?",
+          answer: "Yes, we provide a simple API for developers to programmatically upload images and receive URLs. Check our API documentation for integration details, code examples in JavaScript, Python, and more."
+        },
+        {
+          question: "How do I bulk upload images and get URLs?",
+          answer: "Use our Bulk Upload tool to upload multiple images at once. Simply drag and drop up to 20 images simultaneously and receive shareable URLs for each one. Perfect for batch image hosting needs."
+        },
+        {
+          question: "Can I use ImageToURL for fantasy football team logos?",
+          answer: "Absolutely! ImageToURL is perfect for creating custom team logos for ESPN, Yahoo, or any fantasy sports platform. Upload your logo image, copy the URL, and paste it in your fantasy league settings."
+        },
+        {
+          question: "How do I make an image into a short URL?",
+          answer: "Our image URLs are already optimized for sharing. When you upload an image, we generate a clean, short URL that's easy to share and remember. The link leads directly to your hosted image."
+        },
+        {
+          question: "What's the difference between image URL and base64?",
+          answer: "An image URL is a web link that points to your hosted image, while base64 is the image encoded as text data. URLs are better for sharing and web use as they're shorter and more efficient. Use our tools to convert between formats."
+        }
+      ]
+    },
+    pages: {
+      privacy: {
+        metaTitle: "Privacy Policy | ImageToURL",
+        metaDescription: "Learn how ImageToURL collects, uses, and protects your personal information.",
+        title: "Privacy Policy",
+        lastUpdated: "Last updated: December 2024",
+        sections: [
+          { title: "Information We Collect", content: "We collect information you provide directly, such as your email address when you sign in. We also automatically collect certain information when you use our service, including your IP address and browser type." },
+          { title: "How We Use Your Information", content: "We use the information we collect to provide and improve our image hosting service, communicate with you about your account, and ensure the security of our platform." },
+          { title: "Data Storage", content: "Your uploaded images are stored on enterprise-grade cloud infrastructure with encryption. Anonymous uploads are automatically deleted after 30 days. Signed-in users can manage their upload retention settings." },
+          { title: "Cookies", content: "We use essential cookies to enable core functionality like user authentication. We do not use tracking cookies for advertising purposes." },
+          { title: "Third-Party Services", content: "We use Cloudflare for CDN and security services, and Supabase for authentication. These services have their own privacy policies." },
+          { title: "Your Rights", content: "You can request access to, correction of, or deletion of your personal data at any time by contacting us." },
+          { title: "Contact", content: "If you have questions about this Privacy Policy, please contact us at privacy@imagetourl.cloud" }
+        ]
+      },
+      terms: {
+        metaTitle: "Terms of Service | ImageToURL",
+        metaDescription: "Read the terms and conditions for using ImageToURL image hosting service.",
+        title: "Terms of Service",
+        lastUpdated: "Last updated: December 2024",
+        sections: [
+          { title: "Acceptance of Terms", content: "By accessing or using ImageToURL, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our service." },
+          { title: "Service Description", content: "ImageToURL provides free image hosting and URL generation services. We reserve the right to modify, suspend, or discontinue any part of the service at any time." },
+          { title: "User Responsibilities", content: "You are responsible for all content you upload. You must not upload illegal content, malware, or content that infringes on others' intellectual property rights." },
+          { title: "Prohibited Content", content: "The following content is strictly prohibited: illegal material, malware or viruses, content that infringes copyrights, adult content involving minors, content promoting violence or hate." },
+          { title: "Account Termination", content: "We reserve the right to terminate accounts that violate these terms, upload prohibited content, or abuse the service in any way." },
+          { title: "Limitation of Liability", content: "ImageToURL is provided 'as is' without warranties. We are not liable for any data loss, service interruptions, or damages arising from your use of the service." },
+          { title: "Changes to Terms", content: "We may update these terms from time to time. Continued use of the service after changes constitutes acceptance of the new terms." }
+        ]
+      },
+      cookies: {
+        metaTitle: "Cookie Policy | ImageToURL",
+        metaDescription: "Learn about how ImageToURL uses cookies on our website.",
+        title: "Cookie Policy",
+        lastUpdated: "Last updated: December 2024",
+        intro: "This Cookie Policy explains how ImageToURL uses cookies and similar technologies when you visit our website.",
+        sections: [
+          { title: "What Are Cookies?", content: "Cookies are small text files stored on your device when you visit a website. They help websites remember your preferences and improve your experience." },
+          { title: "Essential Cookies", content: "We use essential cookies that are necessary for the website to function properly. These include authentication cookies to keep you signed in and security cookies to protect against threats." },
+          { title: "Functional Cookies", content: "We use functional cookies to remember your preferences, such as your selected language and theme (light/dark mode)." },
+          { title: "Analytics", content: "We use Vercel Analytics to understand how visitors interact with our website. This helps us improve the user experience. These analytics are privacy-focused and do not use cookies for tracking." },
+          { title: "Third-Party Cookies", content: "We do not use third-party advertising cookies. Our authentication service (Supabase) may set cookies for session management." },
+          { title: "Managing Cookies", content: "You can control cookies through your browser settings. Note that disabling essential cookies may affect the functionality of the website." }
+        ]
+      },
+      about: {
+        metaTitle: "About ImageToURL - Free Image Hosting Service",
+        metaDescription: "Learn about ImageToURL, the free image hosting platform that provides instant shareable links powered by a global CDN.",
+        title: "About ImageToURL",
+        subtitle: "Free, Fast, and Reliable Image Hosting",
+        mission: { title: "Our Mission", content: "We believe sharing images should be simple, fast, and free. ImageToURL was built to provide developers, designers, and everyday users with an effortless way to upload images and get instant shareable links." },
+        features: [
+          { icon: "globe", title: "Global CDN", description: "Images are served from edge locations worldwide for lightning-fast delivery anywhere." },
+          { icon: "zap", title: "Instant Links", description: "Upload any image and get a shareable URL in seconds. No waiting, no complexity." },
+          { icon: "shield", title: "Secure & Private", description: "All uploads are encrypted. We don't sell your data or track you with ads." },
+          { icon: "clock", title: "Flexible Retention", description: "Sign in to manage how long your images are stored, from 1 hour to forever." }
+        ],
+        team: { title: "Built with Care", content: "ImageToURL is an indie project focused on simplicity and user experience. We're constantly improving based on user feedback." },
+        contact: { title: "Get in Touch", content: "Have questions, feedback, or partnership inquiries? We'd love to hear from you.", email: "contact@imagetourl.cloud" }
+      },
+      pricing: {
+        metaTitle: "Pricing & Features - ImageToURL",
+        metaDescription: "Discover ImageToURL features. Free image hosting with unlimited uploads for signed-in users.",
+        title: "Simple, Transparent Pricing",
+        subtitle: "Start free, stay free. ImageToURL is built to be accessible to everyone.",
+        plans: [
+          {
+            name: "Anonymous",
+            price: "Free",
+            description: "No account needed",
+            features: [
+              { text: "5 uploads per day", included: true },
+              { text: "Up to 10MB per file", included: true },
+              { text: "30-day retention", included: true },
+              { text: "Global CDN delivery", included: true },
+              { text: "Manage uploads", included: false },
+              { text: "Custom expiration", included: false }
+            ],
+            cta: "Start Uploading",
+            ctaLink: "/",
+            highlighted: false
+          },
+          {
+            name: "Signed In",
+            price: "Free",
+            description: "Create a free account",
+            features: [
+              { text: "Unlimited uploads", included: true },
+              { text: "Up to 10MB per file", included: true },
+              { text: "Custom retention (1hr - forever)", included: true },
+              { text: "Global CDN delivery", included: true },
+              { text: "Manage all uploads", included: true },
+              { text: "Dashboard access", included: true }
+            ],
+            cta: "Sign Up Free",
+            ctaLink: "/auth/login",
+            highlighted: true
+          }
+        ],
+        faq: { title: "Questions?", content: "Have questions about our features? Check out our FAQ on the home page or contact us." }
+      }
     },
   },
   zh: {
     nav: {
+      home: "首页",
       documentation: "文档",
       api: "API",
       pricing: "价格",
       signIn: "登录",
+      tools: "工具",
     },
     hero: {
       badge: "v2.0 现已可用",
@@ -125,17 +289,44 @@ const dictionaries = {
       cookies: "Cookies",
     },
     meta: {
-      title: "ImageToURL - 即时图片托管",
-      description: "即时上传图片并在几秒钟内获取可共享的CDN链接。免费、安全、超快速的全球图片托管服务。立即开始分享您的图片！",
-      keywords: "图片托管, 图片上传, cdn, 即时链接, 图片分享",
+      title: "免费图片转URL转换器 - 即时获取可分享链接 | ImageToURL",
+      description: "将任何图片即时转换为可分享的URL。100%免费图片托管，无需注册。上传JPG、PNG、GIF（最大10MB），通过全球CDN即时获取链接。",
+      keywords: "图片转url, 免费图片托管, 图片链接生成器, 图片上传获取链接, 图片转换器, 即时图片分享, 免费照片托管",
+    },
+    faq: {
+      title: "常见问题",
+      items: [
+        {
+          question: "如何将图片转换为URL？",
+          answer: "只需将图片拖放到我们的上传区域或点击选择文件。您的图片将立即上传到我们的全球CDN，您将获得一个可分享的URL，可以随时随地使用。"
+        },
+        {
+          question: "ImageToURL完全免费吗？",
+          answer: "是的，ImageToURL基本使用完全免费。您可以无需创建账户上传最大10MB的图片。登录后可享受额外功能，如管理上传和设置自定义过期时间。"
+        },
+        {
+          question: "支持哪些图片格式？",
+          answer: "我们支持所有流行的图片格式，包括JPG/JPEG、PNG、GIF、SVG和WebP。每个文件最大可达10MB。"
+        },
+        {
+          question: "我的图片会存储多长时间？",
+          answer: "匿名上传默认存储30天。登录用户可以设置自定义过期时间或永久保存图片。所有图片通过我们的全球CDN提供快速分发。"
+        },
+        {
+          question: "我的数据安全吗？",
+          answer: "是的，所有上传都通过HTTPS加密传输。图片存储在企业级云基础设施上，正常运行时间达99.9%。我们不会向第三方出售或分享您的数据。"
+        }
+      ]
     },
   },
   hi: {
     nav: {
+      home: "होम",
       documentation: "दस्तावेज़ीकरण",
       api: "API",
       pricing: "मूल्य निर्धारण",
       signIn: "साइन इन करें",
+      tools: "उपकरण",
     },
     hero: {
       badge: "v2.0 अब उपलब्ध",
@@ -170,18 +361,45 @@ const dictionaries = {
       cookies: "कुकीज़",
     },
     meta: {
-      title: "ImageToURL - तत्काल छवि होस्टिंग",
+      title: "मुफ्त इमेज से URL कनवर्टर - तुरंत शेयर करने योग्य फोटो लिंक | ImageToURL",
       description:
-        "तुरंत छवियां अपलोड करें और सेकंड में साझा करने योग्य CDN-संचालित लिंक प्राप्त करें। मुफ्त, सुरक्षित और वैश्विक वितरण के साथ बिजली-तेज़ छवि होस्टिंग। अभी साझा करना शुरू करें!",
-      keywords: "छवि होस्टिंग, छवि अपलोड, cdn, तत्काल लिंक, छवि साझाकरण",
+        "किसी भी इमेज को तुरंत शेयर करने योग्य URL में बदलें। 100% मुफ्त इमेज होस्टिंग, साइनअप की जरूरत नहीं। JPG, PNG, GIF (10MB तक) अपलोड करें और ग्लोबल CDN द्वारा तुरंत लिंक पाएं।",
+      keywords: "इमेज से url, मुफ्त इमेज होस्टिंग, इमेज लिंक जनरेटर, फोटो अपलोड लिंक पाएं, इमेज कनवर्टर, तुरंत इमेज शेयरिंग",
+    },
+    faq: {
+      title: "अक्सर पूछे जाने वाले प्रश्न",
+      items: [
+        {
+          question: "मैं इमेज को URL में कैसे बदलूं?",
+          answer: "बस अपनी इमेज को हमारे अपलोड जोन पर ड्रैग और ड्रॉप करें या फाइल चुनने के लिए क्लिक करें। आपकी इमेज तुरंत हमारे ग्लोबल CDN पर अपलोड हो जाएगी, और आपको एक शेयर करने योग्य URL मिलेगा।"
+        },
+        {
+          question: "क्या ImageToURL पूरी तरह से मुफ्त है?",
+          answer: "हां, ImageToURL बेसिक उपयोग के लिए 100% मुफ्त है। आप बिना अकाउंट बनाए 10MB तक की इमेज अपलोड कर सकते हैं।"
+        },
+        {
+          question: "कौन से इमेज फॉर्मेट सपोर्टेड हैं?",
+          answer: "हम सभी लोकप्रिय इमेज फॉर्मेट को सपोर्ट करते हैं जिसमें JPG/JPEG, PNG, GIF, SVG और WebP शामिल हैं। प्रत्येक फाइल 10MB तक हो सकती है।"
+        },
+        {
+          question: "मेरी इमेज कितने समय तक स्टोर रहती हैं?",
+          answer: "एनोनिमस अपलोड डिफ़ॉल्ट रूप से 30 दिनों के लिए स्टोर होते हैं। साइन इन किए हुए यूजर कस्टम एक्सपायरी टाइम सेट कर सकते हैं।"
+        },
+        {
+          question: "क्या मेरा डेटा सुरक्षित है?",
+          answer: "हां, सभी अपलोड HTTPS का उपयोग करके एन्क्रिप्टेड होते हैं। इमेज एंटरप्राइज-ग्रेड क्लाउड इंफ्रास्ट्रक्चर पर स्टोर होती हैं जिसकी 99.9% अपटाइम है।"
+        }
+      ]
     },
   },
   es: {
     nav: {
+      home: "Inicio",
       documentation: "Documentación",
       api: "API",
       pricing: "Precios",
       signIn: "Iniciar Sesión",
+      tools: "Herramientas",
     },
     hero: {
       badge: "v2.0 Ya Disponible",
@@ -216,18 +434,45 @@ const dictionaries = {
       cookies: "Cookies",
     },
     meta: {
-      title: "ImageToURL - Alojamiento Instantáneo de Imágenes",
+      title: "Convertidor de Imagen a URL Gratis - Enlaces de Fotos Compartibles | ImageToURL",
       description:
-        "Sube imágenes al instante y obtén enlaces CDN compartibles en segundos. Alojamiento de imágenes gratuito, seguro y ultrarrápido con entrega global. ¡Empieza a compartir ahora!",
-      keywords: "alojamiento de imágenes, subir imagen, cdn, enlaces instantáneos, compartir imágenes",
+        "Convierte cualquier imagen a URL compartible al instante. Alojamiento de imágenes 100% gratis sin registro. Sube JPG, PNG, GIF hasta 10MB y obtén enlaces instantáneos con CDN global.",
+      keywords: "imagen a url, alojamiento de imágenes gratis, generador de enlaces de imagen, subir foto obtener enlace, convertidor de imagen, compartir imagen instantáneo",
+    },
+    faq: {
+      title: "Preguntas Frecuentes",
+      items: [
+        {
+          question: "¿Cómo convierto una imagen a URL?",
+          answer: "Simplemente arrastra y suelta tu imagen en nuestra zona de carga o haz clic para seleccionar un archivo. Tu imagen se subirá instantáneamente a nuestro CDN global y recibirás una URL compartible."
+        },
+        {
+          question: "¿Es ImageToURL completamente gratis?",
+          answer: "Sí, ImageToURL es 100% gratis para uso básico. Puedes subir imágenes de hasta 10MB sin crear una cuenta."
+        },
+        {
+          question: "¿Qué formatos de imagen son compatibles?",
+          answer: "Soportamos todos los formatos populares incluyendo JPG/JPEG, PNG, GIF, SVG y WebP. Cada archivo puede ser de hasta 10MB."
+        },
+        {
+          question: "¿Cuánto tiempo se almacenan mis imágenes?",
+          answer: "Las cargas anónimas se almacenan por 30 días por defecto. Los usuarios registrados pueden establecer tiempos de expiración personalizados."
+        },
+        {
+          question: "¿Están seguros mis datos?",
+          answer: "Sí, todas las cargas están cifradas usando HTTPS. Las imágenes se almacenan en infraestructura de nube empresarial con 99.9% de tiempo de actividad."
+        }
+      ]
     },
   },
   ar: {
     nav: {
+      home: "الرئيسية",
       documentation: "التوثيق",
       api: "واجهة برمجية",
       pricing: "التسعير",
       signIn: "تسجيل الدخول",
+      tools: "أدوات",
     },
     hero: {
       badge: "v2.0 متاح الآن",
@@ -264,16 +509,18 @@ const dictionaries = {
     meta: {
       title: "ImageToURL - استضافة الصور الفورية",
       description:
-        "قم بتحميل الصور فوراً واحصل على روابط CDN قابلة للمشاركة في ثوانٍ. استضافة صور مجانية وآمنة وفائقة السرعة مع التوصيل العالمي. ابدأ المشاركة الآن!",
+        "قم بتحميل الصور واحصل على روابط قابلة للمشاركة على الفور. استضافة صور سريعة وآمنة وموثوقة مدعومة بشبكة CDN عالمية.",
       keywords: "استضافة الصور, تحميل الصور, cdn, روابط فورية, مشاركة الصور",
     },
   },
   fr: {
     nav: {
+      home: "Accueil",
       documentation: "Documentation",
       api: "API",
       pricing: "Tarifs",
       signIn: "Se Connecter",
+      tools: "Outils",
     },
     hero: {
       badge: "v2.0 Maintenant Disponible",
@@ -310,16 +557,18 @@ const dictionaries = {
     meta: {
       title: "ImageToURL - Hébergement d'Images Instantané",
       description:
-        "Téléchargez des images instantanément et obtenez des liens CDN partageables en secondes. Hébergement d'images gratuit, sécurisé et ultra-rapide avec livraison mondiale. Commencez à partager maintenant!",
+        "Téléchargez des images et obtenez des liens partageables instantanément. Hébergement d'images rapide, sécurisé et fiable propulsé par un réseau CDN mondial.",
       keywords: "hébergement d'images, télécharger image, cdn, liens instantanés, partage d'images",
     },
   },
   bn: {
     nav: {
+      home: "হোম",
       documentation: "ডকুমেন্টেশন",
       api: "API",
       pricing: "মূল্য",
       signIn: "সাইন ইন",
+      tools: "টুলস",
     },
     hero: {
       badge: "v2.0 এখন উপলব্ধ",
@@ -356,16 +605,18 @@ const dictionaries = {
     meta: {
       title: "ImageToURL - তাৎক্ষণিক ছবি হোস্টিং",
       description:
-        "তাৎক্ষণিকভাবে ছবি আপলোড করুন এবং সেকেন্ডের মধ্যে শেয়ারযোগ্য CDN লিঙ্ক পান। বিনামূল্যে, সুরক্ষিত এবং বৈশ্বিক ডেলিভারি সহ বিদ্যুৎ-দ্রুত ছবি হোস্টিং। এখনই শেয়ার করা শুরু করুন!",
+        "ছবি আপলোড করুন এবং তাৎক্ষণিকভাবে শেয়ারযোগ্য লিঙ্ক পান। একটি বৈশ্বিক CDN নেটওয়ার্ক দ্বারা চালিত দ্রুত, সুরক্ষিত এবং নির্ভরযোগ্য ছবি হোস্টিং।",
       keywords: "ছবি হোস্টিং, ছবি আপলোড, cdn, তাৎক্ষণিক লিঙ্ক, ছবি শেয়ারিং",
     },
   },
   pt: {
     nav: {
+      home: "Início",
       documentation: "Documentação",
       api: "API",
       pricing: "Preços",
       signIn: "Entrar",
+      tools: "Ferramentas",
     },
     hero: {
       badge: "v2.0 Agora Disponível",
@@ -402,16 +653,18 @@ const dictionaries = {
     meta: {
       title: "ImageToURL - Hospedagem Instantânea de Imagens",
       description:
-        "Envie imagens instantaneamente e obtenha links CDN compartilháveis em segundos. Hospedagem de imagens gratuita, segura e ultrarrápida com entrega global. Comece a compartilhar agora!",
+        "Envie imagens e obtenha links compartilháveis instantaneamente. Hospedagem de imagens rápida, segura e confiável alimentada por uma rede CDN global.",
       keywords: "hospedagem de imagens, envio de imagem, cdn, links instantâneos, compartilhamento de imagens",
     },
   },
   ru: {
     nav: {
+      home: "Главная",
       documentation: "Документация",
       api: "API",
       pricing: "Цены",
       signIn: "Войти",
+      tools: "Инструменты",
     },
     hero: {
       badge: "v2.0 Теперь Доступно",
@@ -448,16 +701,18 @@ const dictionaries = {
     meta: {
       title: "ImageToURL - Мгновенный Хостинг Изображений",
       description:
-        "Загружайте изображения мгновенно и получайте общедоступные CDN-ссылки за секунды. Бесплатный, безопасный и молниеносный хостинг изображений с глобальной доставкой. Начните делиться сейчас!",
+        "Загружайте изображения и мгновенно получайте общедоступные ссылки. Быстрый, безопасный и надежный хостинг изображений на базе глобальной CDN-сети.",
       keywords: "хостинг изображений, загрузка изображений, cdn, мгновенные ссылки, обмен изображениями",
     },
   },
   ur: {
     nav: {
+      home: "ہوم",
       documentation: "دستاویزات",
       api: "API",
       pricing: "قیمتیں",
       signIn: "سائن ان کریں",
+      tools: "ٹولز",
     },
     hero: {
       badge: "v2.0 اب دستیاب ہے",
@@ -494,16 +749,18 @@ const dictionaries = {
     meta: {
       title: "ImageToURL - فوری تصویر ہوسٹنگ",
       description:
-        "فوری طور پر تصاویر اپ لوڈ کریں اور سیکنڈوں میں قابل اشتراک CDN لنکس حاصل کریں۔ مفت، محفوظ اور عالمی ڈیلیوری کے ساتھ بجلی کی تیز رفتار تصویر ہوسٹنگ۔ ابھی شیئرنگ شروع کریں!",
+        "تصاویر اپ لوڈ کریں اور فوری طور پر قابل اشتراک لنکس حاصل کریں۔ عالمی CDN نیٹ ورک سے تقویت یافتہ تیز، محفوظ اور قابل اعتماد تصویر ہوسٹنگ۔",
       keywords: "تصویر ہوسٹنگ، تصویر اپ لوڈ، cdn، فوری لنکس، تصویر کی شراکت",
     },
   },
   id: {
     nav: {
+      home: "Beranda",
       documentation: "Dokumentasi",
       api: "API",
       pricing: "Harga",
       signIn: "Masuk",
+      tools: "Alat",
     },
     hero: {
       badge: "v2.0 Sekarang Tersedia",
@@ -540,16 +797,18 @@ const dictionaries = {
     meta: {
       title: "ImageToURL - Hosting Gambar Instan",
       description:
-        "Unggah gambar secara instan dan dapatkan tautan CDN yang dapat dibagikan dalam hitungan detik. Hosting gambar gratis, aman, dan sangat cepat dengan pengiriman global. Mulai berbagi sekarang!",
+        "Unggah gambar dan dapatkan tautan yang dapat dibagikan secara instan. Hosting gambar cepat, aman, dan andal yang didukung oleh jaringan CDN global.",
       keywords: "hosting gambar, unggah gambar, cdn, tautan instan, berbagi gambar",
     },
   },
   de: {
     nav: {
+      home: "Startseite",
       documentation: "Dokumentation",
       api: "API",
       pricing: "Preise",
       signIn: "Anmelden",
+      tools: "Werkzeuge",
     },
     hero: {
       badge: "v2.0 Jetzt Verfügbar",
@@ -586,16 +845,18 @@ const dictionaries = {
     meta: {
       title: "ImageToURL - Sofortiges Bild-Hosting",
       description:
-        "Laden Sie Bilder sofort hoch und erhalten Sie in Sekunden teilbare CDN-Links. Kostenloses, sicheres und blitzschnelles Bild-Hosting mit globaler Lieferung. Jetzt mit dem Teilen beginnen!",
+        "Laden Sie Bilder hoch und erhalten Sie sofort teilbare Links. Schnelles, sicheres und zuverlässiges Bild-Hosting, betrieben von einem globalen CDN-Netzwerk.",
       keywords: "Bild-Hosting, Bild hochladen, cdn, sofortige Links, Bilder teilen",
     },
   },
   ja: {
     nav: {
+      home: "ホーム",
       documentation: "ドキュメント",
       api: "API",
       pricing: "料金",
       signIn: "サインイン",
+      tools: "ツール",
     },
     hero: {
       badge: "v2.0 利用可能",
@@ -632,16 +893,18 @@ const dictionaries = {
     meta: {
       title: "ImageToURL - 即座の画像ホスティング",
       description:
-        "画像を即座にアップロードし、数秒で共有可能なCDNリンクを取得。無料、安全、超高速のグローバル配信を備えた画像ホスティング。今すぐ共有を開始！",
+        "画像をアップロードして、即座に共有可能なリンクを取得します。グローバルCDNネットワークによる高速、安全、信頼性の高い画像ホスティング。",
       keywords: "画像ホスティング, 画像アップロード, cdn, 即座のリンク, 画像共有",
     },
   },
   sw: {
     nav: {
+      home: "Nyumbani",
       documentation: "Nyaraka",
       api: "API",
       pricing: "Bei",
       signIn: "Ingia",
+      tools: "Zana",
     },
     hero: {
       badge: "v2.0 Inapatikana Sasa",
@@ -678,16 +941,18 @@ const dictionaries = {
     meta: {
       title: "ImageToURL - Upakiaji wa Picha Papo Hapo",
       description:
-        "Pakia picha papo hapo na upate viungo vya CDN vinavyoweza kushirikiwa kwa sekunde. Upakiaji wa picha wa bure, salama na wa haraka sana na utoaji wa kimataifa. Anza kushiriki sasa!",
+        "Pakia picha na upate viungo vinavyoweza kushirikiwa papo hapo. Upakiaji wa picha wa haraka, salama na wa kuaminika unaendeshwa na mtandao wa CDN wa kimataifa.",
       keywords: "upakiaji wa picha, pakia picha, cdn, viungo vya papo hapo, kushiriki picha",
     },
   },
   mr: {
     nav: {
+      home: "होम",
       documentation: "दस्तऐवजीकरण",
       api: "API",
       pricing: "किंमत",
       signIn: "साइन इन करा",
+      tools: "साधने",
     },
     hero: {
       badge: "v2.0 आता उपलब्ध",
@@ -724,16 +989,18 @@ const dictionaries = {
     meta: {
       title: "ImageToURL - त्वरित प्रतिमा होस्टिंग",
       description:
-        "त्वरित प्रतिमा अपलोड करा आणि सेकंदात शेअर करण्यायोग्य CDN दुवे मिळवा। जागतिक वितरणासह मोफत, सुरक्षित आणि जलद प्रतिमा होस्टिंग। आताच सामायिकरण सुरू करा!",
+        "प्रतिमा अपलोड करा आणि त्वरित शेअर करण्यायोग्य दुवे मिळवा. जागतिक CDN नेटवर्कद्वारे समर्थित जलद, सुरक्षित आणि विश्वसनीय प्रतिमा होस्टिंग.",
       keywords: "प्रतिमा होस्टिंग, प्रतिमा अपलोड, cdn, त्वरित दुवे, प्रतिमा सामायिकरण",
     },
   },
   te: {
     nav: {
+      home: "హోమ్",
       documentation: "డాక్యుమెంటేషన్",
       api: "API",
       pricing: "ధరలు",
       signIn: "సైన్ ఇన్",
+      tools: "టూల్స్",
     },
     hero: {
       badge: "v2.0 ఇప్పుడు అందుబాటులో ఉంది",
@@ -770,23 +1037,25 @@ const dictionaries = {
     meta: {
       title: "ImageToURL - తక్షణ చిత్ర హోస్టింగ్",
       description:
-        "తక్షణమే చిత్రాలను అప్‌లోడ్ చేయండి మరియు సెకన్లలో CDN షేర్ చేయగల లింక్‌లను పొందండి। గ్లోబల్ డెలివరీతో ఉచిత, సురక్షితమైన మరియు వేగవంతమైన చిత్ర హోస్టింగ్। ఇప్పుడే షేరింగ్ ప్రారంభించండి!",
+        "చిత్రాలను అప్‌లోడ్ చేయండి మరియు తక్షణమే షేర్ చేయగల లింక్‌లను పొందండి. గ్లోబల్ CDN నెట్‌వర్క్ ద్వారా శక్తివంతంగా ఉండే వేగవంతమైన, సురక్షితమైన మరియు నమ్మదగిన చిత్ర హోస్టింగ్.",
       keywords: "చిత్ర హోస్టింగ్, చిత్ర అప్‌లోడ్, cdn, తక్షణ లింక్‌లు, చిత్ర షేరింగ్",
     },
   },
   tr: {
     nav: {
+      home: "Ana Sayfa",
       documentation: "Dokümantasyon",
       api: "API",
       pricing: "Fiyatlandırma",
       signIn: "Giriş Yap",
+      tools: "Araçlar",
     },
     hero: {
       badge: "v2.0 Şimdi Mevcut",
       title: "Görselleri yükleyin,",
       titleGradient: "anında bağlantılar alın.",
       description:
-        "Görselleri anlık yükleyin ve saniyeler içinde paylaşılabilir CDN bağlantıları edinin. Küresel teslimatla ücretsiz, güvenli ve şimşek hızında görsel hosting. Şimdi paylaşmaya başlayın!",
+        "Anında paylaşılabilir bir URL oluşturmak için dosyalarınızı sürükleyip bırakın. Şimşek hızında teslimat için küresel bir edge ağı tarafından desteklenmektedir.",
     },
     upload: {
       clickToUpload: "Yüklemek için tıklayın veya sürükleyip bırakın",
@@ -814,18 +1083,20 @@ const dictionaries = {
       cookies: "Çerezler",
     },
     meta: {
-      title: "ImageToURL - Anlık Görsel Hosting",
+      title: "ImageToURL - Anında Görsel Barındırma",
       description:
-        "Görselleri anlık yükleyin ve saniyeler içinde paylaşılabilir CDN bağlantıları edinin. Küresel teslimatla ücretsiz, güvenli ve şimşek hızında görsel hosting. Şimdi paylaşmaya başlayın!",
-      keywords: "görsel hosting, görsel yükleme, cdn, anlık bağlantılar, görsel paylaşımı",
+        "Görselleri yükleyin ve anında paylaşılabilir bağlantılar alın. Küresel bir CDN ağı tarafından desteklenen hızlı, güvenli ve güvenilir görsel barındırma.",
+      keywords: "görsel barındırma, görsel yükleme, cdn, anında bağlantılar, görsel paylaşımı",
     },
   },
   ta: {
     nav: {
+      home: "ஹோம்",
       documentation: "ஆவணமாக்கல்",
       api: "API",
       pricing: "விலை நிர்ணயம்",
       signIn: "உள்நுழைக",
+      tools: "கருவிகள்",
     },
     hero: {
       badge: "v2.0 இப்போது கிடைக்கிறது",
@@ -868,10 +1139,12 @@ const dictionaries = {
   },
   vi: {
     nav: {
+      home: "Trang chủ",
       documentation: "Tài Liệu",
       api: "API",
       pricing: "Giá Cả",
       signIn: "Đăng Nhập",
+      tools: "Công cụ",
     },
     hero: {
       badge: "v2.0 Hiện Có Sẵn",
@@ -914,10 +1187,12 @@ const dictionaries = {
   },
   ko: {
     nav: {
+      home: "홈",
       documentation: "문서",
       api: "API",
       pricing: "가격",
       signIn: "로그인",
+      tools: "도구",
     },
     hero: {
       badge: "v2.0 현재 사용 가능",
@@ -960,10 +1235,12 @@ const dictionaries = {
   },
   it: {
     nav: {
+      home: "Home",
       documentation: "Documentazione",
       api: "API",
       pricing: "Prezzi",
       signIn: "Accedi",
+      tools: "Strumenti",
     },
     hero: {
       badge: "v2.0 Ora Disponibile",
@@ -1006,10 +1283,12 @@ const dictionaries = {
   },
   th: {
     nav: {
+      home: "หน้าแรก",
       documentation: "เอกสาร",
       api: "API",
       pricing: "ราคา",
       signIn: "เข้าสู่ระบบ",
+      tools: "เครื่องมือ",
     },
     hero: {
       badge: "v2.0 พร้อมใช้งานแล้ว",
@@ -1050,10 +1329,12 @@ const dictionaries = {
   },
   gu: {
     nav: {
+      home: "હોમ",
       documentation: "દસ્તાવેજીકરણ",
       api: "API",
       pricing: "કિંમતો",
       signIn: "સાઇન ઇન કરો",
+      tools: "સાધનો",
     },
     hero: {
       badge: "v2.0 હવે ઉપલબ્ધ",
@@ -1096,10 +1377,12 @@ const dictionaries = {
   },
   pl: {
     nav: {
+      home: "Strona główna",
       documentation: "Dokumentacja",
       api: "API",
       pricing: "Cennik",
       signIn: "Zaloguj się",
+      tools: "Narzędzia",
     },
     hero: {
       badge: "v2.0 Teraz Dostępne",
@@ -1142,10 +1425,12 @@ const dictionaries = {
   },
   uk: {
     nav: {
+      home: "Головна",
       documentation: "Документація",
       api: "API",
       pricing: "Ціни",
       signIn: "Увійти",
+      tools: "Інструменти",
     },
     hero: {
       badge: "v2.0 Тепер Доступно",
@@ -1188,10 +1473,12 @@ const dictionaries = {
   },
   fa: {
     nav: {
+      home: "خانه",
       documentation: "مستندات",
       api: "API",
       pricing: "قیمت‌گذاری",
       signIn: "ورود",
+      tools: "ابزارها",
     },
     hero: {
       badge: "v2.0 اکنون موجود است",
@@ -1234,10 +1521,12 @@ const dictionaries = {
   },
   ml: {
     nav: {
+      home: "ഹോം",
       documentation: "ഡോക്യുമെന്റേഷൻ",
       api: "API",
       pricing: "വിലനിർണ്ണയം",
       signIn: "സൈൻ ഇൻ ചെയ്യുക",
+      tools: "ടൂളുകൾ",
     },
     hero: {
       badge: "v2.0 ഇപ്പോൾ ലഭ്യമാണ്",
@@ -1280,10 +1569,12 @@ const dictionaries = {
   },
   kn: {
     nav: {
+      home: "ಹೋಮ್",
       documentation: "ದಾಖಲಾತಿ",
       api: "API",
       pricing: "ಬೆಲೆ",
       signIn: "ಸೈನ್ ಇನ್ ಮಾಡಿ",
+      tools: "ಉಪಕರಣಗಳು",
     },
     hero: {
       badge: "v2.0 ಈಗ ಲಭ್ಯವಿದೆ",
@@ -1326,10 +1617,12 @@ const dictionaries = {
   },
   or: {
     nav: {
+      home: "ହୋମ",
       documentation: "ଡକ୍ୟୁମେଣ୍ଟେସନ୍",
       api: "API",
       pricing: "ମୂଲ୍ୟ",
       signIn: "ସାଇନ୍ ଇନ୍ କରନ୍ତୁ",
+      tools: "ଟୁଲ୍ସ",
     },
     hero: {
       badge: "v2.0 ବର୍ତ୍ତମାନ ଉପଲବ୍ଧ",
@@ -1372,10 +1665,12 @@ const dictionaries = {
   },
   my: {
     nav: {
+      home: "ပင်မ",
       documentation: "စာရွက်စာတမ်းများ",
       api: "API",
       pricing: "စျေးနှုန်း",
       signIn: "အကောင့်ဝင်ရန်",
+      tools: "ကိရိယာများ",
     },
     hero: {
       badge: "v2.0 ယခုရရှိနိုင်ပါပြီ",

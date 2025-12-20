@@ -1,5 +1,6 @@
 import Link from "next/link"
 import type { Locale } from "@/lib/i18n/config"
+import { Github, Instagram, Mail } from "lucide-react"
 
 interface FooterDict {
     copyright: string
@@ -13,16 +14,66 @@ interface FooterProps {
     dict: FooterDict
 }
 
+const toolLinks = [
+    { name: "JPG to URL", href: "/tools/jpg-to-url" },
+    { name: "PNG to URL", href: "/tools/png-to-url" },
+    { name: "GIF to URL", href: "/tools/gif-to-url" },
+    { name: "SVG to URL", href: "/tools/svg-to-url" },
+    { name: "Base64 to URL", href: "/tools/base64-to-url" },
+    { name: "Bulk Upload", href: "/tools/bulk-upload" },
+]
+
+const useCaseLinks = [
+    { name: "Discord Images", href: "/use-cases/discord" },
+    { name: "HTML & CSS", href: "/use-cases/html" },
+    { name: "Fantasy Sports", href: "/use-cases/fantasy-sports" },
+    { name: "Minecraft", href: "/use-cases/minecraft" },
+]
+
 export function Footer({ locale, dict }: FooterProps) {
     return (
         <footer className="w-full border-t border-white/5 bg-[#1a1a1a] py-12 mt-auto z-10">
             <div className="max-w-6xl mx-auto px-6">
-                {/* Main Footer Content - Internal Links Grid */}
+                {/* Links Grid */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
-                    {/* Product Section */}
+                    {/* Tools */}
                     <div>
-                        <h3 className="text-white font-semibold text-sm mb-4">Product</h3>
-                        <ul className="space-y-3">
+                        <h3 className="text-white text-sm font-medium mb-3">Image Converters</h3>
+                        <ul className="space-y-2">
+                            {toolLinks.map((link) => (
+                                <li key={link.href}>
+                                    <Link
+                                        href={`/${locale}${link.href}`}
+                                        className="text-zinc-500 hover:text-brand text-xs transition-colors"
+                                    >
+                                        {link.name}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Use Cases */}
+                    <div>
+                        <h3 className="text-white text-sm font-medium mb-3">Use Cases</h3>
+                        <ul className="space-y-2">
+                            {useCaseLinks.map((link) => (
+                                <li key={link.href}>
+                                    <Link
+                                        href={`/${locale}${link.href}`}
+                                        className="text-zinc-500 hover:text-brand text-xs transition-colors"
+                                    >
+                                        {link.name}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Company */}
+                    <div>
+                        <h3 className="text-white text-sm font-medium mb-3">Company</h3>
+                        <ul className="space-y-2">
                             <li>
                                 <Link
                                     href={`/${locale}`}
@@ -33,105 +84,19 @@ export function Footer({ locale, dict }: FooterProps) {
                             </li>
                             <li>
                                 <Link
-                                    href={`/${locale}/dashboard`}
-                                    className="text-zinc-500 hover:text-brand text-xs transition-colors"
-                                >
-                                    Dashboard
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href={`/${locale}#features`}
-                                    className="text-zinc-500 hover:text-brand text-xs transition-colors"
-                                >
-                                    Features
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href={`/${locale}#pricing`}
-                                    className="text-zinc-500 hover:text-brand text-xs transition-colors"
-                                >
-                                    Pricing
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* Resources Section */}
-                    <div>
-                        <h3 className="text-white font-semibold text-sm mb-4">Resources</h3>
-                        <ul className="space-y-3">
-                            <li>
-                                <Link
-                                    href={`/${locale}#features`}
-                                    className="text-zinc-500 hover:text-brand text-xs transition-colors"
-                                >
-                                    Documentation
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href={`/${locale}#features`}
-                                    className="text-zinc-500 hover:text-brand text-xs transition-colors"
-                                >
-                                    API
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href={`/${locale}/dashboard`}
-                                    className="text-zinc-500 hover:text-brand text-xs transition-colors"
-                                >
-                                    Upload Images
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href={`/${locale}`}
-                                    className="text-zinc-500 hover:text-brand text-xs transition-colors"
-                                >
-                                    CDN Hosting
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* Company Section */}
-                    <div>
-                        <h3 className="text-white font-semibold text-sm mb-4">Company</h3>
-                        <ul className="space-y-3">
-                            <li>
-                                <Link
-                                    href={`/${locale}`}
+                                    href={`/${locale}/about`}
                                     className="text-zinc-500 hover:text-brand text-xs transition-colors"
                                 >
                                     About
                                 </Link>
                             </li>
-                            <li>
-                                <Link
-                                    href={`/${locale}`}
-                                    className="text-zinc-500 hover:text-brand text-xs transition-colors"
-                                >
-                                    Blog
-                                </Link>
-                            </li>
-                            <li>
-                                <Link
-                                    href={`/${locale}/dashboard`}
-                                    className="text-zinc-500 hover:text-brand text-xs transition-colors"
-                                >
-                                    Contact
-                                </Link>
-                            </li>
                         </ul>
                     </div>
 
-                    {/* Legal Section */}
+                    {/* Legal */}
                     <div>
-                        <h3 className="text-white font-semibold text-sm mb-4">Legal</h3>
-                        <ul className="space-y-3">
+                        <h3 className="text-white text-sm font-medium mb-3">Legal</h3>
+                        <ul className="space-y-2">
                             <li>
                                 <Link
                                     href={`/${locale}/privacy`}
@@ -160,31 +125,43 @@ export function Footer({ locale, dict }: FooterProps) {
                     </div>
                 </div>
 
-                {/* Bottom Bar */}
-                <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
-                    <p className="text-zinc-500 text-xs">{dict.copyright}</p>
-
-                    {/* Quick Links */}
-                    <div className="flex items-center gap-6">
-                        <Link
-                            href={`/${locale}`}
-                            className="text-zinc-500 hover:text-brand text-xs transition-colors"
+                {/* Social Links */}
+                <div className="border-t border-white/5 pt-6 pb-4">
+                    <div className="flex items-center justify-center gap-6">
+                        <a
+                            href="https://github.com/boopul22"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-zinc-500 hover:text-white transition-colors"
+                            aria-label="GitHub"
                         >
-                            Home
-                        </Link>
-                        <Link
-                            href={`/${locale}/dashboard`}
-                            className="text-zinc-500 hover:text-brand text-xs transition-colors"
+                            <Github className="w-5 h-5" />
+                        </a>
+                        <a
+                            href="https://www.instagram.com/no.code_boopul"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-zinc-500 hover:text-pink-400 transition-colors"
+                            aria-label="Instagram"
                         >
-                            Dashboard
-                        </Link>
-                        <Link
-                            href={`/${locale}#features`}
-                            className="text-zinc-500 hover:text-brand text-xs transition-colors"
+                            <Instagram className="w-5 h-5" />
+                        </a>
+                        <a
+                            href="mailto:blog.boopul@gmail.com"
+                            className="text-zinc-500 hover:text-brand transition-colors"
+                            aria-label="Email"
                         >
-                            Features
-                        </Link>
+                            <Mail className="w-5 h-5" />
+                        </a>
                     </div>
+                </div>
+
+                {/* Bottom Bar */}
+                <div className="border-t border-white/5 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+                    <p className="text-zinc-500 text-xs">© 2025 ImageToURL. All rights reserved.</p>
+                    <p className="text-zinc-600 text-xs">
+                        Free image to URL converter powered by global CDN
+                    </p>
                 </div>
             </div>
         </footer>
