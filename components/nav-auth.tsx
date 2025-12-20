@@ -3,6 +3,7 @@ import { UserNav } from "@/components/auth/user-nav"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import type { Locale } from "@/lib/i18n/config"
+import { LoginFeatureTooltip } from "@/components/login-feature-tooltip"
 
 export async function NavAuth({ locale, signInText }: { locale: Locale; signInText: string }) {
   const supabase = await createClient()
@@ -15,12 +16,15 @@ export async function NavAuth({ locale, signInText }: { locale: Locale; signInTe
   }
 
   return (
-    <Button
-      asChild
-      size="sm"
-      className="bg-white text-dark hover:bg-zinc-200 rounded-full shadow-[0_0_10px_rgba(255,255,255,0.1)]"
-    >
-      <Link href={`/${locale}/auth/login`}>{signInText}</Link>
-    </Button>
+    <div className="flex items-center gap-2">
+      <Button
+        asChild
+        size="sm"
+        className="bg-white text-dark hover:bg-zinc-200 rounded-full shadow-[0_0_10px_rgba(255,255,255,0.1)]"
+      >
+        <Link href={`/${locale}/auth/login`}>{signInText}</Link>
+      </Button>
+      <LoginFeatureTooltip variant="icon" />
+    </div>
   )
 }

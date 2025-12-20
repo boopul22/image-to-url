@@ -3,6 +3,7 @@
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Button } from "@/components/ui/button"
 import { AlertCircle, Sparkles } from "lucide-react"
+import { LoginFeatureTooltip } from "@/components/login-feature-tooltip"
 
 interface UploadLimitBannerProps {
   remaining: number
@@ -18,13 +19,16 @@ export function UploadLimitBanner({ remaining, onLoginClick }: UploadLimitBanner
           <div>
             <strong>Upload limit reached!</strong> Sign in to continue uploading and access your files later.
           </div>
-          <Button
-            size="sm"
-            onClick={onLoginClick}
-            className="ml-4 bg-brand hover:bg-brand-dim text-white"
-          >
-            Sign In
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button
+              size="sm"
+              onClick={onLoginClick}
+              className="bg-brand hover:bg-brand-dim text-white"
+            >
+              Sign In
+            </Button>
+            <LoginFeatureTooltip variant="icon" />
+          </div>
         </AlertDescription>
       </Alert>
     )
@@ -38,14 +42,17 @@ export function UploadLimitBanner({ remaining, onLoginClick }: UploadLimitBanner
           <div>
             You have <strong>{remaining} uploads</strong> remaining. Sign in to get unlimited uploads!
           </div>
-          <Button
-            size="sm"
-            variant="outline"
-            onClick={onLoginClick}
-            className="ml-4 border-blue-500/50 hover:bg-blue-500/20"
-          >
-            Sign In
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button
+              size="sm"
+              variant="outline"
+              onClick={onLoginClick}
+              className="border-blue-500/50 hover:bg-blue-500/20"
+            >
+              Sign In
+            </Button>
+            <LoginFeatureTooltip variant="icon" />
+          </div>
         </AlertDescription>
       </Alert>
     )
