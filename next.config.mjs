@@ -3,12 +3,6 @@ const nextConfig = {
   // Disabled reactCompiler due to Turbopack build issues on Vercel
   // reactCompiler: true,
   // cacheComponents: false,
-
-  // Disable Turbopack for production builds to avoid dependency tracking errors
-  experimental: {
-    turbo: false,
-  },
-
   typescript: {
     ignoreBuildErrors: true,
   },
