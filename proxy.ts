@@ -28,7 +28,13 @@ export async function proxy(request: NextRequest) {
   // Check if pathname already has a locale
   const pathnameHasLocale = locales.some((locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`)
 
-  // Handle locale redirect first
+  // Handle root path with rewrite (keeps URL as /) for better SEO
+  if (pathname === '/') {
+    const locale = getLocale(request)
+    return NextResponse.rewrite(new URL(`/${locale}`, request.url))
+  }
+
+  // Handle other paths without locale - redirect to add locale prefix
   if (!pathnameHasLocale) {
     const locale = getLocale(request)
     request.nextUrl.pathname = `/${locale}${pathname}`
