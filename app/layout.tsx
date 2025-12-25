@@ -35,11 +35,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  return (
-    <ThemeProvider defaultTheme="dark" storageKey="imagetourl-theme">
-      <CookieConsentWrapper>
-        {children}
-      </CookieConsentWrapper>
-    </ThemeProvider>
-  )
+  return children
 }

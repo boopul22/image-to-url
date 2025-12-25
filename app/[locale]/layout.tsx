@@ -2,6 +2,8 @@ import type React from "react"
 import type { Metadata } from "next"
 import Script from 'next/script'
 import { Inter } from 'next/font/google'
+import { ThemeProvider } from '@/components/theme-provider'
+import { CookieConsentWrapper } from '@/components/cookie-consent-wrapper'
 import { locales, type Locale } from "@/lib/i18n/config"
 import { getDictionary } from "@/lib/i18n/dictionaries"
 import { getAlternateLinks } from "@/lib/i18n/get-alternate-links"
@@ -81,12 +83,16 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className="dark" suppressHydrationWarning>
       <body className={`${inter.variable} font-sans antialiased selection:bg-brand selection:text-white overflow-x-hidden`}>
-        <Script
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7803867089582138"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
-        {children}
+        <ThemeProvider defaultTheme="dark" storageKey="imagetourl-theme">
+          <CookieConsentWrapper>
+            <Script
+              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7803867089582138"
+              crossOrigin="anonymous"
+              strategy="afterInteractive"
+            />
+            {children}
+          </CookieConsentWrapper>
+        </ThemeProvider>
       </body>
     </html>
   )
