@@ -3,6 +3,8 @@ const nextConfig = {
   // Disabled reactCompiler due to Turbopack build issues on Vercel
   // reactCompiler: true,
   // cacheComponents: false,
+  // Fix Supabase ESM import error
+  serverExternalPackages: ['@supabase/ssr', '@supabase/supabase-js'],
   typescript: {
     ignoreBuildErrors: true,
   },
