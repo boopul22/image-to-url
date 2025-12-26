@@ -11,7 +11,8 @@ import {
     Copy,
     Check,
     RefreshCcw,
-    Filter
+    Filter,
+    User
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -38,6 +39,12 @@ interface Upload {
     uploaded_at: string | null
     expires_at: string | null
     user_id: string | null
+    user_email: string | null
+}
+
+interface UserOption {
+    id: string
+    email: string
 }
 
 interface Pagination {
@@ -62,6 +69,8 @@ export function AdminUploadsTable() {
     const [search, setSearch] = useState("")
     const [searchInput, setSearchInput] = useState("")
     const [status, setStatus] = useState("all")
+    const [userFilter, setUserFilter] = useState("all")
+    const [availableUsers, setAvailableUsers] = useState<UserOption[]>([])
     const [sortBy, setSortBy] = useState("created_at")
     const [sortOrder, setSortOrder] = useState("desc")
 
@@ -82,6 +91,7 @@ export function AdminUploadsTable() {
                 limit: pagination.limit.toString(),
                 search,
                 status,
+                userId: userFilter,
                 sortBy,
                 sortOrder,
             })
@@ -101,11 +111,29 @@ export function AdminUploadsTable() {
         } finally {
             setLoading(false)
         }
-    }, [pagination.page, pagination.limit, search, status, sortBy, sortOrder])
+    }, [pagination.page, pagination.limit, search, status, userFilter, sortBy, sortOrder])
+
+    // Fetch available users for filter dropdown
+    const fetchUsers = useCallback(async () => {
+        try {
+            const response = await fetch("/api/admin/users")
+            if (response.ok) {
+                const data = await response.json()
+                setAvailableUsers(data.users || [])
+            }
+        } catch (err) {
+            console.error("Failed to fetch users:", err)
+        }
+    }, [])
 
     useEffect(() => {
         fetchUploads()
     }, [fetchUploads])
+
+    // Fetch users on mount
+    useEffect(() => {
+        fetchUsers()
+    }, [fetchUsers])
 
     // Debounced search
     useEffect(() => {
@@ -220,6 +248,23 @@ export function AdminUploadsTable() {
                     </SelectContent>
                 </Select>
 
+                {/* User Filter */}
+                <Select value={userFilter} onValueChange={(v) => { setUserFilter(v); setPagination((p) => ({ ...p, page: 1 })) }}>
+                    <SelectTrigger className="w-48 bg-black/30 border-white/10 text-sm">
+                        <User size={14} className="mr-2 text-zinc-500" />
+                        <SelectValue placeholder="Filter by User" />
+                    </SelectTrigger>
+                    <SelectContent>
+                        <SelectItem value="all">All Users</SelectItem>
+                        <SelectItem value="anonymous">Anonymous Only</SelectItem>
+                        {availableUsers.map(user => (
+                            <SelectItem key={user.id} value={user.id}>
+                                {user.email}
+                            </SelectItem>
+                        ))}
+                    </SelectContent>
+                </Select>
+
                 {/* Sort */}
                 <Select value={sortBy} onValueChange={(v) => setSortBy(v)}>
                     <SelectTrigger className="w-36 bg-black/30 border-white/10 text-sm">
@@ -280,6 +325,7 @@ export function AdminUploadsTable() {
                                 <th className="p-4 w-24">Size</th>
                                 <th className="p-4 w-24">Type</th>
                                 <th className="p-4 w-24">Status</th>
+                                <th className="p-4 w-48">User</th>
                                 <th className="p-4 w-40">Uploaded</th>
                                 <th className="p-4 w-32">Actions</th>
                             </tr>
@@ -288,14 +334,14 @@ export function AdminUploadsTable() {
                             {loading && uploads.length === 0 ? (
                                 [...Array(5)].map((_, i) => (
                                     <tr key={i} className="border-b border-white/5">
-                                        <td colSpan={8} className="p-4">
+                                        <td colSpan={9} className="p-4">
                                             <div className="h-12 bg-white/5 rounded animate-pulse" />
                                         </td>
                                     </tr>
                                 ))
                             ) : uploads.length === 0 ? (
                                 <tr>
-                                    <td colSpan={8} className="p-8 text-center text-zinc-500">
+                                    <td colSpan={9} className="p-8 text-center text-zinc-500">
                                         No uploads found
                                     </td>
                                 </tr>
@@ -346,6 +392,17 @@ export function AdminUploadsTable() {
                                             >
                                                 {upload.status || "unknown"}
                                             </span>
+                                        </td>
+                                        <td className="p-4">
+                                            {upload.user_email ? (
+                                                <span className="text-zinc-300 text-sm truncate max-w-[180px] block" title={upload.user_email}>
+                                                    {upload.user_email}
+                                                </span>
+                                            ) : (
+                                                <span className="px-2 py-1 text-xs bg-zinc-700/50 rounded text-zinc-400 italic">
+                                                    Anonymous
+                                                </span>
+                                            )}
                                         </td>
                                         <td className="p-4 text-zinc-400 text-xs">
                                             {formatDate(upload.uploaded_at || upload.created_at)}

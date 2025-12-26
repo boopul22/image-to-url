@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic"
 
 /**
  * GET /api/admin/uploads
- * Fetch all uploads with pagination, search, and sorting
+ * Fetch all uploads with pagination, search, sorting, and user info
  */
 export async function GET(request: NextRequest) {
     // Check admin access
@@ -22,9 +22,11 @@ export async function GET(request: NextRequest) {
         const sortBy = searchParams.get("sortBy") || "created_at"
         const sortOrder = searchParams.get("sortOrder") === "asc" ? true : false
         const status = searchParams.get("status") || "all"
+        const userId = searchParams.get("userId") || "all"
 
         const offset = (page - 1) * limit
 
+        // Regular client - admin can see all uploads via RLS policy
         const supabase = await createClient()
 
         // Build query
@@ -35,6 +37,13 @@ export async function GET(request: NextRequest) {
         // Apply status filter
         if (status !== "all") {
             query = query.eq("status", status)
+        }
+
+        // Apply user filter
+        if (userId === "anonymous") {
+            query = query.is("user_id", null)
+        } else if (userId !== "all") {
+            query = query.eq("user_id", userId)
         }
 
         // Apply search filter
@@ -57,13 +66,19 @@ export async function GET(request: NextRequest) {
             )
         }
 
+        // Add user info to uploads (show shortened user ID)
+        const uploadsWithEmail = (uploads || []).map(upload => ({
+            ...upload,
+            user_email: upload.user_id ? `User (${upload.user_id.slice(0, 8)}...)` : null
+        }))
+
         // Debug logging
         const anonymousCount = uploads?.filter(u => u.user_id === null).length || 0
         const userCount = uploads?.filter(u => u.user_id !== null).length || 0
         console.log(`[Admin API] Fetched ${uploads?.length || 0} uploads: ${anonymousCount} anonymous, ${userCount} registered users`)
 
         return NextResponse.json({
-            uploads: uploads || [],
+            uploads: uploadsWithEmail,
             pagination: {
                 page,
                 limit,
