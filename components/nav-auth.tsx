@@ -12,11 +12,15 @@ export async function NavAuth({ locale, signInText }: { locale: Locale; signInTe
   } = await supabase.auth.getUser()
 
   if (user) {
-    return <UserNav user={user} locale={locale} />
+    return (
+      <div className="flex items-center justify-end min-w-[120px]">
+        <UserNav user={user} locale={locale} />
+      </div>
+    )
   }
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center justify-end gap-2 min-w-[120px]">
       <Button
         asChild
         size="sm"

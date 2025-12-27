@@ -2,8 +2,10 @@
 
 import { useState } from "react"
 import { useCookieConsent } from "@/hooks/use-cookie-consent"
-import { Cookie, X, ChevronDown, ChevronUp } from "lucide-react"
+import { Cookie, ChevronDown, ChevronUp } from "lucide-react"
 import Link from "next/link"
+import { cn } from "@/lib/utils"
+import { Switch } from "@/components/ui/switch"
 
 export function CookieConsentBanner() {
     const { hasConsented, acceptAll, rejectAll, updatePreferences } = useCookieConsent()
@@ -12,11 +14,6 @@ export function CookieConsentBanner() {
         analytics: true,
         advertising: true,
     })
-
-    // Don't show banner if user has already consented
-    if (hasConsented) {
-        return null
-    }
 
     const handleSavePreferences = () => {
         updatePreferences({
@@ -27,7 +24,14 @@ export function CookieConsentBanner() {
     }
 
     return (
-        <div className="fixed bottom-0 left-0 right-0 z-50 p-4 animate-in slide-in-from-bottom-5 duration-500">
+        <div
+            className={cn(
+                "fixed bottom-0 left-0 right-0 z-50 p-4 transition-all duration-300",
+                hasConsented
+                    ? "opacity-0 translate-y-full pointer-events-none"
+                    : "opacity-100 translate-y-0 pointer-events-auto"
+            )}
+        >
             <div className="max-w-4xl mx-auto">
                 <div className="bg-zinc-900/95 backdrop-blur-xl border border-zinc-700 rounded-2xl shadow-2xl overflow-hidden">
                     {/* Main Banner */}
@@ -78,67 +82,64 @@ export function CookieConsentBanner() {
                     </div>
 
                     {/* Expandable Details */}
-                    {showDetails && (
-                        <div className="border-t border-zinc-700 p-6 bg-zinc-800/50 animate-in slide-in-from-top-2 duration-300">
-                            <h4 className="text-white font-medium mb-4">Cookie Preferences</h4>
+                    <div
+                        className={cn(
+                            "grid transition-[grid-template-rows] duration-300 ease-out",
+                            showDetails ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                        )}
+                    >
+                        <div className="overflow-hidden">
+                            <div className="border-t border-zinc-700 p-6 bg-zinc-800/50">
+                                <h4 className="text-white font-medium mb-4">Cookie Preferences</h4>
 
-                            <div className="space-y-4">
-                                {/* Essential - Always On */}
-                                <div className="flex items-center justify-between">
-                                    <div>
-                                        <p className="text-white text-sm font-medium">Essential Cookies</p>
-                                        <p className="text-zinc-500 text-xs">Required for the website to function</p>
+                                <div className="space-y-4">
+                                    {/* Essential - Always On */}
+                                    <div className="flex items-center justify-between">
+                                        <div>
+                                            <p className="text-white text-sm font-medium">Essential Cookies</p>
+                                            <p className="text-zinc-500 text-xs">Required for the website to function</p>
+                                        </div>
+                                        <div className="bg-emerald-500/20 text-emerald-400 text-xs px-3 py-1 rounded-full">
+                                            Always On
+                                        </div>
                                     </div>
-                                    <div className="bg-emerald-500/20 text-emerald-400 text-xs px-3 py-1 rounded-full">
-                                        Always On
-                                    </div>
-                                </div>
 
-                                {/* Analytics */}
-                                <div className="flex items-center justify-between">
-                                    <div>
-                                        <p className="text-white text-sm font-medium">Analytics Cookies</p>
-                                        <p className="text-zinc-500 text-xs">Help us understand how you use our site</p>
-                                    </div>
-                                    <label className="relative inline-flex items-center cursor-pointer">
-                                        <input
-                                            type="checkbox"
+                                    {/* Analytics */}
+                                    <div className="flex items-center justify-between">
+                                        <div>
+                                            <p className="text-white text-sm font-medium">Analytics Cookies</p>
+                                            <p className="text-zinc-500 text-xs">Help us understand how you use our site</p>
+                                        </div>
+                                        <Switch
                                             checked={customPrefs.analytics}
-                                            onChange={(e) => setCustomPrefs({ ...customPrefs, analytics: e.target.checked })}
-                                            className="sr-only peer"
+                                            onCheckedChange={(checked) => setCustomPrefs({ ...customPrefs, analytics: checked })}
                                         />
-                                        <div className="w-11 h-6 bg-zinc-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-brand"></div>
-                                    </label>
-                                </div>
-
-                                {/* Advertising */}
-                                <div className="flex items-center justify-between">
-                                    <div>
-                                        <p className="text-white text-sm font-medium">Advertising Cookies</p>
-                                        <p className="text-zinc-500 text-xs">Used to show relevant ads</p>
                                     </div>
-                                    <label className="relative inline-flex items-center cursor-pointer">
-                                        <input
-                                            type="checkbox"
-                                            checked={customPrefs.advertising}
-                                            onChange={(e) => setCustomPrefs({ ...customPrefs, advertising: e.target.checked })}
-                                            className="sr-only peer"
-                                        />
-                                        <div className="w-11 h-6 bg-zinc-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-brand"></div>
-                                    </label>
-                                </div>
-                            </div>
 
-                            <div className="mt-6 flex justify-end">
-                                <button
-                                    onClick={handleSavePreferences}
-                                    className="bg-brand hover:bg-brand/90 text-white font-medium px-6 py-2 rounded-full transition-colors text-sm"
-                                >
-                                    Save Preferences
-                                </button>
+                                    {/* Advertising */}
+                                    <div className="flex items-center justify-between">
+                                        <div>
+                                            <p className="text-white text-sm font-medium">Advertising Cookies</p>
+                                            <p className="text-zinc-500 text-xs">Used to show relevant ads</p>
+                                        </div>
+                                        <Switch
+                                            checked={customPrefs.advertising}
+                                            onCheckedChange={(checked) => setCustomPrefs({ ...customPrefs, advertising: checked })}
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="mt-6 flex justify-end">
+                                    <button
+                                        onClick={handleSavePreferences}
+                                        className="bg-brand hover:bg-brand/90 text-white font-medium px-6 py-2 rounded-full transition-colors text-sm"
+                                    >
+                                        Save Preferences
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    )}
+                    </div>
                 </div>
             </div>
         </div>

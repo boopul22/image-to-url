@@ -366,6 +366,7 @@ export function AdminUploadsTable() {
                                                     fill
                                                     className="object-cover"
                                                     sizes="48px"
+                                                    unoptimized
                                                 />
                                             </div>
                                         </td>

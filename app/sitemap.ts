@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { locales, defaultLocale } from '@/lib/i18n/config'
+import { getAllPosts } from '@/lib/content'
 import fs from 'fs'
 import path from 'path'
 
@@ -41,7 +42,8 @@ function walkDirectory(dir: string, baseDir: string): string[] {
   const entries = fs.readdirSync(dir, { withFileTypes: true })
 
   for (const entry of entries) {
-    if (entry.name.startsWith('.')) continue
+    // Skip hidden files and dynamic route directories (e.g., [slug])
+    if (entry.name.startsWith('.') || entry.name.startsWith('[')) continue
 
     const fullPath = path.join(dir, entry.name)
 
@@ -82,8 +84,9 @@ const publicRoutes = scanPublicRoutes(
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = []
+  const now = new Date()
 
-  // Generate entries for each route and locale
+  // Generate entries for each static route and locale
   for (const route of publicRoutes) {
     for (const locale of locales) {
       const url = `${BASE_URL}/${locale}${route}`
@@ -98,7 +101,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
       entries.push({
         url,
-        lastModified: new Date('2025-12-23T00:00:00Z'),
+        lastModified: now,
         changeFrequency: 'weekly',
         priority: locale === defaultLocale ? 1.0 : 0.8,
         alternates: {
@@ -108,5 +111,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
+  // Add blog post entries
+  const posts = getAllPosts()
+  for (const post of posts) {
+    for (const locale of locales) {
+      const url = `${BASE_URL}/${locale}/blog/${post.slug}`
+
+      // Create language alternates for this blog post
+      const languages: Record<string, string> = {}
+      for (const altLocale of locales) {
+        languages[altLocale] = `${BASE_URL}/${altLocale}/blog/${post.slug}`
+      }
+      languages['x-default'] = `${BASE_URL}/${defaultLocale}/blog/${post.slug}`
+
+      // Use updatedAt if available, otherwise publishedAt
+      const lastModified = post.frontmatter.updatedAt
+        ? new Date(post.frontmatter.updatedAt)
+        : new Date(post.frontmatter.publishedAt)
+
+      entries.push({
+        url,
+        lastModified,
+        changeFrequency: 'monthly',
+        priority: locale === defaultLocale ? 0.9 : 0.7,
+        alternates: {
+          languages,
+        },
+      })
+    }
+  }
+
   return entries
 }
+

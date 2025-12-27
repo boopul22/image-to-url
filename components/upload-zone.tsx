@@ -3,14 +3,23 @@
 import type React from "react"
 
 import { useState, useRef, useCallback, useEffect } from "react"
-import { Upload, Link2, Check, AlertCircle, Shield, Zap, FileImage, X, Download, Code } from "lucide-react"
+import { Upload, Link2, Check, AlertCircle, Shield, Zap, FileImage, X, Download, Code, QrCode } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog"
 import type { Dictionary } from "@/lib/i18n/dictionaries"
 import { UploadLimitBanner } from "@/components/upload-limit-banner"
 import { LoginDialog } from "@/components/auth/login-dialog"
 import { BookmarkBanner } from "@/components/bookmark-banner"
 import { LoginFeatureTooltip } from "@/components/login-feature-tooltip"
+import { PushNotificationPrompt } from "@/components/push-notification-prompt"
+import { PWAInstallPrompt } from "@/components/pwa-install-prompt"
+import { useServiceWorker } from "@/hooks/use-service-worker"
 
 interface UploadedFile {
   url: string
@@ -41,7 +50,12 @@ export function UploadZone({ dict }: { dict: Dictionary }) {
   const [showLoginDialog, setShowLoginDialog] = useState(false)
   const [showBookmarkBanner, setShowBookmarkBanner] = useState(false)
   const [currentTipIndex, setCurrentTipIndex] = useState(0)
+  const [qrCodeUrl, setQrCodeUrl] = useState<string | null>(null)
+  const [qrLoading, setQrLoading] = useState(true)
   const fileInputRef = useRef<HTMLInputElement>(null)
+
+  // Register service worker for PWA
+  useServiceWorker()
 
   // Login benefits for rotating tooltip
   const loginBenefits = [
@@ -314,6 +328,91 @@ export function UploadZone({ dict }: { dict: Dictionary }) {
       <LoginDialog open={showLoginDialog} onOpenChange={setShowLoginDialog} />
       <BookmarkBanner show={showBookmarkBanner} onDismiss={() => setShowBookmarkBanner(false)} />
 
+      {/* QR Code Dialog */}
+      <Dialog open={!!qrCodeUrl} onOpenChange={(open) => { if (!open) setQrCodeUrl(null); setQrLoading(true) }}>
+        <DialogContent className="sm:max-w-md bg-zinc-900 border-zinc-800">
+          <DialogHeader>
+            <DialogTitle className="text-white text-center">Scan QR Code</DialogTitle>
+          </DialogHeader>
+          <div className="flex flex-col items-center py-4">
+            {qrCodeUrl && (
+              <>
+                <div className="p-4 bg-white rounded-xl mb-4 relative">
+                  {qrLoading && (
+                    <div className="w-48 h-48 flex items-center justify-center">
+                      <div className="flex flex-col items-center gap-3">
+                        <div className="w-8 h-8 border-[3px] border-zinc-300 border-t-brand rounded-full animate-spin" />
+                        <span className="text-zinc-500 text-sm">Generating QR...</span>
+                      </div>
+                    </div>
+                  )}
+                  <img
+                    src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(qrCodeUrl)}`}
+                    alt="QR Code"
+                    className={`w-48 h-48 ${qrLoading ? 'hidden' : 'block'}`}
+                    width={200}
+                    height={200}
+                    onLoad={() => setQrLoading(false)}
+                  />
+                </div>
+                <p className="text-zinc-400 text-sm text-center mb-4">
+                  Scan to open image on any device
+                </p>
+                <div className="flex gap-2 w-full">
+                  <Button
+                    onClick={() => {
+                      navigator.clipboard.writeText(qrCodeUrl)
+                      setCopiedUrl(qrCodeUrl)
+                      setTimeout(() => setCopiedUrl(""), 2000)
+                    }}
+                    variant="outline"
+                    className="flex-1 border-zinc-700 text-zinc-300"
+                  >
+                    {copiedUrl === qrCodeUrl ? (
+                      <>
+                        <Check size={16} className="mr-2" />
+                        Copied!
+                      </>
+                    ) : (
+                      <>
+                        <Link2 size={16} className="mr-2" />
+                        Copy Link
+                      </>
+                    )}
+                  </Button>
+                  <Button
+                    onClick={async () => {
+                      try {
+                        const response = await fetch(`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(qrCodeUrl)}`)
+                        const blob = await response.blob()
+                        const url = URL.createObjectURL(blob)
+                        const link = document.createElement("a")
+                        link.href = url
+                        link.download = "qr-code.png"
+                        link.click()
+                        URL.revokeObjectURL(url)
+                      } catch (err) {
+                        console.error("Failed to download QR:", err)
+                      }
+                    }}
+                    className="flex-1 bg-brand hover:bg-brand/90"
+                  >
+                    <Download size={16} className="mr-2" />
+                    Download QR
+                  </Button>
+                </div>
+              </>
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Push Notification Prompt - contextual after uploads */}
+      <PushNotificationPrompt uploadCount={uploadedFiles.length} />
+
+      {/* PWA Install Prompt - for mobile users */}
+      <PWAInstallPrompt />
+
       <div className="w-full max-w-4xl animate-slide-up" style={{ animationDelay: "100ms" }}>
         <div className="bg-surface rounded-2xl p-2 shadow-2xl shadow-black/50 border border-white/5 relative overflow-hidden">
           {/* Top gradient line */}
@@ -539,6 +638,15 @@ export function UploadZone({ dict }: { dict: Dictionary }) {
                                   Embed
                                 </>
                               )}
+                            </Button>
+                            <Button
+                              onClick={() => { setQrLoading(true); setQrCodeUrl(uploadedFile.url) }}
+                              variant="outline"
+                              size="sm"
+                              className="h-9 w-9 p-0 bg-transparent border-white/10 hover:border-brand/50 hover:bg-brand/5"
+                              title="Show QR Code"
+                            >
+                              <QrCode size={14} />
                             </Button>
                             <Button
                               asChild

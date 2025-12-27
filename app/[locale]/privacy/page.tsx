@@ -51,13 +51,15 @@ export default async function PrivacyPage({
                 <Header locale={locale} dict={dict.nav}>
                     <Suspense
                         fallback={
-                            <Button
-                                size="sm"
-                                className="bg-white text-dark rounded-full shadow-[0_0_10px_rgba(255,255,255,0.1)]"
-                                disabled
-                            >
-                                {dict.nav.signIn}
-                            </Button>
+                            <div className="flex items-center justify-end min-w-[120px]">
+                                <Button
+                                    size="sm"
+                                    className="bg-white text-dark rounded-full shadow-[0_0_10px_rgba(255,255,255,0.1)]"
+                                    disabled
+                                >
+                                    {dict.nav.signIn}
+                                </Button>
+                            </div>
                         }
                     >
                         <NavAuth locale={locale} signInText={dict.nav.signIn} />

@@ -1,14 +1,12 @@
 import type React from "react"
 import type { Metadata } from "next"
 import Script from 'next/script'
-import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/theme-provider'
 import { CookieConsentWrapper } from '@/components/cookie-consent-wrapper'
+import { LocaleUpdater } from '@/components/locale-updater'
 import { locales, type Locale } from "@/lib/i18n/config"
 import { getDictionary } from "@/lib/i18n/dictionaries"
 import { getAlternateLinks } from "@/lib/i18n/get-alternate-links"
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.imagetourl.cloud"
 
@@ -81,19 +79,16 @@ export default async function LocaleLayout({
   const { locale } = await params
 
   return (
-    <html lang={locale} className="dark" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans antialiased selection:bg-brand selection:text-white overflow-x-hidden`}>
-        <ThemeProvider defaultTheme="dark" storageKey="imagetourl-theme">
-          <CookieConsentWrapper>
-            <Script
-              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7803867089582138"
-              crossOrigin="anonymous"
-              strategy="afterInteractive"
-            />
-            {children}
-          </CookieConsentWrapper>
-        </ThemeProvider>
-      </body>
-    </html>
+    <ThemeProvider defaultTheme="dark" storageKey="imagetourl-theme">
+      <LocaleUpdater locale={locale} />
+      <CookieConsentWrapper>
+        <Script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7803867089582138"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+        {children}
+      </CookieConsentWrapper>
+    </ThemeProvider>
   )
 }

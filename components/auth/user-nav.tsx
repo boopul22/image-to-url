@@ -33,9 +33,12 @@ export function UserNav({ user, locale }: UserNavProps) {
   const userInitial = user.email?.charAt(0).toUpperCase() || "U"
 
   return (
-    <DropdownMenu>
+    <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" className="relative h-9 w-9 rounded-full">
+        <Button
+          variant="ghost"
+          className="relative h-9 w-9 rounded-full shrink-0 focus:outline-none focus-visible:outline-none focus-visible:ring-0"
+        >
           <Avatar className="h-9 w-9">
             <AvatarFallback className="bg-brand text-white">{userInitial}</AvatarFallback>
           </Avatar>

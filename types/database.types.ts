@@ -17,6 +17,7 @@ export type Database = {
       anonymous_upload_tracking: {
         Row: {
           created_at: string | null
+          gallery_token: string | null
           id: string
           last_upload_at: string | null
           session_id: string
@@ -24,6 +25,7 @@ export type Database = {
         }
         Insert: {
           created_at?: string | null
+          gallery_token?: string | null
           id?: string
           last_upload_at?: string | null
           session_id: string
@@ -31,10 +33,41 @@ export type Database = {
         }
         Update: {
           created_at?: string | null
+          gallery_token?: string | null
           id?: string
           last_upload_at?: string | null
           session_id?: string
           upload_count?: number | null
+        }
+        Relationships: []
+      }
+      push_subscriptions: {
+        Row: {
+          auth: string
+          created_at: string | null
+          endpoint: string
+          id: string
+          p256dh: string
+          session_id: string
+          user_agent: string | null
+        }
+        Insert: {
+          auth: string
+          created_at?: string | null
+          endpoint: string
+          id?: string
+          p256dh: string
+          session_id: string
+          user_agent?: string | null
+        }
+        Update: {
+          auth?: string
+          created_at?: string | null
+          endpoint?: string
+          id?: string
+          p256dh?: string
+          session_id?: string
+          user_agent?: string | null
         }
         Relationships: []
       }
@@ -49,6 +82,7 @@ export type Database = {
           id: string
           image_url: string
           r2_key: string
+          session_id: string | null
           status: string | null
           thumbnail_url: string | null
           uploaded_at: string | null
@@ -64,6 +98,7 @@ export type Database = {
           id?: string
           image_url: string
           r2_key: string
+          session_id?: string | null
           status?: string | null
           thumbnail_url?: string | null
           uploaded_at?: string | null
@@ -79,6 +114,7 @@ export type Database = {
           id?: string
           image_url?: string
           r2_key?: string
+          session_id?: string | null
           status?: string | null
           thumbnail_url?: string | null
           uploaded_at?: string | null

@@ -82,11 +82,11 @@ export function Header({ locale, dict, children }: HeaderProps) {
                         </Link>
                     ))}
 
-                    {/* Tools Dropdown */}
-                    <DropdownMenu>
-                        <DropdownMenuTrigger className="nav-link text-sm font-medium text-zinc-400 hover:text-white transition-colors relative flex items-center gap-1 outline-none">
+                    {/* Tools Dropdown - modal=false prevents body scroll lock */}
+                    <DropdownMenu modal={false}>
+                        <DropdownMenuTrigger className="group nav-link text-sm font-medium text-zinc-400 hover:text-white transition-colors relative flex items-center gap-1 outline-none focus:outline-none focus-visible:outline-none">
                             {dict.tools || "Tools"}
-                            <ChevronDown className="h-4 w-4" />
+                            <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[state=open]:rotate-180" />
                         </DropdownMenuTrigger>
                         <DropdownMenuContent className="bg-dark border border-white/10 min-w-[180px]">
                             {toolLinks.map((tool) => (
@@ -102,19 +102,22 @@ export function Header({ locale, dict, children }: HeaderProps) {
                         </DropdownMenuContent>
                     </DropdownMenu>
 
-                    {isDashboard && dict.dashboard && (
-                        <Link
-                            href={`/${locale}/dashboard`}
-                            className={cn(
-                                "nav-link text-sm font-medium transition-colors relative",
-                                pathname.includes("/dashboard")
-                                    ? "text-brand"
-                                    : "text-zinc-400 hover:text-white"
-                            )}
-                        >
-                            {dict.dashboard}
-                        </Link>
-                    )}
+                    {/* Dashboard link - always rendered but visibility controlled to prevent layout shift */}
+                    <Link
+                        href={`/${locale}/dashboard`}
+                        className={cn(
+                            "nav-link text-sm font-medium transition-colors relative",
+                            pathname.includes("/dashboard")
+                                ? "text-brand"
+                                : "text-zinc-400 hover:text-white",
+                            // Hide when not on dashboard but keep space reserved
+                            !isDashboard && "opacity-0 pointer-events-none absolute"
+                        )}
+                        tabIndex={isDashboard ? 0 : -1}
+                        aria-hidden={!isDashboard}
+                    >
+                        {dict.dashboard || "Dashboard"}
+                    </Link>
                 </div>
 
                 {/* Right Side Actions */}
@@ -123,8 +126,8 @@ export function Header({ locale, dict, children }: HeaderProps) {
                         <LanguageSwitcher currentLocale={locale} />
                     </div>
 
-                    {/* Auth button passed from server component */}
-                    <div className="hidden sm:block">
+                    {/* Auth button passed from server component - min-w prevents layout shift */}
+                    <div className="hidden sm:flex sm:items-center sm:justify-end sm:min-w-[120px]">
                         {children}
                     </div>
 

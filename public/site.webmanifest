@@ -1,6 +1,6 @@
 {
-  "name": "Free Image to URL Converter - No Sign-up Required",
-  "short_name": "Free Image to URL",
+  "name": "ImageToURL - Free Image Hosting",
+  "short_name": "ImageToURL",
   "description": "Get shareable URLs instantly. 100% free image hosting with no sign-up required. Supports JPG, PNG, GIF up to 10MB",
   "icons": [
     {
@@ -41,8 +41,25 @@
     }
   ],
   "theme_color": "#FF7A30",
-  "background_color": "#ffffff",
+  "background_color": "#0a0a0a",
   "display": "standalone",
-  "start_url": "/",
-  "scope": "/"
+  "orientation": "portrait-primary",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "categories": ["productivity", "utilities", "photo"],
+  "shortcuts": [
+    {
+      "name": "Upload Image",
+      "short_name": "Upload",
+      "url": "/?action=upload&source=pwa",
+      "icons": [{ "src": "/android-chrome-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "My Gallery",
+      "short_name": "Gallery",
+      "url": "/gallery?source=pwa",
+      "icons": [{ "src": "/android-chrome-192x192.png", "sizes": "192x192" }]
+    }
+  ],
+  "prefer_related_applications": false
 }

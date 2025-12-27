@@ -21,11 +21,15 @@ export function LanguageSwitcher({ currentLocale }: { currentLocale: Locale }) {
   }
 
   return (
-    <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
+    <DropdownMenu open={isOpen} onOpenChange={setIsOpen} modal={false}>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="sm" className="text-zinc-400 hover:text-white transition-colors gap-2">
-          <Globe className="h-4 w-4" />
-          <span className="hidden sm:inline">{localeNames[currentLocale]}</span>
+        <Button
+          variant="ghost"
+          size="sm"
+          className="text-zinc-400 hover:text-white transition-colors gap-2 min-w-[100px] sm:min-w-[120px] justify-start focus:outline-none focus-visible:outline-none focus-visible:ring-0"
+        >
+          <Globe className="h-4 w-4 shrink-0" />
+          <span className="hidden sm:inline truncate">{localeNames[currentLocale]}</span>
           <span className="sm:hidden">{localeFlags[currentLocale]}</span>
         </Button>
       </DropdownMenuTrigger>
