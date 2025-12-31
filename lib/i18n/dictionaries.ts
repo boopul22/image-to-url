@@ -265,6 +265,113 @@ const dictionaries = {
         faq: { title: "Questions?", content: "Have questions about our features? Check out our FAQ on the home page or contact us." }
       }
     },
+    aboutBoopul: {
+      meta: {
+        title: "About Boopul | AI Creator & No-Code Explorer",
+        description: "Learn about Boopul - an AI-powered creator, no-code explorer, and disciplined builder focused on AI workflows, automation, and personal development.",
+        keywords: "AI creator, no-code, web development, automation, personal development, fitness, discipline",
+        ogTitle: "About Boopul | AI Creator & No-Code Explorer",
+        ogDescription: "Learn about Boopul - an AI-powered creator, no-code explorer, and disciplined builder focused on AI workflows, automation, and personal development.",
+      },
+      hero: {
+        badge: "Built with passion",
+        title: "Hi, I'm Boopul 👋",
+        description: "I'm an AI-powered creator, no-code explorer, and disciplined builder who believes that consistency beats talent and action beats intention.",
+      },
+      story: {
+        title: "My Story",
+        subtitle: "The journey that shaped who I am today",
+        content: "My journey hasn't been smooth or privileged. I grew up with limited resources, struggled academically in my early years, and paid my own college fees through persistence and self-learning. Those experiences shaped how I think, work, and build today — with clarity, resilience, and focus on long-term growth.",
+      },
+      whatIDo: {
+        title: "What I Do",
+        subtitle: "I enjoy working at the intersection of AI, no-code tools, design, automation, and personal development",
+        cards: {
+          apps: {
+            title: "Apps & Tools",
+            description: "Build small apps, tools, and websites using AI, no-code, and lightweight tech",
+          },
+          ai: {
+            title: "AI Workflows",
+            description: "Experiment with AI workflows to automate ideas and simplify complex tasks",
+          },
+          digital: {
+            title: "Digital Assets",
+            description: "Design and contribute to digital assets and creative projects",
+          },
+          self: {
+            title: "Self-Improvement",
+            description: "Create content around discipline, fitness, self-improvement, and stoic thinking",
+          },
+          discipline: {
+            title: "Discipline & Fitness",
+            description: "Train regularly, follow structured routines, and treat physical health as a foundation",
+          },
+          comm: {
+            title: "Communication",
+            description: "Continuously improve English communication and clarity of thought",
+          },
+        },
+        footer: "I prefer practical execution over theory, clean systems over noise, and steady progress over shortcuts.",
+      },
+      philosophy: {
+        title: "Personal Philosophy",
+        items: [
+          "Start small.",
+          "Stay consistent.",
+          "Build quietly.",
+          "Let results make the noise.",
+        ],
+      },
+      projects: {
+        title: "My Other Projects",
+        visit: "Visit {title}",
+        items: {
+          extractpics: {
+            title: "ExtractPics",
+            description: "Extract and download images from any website instantly. Supports batch processing of up to 5 URLs, quick & deep scan modes, smart filtering by file type and dimensions.",
+          },
+          imagetourl: {
+            title: "ImageToURL",
+            description: "Convert any image to URL instantly. Free image hosting with no signup. Upload JPG, PNG, GIF, SVG, WebP up to 10MB with global CDN delivery.",
+          },
+          storiespdf: {
+            title: "StoriesPDF",
+            description: "Discover captivating stories for all ages. Download and enjoy beautifully crafted PDF stories anytime, anywhere. Perfect for bedtime reading and storytelling.",
+          },
+          tamilkathai: {
+            title: "TamilKathai",
+            description: "Welcome to Tamil Kathai - A collection of wonderful Tamil stories. Explore rich cultural narratives and traditional tales in Tamil language.",
+          },
+        },
+      },
+      connect: {
+        title: "Let's Connect",
+        description: "If you're interested in AI, no-code tools, creative technology, fitness discipline, or personal growth — welcome, you're in the right place.",
+        items: {
+          github: {
+            title: "GitHub",
+            description: "Projects, experiments, and code",
+          },
+          instaPersonal: {
+            title: "Personal Instagram",
+            description: "Life, fitness, and everyday moments",
+          },
+          instaDev: {
+            title: "Developer Instagram",
+            description: "No-code, AI experiments, creator life",
+          },
+          email: {
+            title: "Email",
+            description: "blog.boopul@gmail.com",
+          },
+          portfolio: {
+            title: "Portfolio",
+            description: "View my complete work and projects",
+          },
+        },
+      },
+    }
   },
   zh: {
     nav: {
@@ -409,6 +516,113 @@ const dictionaries = {
           answer: "हां, सभी अपलोड HTTPS का उपयोग करके एन्क्रिप्टेड होते हैं। इमेज एंटरप्राइज-ग्रेड क्लाउड इंफ्रास्ट्रक्चर पर स्टोर होती हैं जिसकी 99.9% अपटाइम है।"
         }
       ]
+    },
+    aboutBoopul: {
+      meta: {
+        title: "बूपुल के बारे में | AI क्रिएटर और नो-कोड एक्सप्लोरर",
+        description: "बूपुल के बारे में जानें - एक AI-संचालित क्रिएटर, नो-कोड एक्सप्लोरर, और अनुशासित बिल्डर जो AI वर्कफ़्लो, ऑटोमेशन और व्यक्तिगत विकास पर केंद्रित है।",
+        keywords: "AI क्रिएटर, नो-कोड, वेब डेवलपमेंट, ऑटोमेशन, व्यक्तिगत विकास, फिटनेस, अनुशासन",
+        ogTitle: "बूपुल के बारे में | AI क्रिएटर और नो-कोड एक्सप्लोरर",
+        ogDescription: "बूपुल के बारे में जानें - एक AI-संचालित क्रिएटर, नो-कोड एक्सप्लोरर, और अनुशासित बिल्डर जो AI वर्कफ़्लो, ऑटोमेशन और व्यक्तिगत विकास पर केंद्रित है।",
+      },
+      hero: {
+        badge: "जुनून के साथ बनाया गया",
+        title: "नमस्ते, मैं बूपुल हूँ 👋",
+        description: "मैं एक AI-संचालित क्रिएटर, नो-कोड एक्सप्लोरर और अनुशासित बिल्डर हूँ जो मानता है कि निरंतरता प्रतिभा को मात देती है और कार्य इरादे को मात देता है।",
+      },
+      story: {
+        title: "मेरी कहानी",
+        subtitle: "वह यात्रा जिसने आज मुझे गढ़ा है",
+        content: "मेरी यात्रा आसान या विशेषाधिकार प्राप्त नहीं रही है। मैं सीमित संसाधनों के साथ बड़ा हुआ, अपने शुरुआती वर्षों में शैक्षणिक रूप से संघर्ष किया, और दृढ़ता और स्वयं-सीखने के माध्यम से अपनी कॉलेज की फीस का भुगतान किया। उन अनुभवों ने आकार दिया कि मैं आज कैसे सोचता हूं, काम करता हूं और निर्माण करता हूं — स्पष्टता, लचीलापन और दीर्घकालिक विकास पर ध्यान देने के साथ।",
+      },
+      whatIDo: {
+        title: "मैं क्या करता हूँ",
+        subtitle: "मुझे AI, नो-कोड टूल्स, डिज़ाइन, ऑटोमेशन और व्यक्तिगत विकास के संगम पर काम करना पसंद है",
+        cards: {
+          apps: {
+            title: "ऐप्स और टूल्स",
+            description: "AI, नो-कोड और लाइटवेट तकनीक का उपयोग करके छोटे ऐप्स, टूल्स और वेबसाइट बनाएं",
+          },
+          ai: {
+            title: "AI वर्कफ़्लो",
+            description: "विचारों को स्वचालित करने और जटिल कार्यों को सरल बनाने के लिए AI वर्कफ़्लो के साथ प्रयोग करें",
+          },
+          digital: {
+            title: "डिजिटल एसेट्स",
+            description: "डिजिटल एसेट्स और रचनात्मक परियोजनाओं में डिज़ाइन और योगदान करें",
+          },
+          self: {
+            title: "आत्म-सुधार",
+            description: "अनुशासन, फिटनेस, आत्म-सुधार और स्टोइक सोच के बारे में सामग्री बनाएं",
+          },
+          discipline: {
+            title: "अनुशासन और फिटनेस",
+            description: "नियमित रूप से प्रशिक्षण लें, संरचित दिनचर्या का पालन करें और शारीरिक स्वास्थ्य को आधार मानें",
+          },
+          comm: {
+            title: "संचार",
+            description: "अंग्रेजी संचार और विचार की स्पष्टता में निरंतर सुधार करें",
+          },
+        },
+        footer: "मैं सिद्धांत पर व्यावहारिक निष्पादन, शोर पर साफ सिस्टम और शॉर्टकट पर निरंतर प्रगति पसंद करता हूं।",
+      },
+      philosophy: {
+        title: "व्यक्तिगत दर्शन",
+        items: [
+          "छोटा शुरू करें।",
+          "निरंतर रहें।",
+          "चुपचाप निर्माण करें।",
+          "परिणामों को शोर मचाने दें।",
+        ],
+      },
+      projects: {
+        title: "मेरी अन्य परियोजनाएं",
+        visit: "{title} पर जाएं",
+        items: {
+          extractpics: {
+            title: "ExtractPics",
+            description: "किसी भी वेबसाइट से तुरंत चित्र निकालें और डाउनलोड करें। 5 URL तक बैच प्रोसेसिंग, त्वरित और गहरी स्कैन मोड का समर्थन करता है।",
+          },
+          imagetourl: {
+            title: "ImageToURL",
+            description: "किसी भी छवि को तुरंत URL में बदलें। कोई साइनअप के साथ मुफ्त छवि होस्टिंग। वैश्विक CDN वितरण के साथ 10MB तक अपलोड करें।",
+          },
+          storiespdf: {
+            title: "StoriesPDF",
+            description: "सभी उम्र के लिए मनोरंजक कहानियों की खोज करें। कभी भी, कहीं भी खूबसूरती से तैयार की गई PDF कहानियां डाउनलोड करें और आनंद लें।",
+          },
+          tamilkathai: {
+            title: "TamilKathai",
+            description: "तमिल कथाई में आपका स्वागत है - अद्भुत तमिल कहानियों का एक संग्रह। तमिल भाषा में समृद्ध सांस्कृतिक कथाओं का अन्वेषण करें।",
+          },
+        },
+      },
+      connect: {
+        title: "जुड़ें",
+        description: "यदि आप AI, नो-कोड टूल्स, रचनात्मक तकनीक, फिटनेस अनुशासन, या व्यक्तिगत विकास में रुचि रखते हैं — आपका स्वागत है, आप सही जगह पर हैं।",
+        items: {
+          github: {
+            title: "GitHub",
+            description: "परियोजनाएं, प्रयोग और कोड",
+          },
+          instaPersonal: {
+            title: "पर्सनल इंस्टाग्राम",
+            description: "जीवन, फिटनेस और रोजमर्रा के पल",
+          },
+          instaDev: {
+            title: "डेवलपर इंस्टाग्राम",
+            description: "नो-कोड, AI प्रयोग, क्रिएटर लाइफ",
+          },
+          email: {
+            title: "ईमेल",
+            description: "blog.boopul@gmail.com",
+          },
+          portfolio: {
+            title: "पोर्टफोलियो",
+            description: "मेरा पूरा काम और परियोजनाएं देखें",
+          },
+        },
+      },
     },
   },
   es: {

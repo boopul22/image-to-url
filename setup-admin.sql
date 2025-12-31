@@ -7,7 +7,7 @@
 -- 1. Set a user as admin
 UPDATE auth.users 
 SET raw_user_meta_data = raw_user_meta_data || '{"is_admin": true}'::jsonb
-WHERE email = 'bipul281b@gmail.com';
+WHERE email = 'blog.boopul@gmail.com';
 
 -- 2. Verify admin users
 SELECT 

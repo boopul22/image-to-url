@@ -325,8 +325,8 @@ export default async function TermsPage({
                                 </ul>
                                 <p className="text-zinc-400">
                                     To report inappropriate content, contact us at:{" "}
-                                    <a href="mailto:boopul22@gmail.com" className="text-brand hover:underline">
-                                        boopul22@gmail.com
+                                    <a href="mailto:blog.boopul@gmail.com" className="text-brand hover:underline">
+                                        blog.boopul@gmail.com
                                     </a>
                                 </p>
                             </div>
@@ -425,11 +425,11 @@ export default async function TermsPage({
                                 <h2 className="text-2xl font-bold text-white mb-3">Questions about our terms?</h2>
                                 <p className="text-zinc-400 mb-6">We're here to clarify any questions about our terms of service.</p>
                                 <a
-                                    href="mailto:boopul22@gmail.com"
+                                    href="mailto:blog.boopul@gmail.com"
                                     className="inline-flex items-center gap-2 bg-brand hover:bg-brand/90 text-white font-medium px-6 py-3 rounded-full transition-colors"
                                 >
                                     <Mail className="w-4 h-4" />
-                                    Contact us at: boopul22@gmail.com
+                                    Contact us at: blog.boopul@gmail.com
                                 </a>
                                 <p className="text-zinc-500 text-sm mt-6">Last updated: January 1, 2025</p>
                             </div>

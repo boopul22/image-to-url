@@ -167,11 +167,17 @@ function OptimizedImage({
   const isExternal = src.startsWith('http')
 
   if (isExternal) {
+    // Check if it's an R2 image that needs proxying
+    const isR2Image = src.includes('pub-141831e61e69445289222976a15b6fb3.r2.dev')
+    const imageSrc = isR2Image
+      ? `/api/proxy-image?url=${encodeURIComponent(src)}`
+      : src
+
     return (
       <figure className="my-6">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={src}
+          src={imageSrc}
           alt={alt || ''}
           className="rounded-lg w-full"
           loading="lazy"
