@@ -84,6 +84,14 @@ export function Footer({ locale, dict }: FooterProps) {
                             </li>
                             <li>
                                 <Link
+                                    href={`/${locale}/blog`}
+                                    className="text-zinc-500 hover:text-brand text-xs transition-colors"
+                                >
+                                    Blog
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
                                     href={`/${locale}/about`}
                                     className="text-zinc-500 hover:text-brand text-xs transition-colors"
                                 >

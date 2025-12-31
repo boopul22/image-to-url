@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next'
 import { locales, defaultLocale } from '@/lib/i18n/config'
 import fs from 'fs'
 import path from 'path'
+import { getAllPosts } from '@/lib/blog/content'
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.imagetourl.cloud'
 
@@ -81,7 +82,7 @@ const publicRoutes = scanPublicRoutes(
   path.join(process.cwd(), 'app', '[locale]')
 )
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const entries: MetadataRoute.Sitemap = []
   const now = new Date()
 
@@ -107,6 +108,43 @@ export default function sitemap(): MetadataRoute.Sitemap {
           languages,
         },
       })
+    }
+  }
+
+  // Add blog posts to sitemap
+  try {
+    const posts = await getAllPosts(defaultLocale)
+
+    for (const post of posts) {
+      const route = `/blog/${post.slug}`
+
+      for (const locale of locales) {
+        const url = `${BASE_URL}/${locale}${route}`
+
+        // Create language alternates for this blog post
+        const languages: Record<string, string> = {}
+        for (const altLocale of locales) {
+          languages[altLocale] = `${BASE_URL}/${altLocale}${route}`
+        }
+        languages['x-default'] = `${BASE_URL}/${defaultLocale}${route}`
+
+        entries.push({
+          url,
+          lastModified: post.frontmatter.updatedAt
+            ? new Date(post.frontmatter.updatedAt)
+            : new Date(post.frontmatter.publishedAt),
+          changeFrequency: 'monthly',
+          priority: locale === defaultLocale ? 0.8 : 0.6,
+          alternates: {
+            languages,
+          },
+        })
+      }
+    }
+  } catch (error) {
+    // Blog content may not exist yet, continue without blog posts
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Sitemap: No blog posts found or error loading posts')
     }
   }
 

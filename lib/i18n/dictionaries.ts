@@ -4,6 +4,7 @@ const dictionaries = {
   en: {
     nav: {
       home: "Home",
+      blog: "Blog",
       documentation: "Documentation",
       api: "API",
       pricing: "Pricing",
@@ -11,6 +12,23 @@ const dictionaries = {
       signOut: "Sign Out",
       dashboard: "Dashboard",
       tools: "Tools",
+    },
+    blog: {
+      title: "Blog",
+      readMore: "Read more",
+      readingTime: "{minutes} min read",
+      postedOn: "Posted on",
+      byAuthor: "by",
+      relatedPosts: "Related Posts",
+      categories: "Categories",
+      tags: "Tags",
+      sharePost: "Share this post",
+      tableOfContents: "Table of Contents",
+      allPosts: "All Posts",
+      noPosts: "No posts found",
+      featured: "Featured",
+      latestPosts: "Latest Posts",
+      searchPosts: "Search posts...",
     },
     auth: {
       signIn: "Sign In",
@@ -251,6 +269,7 @@ const dictionaries = {
   zh: {
     nav: {
       home: "首页",
+      blog: "博客",
       documentation: "文档",
       api: "API",
       pricing: "价格",
@@ -395,6 +414,7 @@ const dictionaries = {
   es: {
     nav: {
       home: "Inicio",
+      blog: "Blog",
       documentation: "Documentación",
       api: "API",
       pricing: "Precios",
@@ -516,6 +536,7 @@ const dictionaries = {
   fr: {
     nav: {
       home: "Accueil",
+      blog: "Blog",
       documentation: "Documentation",
       api: "API",
       pricing: "Tarifs",
@@ -804,6 +825,7 @@ const dictionaries = {
   de: {
     nav: {
       home: "Startseite",
+      blog: "Blog",
       documentation: "Dokumentation",
       api: "API",
       pricing: "Preise",
@@ -852,6 +874,7 @@ const dictionaries = {
   ja: {
     nav: {
       home: "ホーム",
+      blog: "ブログ",
       documentation: "ドキュメント",
       api: "API",
       pricing: "料金",

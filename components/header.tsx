@@ -18,6 +18,7 @@ import {
 
 interface NavDict {
     home?: string
+    blog?: string
     documentation: string
     api: string
     pricing: string
@@ -34,6 +35,7 @@ interface HeaderProps {
 
 const navLinks = [
     { key: "home", href: "" },
+    { key: "blog", href: "/blog" },
     { key: "pricing", href: "/pricing" },
 ] as const
 

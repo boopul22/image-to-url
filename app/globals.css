@@ -226,3 +226,96 @@
 .nav-link[data-active="true"]::after {
   width: 100%;
 }
+
+/* Mobile Reading Optimizations */
+@media (max-width: 639px) {
+  /* Improved line height for mobile readability */
+  .prose p,
+  .prose li {
+    line-height: 1.8;
+  }
+
+  /* Better paragraph spacing on mobile */
+  .prose p {
+    margin-bottom: 1.25rem;
+  }
+
+  /* Better heading spacing on mobile */
+  .prose h2 {
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Better code block handling on mobile */
+  .prose pre {
+    font-size: 0.8125rem; /* 13px */
+    margin-left: -1rem;
+    margin-right: -1rem;
+    border-radius: 0;
+    padding: 1rem;
+  }
+
+  /* Tighter inline code on mobile */
+  .prose code:not(pre code) {
+    font-size: 0.8125rem;
+    word-break: break-word;
+    padding: 0.15rem 0.35rem;
+  }
+
+  /* Better list spacing on mobile */
+  .prose ul,
+  .prose ol {
+    padding-left: 1.25rem;
+  }
+
+  /* Better blockquote on mobile */
+  .prose blockquote {
+    margin-left: 0;
+    padding-left: 1rem;
+  }
+
+  /* Better image handling on mobile */
+  .prose img {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    max-width: calc(100% + 2rem);
+    width: calc(100% + 2rem);
+    border-radius: 0;
+  }
+
+  /* Better table handling on mobile */
+  .prose table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    font-size: 0.875rem;
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Safe area padding for devices with notches/home indicators */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .mobile-toc-fab {
+    bottom: calc(1.5rem + env(safe-area-inset-bottom));
+  }
+
+  [data-slot="drawer-content"] {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
