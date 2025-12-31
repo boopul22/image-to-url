@@ -162,7 +162,7 @@ function OptimizedImage({
   height,
   ...props
 }: React.ImgHTMLAttributes<HTMLImageElement>) {
-  if (!src) return null
+  if (!src || typeof src !== 'string') return null
 
   const isExternal = src.startsWith('http')
 
