@@ -422,11 +422,11 @@ export default async function CookiesPage({
                                 <h2 className="text-2xl font-bold text-white mb-3">Questions About Cookies?</h2>
                                 <p className="text-zinc-400 mb-6">If you have any questions about our use of cookies or this policy, please contact us.</p>
                                 <a
-                                    href="mailto:blog.boopul@gmail.com"
+                                    href="mailto:boopul22@gmail.com"
                                     className="inline-flex items-center gap-2 bg-brand hover:bg-brand/90 text-white font-medium px-6 py-3 rounded-full transition-colors"
                                 >
                                     <Mail className="w-4 h-4" />
-                                    Contact us at: blog.boopul@gmail.com
+                                    Contact us at: boopul22@gmail.com
                                 </a>
                             </div>
                         </section>

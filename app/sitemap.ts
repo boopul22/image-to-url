@@ -1,6 +1,5 @@
 import type { MetadataRoute } from 'next'
 import { locales, defaultLocale } from '@/lib/i18n/config'
-import { getAllPosts } from '@/lib/content'
 import fs from 'fs'
 import path from 'path'
 
@@ -104,36 +103,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: now,
         changeFrequency: 'weekly',
         priority: locale === defaultLocale ? 1.0 : 0.8,
-        alternates: {
-          languages,
-        },
-      })
-    }
-  }
-
-  // Add blog post entries
-  const posts = getAllPosts()
-  for (const post of posts) {
-    for (const locale of locales) {
-      const url = `${BASE_URL}/${locale}/blog/${post.slug}`
-
-      // Create language alternates for this blog post
-      const languages: Record<string, string> = {}
-      for (const altLocale of locales) {
-        languages[altLocale] = `${BASE_URL}/${altLocale}/blog/${post.slug}`
-      }
-      languages['x-default'] = `${BASE_URL}/${defaultLocale}/blog/${post.slug}`
-
-      // Use updatedAt if available, otherwise publishedAt
-      const lastModified = post.frontmatter.updatedAt
-        ? new Date(post.frontmatter.updatedAt)
-        : new Date(post.frontmatter.publishedAt)
-
-      entries.push({
-        url,
-        lastModified,
-        changeFrequency: 'monthly',
-        priority: locale === defaultLocale ? 0.9 : 0.7,
         alternates: {
           languages,
         },

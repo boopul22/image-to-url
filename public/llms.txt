@@ -21,7 +21,6 @@ ImageURL is a free, fast, and secure image hosting service that converts your im
 - **Mobile Friendly**: Works on all devices
 
 ## Use Cases
-- Blog and website images
 - Social media sharing
 - E-commerce product photos
 - Portfolio and gallery hosting
@@ -39,7 +38,7 @@ ImageURL is a free, fast, and secure image hosting service that converts your im
 
 ## Contact
 - Website: https://imagetourl.cloud
-- Email: blog.boopul@gmail.com
+- Email: boopul22@gmail.com
 - Support: Available 24/7
 
 ## Developer

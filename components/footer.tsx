@@ -147,7 +147,7 @@ export function Footer({ locale, dict }: FooterProps) {
                             <Instagram className="w-5 h-5" />
                         </a>
                         <a
-                            href="mailto:blog.boopul@gmail.com"
+                            href="mailto:boopul22@gmail.com"
                             className="text-zinc-500 hover:text-brand transition-colors"
                             aria-label="Email"
                         >

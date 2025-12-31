@@ -196,7 +196,7 @@ git push origin feature/amazing-feature
 
 [![GitHub](https://img.shields.io/badge/GitHub-@boopul22-181717?style=for-the-badge&logo=github)](https://github.com/boopul22)
 [![Instagram](https://img.shields.io/badge/Instagram-@no.code__boopul-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/no.code_boopul)
-[![Email](https://img.shields.io/badge/Email-blog.boopul@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:blog.boopul@gmail.com)
+[![Email](https://img.shields.io/badge/Email-boopul22@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:boopul22@gmail.com)
 
 </div>
 

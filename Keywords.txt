@@ -100,22 +100,6 @@
 ✓ upload image to get url (UPLOAD-IMAGE-TO-URL PAGE)
 ✓ get image url (UPLOAD-IMAGE-TO-URL PAGE)
 
-================================================================================
-## BATCH 4: How-To / Informational Keywords (Great for Blog Posts)
-================================================================================
-
-✗ how to turn image into url
-✗ how to create an image url
-✗ how to make image url
-✗ how to convert image to url
-✗ how to get image url
-✗ how to get a url for an image
-✗ how to make an image a url link
-✗ how do you get an image url
-✗ how do i get image url
-✗ how to make a image url
-✗ what is a image url
-✗ what is the url of an image
 
 ================================================================================
 ## BATCH 5: Format-Specific Keywords
@@ -234,5 +218,4 @@ PRIORITY TARGETS (Not yet used - 80 keywords):
 1. Create "PDF to URL" page (14 keywords)
 2. Create "Video to URL" page (5 keywords)  
 3. Target "photo/picture" variations (25+ keywords)
-4. Create blog posts for "how to" keywords (12 keywords)
 5. Target remaining format variations

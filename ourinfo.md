@@ -42,7 +42,7 @@ The same mindset applies to my work — **show up daily, improve incrementally, 
 ## 📬 Contact
 
 - ✉️ **Email**  
-  blog.boopul@gmail.com
+  boopul22@gmail.com
 
 ---
 

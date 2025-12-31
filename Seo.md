@@ -10,7 +10,7 @@ developers.google.com
 . Avoid keyword stuffing – use the focus terms judiciously as Google considers stuffing to violate spam policies
 developers.google.com
 .
-Include long-tail phrases and synonyms in content. For example, blog or help pages could target questions like “How to get a shareable link for my image?”
+Include long-tail phrases and synonyms in content. For example, help pages could target questions like “How to get a shareable link for my image?”
 Answer the “Common Questions” on the site with full responses (not just question headlines) so pages are informative. This both improves UX and provides material for FAQ schema (see below).
 Title Tags & Meta Descriptions
 Ensure every page has a unique, keyword-focused title tag and meta description. Put the main keyword (“image to URL” or its translation) near the front of the title for maximum relevance
@@ -48,13 +48,13 @@ developers.google.com
 Use responsive images or set max-width for mobile.
 If adding screenshots or instructional graphics, caption them with keywords when relevant.
 Internal Linking & Site Structure
-Link between related pages using descriptive anchor text. For example, from the homepage or blog, link “Bulk Upload tool” text to the Bulk Upload page, “Image Hosting” to that service, etc. Google notes that appropriate anchor text helps users and search engines understand the linked page
+Link between related pages using descriptive anchor text. For example, from the homepage, link “Bulk Upload tool” text to the Bulk Upload page, “Image Hosting” to that service, etc. Google notes that appropriate anchor text helps users and search engines understand the linked page
 developers.google.com
 . Make sure all key pages (tools, FAQs, policies) are accessible in the main menu or footer so nothing is orphaned.
 Create an HTML sitemap or XML sitemap of all pages (including each language version). In the XML sitemap, use <xhtml:link rel="alternate"> entries for hreflang on each URL
 weglot.com
 .
-Use consistent URL structure for languages, e.g. imagetourl.cloud/en/, /zh/, /es/, etc. Group related pages in logical subfolders (e.g. /tools/, /blog/).
+Use consistent URL structure for languages, e.g. imagetourl.cloud/en/, /zh/, /es/, etc. Group related pages in logical subfolders (e.g. /tools/).
 Implement canonical tags on pages to point to the preferred URL when necessary
 developers.google.com
 . For example, if “Free Hosting” has duplicate content to another page, canonicalize it to avoid confusion
@@ -88,7 +88,7 @@ FAQPage: If you add actual Q&A content (e.g. answers under each common question)
 thatcompany.com
 . (Ensure the page has the Q&As visible in HTML when using this schema.)
 Website Schema with Search (optional): If you implement a site search, add WebSite schema with a potentialAction SearchAction.
-Misc: If a blog is added, use Article or BlogPosting schema for posts. For tools, there isn’t a specific image-URL schema, but you could use WebApplication or SoftwareApplication if desired (with name/description).
+Misc: For tools, there isn’t a specific image-URL schema, but you could use WebApplication or SoftwareApplication if desired (with name/description).
 Schema.org vocabularies use English property names but accept values in any language
 schemaapp.com
 pageoneformula.com
@@ -99,7 +99,7 @@ Technical Recommendations
 Mobile & Speed: Ensure the site is mobile-friendly and fast-loading, as Google’s mobile-first index and ranking consider page speed and usability
 weglot.com
 . Minify CSS/JS, leverage caching/CDN (already using global CDN), and optimize images.
-Robots & Crawl: Use a robots.txt file to block any irrelevant sections (e.g. blank blog template) and noindex meta tags for pages you don’t want indexed (such as duplicate content or policy pages, if desired)
+Robots & Crawl: Use a robots.txt file to block any irrelevant sections and noindex meta tags for pages you don’t want indexed (such as duplicate content or policy pages, if desired)
 developers.google.com
 .
 Search Console & Analytics: Submit your sitemap to Google Search Console and Bing Webmaster Tools. Monitor indexing and fix errors. Google’s guide stresses monitoring site performance via Search Console

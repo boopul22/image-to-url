@@ -325,14 +325,14 @@ export default async function AboutPage({
                                 </a>
 
                                 <a
-                                    href="mailto:blog.boopul@gmail.com"
+                                    href="mailto:boopul22@gmail.com"
                                     className="group bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 hover:border-brand/30 transition-all duration-300 flex flex-col items-center text-center"
                                 >
                                     <div className="w-14 h-14 bg-brand/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-brand/20 transition-colors">
                                         <Mail className="w-7 h-7 text-brand" />
                                     </div>
                                     <h3 className="font-semibold text-white mb-1">Email</h3>
-                                    <p className="text-zinc-500 text-sm mb-3">blog.boopul@gmail.com</p>
+                                    <p className="text-zinc-500 text-sm mb-3">boopul22@gmail.com</p>
                                     <span className="inline-flex items-center gap-1 text-brand text-sm group-hover:gap-2 transition-all">
                                         Get in Touch <ArrowRight className="w-4 h-4" />
                                     </span>
