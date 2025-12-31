@@ -45,9 +45,9 @@ export function TableOfContents({
   }
 
   return (
-    <nav className="space-y-2">
-      <h3 className="text-sm font-semibold text-white mb-3">{title}</h3>
-      <ul className="space-y-1">
+    <nav className="space-y-3">
+      <h3 className="text-sm font-semibold text-white uppercase tracking-wide">{title}</h3>
+      <ul className="space-y-0.5">
         {headings.map(({ id, title, level }) => (
           <li key={id}>
             <a
@@ -61,13 +61,13 @@ export function TableOfContents({
                 }
               }}
               className={cn(
-                'block text-sm py-1 transition-colors border-l-2 hover:text-white',
-                level === 2 && 'pl-3',
-                level === 3 && 'pl-6',
-                level === 4 && 'pl-9',
+                'block text-sm py-2 transition-all duration-200 border-l-2 hover:text-white',
+                level === 2 && 'pl-4',
+                level === 3 && 'pl-7',
+                level === 4 && 'pl-10',
                 activeId === id
-                  ? 'border-brand text-brand'
-                  : 'border-transparent text-zinc-500 hover:border-zinc-600'
+                  ? 'border-brand text-brand bg-brand/5 font-medium'
+                  : 'border-transparent text-zinc-500 hover:border-zinc-600 hover:bg-zinc-800/30'
               )}
             >
               {title}

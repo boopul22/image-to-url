@@ -53,14 +53,14 @@ function Paragraph({ children, ...props }: React.HTMLAttributes<HTMLParagraphEle
   // If children contain block-level elements like images, use div to avoid hydration errors
   if (hasBlockChildren(children)) {
     return (
-      <div className="text-zinc-300 leading-relaxed mb-4" {...props}>
+      <div className="text-zinc-300 text-base sm:text-lg leading-relaxed sm:leading-loose mb-5 sm:mb-6" {...props}>
         {children}
       </div>
     )
   }
 
   return (
-    <p className="text-zinc-300 leading-relaxed mb-4" {...props}>
+    <p className="text-zinc-300 text-base sm:text-lg leading-relaxed sm:leading-loose mb-5 sm:mb-6" {...props}>
       {children}
     </p>
   )
@@ -98,7 +98,7 @@ function CustomLink({
 
 function UnorderedList({ children, ...props }: React.HTMLAttributes<HTMLUListElement>) {
   return (
-    <ul className="list-disc list-inside space-y-2 mb-4 text-zinc-300 ml-4" {...props}>
+    <ul className="list-disc list-outside space-y-2.5 sm:space-y-3 mb-5 sm:mb-6 text-zinc-300 ml-5 sm:ml-6 text-base sm:text-lg" {...props}>
       {children}
     </ul>
   )
@@ -106,7 +106,7 @@ function UnorderedList({ children, ...props }: React.HTMLAttributes<HTMLUListEle
 
 function OrderedList({ children, ...props }: React.HTMLAttributes<HTMLOListElement>) {
   return (
-    <ol className="list-decimal list-inside space-y-2 mb-4 text-zinc-300 ml-4" {...props}>
+    <ol className="list-decimal list-outside space-y-2.5 sm:space-y-3 mb-5 sm:mb-6 text-zinc-300 ml-5 sm:ml-6 text-base sm:text-lg" {...props}>
       {children}
     </ol>
   )
@@ -114,7 +114,7 @@ function OrderedList({ children, ...props }: React.HTMLAttributes<HTMLOListEleme
 
 function ListItem({ children, ...props }: React.HTMLAttributes<HTMLLIElement>) {
   return (
-    <li className="text-zinc-300" {...props}>
+    <li className="text-zinc-300 leading-relaxed sm:leading-loose" {...props}>
       {children}
     </li>
   )

@@ -46,12 +46,12 @@ export function ShareButtons({ url, title, description }: ShareButtonsProps) {
   }
 
   const buttonClass =
-    'p-3 sm:p-2.5 rounded-lg bg-zinc-800 text-zinc-400 hover:bg-zinc-700 hover:text-white transition-colors active:scale-95'
+    'size-12 sm:size-10 rounded-xl bg-zinc-800/80 text-zinc-400 hover:bg-zinc-700 hover:text-white transition-all duration-200 active:scale-95 flex items-center justify-center'
 
   return (
-    <div className="mt-6 sm:mt-6 pt-4 sm:pt-6 border-t border-zinc-800">
-      <h4 className="text-sm font-semibold text-white mb-3">Share this post</h4>
-      <div className="flex gap-2 sm:gap-2">
+    <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-zinc-800">
+      <h4 className="text-sm font-semibold text-white mb-4">Share this post</h4>
+      <div className="flex gap-3 sm:gap-2">
         <a
           href={shareLinks.twitter}
           target="_blank"
@@ -59,7 +59,7 @@ export function ShareButtons({ url, title, description }: ShareButtonsProps) {
           className={buttonClass}
           aria-label="Share on Twitter"
         >
-          <Twitter className="size-4" />
+          <Twitter className="size-5 sm:size-4" />
         </a>
         <a
           href={shareLinks.facebook}
@@ -68,7 +68,7 @@ export function ShareButtons({ url, title, description }: ShareButtonsProps) {
           className={buttonClass}
           aria-label="Share on Facebook"
         >
-          <Facebook className="size-4" />
+          <Facebook className="size-5 sm:size-4" />
         </a>
         <a
           href={shareLinks.linkedin}
@@ -77,7 +77,7 @@ export function ShareButtons({ url, title, description }: ShareButtonsProps) {
           className={buttonClass}
           aria-label="Share on LinkedIn"
         >
-          <Linkedin className="size-4" />
+          <Linkedin className="size-5 sm:size-4" />
         </a>
         <button
           onClick={copyToClipboard}
@@ -88,9 +88,9 @@ export function ShareButtons({ url, title, description }: ShareButtonsProps) {
           aria-label={copied ? 'Copied!' : 'Copy link'}
         >
           {copied ? (
-            <Check className="size-4" />
+            <Check className="size-5 sm:size-4" />
           ) : (
-            <LinkIcon className="size-4" />
+            <LinkIcon className="size-5 sm:size-4" />
           )}
         </button>
       </div>

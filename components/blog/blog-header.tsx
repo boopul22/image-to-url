@@ -93,7 +93,7 @@ export function BlogHeader({ post, locale }: BlogHeaderProps) {
 
       {/* Cover Image */}
       {frontmatter.coverImage && (
-        <div className="relative aspect-video rounded-lg sm:rounded-xl overflow-hidden mb-6 sm:mb-8 -mx-4 sm:mx-0">
+        <div className="relative aspect-video rounded-lg sm:rounded-xl overflow-hidden mb-6 sm:mb-8 mx-0">
           <Image
             src={frontmatter.coverImage}
             alt={frontmatter.coverImageAlt || frontmatter.title}

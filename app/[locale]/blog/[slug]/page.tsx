@@ -16,6 +16,7 @@ import { RelatedPosts } from '@/components/blog/related-posts'
 import { ShareButtons } from '@/components/blog/share-buttons'
 import { ReadingProgress } from '@/components/blog/reading-progress'
 import { MobileTocDrawer } from '@/components/blog/mobile-toc-drawer'
+import { TableOfContents } from '@/components/blog/table-of-contents'
 import { getPostBySlug, getAllPostSlugs, getRelatedPosts } from '@/lib/blog/content'
 import { processMDX } from '@/lib/blog/mdx'
 
@@ -149,28 +150,39 @@ export default async function BlogPostPage({
           </Suspense>
         </Header>
 
-        {/* Main Content */}
+        {/* Main Content - Responsive Grid Layout */}
         <main className="flex-grow relative z-10 px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
-          <div className="max-w-3xl mx-auto">
-            {/* Article Content */}
-            <article>
-              <BlogHeader post={post} locale={locale} />
+          <div className="max-w-7xl mx-auto">
+            <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-12 xl:gap-16">
+              {/* Article Content - Main Column */}
+              <article className="max-w-3xl">
+                <BlogHeader post={post} locale={locale} />
 
-              {/* MDX Content */}
-              <div className="prose prose-sm sm:prose-base prose-invert prose-zinc max-w-none prose-headings:scroll-mt-20 prose-p:text-zinc-300 prose-a:text-brand prose-a:no-underline hover:prose-a:underline prose-pre:bg-zinc-900 prose-pre:border prose-pre:border-zinc-800 prose-img:rounded-lg">
-                {content}
-              </div>
+                {/* MDX Content */}
+                <div className="prose prose-sm sm:prose-base prose-invert prose-zinc max-w-none prose-headings:scroll-mt-20 prose-p:text-zinc-300 prose-a:text-brand prose-a:no-underline hover:prose-a:underline prose-pre:bg-zinc-900 prose-pre:border prose-pre:border-zinc-800 prose-img:rounded-lg">
+                  {content}
+                </div>
 
-              {/* Share Buttons */}
-              <ShareButtons
-                url={`/${locale}/blog/${slug}`}
-                title={post.frontmatter.title}
-                description={post.frontmatter.description}
-              />
+                {/* Share Buttons */}
+                <ShareButtons
+                  url={`/${locale}/blog/${slug}`}
+                  title={post.frontmatter.title}
+                  description={post.frontmatter.description}
+                />
 
-              {/* Related Posts */}
-              <RelatedPosts posts={relatedPosts} locale={locale} />
-            </article>
+                {/* Related Posts */}
+                <RelatedPosts posts={relatedPosts} locale={locale} />
+              </article>
+
+              {/* Desktop Sidebar - Table of Contents */}
+              <aside className="hidden lg:block">
+                <div className="sticky top-24">
+                  <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-5">
+                    <TableOfContents headings={post.headings} />
+                  </div>
+                </div>
+              </aside>
+            </div>
           </div>
         </main>
 

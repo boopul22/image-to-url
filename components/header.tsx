@@ -57,9 +57,9 @@ export function Header({ locale, dict, children }: HeaderProps) {
 
     return (
         <nav className="w-full z-50 border-b border-white/5 glass-panel sticky top-0">
-            <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
                 {/* Logo */}
-                <Link href={`/${locale}`} className="flex items-center gap-2.5 group">
+                <Link href={`/${locale}`} className="flex items-center gap-2.5 group shrink-0">
                     <div className="w-9 h-9 rounded-lg overflow-hidden">
                         <img
                             src="/favicon-32x32.png"
@@ -73,12 +73,12 @@ export function Header({ locale, dict, children }: HeaderProps) {
                 </Link>
 
                 {/* Desktop Navigation */}
-                <div className="hidden md:flex items-center gap-8">
+                <div className="hidden md:flex items-center">
                     {navLinks.map((link) => (
                         <Link
                             key={link.key}
                             href={`/${locale}${link.href}`}
-                            className="nav-link text-sm font-medium text-zinc-400 hover:text-white transition-colors relative"
+                            className="nav-link text-sm font-medium text-zinc-400 hover:text-white transition-colors relative px-4 py-2"
                         >
                             {dict[link.key as keyof NavDict] || (link.key === "home" ? "Home" : link.key)}
                         </Link>
@@ -86,7 +86,7 @@ export function Header({ locale, dict, children }: HeaderProps) {
 
                     {/* Tools Dropdown - modal=false prevents body scroll lock */}
                     <DropdownMenu modal={false}>
-                        <DropdownMenuTrigger className="group nav-link text-sm font-medium text-zinc-400 hover:text-white transition-colors relative flex items-center gap-1 outline-none focus:outline-none focus-visible:outline-none">
+                        <DropdownMenuTrigger className="group nav-link text-sm font-medium text-zinc-400 hover:text-white transition-colors relative flex items-center gap-1.5 px-4 py-2 outline-none focus:outline-none focus-visible:outline-none">
                             {dict.tools || "Tools"}
                             <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200 group-data-[state=open]:rotate-180" />
                         </DropdownMenuTrigger>
