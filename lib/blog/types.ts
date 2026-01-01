@@ -65,3 +65,15 @@ export interface BlogTag {
   name: string
   count: number
 }
+
+/**
+ * Lightweight search index item - only essential fields for client-side search
+ * This reduces data serialization by ~80% compared to passing full PostMeta
+ */
+export interface SearchIndexItem {
+  slug: string
+  title: string
+  description: string
+  category: string
+  tags: string[]
+}

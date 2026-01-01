@@ -3,15 +3,15 @@
 import { useState, useEffect } from 'react'
 import { Search } from 'lucide-react'
 import { SearchDialog } from '@/components/blog/search-dialog'
-import type { PostMeta } from '@/lib/blog/types'
+import type { SearchIndexItem } from '@/lib/blog/types'
 import type { Locale } from '@/lib/i18n/config'
 
 interface BlogSearchProps {
-  posts: PostMeta[]
+  searchIndex: SearchIndexItem[]
   locale: Locale
 }
 
-export function BlogSearch({ posts, locale }: BlogSearchProps) {
+export function BlogSearch({ searchIndex, locale }: BlogSearchProps) {
   const [open, setOpen] = useState(false)
 
   // Cmd+K shortcut
@@ -41,7 +41,7 @@ export function BlogSearch({ posts, locale }: BlogSearchProps) {
       </button>
 
       <SearchDialog
-        posts={posts}
+        searchIndex={searchIndex}
         locale={locale}
         open={open}
         onOpenChange={setOpen}

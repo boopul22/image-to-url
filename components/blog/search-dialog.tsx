@@ -11,11 +11,11 @@ import {
 } from '@/components/ui/dialog'
 import { Input } from '@/components/ui/input'
 import { cn } from '@/lib/utils'
-import type { PostMeta } from '@/lib/blog/types'
+import type { SearchIndexItem } from '@/lib/blog/types'
 import type { Locale } from '@/lib/i18n/config'
 
 interface SearchDialogProps {
-  posts: PostMeta[]
+  searchIndex: SearchIndexItem[]
   locale: Locale
   open: boolean
   onOpenChange: (open: boolean) => void
@@ -29,7 +29,7 @@ interface SearchResult {
 }
 
 export function SearchDialog({
-  posts,
+  searchIndex,
   locale,
   open,
   onOpenChange,
@@ -50,30 +50,26 @@ export function SearchDialog({
     const searchResults: SearchResult[] = []
 
     // Search posts
-    posts.forEach((post) => {
-      const titleMatch = post.frontmatter.title.toLowerCase().includes(searchTerm)
-      const descMatch = post.frontmatter.description
-        .toLowerCase()
-        .includes(searchTerm)
-      const tagMatch = post.frontmatter.tags.some((tag) =>
+    searchIndex.forEach((item) => {
+      const titleMatch = item.title.toLowerCase().includes(searchTerm)
+      const descMatch = item.description.toLowerCase().includes(searchTerm)
+      const tagMatch = item.tags.some((tag) =>
         tag.toLowerCase().includes(searchTerm)
       )
-      const categoryMatch = post.frontmatter.category
-        .toLowerCase()
-        .includes(searchTerm)
+      const categoryMatch = item.category.toLowerCase().includes(searchTerm)
 
       if (titleMatch || descMatch || tagMatch || categoryMatch) {
         searchResults.push({
           type: 'post',
-          title: post.frontmatter.title,
-          description: post.frontmatter.description,
-          href: `/${locale}/blog/${post.slug}`,
+          title: item.title,
+          description: item.description,
+          href: `/${locale}/blog/${item.slug}`,
         })
       }
     })
 
     // Search categories
-    const categories = new Set(posts.map((p) => p.frontmatter.category))
+    const categories = new Set(searchIndex.map((p) => p.category))
     categories.forEach((category) => {
       if (category.toLowerCase().includes(searchTerm)) {
         searchResults.push({
@@ -85,7 +81,7 @@ export function SearchDialog({
     })
 
     // Search tags
-    const tags = new Set(posts.flatMap((p) => p.frontmatter.tags))
+    const tags = new Set(searchIndex.flatMap((p) => p.tags))
     tags.forEach((tag) => {
       if (tag.toLowerCase().includes(searchTerm)) {
         searchResults.push({
@@ -98,7 +94,7 @@ export function SearchDialog({
 
     setResults(searchResults.slice(0, 10))
     setSelectedIndex(0)
-  }, [query, posts, locale])
+  }, [query, searchIndex, locale])
 
   // Keyboard navigation
   const handleKeyDown = useCallback(

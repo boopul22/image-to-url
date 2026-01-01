@@ -189,7 +189,7 @@ export function Footer({ locale, dict }: FooterProps) {
 
                 {/* Bottom Bar */}
                 <div className="border-t border-white/5 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-                    <p className="text-zinc-500 text-xs">© 2025 ImageToURL. All rights reserved.</p>
+                    <p className="text-zinc-500 text-xs">© 2026 ImageToURL. All rights reserved.</p>
                     <p className="text-zinc-600 text-xs">
                         Free image to URL converter powered by global CDN
                     </p>
