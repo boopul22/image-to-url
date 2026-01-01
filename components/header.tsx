@@ -93,7 +93,7 @@ export function Header({ locale, dict, children }: HeaderProps) {
                 </div>
             )}
 
-            <nav className="w-full z-50 border-b border-white/5 glass-panel sticky top-0">
+            <nav className="w-full z-50 glass-panel sticky top-0">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
                     {/* Logo */}
                     <Link href={`/${locale}`} className="flex items-center gap-2.5 group shrink-0">

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import type { Tables } from "@/types/database.types"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -18,7 +18,16 @@ export function UploadCard({ upload }: UploadCardProps) {
   const [copiedUrl, setCopiedUrl] = useState(false)
   const [showDeleteDialog, setShowDeleteDialog] = useState(false)
   const [showExpiryEditor, setShowExpiryEditor] = useState(false)
+  const [isDeleting, setIsDeleting] = useState(false)
+  const [isDeleted, setIsDeleted] = useState(false)
+  const [canShare, setCanShare] = useState(false)
   const router = useRouter()
+
+  useEffect(() => {
+    if (typeof navigator !== "undefined" && "share" in navigator) {
+      setCanShare(true)
+    }
+  }, [])
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(upload.image_url)
@@ -27,19 +36,26 @@ export function UploadCard({ upload }: UploadCardProps) {
   }
 
   const handleShare = async () => {
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: upload.file_name,
-          url: upload.image_url,
-        })
-      } catch (err) {
-        console.error("Share failed:", err)
-      }
+    if (!canShare) return
+    try {
+      await navigator.share({
+        title: upload.file_name,
+        url: upload.image_url,
+      })
+    } catch (err) {
+      console.error("Share failed:", err)
     }
   }
 
   const handleDelete = async () => {
+    // Optimistic UI update - hide immediately
+    setIsDeleted(true)
+    setShowDeleteDialog(false)
+
+    // We don't need isDeleting state anymore for the UI since the card is gone,
+    // but we can keep it if we want to show a spinner in the dialog before closing.
+    // However, for "instant" feel, we should close dialog and hide card immediately.
+
     try {
       const response = await fetch(`/api/uploads/${upload.id}`, {
         method: "DELETE",
@@ -47,9 +63,18 @@ export function UploadCard({ upload }: UploadCardProps) {
 
       if (response.ok) {
         router.refresh()
+      } else {
+        // Revert optimistic update if failed
+        setIsDeleted(false)
+        const data = await response.json()
+        console.error("Delete failed:", data.error)
+        alert(data.error || "Failed to delete. Please try again.")
       }
     } catch (err) {
+      // Revert optimistic update if failed
+      setIsDeleted(false)
       console.error("Delete failed:", err)
+      alert("Failed to delete. Please try again.")
     }
   }
 
@@ -68,6 +93,9 @@ export function UploadCard({ upload }: UploadCardProps) {
   }
 
   const getExpiresIn = (expiresAt: string | null, customDeletion: string | null) => {
+    // If no expiry is set, image is permanent
+    if (!customDeletion && !expiresAt) return null
+
     const targetDate = new Date(customDeletion || expiresAt || "")
     const now = new Date()
     const diffMs = targetDate.getTime() - now.getTime()
@@ -81,6 +109,10 @@ export function UploadCard({ upload }: UploadCardProps) {
     return `${Math.ceil(diffDays / 30)} months`
   }
 
+  if (isDeleted) {
+    return null
+  }
+
   return (
     <>
       <DeleteDialog
@@ -88,6 +120,7 @@ export function UploadCard({ upload }: UploadCardProps) {
         onOpenChange={setShowDeleteDialog}
         onConfirm={handleDelete}
         fileName={upload.file_name}
+        isDeleting={isDeleting}
       />
 
       <ExpiryEditor
@@ -121,10 +154,16 @@ export function UploadCard({ upload }: UploadCardProps) {
                   <span>•</span>
                   <span>Uploaded {formatDate(upload.uploaded_at)}</span>
                   <span>•</span>
-                  <span className="flex items-center gap-1">
-                    <Clock size={12} />
-                    Expires in {getExpiresIn(upload.expires_at, upload.custom_deletion_time)}
-                  </span>
+                  {getExpiresIn(upload.expires_at, upload.custom_deletion_time) ? (
+                    <span className="flex items-center gap-1">
+                      <Clock size={12} />
+                      Expires in {getExpiresIn(upload.expires_at, upload.custom_deletion_time)}
+                    </span>
+                  ) : (
+                    <span className="flex items-center gap-1 text-green-500">
+                      Permanent
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
@@ -146,11 +185,10 @@ export function UploadCard({ upload }: UploadCardProps) {
               <Button
                 onClick={handleCopy}
                 size="sm"
-                className={`h-9 px-3 text-xs transition-all ${
-                  copiedUrl
-                    ? "bg-brand hover:bg-brand-dim text-white"
-                    : "bg-white hover:bg-zinc-200 text-dark"
-                }`}
+                className={`h-9 px-3 text-xs transition-all ${copiedUrl
+                  ? "bg-brand hover:bg-brand-dim text-white"
+                  : "bg-white hover:bg-zinc-200 text-dark"
+                  }`}
               >
                 {copiedUrl ? (
                   <>
@@ -165,7 +203,7 @@ export function UploadCard({ upload }: UploadCardProps) {
                 )}
               </Button>
 
-              {navigator.share && (
+              {canShare && (
                 <Button
                   onClick={handleShare}
                   variant="outline"

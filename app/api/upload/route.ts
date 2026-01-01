@@ -117,9 +117,7 @@ export async function POST(request: NextRequest) {
     const publicUrl = `${process.env.R2_PUBLIC_URL}/${fullPath}`
 
     // Save upload metadata to database
-    const expiresAt = new Date()
-    expiresAt.setDate(expiresAt.getDate() + 30) // 30 days from now
-
+    // Images are permanent by default - no expiry unless user sets one
     try {
       const { error: dbError } = await supabase.from("uploads").insert({
         user_id: user?.id || null,
@@ -129,7 +127,7 @@ export async function POST(request: NextRequest) {
         file_size: file.size,
         file_type: file.type,
         r2_key: fullPath,
-        expires_at: expiresAt.toISOString(),
+        expires_at: null, // Permanent by default
         status: "active",
       })
 

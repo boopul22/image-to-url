@@ -33,16 +33,27 @@ export async function DELETE(
       return NextResponse.json({ error: "Unauthorized" }, { status: 403 })
     }
 
-    // Delete from R2
-    await deleteFromR2(upload.r2_key)
+    // Delete from R2 - MUST succeed before deleting from database
+    const r2Success = await deleteFromR2(upload.r2_key)
 
-    // Delete from database
+    if (!r2Success) {
+      console.error(`[Delete] R2 deletion failed for upload ${id}, r2_key: ${upload.r2_key}`)
+      return NextResponse.json(
+        { error: "Failed to delete file from storage. Please try again." },
+        { status: 500 }
+      )
+    }
+
+    // Delete from database only after R2 deletion succeeds
     const { error: deleteError } = await supabase.from("uploads").delete().eq("id", id)
 
     if (deleteError) {
-      return NextResponse.json({ error: "Failed to delete upload" }, { status: 500 })
+      // R2 file is already deleted, log this orphan situation
+      console.error(`[Delete] Database deletion failed for upload ${id} after R2 success:`, deleteError)
+      return NextResponse.json({ error: "Failed to delete upload record" }, { status: 500 })
     }
 
+    console.log(`[Delete] Successfully deleted upload ${id} from R2 and database`)
     return NextResponse.json({ success: true })
   } catch (error) {
     console.error("Error deleting upload:", error)

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Trash2, AlertTriangle } from "lucide-react"
+import { Trash2, AlertTriangle, Loader2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
     AlertDialog,
@@ -71,7 +71,7 @@ export function BulkDeleteDialog({
                     >
                         {deleting ? (
                             <>
-                                <span className="animate-spin mr-2">⏳</span>
+                                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                                 Deleting...
                             </>
                         ) : (

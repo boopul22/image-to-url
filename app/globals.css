@@ -135,8 +135,7 @@
   }
 
   html {
-    /* Prevents layout shift when scrollbar appears/disappears */
-    scrollbar-gutter: stable;
+    @apply scroll-smooth;
   }
 
   body {
@@ -144,11 +143,6 @@
     font-feature-settings: "cv11", "ss01";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-
-  /* Override Radix UI scroll locking padding to prevent double padding with scrollbar-gutter */
-  body[data-scroll-locked] {
-    padding-right: 0 !important;
   }
 
   /* Custom scrollbar styles */
@@ -170,12 +164,12 @@
   }
 }
 
-/* Added glass panel effect */
+/* Added glass panel effect - translucent navbar */
 .glass-panel {
-  background: oklch(0.205 0 0 / 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid oklch(0.985 0 0 / 0.08);
+  background: oklch(0.145 0 0 / 0.6);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid oklch(0.985 0 0 / 0.05);
 }
 
 /* Added custom animations */
