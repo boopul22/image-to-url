@@ -1,13 +1,3 @@
 {
-    "buildCommand": "NEXT_PRIVATE_TURBOPACK=0 pnpm run build",
-    "crons": [
-        {
-            "path": "/api/cron/delete-expired",
-            "schedule": "0 */6 * * *"
-        },
-        {
-            "path": "/api/cron/retry-failed-deletions",
-            "schedule": "30 */12 * * *"
-        }
-    ]
+    "buildCommand": "NEXT_PRIVATE_TURBOPACK=0 pnpm run build"
 }

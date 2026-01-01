@@ -1,0 +1,70 @@
+name: Scheduled Cron Jobs
+
+on:
+  schedule:
+    # Delete expired uploads - every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      job:
+        description: 'Which job to run'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - delete-expired
+          - retry-failed
+
+jobs:
+  delete-expired:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' && (github.event.inputs.job == 'all' || github.event.inputs.job == 'delete-expired') || github.event_name == 'schedule'
+    steps:
+      - name: Delete expired uploads
+        run: |
+          response=$(curl -s -w "\n%{http_code}" -X GET "${{ secrets.APP_URL }}/api/cron/delete-expired" \
+            -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}")
+
+          http_code=$(echo "$response" | tail -n1)
+          body=$(echo "$response" | sed '$d')
+
+          echo "Response: $body"
+          echo "Status: $http_code"
+
+          if [ "$http_code" != "200" ]; then
+            echo "Cron job failed with status $http_code"
+            exit 1
+          fi
+
+  retry-failed:
+    runs-on: ubuntu-latest
+    # Run every 12 hours (at 0:30 and 12:30)
+    if: github.event_name == 'workflow_dispatch' && (github.event.inputs.job == 'all' || github.event.inputs.job == 'retry-failed') || (github.event_name == 'schedule' && (github.event.schedule == '0 */6 * * *') && (contains('0,12', format('{0}', github.event.schedule))))
+    steps:
+      - name: Check if should run (every 12 hours)
+        id: check
+        run: |
+          hour=$(date -u +%H)
+          if [ "$hour" == "00" ] || [ "$hour" == "12" ]; then
+            echo "should_run=true" >> $GITHUB_OUTPUT
+          else
+            echo "should_run=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Retry failed deletions
+        if: steps.check.outputs.should_run == 'true' || github.event_name == 'workflow_dispatch'
+        run: |
+          response=$(curl -s -w "\n%{http_code}" -X GET "${{ secrets.APP_URL }}/api/cron/retry-failed-deletions" \
+            -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}")
+
+          http_code=$(echo "$response" | tail -n1)
+          body=$(echo "$response" | sed '$d')
+
+          echo "Response: $body"
+          echo "Status: $http_code"
+
+          if [ "$http_code" != "200" ]; then
+            echo "Cron job failed with status $http_code"
+            exit 1
+          fi
