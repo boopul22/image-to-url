@@ -1,86 +1,60 @@
 import type { MetadataRoute } from 'next'
 import { locales, defaultLocale } from '@/lib/i18n/config'
-import fs from 'fs'
-import path from 'path'
 import { getAllPosts } from '@/lib/blog/content'
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.imagetourl.cloud'
 
-// Protected routes that should be excluded from the sitemap
-const EXCLUDED_ROUTES = ['/admin', '/auth', '/dashboard']
-
-/**
- * Checks if a route is public (should be included in sitemap)
- */
-function isPublicRoute(route: string): boolean {
-  for (const excluded of EXCLUDED_ROUTES) {
-    if (route === excluded || route.startsWith(excluded + '/')) {
-      return false
-    }
-  }
-  return true
-}
-
-/**
- * Converts a filesystem directory path to a URL route
- */
-function pathToRoute(dirPath: string, baseDir: string): string {
-  const relativePath = path.relative(baseDir, dirPath)
-
-  if (!relativePath || relativePath === '.') {
-    return ''
-  }
-
-  return '/' + relativePath.split(path.sep).join('/')
-}
-
-/**
- * Recursively walks a directory to find all page.tsx files
- */
-function walkDirectory(dir: string, baseDir: string): string[] {
-  const routes: string[] = []
-  const entries = fs.readdirSync(dir, { withFileTypes: true })
-
-  for (const entry of entries) {
-    // Skip hidden files and dynamic route directories (e.g., [slug])
-    if (entry.name.startsWith('.') || entry.name.startsWith('[')) continue
-
-    const fullPath = path.join(dir, entry.name)
-
-    if (entry.isDirectory()) {
-      routes.push(...walkDirectory(fullPath, baseDir))
-    } else if (entry.name === 'page.tsx') {
-      const route = pathToRoute(dir, baseDir)
-      routes.push(route)
-    }
-  }
-
-  return routes
-}
-
-/**
- * Scans the filesystem to discover all public routes
- */
-function scanPublicRoutes(baseDir: string): string[] {
-  if (!fs.existsSync(baseDir)) {
-    throw new Error(`Directory not found: ${baseDir}`)
-  }
-
-  const allRoutes = walkDirectory(baseDir, baseDir)
-  const publicRoutes = allRoutes.filter(isPublicRoute)
-  publicRoutes.sort()
-
-  if (process.env.NODE_ENV === 'development') {
-    console.log(`Sitemap: Discovered ${publicRoutes.length} public routes`)
-  }
-
-  return publicRoutes
-}
-
-// Dynamically discover all public routes from the filesystem
-const publicRoutes = scanPublicRoutes(
-  path.join(process.cwd(), 'app', '[locale]')
-)
+// Static list of public routes (excluding protected routes like /admin, /auth, /dashboard)
+// This is required because filesystem scanning doesn't work on Vercel's serverless environment
+const publicRoutes: string[] = [
+  '', // home page
+  '/about',
+  '/blog',
+  '/cookies',
+  '/pricing',
+  '/privacy',
+  '/terms',
+  // Tools routes
+  '/tools/base64-to-url',
+  '/tools/bulk-upload',
+  '/tools/convert-image-to-link',
+  '/tools/convert-picture-to-url',
+  '/tools/create-image-url',
+  '/tools/free-image-hosting',
+  '/tools/gif-to-url',
+  '/tools/image-embed-code',
+  '/tools/image-link-generator',
+  '/tools/image-to-data-url',
+  '/tools/image-to-short-url',
+  '/tools/jpeg-to-url',
+  '/tools/jpg-to-url',
+  '/tools/pdf-to-url',
+  '/tools/photo-link-creator',
+  '/tools/photo-to-url',
+  '/tools/picture-to-link',
+  '/tools/picture-url-maker',
+  '/tools/png-to-url',
+  '/tools/qr-to-url',
+  '/tools/svg-to-url',
+  '/tools/upload-image-to-url',
+  '/tools/url-generator-for-image',
+  '/tools/url-to-qr-code',
+  '/tools/video-to-url',
+  '/tools/webp-to-url',
+  // Use cases routes
+  '/use-cases/discord',
+  '/use-cases/espn-fantasy',
+  '/use-cases/fantasy-sports',
+  '/use-cases/html',
+  '/use-cases/javascript',
+  '/use-cases/minecraft',
+  '/use-cases/nodejs',
+  '/use-cases/python',
+  '/use-cases/react',
+  '/use-cases/sheets',
+  '/use-cases/slack',
+  '/use-cases/wordpress',
+]
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const entries: MetadataRoute.Sitemap = []
