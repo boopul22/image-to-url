@@ -2,6 +2,9 @@ import { UploadZone } from "@/components/upload-zone"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { FAQSection } from "@/components/faq-section"
+import { IntroductionSection } from "@/components/introduction-section"
+import { UseCasesSection } from "@/components/use-cases-section"
+import { TipsSection } from "@/components/tips-section"
 import { NavAuth } from "@/components/nav-auth"
 import { Button } from "@/components/ui/button"
 import { Suspense } from "react"
@@ -33,6 +36,10 @@ interface ToolPageTemplateProps {
     title: string
     subtitle: string
     description: string
+    introduction?: {
+      title: string
+      paragraphs: string[]
+    }
     features: {
       title: string
       items: string[]
@@ -40,6 +47,14 @@ interface ToolPageTemplateProps {
     howItWorks: {
       title: string
       steps: { title: string; description: string }[]
+    }
+    useCases?: {
+      title: string
+      items: { title: string; description: string }[]
+    }
+    tips?: {
+      title: string
+      items: string[]
     }
     faq: {
       title: string
@@ -98,6 +113,14 @@ export function ToolPageTemplate({ locale, dict, toolDict }: ToolPageTemplatePro
             </p>
           </div>
 
+          {/* Introduction Section - Above Upload Zone for AdSense compliance */}
+          {toolDict.introduction && (
+            <IntroductionSection
+              title={toolDict.introduction.title}
+              paragraphs={toolDict.introduction.paragraphs}
+            />
+          )}
+
           <UploadZone dict={dict} />
         </section>
 
@@ -121,6 +144,14 @@ export function ToolPageTemplate({ locale, dict, toolDict }: ToolPageTemplatePro
           </div>
         </section>
 
+        {/* Use Cases Section */}
+        {toolDict.useCases && (
+          <UseCasesSection
+            title={toolDict.useCases.title}
+            items={toolDict.useCases.items}
+          />
+        )}
+
         {/* Features Section */}
         <section className="py-16 px-4 bg-white/[0.02]">
           <div className="max-w-4xl mx-auto">
@@ -140,6 +171,14 @@ export function ToolPageTemplate({ locale, dict, toolDict }: ToolPageTemplatePro
             </div>
           </div>
         </section>
+
+        {/* Tips Section */}
+        {toolDict.tips && (
+          <TipsSection
+            title={toolDict.tips.title}
+            items={toolDict.tips.items}
+          />
+        )}
 
         {/* FAQ Section */}
         <FAQSection title={toolDict.faq.title} items={toolDict.faq.items} />

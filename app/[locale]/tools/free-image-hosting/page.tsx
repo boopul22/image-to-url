@@ -43,6 +43,14 @@ const defaultToolContent = {
     title: "Free Image Hosting",
     subtitle: "Upload Images & Get Instant URLs",
     description: "Host your images for free with our reliable image hosting service. Upload any photo and get a shareable URL instantly. No signup, no hidden fees, just simple image hosting.",
+    introduction: {
+        title: "Reliable Free Image Hosting for Everyone",
+        paragraphs: [
+            "Free image hosting provides a simple solution to one of the internet's most common needs: sharing images online. Whether you're a blogger, developer, small business owner, or casual user, having reliable hosting means your images are always accessible when you need them—without paying monthly fees or managing complex infrastructure.",
+            "Our free hosting service stores your images on a global content delivery network (CDN), ensuring fast loading times for viewers anywhere in the world. Unlike social media platforms that compress your uploads or file-sharing services with download limits, we preserve your image quality and provide direct URLs that work everywhere.",
+            "With no registration required for basic use, you can start hosting images immediately. Power users can create a free account for additional features like permanent storage, folder organization, and upload history. We're committed to keeping core hosting features free forever.",
+        ],
+    },
     features: {
         title: "Why Choose Our Free Image Hosting?",
         items: [
@@ -71,6 +79,28 @@ const defaultToolContent = {
                 title: "Share Your URL",
                 description: "Copy your image URL and use it anywhere. Your image is now hosted and accessible from anywhere in the world.",
             },
+        ],
+    },
+    useCases: {
+        title: "Who Uses Free Image Hosting",
+        items: [
+            { title: "Bloggers & Writers", description: "Host header images, inline graphics, and featured photos for blog posts without paying for expensive hosting plans." },
+            { title: "Online Sellers", description: "Upload product photos for eBay, Etsy, Poshmark, and Facebook Marketplace listings with reliable, free hosting." },
+            { title: "Forum Users & Communities", description: "Share images on Reddit, Discord, gaming forums, and hobby communities where direct uploads may be limited." },
+            { title: "Developers & Designers", description: "Host mockups, screenshots, and assets for projects, portfolios, and documentation without cluttering your server." },
+            { title: "Teachers & Students", description: "Include images in online assignments, study materials, presentations, and educational resources." },
+            { title: "Small Businesses", description: "Host logos, team photos, and marketing images for websites, email campaigns, and social media without added costs." },
+        ],
+    },
+    tips: {
+        title: "Free Image Hosting Tips",
+        items: [
+            "Compress images before uploading—smaller files load faster and won't count against any fair-use limits.",
+            "Use the bulk upload feature to host multiple images at once for large projects or photo galleries.",
+            "Create a free account to prevent your images from expiring after 30 days.",
+            "Organize your hosted images with folders to easily find them later when you have many uploads.",
+            "Check your image dimensions before uploading—hosting doesn't resize, so upload the size you actually need.",
+            "For mission-critical images, keep a backup of the original files on your local device.",
         ],
     },
     faq: {

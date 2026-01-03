@@ -41,6 +41,14 @@ const defaultToolContent = {
   title: "SVG to URL Converter",
   subtitle: "Free Vector Image Hosting",
   description: "Convert your SVG vector images to shareable URLs instantly. Perfect scalability at any size.",
+  introduction: {
+    title: "The Power of Scalable Vector Graphics",
+    paragraphs: [
+      "SVG (Scalable Vector Graphics) is the gold standard for logos, icons, and illustrations on the web. Unlike raster images that pixelate when enlarged, SVG files are mathematically defined shapes that render perfectly at any size—from a tiny favicon to a billboard-sized display.",
+      "When you convert an SVG to a URL, you're creating a lightweight, universally accessible link to your vector artwork. SVG files are typically just a few kilobytes, meaning incredibly fast load times. Plus, they can be styled with CSS and animated with JavaScript, making them incredibly versatile for web applications.",
+      "Designers and developers rely on SVG URLs for brand assets, UI icons, infographics, and interactive graphics. Our converter hosts your SVG on a global CDN, ensuring your vector graphics load instantly for viewers anywhere in the world while maintaining their crisp, scalable quality.",
+    ],
+  },
   features: {
     title: "Why Use Our SVG to URL Converter?",
     items: [
@@ -69,6 +77,28 @@ const defaultToolContent = {
         title: "Use Anywhere",
         description: "Embed in HTML, use in CSS, or link directly. Scales perfectly at any size.",
       },
+    ],
+  },
+  useCases: {
+    title: "Perfect Use Cases for SVG URLs",
+    items: [
+      { title: "Logo Hosting", description: "Host company logos that look crisp on any screen—from mobile to 4K displays—without multiple file sizes." },
+      { title: "Icon Libraries", description: "Create hosted icon sets for web applications with URLs you can reference across multiple projects." },
+      { title: "Infographics", description: "Share detailed charts, diagrams, and data visualizations that remain sharp when users zoom in." },
+      { title: "Design System Assets", description: "Host UI components, illustrations, and brand assets as accessible URLs for your design team." },
+      { title: "Documentation", description: "Embed technical diagrams, flowcharts, and architectural drawings that scale perfectly in any viewport." },
+      { title: "Print Preparation", description: "Share vector artwork with print vendors using direct URLs—no file attachments needed." },
+    ],
+  },
+  tips: {
+    title: "Pro Tips for SVG Hosting",
+    items: [
+      "Optimize SVGs with tools like SVGOMG before uploading—you can often reduce file size by 50% or more.",
+      "Remove unnecessary metadata, comments, and editor-specific data from SVG files for cleaner code.",
+      "For logos, ensure text is converted to outlines so fonts render correctly without external dependencies.",
+      "Use viewBox attributes to make your SVGs responsive—they'll scale perfectly in any container.",
+      "Consider URL-encoding simple SVGs for inline use in CSS as data URIs for critical above-the-fold graphics.",
+      "Sign in to organize brand assets and icons in folders for easier team access and management.",
     ],
   },
   faq: {

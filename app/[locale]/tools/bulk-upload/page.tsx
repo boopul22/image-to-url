@@ -41,6 +41,14 @@ const defaultToolContent = {
   title: "Bulk Image Upload",
   subtitle: "Upload Multiple Images at Once",
   description: "Upload multiple images simultaneously and get shareable URLs for each. Save time with batch uploads.",
+  introduction: {
+    title: "Streamline Your Image Workflow",
+    paragraphs: [
+      "When you have dozens or hundreds of images to share online, uploading them one by one is simply not practical. Our bulk upload tool lets you drag and drop an entire folder of images and get shareable URLs for every single file in seconds—no repetitive clicking, no waiting between uploads.",
+      "Every image uploads in parallel to our global CDN, maximizing speed while maintaining full quality. Whether you're preparing an e-commerce catalog, migrating a photo gallery, or setting up image assets for a website redesign, bulk upload handles the heavy lifting so you can focus on what matters.",
+      "Once uploaded, copy individual URLs or export all links at once as a text file. Signed-in users can organize batches into folders, set uniform expiration policies, and manage all uploaded assets from a central dashboard. It's image hosting that scales with your workflow.",
+    ],
+  },
   features: {
     title: "Why Use Our Bulk Upload Tool?",
     items: [
@@ -69,6 +77,28 @@ const defaultToolContent = {
         title: "Get All URLs",
         description: "Copy individual URLs or all URLs at once. Perfect for galleries and batch processing.",
       },
+    ],
+  },
+  useCases: {
+    title: "Who Uses Bulk Upload?",
+    items: [
+      { title: "E-commerce Sellers", description: "Upload entire product catalogs and get URLs ready for marketplace listings on eBay, Amazon, or Etsy." },
+      { title: "Web Developers", description: "Batch upload image assets for new websites and get all URLs at once for quick integration." },
+      { title: "Marketing Teams", description: "Prepare campaign assets—upload social media graphics, email images, and banner ads in one batch." },
+      { title: "Photographers", description: "Share client galleries or portfolio sets with multiple high-quality image links at once." },
+      { title: "Content Creators", description: "Upload thumbnails, graphics, and promotional images for video content across multiple platforms." },
+      { title: "Documentation Teams", description: "Batch upload screenshots and diagrams for help docs, wikis, and training materials." },
+    ],
+  },
+  tips: {
+    title: "Tips for Efficient Bulk Uploads",
+    items: [
+      "Organize and name your files before uploading—good filenames make managing multiple URLs much easier.",
+      "Optimize images in batch using tools like ImageOptim before uploading to ensure fast load times.",
+      "For very large batches (100+ images), upload in smaller groups to monitor progress and catch any issues.",
+      "Sign in before bulk uploading to keep all images organized in folders and access permanent URLs.",
+      "Use the 'Copy All URLs' feature to quickly export links for spreadsheets, databases, or CMS imports.",
+      "Check the upload progress for each file—failed uploads can be retried without re-uploading successful ones.",
     ],
   },
   faq: {

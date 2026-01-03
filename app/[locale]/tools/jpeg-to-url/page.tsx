@@ -43,6 +43,14 @@ const defaultToolContent = {
     title: "JPEG to URL Converter",
     subtitle: "Free Online JPEG Image Hosting",
     description: "Convert your JPEG images to shareable URLs instantly. JPEG is the most widely used image format for photographs. No signup required, just upload and share.",
+    introduction: {
+        title: "JPEG: The Universal Photo Format",
+        paragraphs: [
+            "JPEG (Joint Photographic Experts Group) has been the standard format for digital photographs since 1992. Its efficient compression makes it ideal for sharing photos online—balancing visual quality with file size in a way that works everywhere, from social media to email to websites.",
+            "When you convert a JPEG to a URL, you're creating a permanent, shareable link to your photo hosted on our global CDN. This means anyone you share the link with can view your image instantly in their browser, without downloading attachments or dealing with file size limits.",
+            "Whether you're sharing family photos, product images for your online store, or professional photography for your portfolio, JPEG URLs provide the most universally compatible way to make your images accessible online.",
+        ],
+    },
     features: {
         title: "Why Use Our JPEG to URL Converter?",
         items: [
@@ -71,6 +79,28 @@ const defaultToolContent = {
                 title: "Share Anywhere",
                 description: "Copy the URL and use it anywhere - websites, social media, emails, or documents.",
             },
+        ],
+    },
+    useCases: {
+        title: "Common JPEG Hosting Scenarios",
+        items: [
+            { title: "Photo Sharing", description: "Share vacation photos, family pictures, or event images with friends and family via simple links." },
+            { title: "E-commerce Products", description: "Host product photos for online marketplaces, listings, and shopping comparisons." },
+            { title: "Real Estate Listings", description: "Share property photos with potential buyers or embed in listing platforms." },
+            { title: "Portfolio Display", description: "Host photography portfolio images for sharing with clients or on personal websites." },
+            { title: "Social Media Content", description: "Create shareable links for photos that work across all social platforms." },
+            { title: "Email Newsletters", description: "Embed JPEG photos in email campaigns without attachment size limits." },
+        ],
+    },
+    tips: {
+        title: "Tips for JPEG Hosting",
+        items: [
+            "JPEG is ideal for photographs—use PNG instead for graphics with text or transparency.",
+            "Optimize large JPEGs before uploading to reduce file size while maintaining quality.",
+            "Use quality settings of 80-90% for web images—visually identical but much smaller.",
+            "Name files descriptively for easier organization and searchability in your dashboard.",
+            "Sign in for permanent URLs and to organize photos into albums or folders.",
+            "For print-quality images, maintain higher resolution and quality settings.",
         ],
     },
     faq: {

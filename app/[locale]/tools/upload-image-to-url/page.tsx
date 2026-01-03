@@ -43,6 +43,14 @@ const defaultToolContent = {
     title: "Upload Image to URL",
     subtitle: "Upload Photos and Get Instant Links",
     description: "Simply upload your image to get a URL. Our tool hosts your uploaded images and provides direct links for sharing on the web, social media, or anywhere else.",
+    introduction: {
+        title: "Upload Images and Receive Instant URLs",
+        paragraphs: [
+            "Uploading an image to get a URL is the fastest way to make your local files accessible online. Whether the image is on your computer, phone, or tablet, our upload tool accepts it and provides a web-ready link in seconds. No email attachments, no cloud storage setup—just direct, usable URLs.",
+            "When you upload an image, we store it on our global server network optimized for speed and reliability. The URL we generate is a direct link to your image, meaning it can be embedded in websites, shared in messages, or used anywhere that accepts image addresses. Your original image quality is preserved.",
+            "This tool is designed for both technical and non-technical users. Developers appreciate the clean URLs for web projects, while everyday users love how easy it is to share images without dealing with file size limits or download prompts. Upload once, share the link everywhere.",
+        ],
+    },
     features: {
         title: "Fast & Free Image Upload",
         items: [
@@ -71,6 +79,28 @@ const defaultToolContent = {
                 title: "Get URL",
                 description: "Receive your unique image URL immediately after upload finishes.",
             },
+        ],
+    },
+    useCases: {
+        title: "Image Upload Use Cases",
+        items: [
+            { title: "Quick File Sharing", description: "Upload images to get URLs for fast sharing when you need to send visuals without email attachments or file transfer apps." },
+            { title: "Embedding in CMS Platforms", description: "Upload images to get URLs for WordPress, Squarespace, Wix, or other website builders that accept external image links." },
+            { title: "API & App Testing", description: "Developers can upload test images to get URLs for testing image displays, API integrations, or mobile app development." },
+            { title: "Chat & Messaging", description: "Upload images to share in Slack, Teams, Discord, or other chat platforms with direct links instead of file uploads." },
+            { title: "Backup & Archiving", description: "Upload important images to create secondary copies accessible via URL from anywhere in the world." },
+            { title: "Social Media Scheduling", description: "Upload images to get URLs for scheduling tools like Buffer, Hootsuite, or Later that need image links." },
+        ],
+    },
+    tips: {
+        title: "Image Upload Tips",
+        items: [
+            "Ensure your internet connection is stable before uploading large images to avoid failed uploads.",
+            "Use the drag-and-drop feature for faster uploads—just drag your image onto the upload zone.",
+            "The progress bar shows upload status—wait for it to complete before copying the URL.",
+            "For multiple images, use our bulk upload feature to upload several files at once.",
+            "Sign in to keep your uploaded images permanently and organize them with folders.",
+            "Check that your image displays correctly in the preview before sharing the URL.",
         ],
     },
     faq: {

@@ -43,6 +43,14 @@ const defaultToolContent = {
     title: "WebP to URL Converter",
     subtitle: "Free Online WebP Image Hosting",
     description: "Convert your WebP images to shareable URLs instantly. WebP offers superior compression for faster loading times. No signup required, just upload and share.",
+    introduction: {
+        title: "Why WebP is the Future of Web Images",
+        paragraphs: [
+            "WebP is Google's modern image format designed specifically for the web, offering 25-35% smaller file sizes compared to JPEG and PNG while maintaining equivalent visual quality. This means faster page loads, lower bandwidth costs, and better user experiences—all without sacrificing image quality.",
+            "When you convert a WebP to a URL, you're leveraging the most efficient image format available for web delivery. Our converter hosts your WebP on a global CDN, ensuring that viewers get the fastest possible load times. WebP supports both lossy and lossless compression, plus full alpha transparency—the best of both JPG and PNG in one format.",
+            "Major websites like Google, Facebook, and Netflix have adopted WebP as their primary image format. By using WebP URLs, you're following industry best practices for web performance and delivering the optimal viewing experience to your audience across all modern browsers.",
+        ],
+    },
     features: {
         title: "Why Use Our WebP to URL Converter?",
         items: [
@@ -71,6 +79,28 @@ const defaultToolContent = {
                 title: "Share Anywhere",
                 description: "Copy the URL and use it anywhere - websites, social media, emails, or documents. WebP delivers faster loading.",
             },
+        ],
+    },
+    useCases: {
+        title: "Ideal Use Cases for WebP URLs",
+        items: [
+            { title: "Website Optimization", description: "Replace JPG and PNG images with WebP to dramatically improve page load speeds and Core Web Vitals scores." },
+            { title: "E-commerce Product Images", description: "Host high-quality product photos that load quickly, improving conversion rates and user experience." },
+            { title: "Blog & Content Sites", description: "Serve article images in WebP format for faster page loads and reduced bandwidth costs." },
+            { title: "Progressive Web Apps", description: "Use lightweight WebP images in PWAs to minimize data usage and improve offline performance." },
+            { title: "Email Templates", description: "Create fallback image URLs for email clients that support WebP format." },
+            { title: "Ad Creative", description: "Deliver banner ads and display creatives with smaller file sizes for faster impressions." },
+        ],
+    },
+    tips: {
+        title: "Best Practices for WebP Hosting",
+        items: [
+            "Use WebP with quality 80-85 for photographs—visually identical to JPG but significantly smaller file size.",
+            "Check browser compatibility at caniuse.com/webp—WebP now has 97%+ global support in modern browsers.",
+            "For legacy browser support, consider hosting both WebP and JPG versions using picture element fallbacks.",
+            "Enable lossy WebP for photos and lossless WebP for graphics with sharp edges or text.",
+            "Use WebP's alpha channel support when you need transparency—it's more efficient than PNG.",
+            "Sign in to organize your WebP assets in folders and get permanent URLs for production use.",
         ],
     },
     faq: {

@@ -43,6 +43,14 @@ const defaultToolContent = {
     title: "Image to Short URL",
     subtitle: "Create Compact Shareable Links",
     description: "Convert your images to short, compact URLs that are easy to share. Perfect for social media, SMS, emails, and anywhere character count matters.",
+    introduction: {
+        title: "When Every Character Counts",
+        paragraphs: [
+            "Some contexts demand brevity. Twitter bios have character limits. SMS messages get split if too long. Business cards have limited space. QR codes get harder to scan as URLs get longer. Our short URL generator creates compact links that fit anywhere.",
+            "A typical image URL might be 60-100 characters. Our short URLs are under 30. That's the difference between a tweet with room for commentary and one that's just a link. Between a QR code that scans reliably at small sizes and one that fails. Between easy-to-type and error-prone.",
+            "Short URLs aren't just about saving space—they're about making images more shareable. People are more likely to share a link they can actually type if needed. More likely to trust a clean, short URL than a long, cryptic one. More likely to fit your image into their message without sacrificing their own words.",
+        ],
+    },
     features: {
         title: "Why Use Short Image URLs?",
         items: [
@@ -71,6 +79,28 @@ const defaultToolContent = {
                 title: "Share Anywhere",
                 description: "Use your short URL in tweets, text messages, QR codes, or anywhere space is limited.",
             },
+        ],
+    },
+    useCases: {
+        title: "Perfect For Short URLs",
+        items: [
+            { title: "Twitter/X Posts", description: "Maximize your tweet content by using compact image links that leave room for your message." },
+            { title: "SMS Marketing", description: "Keep text messages under character limits while still including visual content." },
+            { title: "Business Cards", description: "Print QR codes that link to portfolios or headshots with URLs short enough to type manually." },
+            { title: "Podcast Show Notes", description: "Include easy-to-read image links that listeners can type without errors." },
+            { title: "Print Materials", description: "Add short URLs to flyers, posters, and brochures that people can easily enter in browsers." },
+            { title: "Verbal Sharing", description: "Share image links verbally in podcasts, videos, or presentations." },
+        ],
+    },
+    tips: {
+        title: "Short URL Best Practices",
+        items: [
+            "Sign in to create custom short codes that match your brand or content.",
+            "Use click tracking to measure engagement on shared short URLs.",
+            "Test short URLs before printing on physical materials—typos are expensive to fix.",
+            "Combine short URLs with QR codes for the best of both worlds.",
+            "For mission-critical links, sign in to ensure they never expire.",
+            "Check analytics regularly to understand which shared images get the most engagement.",
         ],
     },
     faq: {

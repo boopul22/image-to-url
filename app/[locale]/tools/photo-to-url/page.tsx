@@ -43,6 +43,14 @@ const defaultToolContent = {
     title: "Photo to URL Converter",
     subtitle: "Free Online Photo Link Generator",
     description: "Convert your photos to shareable URLs instantly. Upload any photo and get a direct link that works anywhere - websites, social media, emails, messaging apps, and more.",
+    introduction: {
+        title: "Turn Any Photo into a Web URL",
+        paragraphs: [
+            "Converting photos to URLs opens up endless possibilities for sharing your images across the digital world. A URL is simply a web address that points directly to your photo, allowing anyone to view it instantly in their browser without needing to download files or use specific apps.",
+            "Our photo to URL converter handles all common photo formats including JPG, PNG, HEIC from iPhones, and WebP. When you upload, your photo is stored on high-speed servers distributed globally, so viewers anywhere experience fast loading times. The original quality is preserved with no compression or resizing.",
+            "Whether you're a photographer sharing your portfolio, a parent sending pictures to relatives, or a business professional including visuals in communications, converting photos to URLs eliminates the friction of traditional file sharing. It's faster, more reliable, and works universally across devices and platforms.",
+        ],
+    },
     features: {
         title: "Why Use Our Photo to URL Converter?",
         items: [
@@ -71,6 +79,28 @@ const defaultToolContent = {
                 title: "Share Your Photo Link",
                 description: "Copy the URL and use it anywhere - embed in websites, share on social media, or send via email and chat.",
             },
+        ],
+    },
+    useCases: {
+        title: "Common Photo to URL Uses",
+        items: [
+            { title: "Photography Portfolios", description: "Convert high-quality photos to URLs for embedding in portfolio websites, client galleries, or photography platforms." },
+            { title: "Wedding & Event Sharing", description: "Share event photos with guests through a single link they can access from any device without app downloads." },
+            { title: "Property Documentation", description: "Convert photos of rental properties, home repairs, or insurance claims to URLs for easy reference and communication." },
+            { title: "Social Media Content", description: "Create URLs for photos to share across multiple platforms with consistent quality and reliable availability." },
+            { title: "Medical & Health Records", description: "Securely share medical images, progress photos, or health documentation with healthcare providers." },
+            { title: "Remote Work Collaboration", description: "Share visual updates, whiteboard photos, or design feedback with remote team members instantly." },
+        ],
+    },
+    tips: {
+        title: "Photo URL Best Practices",
+        items: [
+            "For the fastest uploads, connect to WiFi rather than cellular data when uploading large photo files.",
+            "iPhone HEIC photos are automatically compatible—no need to convert before uploading.",
+            "Use the copy button to get the exact URL—typing it manually may introduce errors.",
+            "Sign in before uploading to ensure your photo URLs never expire and can be managed later.",
+            "For professional use, consider naming or organizing photos before uploading for easier tracking.",
+            "Test the URL by opening it in a new browser tab before sharing with others.",
         ],
     },
     faq: {

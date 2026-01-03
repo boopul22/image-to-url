@@ -43,6 +43,14 @@ const defaultToolContent = {
     title: "Image to Data URL",
     subtitle: "Convert Images to Base64 Data URIs",
     description: "Convert images to Data URLs (base64 encoded) that can be embedded directly in HTML, CSS, or JavaScript. No external hosting needed - the image data is included inline.",
+    introduction: {
+        title: "When Inline Images Make Sense",
+        paragraphs: [
+            "Data URLs (also called Data URIs) embed the entire image directly in your code as a base64-encoded string. While this might seem counterintuitive in an age of CDNs and optimized delivery, there are specific scenarios where Data URLs are the right choice.",
+            "For small images like icons, email signatures, and single-page HTML documents, Data URLs eliminate HTTP requests entirely. No DNS lookup, no connection overhead—the image is right there in the code, ready to render instantly. This is especially valuable for critical above-the-fold content or when you need a completely self-contained file.",
+            "Our converter makes creating Data URLs effortless. Simply upload any image—PNG, JPG, GIF, SVG, or WebP—and receive a properly formatted Data URL ready to paste into your HTML, CSS, or JavaScript. The tool automatically detects the MIME type and generates the correct prefix.",
+        ],
+    },
     features: {
         title: "Why Use Data URLs?",
         items: [
@@ -71,6 +79,28 @@ const defaultToolContent = {
                 title: "Copy & Use",
                 description: "Copy the Data URL and use it directly in img src, CSS background-image, or JavaScript.",
             },
+        ],
+    },
+    useCases: {
+        title: "Ideal Scenarios for Data URLs",
+        items: [
+            { title: "Email Signatures", description: "Embed your logo directly in HTML email signatures—no broken images from blocked external resources." },
+            { title: "Single-Page HTML", description: "Create self-contained HTML files for documentation, reports, or presentations that work offline." },
+            { title: "Critical CSS Icons", description: "Inline small icons in your critical CSS to eliminate render-blocking requests above the fold." },
+            { title: "Canvas & JavaScript", description: "Programmatically work with image data in JavaScript without cross-origin restrictions." },
+            { title: "SVG Sprites", description: "Embed small raster images within SVG files for hybrid icon systems." },
+            { title: "Offline Applications", description: "Bundle essential images in PWAs or electron apps for reliable offline functionality." },
+        ],
+    },
+    tips: {
+        title: "Data URL Best Practices",
+        items: [
+            "Only use Data URLs for images under 10KB—larger images are more efficient as hosted URLs with caching.",
+            "Optimize images before converting to reduce the size of the resulting Base64 string.",
+            "Remember that Data URLs can't be cached separately—every page load re-downloads the data.",
+            "Test email signatures across clients—some email providers have size limits or block inline images.",
+            "Use PNG Data URLs for images with transparency; JPEG for photos where transparency isn't needed.",
+            "Consider using SVG Data URLs for simple icons—they're often smaller and scale perfectly.",
         ],
     },
     faq: {

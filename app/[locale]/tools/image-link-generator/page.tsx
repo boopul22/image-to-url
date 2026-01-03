@@ -43,6 +43,14 @@ const defaultToolContent = {
     title: "Image Link Generator",
     subtitle: "Create Shareable Photo URLs Instantly",
     description: "Generate shareable links for any image in seconds. Upload your photo and get an instant URL that works anywhere - websites, social media, emails, and more.",
+    introduction: {
+        title: "Turn Any Image Into a Shareable Link",
+        paragraphs: [
+            "Images on your device are trapped—you can email them as attachments, but file sizes cause problems. You can upload to social media, but lose control of the image. Our image link generator gives you a third option: a direct URL that you control, hosted reliably on our CDN.",
+            "A generated image link works everywhere URLs work. Paste it in a chat message for an instant preview. Add it to a document that stays small. Include it in a presentation that works offline. Share it via QR code on a poster. The image lives at a stable address, accessible to anyone you share the link with.",
+            "Unlike temporary file-sharing services that expire or require recipients to download, our image links are direct—the image loads right in the browser. No downloads, no apps, no accounts needed to view. Just share the link and the image appears.",
+        ],
+    },
     features: {
         title: "Why Use Our Image Link Generator?",
         items: [
@@ -71,6 +79,28 @@ const defaultToolContent = {
                 title: "Use It Anywhere",
                 description: "Copy the link and paste it wherever you need - HTML, Markdown, social media, emails, or documents.",
             },
+        ],
+    },
+    useCases: {
+        title: "Popular Uses for Image Links",
+        items: [
+            { title: "Chat & Messaging", description: "Share image links in Slack, Discord, Teams, or WhatsApp for instant inline previews." },
+            { title: "Email Content", description: "Include images in emails without attachments—links keep messages small and fast." },
+            { title: "Website Integration", description: "Use generated links in HTML, CSS, or any web platform that accepts image URLs." },
+            { title: "Documentation", description: "Embed screenshots and diagrams in wikis, help docs, and technical documentation." },
+            { title: "Social Sharing", description: "Post direct image links that display properly across social media platforms." },
+            { title: "Client Delivery", description: "Share design assets, photos, or proofs with clients via simple, professional links." },
+        ],
+    },
+    tips: {
+        title: "Image Link Tips",
+        items: [
+            "Optimize images before uploading for faster load times—smaller files mean quicker sharing.",
+            "Use descriptive filenames for easier organization when managing multiple links.",
+            "Test your link in a private/incognito window to confirm it works before sharing widely.",
+            "Sign in to get permanent links that won't expire after 30 days.",
+            "For batch needs, check our Bulk Upload tool to generate many links at once.",
+            "Consider short URLs for social media where character count matters.",
         ],
     },
     faq: {

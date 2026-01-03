@@ -41,6 +41,14 @@ const defaultToolContent = {
   title: "QR Code to URL",
   subtitle: "Host Your QR Code Images",
   description: "Upload QR code images and get shareable URLs. Perfect for sharing QR codes in emails, documents, and websites.",
+  introduction: {
+    title: "Share QR Codes Anywhere with Hosted URLs",
+    paragraphs: [
+      "QR codes bridge the physical and digital worlds—from restaurant menus and business cards to product packaging and event tickets. But sharing QR code images in digital contexts often means dealing with email attachments, file compatibility issues, and quality degradation.",
+      "By hosting your QR code as a URL, you get a simple link that works everywhere. Embed it in emails that display perfectly, add it to documents without bloating file sizes, or share it in any digital channel. The QR code remains high-quality and perfectly scannable because we preserve every pixel.",
+      "Our CDN ensures your QR code images load instantly for viewers anywhere in the world. Whether you're distributing QR codes for a marketing campaign or embedding them in digital documents, a hosted URL is the most reliable way to share QR codes online.",
+    ],
+  },
   features: {
     title: "Why Host QR Codes with Us?",
     items: [
@@ -69,6 +77,28 @@ const defaultToolContent = {
         title: "Share Anywhere",
         description: "Embed in documents, emails, or websites. The QR code remains perfectly scannable.",
       },
+    ],
+  },
+  useCases: {
+    title: "QR Code Image Hosting Use Cases",
+    items: [
+      { title: "Digital Documents", description: "Embed QR codes in PDFs, Word docs, and presentations with reliable image display." },
+      { title: "Email Campaigns", description: "Add QR codes to email newsletters that display perfectly across all email clients." },
+      { title: "Website Integration", description: "Display QR codes on web pages for easy scanning by mobile users." },
+      { title: "Training Materials", description: "Include QR codes in training docs that link to resources, videos, or supplementary content." },
+      { title: "Event Management", description: "Share event check-in QR codes digitally with attendees before arrival." },
+      { title: "Marketing Collateral", description: "Use consistent QR code URLs across digital marketing channels for tracking." },
+    ],
+  },
+  tips: {
+    title: "QR Code Hosting Best Practices",
+    items: [
+      "Upload QR codes as PNG for best quality—avoid JPEG compression which can affect scannability.",
+      "Ensure your QR code has adequate quiet zone (white space) around it for reliable scanning.",
+      "Test the hosted QR code URL by scanning it before distributing widely.",
+      "Use high contrast colors (dark code on light background) for best scanning reliability.",
+      "Consider SVG format for QR codes that need to scale to different sizes without pixelation.",
+      "Sign in to get permanent URLs—expired QR codes become useless after 30 days.",
     ],
   },
   faq: {

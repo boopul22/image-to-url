@@ -41,6 +41,14 @@ const defaultToolContent = {
   title: "Base64 to URL Converter",
   subtitle: "Convert Base64 Images to Shareable Links",
   description: "Convert Base64 encoded images to clean, shareable URLs. Perfect for developers working with data URIs.",
+  introduction: {
+    title: "Why Convert Base64 to Hosted URLs?",
+    paragraphs: [
+      "Base64 encoding is a common technique for embedding images directly in HTML, CSS, or JSON—but it comes with significant drawbacks. Those long strings of characters bloat your files, can't be cached separately by browsers, and make your code harder to read and maintain.",
+      "Converting Base64 images to hosted URLs solves all these problems. A 10KB image that becomes a 13KB Base64 string in your code is replaced by a 50-character URL that loads from a fast CDN. Your HTML shrinks, your pages load faster, and browsers can cache images independently from your code.",
+      "Our converter is built for developers who need to clean up legacy code, optimize build sizes, or simply want a cleaner separation between content and code. Upload any Base64-encoded image—whether PNG, JPG, GIF, or WebP—and get a production-ready URL in seconds.",
+    ],
+  },
   features: {
     title: "Why Use Our Base64 to URL Converter?",
     items: [
@@ -69,6 +77,28 @@ const defaultToolContent = {
         title: "Use Everywhere",
         description: "Replace bloated Base64 strings in your code with clean, fast-loading URLs.",
       },
+    ],
+  },
+  useCases: {
+    title: "When to Convert Base64 to URLs",
+    items: [
+      { title: "Legacy Code Cleanup", description: "Replace inline Base64 images in old codebases to reduce bundle sizes and improve maintainability." },
+      { title: "Build Optimization", description: "Move assets out of JavaScript bundles to enable better caching and faster initial page loads." },
+      { title: "API Response Slimming", description: "Convert Base64 images in JSON responses to URL references for faster API performance." },
+      { title: "Email Template Fixes", description: "Replace Base64 images that break in some email clients with hosted URLs for reliable rendering." },
+      { title: "CMS Migration", description: "Extract embedded images from content during platform migrations to proper hosted storage." },
+      { title: "Performance Audits", description: "Identify and externalize inline images flagged by Lighthouse or PageSpeed Insights." },
+    ],
+  },
+  tips: {
+    title: "Developer Best Practices",
+    items: [
+      "Base64 increases file size by ~33%—only use inline encoding for images under 2KB where HTTP overhead matters.",
+      "Use our bulk upload if you have multiple Base64 images to convert—process them all at once.",
+      "Check your build tools for automatic Base64 inlining that might be counterproductive for larger assets.",
+      "Consider SVG sprites instead of Base64 for icon systems—they're more flexible and often smaller.",
+      "After converting, update all references in your code and test thoroughly before deploying.",
+      "Sign in to organize converted assets and maintain a mapping between old Base64 and new URLs.",
     ],
   },
   faq: {

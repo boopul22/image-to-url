@@ -43,6 +43,14 @@ const defaultToolContent = {
     title: "Create Image URL",
     subtitle: "Make Any Image into a Shareable Link",
     description: "Need to create a URL for an image? Our simple tool allows you to upload pictures and instantly make them into web links that you can share anywhere.",
+    introduction: {
+        title: "Create Web-Ready Image URLs Instantly",
+        paragraphs: [
+            "Creating a URL for an image transforms a static file on your device into a dynamic, shareable asset on the web. Instead of attaching files or dealing with cloud storage permissions, a simple URL allows anyone with the link to view your image directly in their browser—no downloads required.",
+            "Our image URL creator handles the technical complexity for you. When you upload an image, we store it on secure, high-performance servers and generate a clean, direct URL. These links work seamlessly in HTML code, CSS stylesheets, Markdown documents, and anywhere else that accepts image addresses.",
+            "This tool is especially valuable for web developers who need quick image hosting, content creators building online presence, and professionals who regularly share visual content. Creating image URLs takes just seconds and requires no coding knowledge or account setup.",
+        ],
+    },
     features: {
         title: "Why Create Image URLs With Us?",
         items: [
@@ -71,6 +79,28 @@ const defaultToolContent = {
                 title: "Share",
                 description: "Copy the created URL and share it wherever you need.",
             },
+        ],
+    },
+    useCases: {
+        title: "Ways to Use Image URLs",
+        items: [
+            { title: "GitHub README Files", description: "Create URLs for screenshots and diagrams to embed in your GitHub project documentation using Markdown syntax." },
+            { title: "Notion & Confluence Pages", description: "Add visual content to team workspaces and knowledge bases by embedding created image URLs directly." },
+            { title: "Email Signatures", description: "Create a URL for your logo or headshot to include in professional email signatures without attachment issues." },
+            { title: "Online Forms & Surveys", description: "Add images to Google Forms, Typeform, or other survey tools by providing the image URL." },
+            { title: "QR Code Content", description: "Create image URLs to embed in QR codes, making it easy to share visual content via printed materials." },
+            { title: "Prototyping & Wireframes", description: "Add placeholder images or actual graphics to Figma, Sketch, or web prototypes using created URLs." },
+        ],
+    },
+    tips: {
+        title: "Image URL Creation Tips",
+        items: [
+            "Keep your original files organized locally—the URL is a copy, not a replacement for your source file.",
+            "For web use, optimize images to under 1MB for faster page loading without noticeable quality loss.",
+            "Use descriptive alt text when embedding URLs in HTML to improve accessibility and SEO.",
+            "Test the created URL in multiple browsers to ensure compatibility before widespread use.",
+            "Sign in to keep your image URLs permanent—anonymous URLs expire after 30 days.",
+            "Use our bulk upload feature when you need to create URLs for multiple images at once.",
         ],
     },
     faq: {

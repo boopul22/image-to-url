@@ -43,6 +43,14 @@ const defaultToolContent = {
     title: "Image URL to QR Code",
     subtitle: "Generate Scannable QR Codes from Image Links",
     description: "Upload an image, get a URL, and instantly generate a QR code that links directly to your image. Perfect for print materials, business cards, and offline-to-online sharing.",
+    introduction: {
+        title: "Bridge Print and Digital with Image QR Codes",
+        paragraphs: [
+            "QR codes transform any printed material into a gateway to digital content. By generating a QR code from your image URL, you enable anyone with a smartphone to instantly access your photos, graphics, or visual content—no typing, no searching, just scan and view.",
+            "This is particularly powerful for portfolios, product catalogs, and marketing materials. A photographer can add a QR code to a business card linking to their portfolio. A retailer can put QR codes on shelf tags showing detailed product images. An artist can include codes on gallery labels linking to high-resolution artwork.",
+            "Our tool combines image hosting with QR generation in one seamless workflow. Upload your image, get a permanent URL, and generate a customizable QR code—all in seconds. Download your QR code in print-ready PNG or scalable SVG format for any use case.",
+        ],
+    },
     features: {
         title: "Why Generate QR Codes for Image URLs?",
         items: [
@@ -71,6 +79,28 @@ const defaultToolContent = {
                 title: "Download & Share",
                 description: "Download your QR code in PNG or SVG format. Use it in print materials, presentations, or anywhere.",
             },
+        ],
+    },
+    useCases: {
+        title: "Where to Use Image QR Codes",
+        items: [
+            { title: "Business Cards", description: "Add a QR code linking to your portfolio, headshot, or company logo." },
+            { title: "Product Packaging", description: "Include QR codes that show product images, usage guides, or assembly instructions." },
+            { title: "Art Galleries", description: "Place QR codes next to artwork that link to high-resolution images or purchase pages." },
+            { title: "Real Estate Signs", description: "Let potential buyers scan to see property photos without visiting websites." },
+            { title: "Restaurant Menus", description: "Link to food photos that entice customers with visual menu items." },
+            { title: "Educational Materials", description: "Add QR codes to textbooks linking to diagrams, charts, or visual examples." },
+        ],
+    },
+    tips: {
+        title: "QR Code Generation Tips",
+        items: [
+            "Use SVG format for print materials—it scales perfectly to any size without pixelation.",
+            "Test your QR code at the intended print size before mass production.",
+            "Maintain at least 2cm (0.8in) size for reliable scanning at typical distances.",
+            "Sign in before generating QR codes to ensure your image URL never expires.",
+            "Choose colors with high contrast—dark codes on light backgrounds work best.",
+            "For outdoor use, consider weather-resistant printing and UV-stable inks.",
         ],
     },
     faq: {

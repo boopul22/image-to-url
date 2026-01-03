@@ -55,6 +55,14 @@ const defaultToolContent = {
   title: "GIF to URL Converter",
   subtitle: "Free Instant Animated GIF Hosting",
   description: "Transform your animated GIFs into permanent, shareable URLs in seconds. Our free online tool preserves 100% of your animation frames with zero compression or quality loss. No account creation required—just upload, convert, and share instantly.",
+  introduction: {
+    title: "The Power of Animated GIFs Online",
+    paragraphs: [
+      "GIFs have become the universal language of the internet—from reaction images and memes to product demos and tutorial clips. When you convert a GIF to a URL, you're creating an instantly shareable link that plays automatically across virtually every platform, from Discord and Slack to Twitter and Reddit.",
+      "Unlike video files that often require players or plugins, GIFs are natively supported everywhere. Our converter preserves every frame, timing, and loop setting of your original animation while hosting it on a global CDN. This means your GIF loads fast and plays smoothly for viewers anywhere in the world.",
+      "Whether you're sharing the latest meme, creating a product walkthrough, or adding motion to your documentation, our GIF to URL tool makes animation sharing effortless. No compression, no quality loss, no complicated embed codes—just a clean URL that works everywhere.",
+    ],
+  },
   features: {
     title: "Why Choose Our GIF to URL Converter?",
     items: [
@@ -85,6 +93,28 @@ const defaultToolContent = {
         title: "Share Anywhere Online",
         description: "Paste the URL into Discord, Reddit, Twitter, forums, or HTML. Animation plays natively with full autoplay support.",
       },
+    ],
+  },
+  useCases: {
+    title: "Where to Use Your GIF URLs",
+    items: [
+      { title: "Discord & Slack", description: "Share reaction GIFs, emotes, and animated content in chat channels with instant preview and autoplay." },
+      { title: "Reddit & Forums", description: "Post memes, reactions, and visual content that plays automatically in comment threads and posts." },
+      { title: "Product Demos", description: "Create short animated walkthroughs showing app features, UI interactions, or before/after comparisons." },
+      { title: "Email Marketing", description: "Add eye-catching animated elements to newsletters—GIFs are one of the few animations that work in email." },
+      { title: "Documentation", description: "Embed animated tutorials, process flows, or feature demonstrations in help docs and wikis." },
+      { title: "Social Media", description: "Share animated content on Twitter, Tumblr, and platforms that support GIF autoplay in feeds." },
+    ],
+  },
+  tips: {
+    title: "Pro Tips for GIF Hosting",
+    items: [
+      "Keep GIF file sizes under 5MB for fastest loading—viewers often scroll past slow-loading animations.",
+      "Optimize GIFs with tools like Ezgif or Gifsicle to reduce file size while maintaining visual quality.",
+      "For longer animations, consider using fewer colors or reducing frame rate to keep file sizes manageable.",
+      "Test your GIF URLs on mobile devices—some platforms handle large GIFs differently on cellular connections.",
+      "Sign in to keep your meme collection organized with folders and permanent URLs that never expire.",
+      "Consider WebP or short video formats for photographic animations—GIF works best for graphics with limited colors.",
     ],
   },
   faq: {

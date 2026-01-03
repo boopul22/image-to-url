@@ -45,6 +45,14 @@ const defaultToolContent = {
   subtitle: "Free Online PNG to URL Tool with Transparency Support",
   description:
     "Easily convert PNG images into shareable URLs in seconds. Ideal for logos, icons, UI assets, and transparent background images. No registration required.",
+  introduction: {
+    title: "Why PNG is Perfect for Web Graphics",
+    paragraphs: [
+      "PNG (Portable Network Graphics) is the go-to image format for web graphics that require transparency, crisp edges, and lossless quality. Unlike JPG, PNG preserves every pixel exactly as designed—making it ideal for logos, icons, screenshots, and UI elements where clarity matters.",
+      "When you convert a PNG to a URL, you're creating a permanent, shareable link that preserves all the format's benefits: transparency, sharp text, and accurate colors. Our converter uploads your PNG to a global CDN, ensuring fast load times whether your audience is in New York or Tokyo.",
+      "Professional designers, developers, and content creators rely on PNG URLs for embedding assets across websites, apps, and documentation. The format's support for alpha channels means your transparent backgrounds work seamlessly on any colored background or layout.",
+    ],
+  },
   features: {
     title: "Why Choose Our PNG to URL Converter?",
     items: [
@@ -78,6 +86,28 @@ const defaultToolContent = {
       },
     ],
   },
+  useCases: {
+    title: "Popular Use Cases for PNG URLs",
+    items: [
+      { title: "Logo Embedding", description: "Host company logos with transparent backgrounds for use across websites, emails, and marketing materials." },
+      { title: "App Development", description: "Store UI icons, buttons, and design assets as URLs for easy integration in mobile and web applications." },
+      { title: "Screenshots & Tutorials", description: "Share crisp, high-quality screenshots in documentation, help guides, and tutorial content." },
+      { title: "Discord & Gaming", description: "Create custom emojis, avatars, and server icons with transparent backgrounds for gaming communities." },
+      { title: "Print-on-Demand", description: "Provide PNG artwork URLs for merchandise platforms that require transparent background designs." },
+      { title: "Design Mockups", description: "Share design assets with clients and collaborators using direct, always-accessible image links." },
+    ],
+  },
+  tips: {
+    title: "Best Practices for PNG Hosting",
+    items: [
+      "Use PNG-24 for images requiring full alpha transparency; PNG-8 for simple graphics with limited colors to save file size.",
+      "Compress large PNGs with tools like TinyPNG before uploading—you can reduce file size by up to 70% with no visible quality loss.",
+      "For web performance, consider if WebP might be a better choice for browsers that support it, especially for photos.",
+      "Name your files descriptively (e.g., 'company-logo-dark-bg.png') for easier organization and searchability.",
+      "Sign in to get permanent URLs and organize your PNG assets into folders for long-term projects.",
+      "Test your PNG URLs on different backgrounds to ensure transparency appears as expected in all contexts.",
+    ],
+  },
   faq: {
     title: "PNG to URL – Frequently Asked Questions",
     items: [
@@ -105,6 +135,18 @@ const defaultToolContent = {
         question: "How long will my PNG image URL remain active?",
         answer:
           "Anonymous uploads are stored for up to 30 days. Free accounts can keep PNG URLs active for longer periods.",
+      },
+      {
+        question: "What's the difference between PNG and JPG for web use?",
+        answer: "PNG supports transparency and lossless compression, making it ideal for logos, icons, and graphics with text. JPG uses lossy compression, making it better for photographs. Use PNG when you need transparent backgrounds or crisp edges.",
+      },
+      {
+        question: "Can I upload PNG images with semi-transparent areas?",
+        answer: "Yes! Our converter fully supports alpha channel transparency, including semi-transparent pixels. Gradients, shadows, and partial transparency are preserved exactly as in your original file.",
+      },
+      {
+        question: "Will my PNG be compressed when I convert it to a URL?",
+        answer: "No, we preserve your PNG in its original quality. There's no lossy compression applied. However, we recommend optimizing large PNGs before upload using tools like TinyPNG to ensure faster loading times.",
       },
     ],
   },

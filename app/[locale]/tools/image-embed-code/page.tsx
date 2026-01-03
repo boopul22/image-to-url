@@ -43,6 +43,14 @@ const defaultToolContent = {
     title: "Image Embed Code Generator",
     subtitle: "Get Ready-to-Use Code Snippets",
     description: "Upload an image and get instant embed codes in HTML, BBCode, Markdown, and more. Perfect for websites, forums, GitHub, and documentation.",
+    introduction: {
+        title: "Embed Images Anywhere with Ready-Made Code",
+        paragraphs: [
+            "Different platforms require different code formats for embedding images. A website needs HTML, a forum post needs BBCode, a GitHub README needs Markdown. Our embed code generator gives you all these formats instantly from a single image upload.",
+            "Instead of manually writing code or hunting for the right syntax, simply upload your image and copy the exact code you need. We provide properly formatted snippets with correct attributes, escaping, and best practices built in—no typos, no broken tags.",
+            "Whether you're updating documentation, posting to forums, adding images to your website, or formatting a README, our tool eliminates the friction between having an image and embedding it correctly. Upload once, get code for every platform.",
+        ],
+    },
     features: {
         title: "Embed Formats Available",
         items: [
@@ -71,6 +79,28 @@ const defaultToolContent = {
                 title: "Copy & Embed",
                 description: "Click to copy the generated code and paste it directly into your website, forum, or document.",
             },
+        ],
+    },
+    useCases: {
+        title: "Where to Use Embed Codes",
+        items: [
+            { title: "Website Development", description: "Get HTML img tags with proper alt text and dimensions for SEO-friendly image embedding." },
+            { title: "Forum Posts", description: "Copy BBCode for phpBB, vBulletin, and other popular forum platforms." },
+            { title: "GitHub Documentation", description: "Use Markdown format for README files, wikis, and issue descriptions." },
+            { title: "Email Signatures", description: "Get HTML that works in email clients for professional image-based signatures." },
+            { title: "CMS Content", description: "Paste HTML or Markdown into WordPress, Ghost, Notion, and other content platforms." },
+            { title: "CSS Backgrounds", description: "Get CSS background-image code for headers, hero sections, and design elements." },
+        ],
+    },
+    tips: {
+        title: "Embed Code Best Practices",
+        items: [
+            "Always include alt text for accessibility—our HTML includes a placeholder you can customize.",
+            "Use responsive HTML for images that need to scale with their container on different devices.",
+            "For forums, test your BBCode in a preview before posting to ensure it renders correctly.",
+            "Markdown syntax varies slightly between platforms—test in your target site first.",
+            "CSS background images don't have alt text—use them for decorative images only.",
+            "Sign in to ensure your embed codes continue working permanently without expiration.",
         ],
     },
     faq: {
