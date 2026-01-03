@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/theme-provider'
 import { CookieConsentWrapper } from '@/components/cookie-consent-wrapper'
 import { LocaleUpdater } from '@/components/locale-updater'
+import { SeoNav } from '@/components/seo-nav'
 import { locales, type Locale } from "@/lib/i18n/config"
 import { getDictionary } from "@/lib/i18n/dictionaries"
 import { getAlternateLinks } from "@/lib/i18n/get-alternate-links"
@@ -95,6 +96,9 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={dir} className="dark" suppressHydrationWarning>
       <body className={`${inter.variable} font-sans antialiased selection:bg-brand selection:text-white overflow-x-hidden`}>
+        {/* Server-side navigation for SEO crawlers */}
+        <SeoNav locale={locale} />
+
         <ThemeProvider defaultTheme="dark" storageKey="imagetourl-theme">
           <LocaleUpdater locale={locale} />
           <CookieConsentWrapper>
