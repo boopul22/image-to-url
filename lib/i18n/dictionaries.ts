@@ -69,10 +69,36 @@ const dictionaries = {
     },
     hero: {
       badge: "v2.0 Now Available",
-      title: "Upload images,",
-      titleGradient: "get instant links.",
+      title: "Free Image to URL",
+      titleGradient: "Converter",
       description:
-        "Drag and drop your assets to generate a shareable URL instantly. Powered by a global edge network for lightning-fast delivery.",
+        "Convert any image to a shareable URL in seconds. Simply drag and drop your JPG, PNG, GIF, SVG, or WebP file—no signup required. Powered by a global edge CDN for lightning-fast delivery.",
+    },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
+    },
+    howTo: {
+      title: "How to Convert Image to URL",
+      steps: [
+        {
+          title: "Select Your Image",
+          description: "Click the upload area or drag and drop any JPG, PNG, GIF, SVG, or WebP file (up to 10MB)",
+        },
+        {
+          title: "Automatic Upload",
+          description: "Your image is instantly uploaded and distributed across our global CDN network",
+        },
+        {
+          title: "Copy Your URL",
+          description: "Click the copy button to get your permanent, shareable image link—ready to use anywhere",
+        },
+      ],
+    },
+    trust: {
+      title: "Trusted Worldwide",
+      subtitle: "Join millions of users who rely on ImageToURL for fast, secure image hosting",
+      comingSoon: "Testimonials coming soon",
     },
     upload: {
       clickToUpload: "Click to upload or drag and drop",
@@ -100,10 +126,10 @@ const dictionaries = {
       cookies: "Cookies",
     },
     meta: {
-      title: "Free Image to URL Converter - Instant Shareable Photo Links | ImageToURL",
+      title: "Image to URL Converter - Free Instant Link Generator | ImageToURL",
       description:
-        "Convert any image to URL instantly. Free image hosting with no signup. Upload JPG, PNG, GIF, SVG, WebP up to 10MB. Best free image to URL converter online with global CDN delivery.",
-      keywords: "image to url, convert image to url, free image hosting, image link generator, photo to url, upload image get link, jpg to url, png to url, gif to url, image url converter, base64 image to url, copy image to url, image to link, instant image sharing, free photo hosting, image to url converter free, image to url online",
+        "Convert any image to URL in seconds. Free image hosting with no signup. Upload JPG, PNG, GIF, WebP up to 10MB. Get instant shareable links via global CDN.",
+      keywords: "image to url, convert image to url, image url converter, free image hosting, image link generator, photo to url, upload image get link, jpg to url, png to url, gif to url, image to link, picture to url, online image hosting, shareable image link, image to url converter free, copy image to url, instant image sharing",
     },
     faq: {
       title: "Frequently Asked Questions",

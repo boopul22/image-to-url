@@ -6,8 +6,10 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Suspense } from "react"
 import { Button } from "@/components/ui/button"
-import { WebApplicationJsonLd, OrganizationJsonLd, FAQJsonLd, BreadcrumbJsonLd, WebSiteJsonLd } from "@/components/json-ld"
+import { WebApplicationJsonLd, OrganizationJsonLd, FAQJsonLd, BreadcrumbJsonLd, WebSiteJsonLd, HowToJsonLd } from "@/components/json-ld"
 import { FAQSection } from "@/components/faq-section"
+import { HowToSection } from "@/components/how-to-section"
+import { TrustSection } from "@/components/trust-section"
 
 export default async function HomePage({
   params,
@@ -28,6 +30,16 @@ export default async function HomePage({
       />
       <OrganizationJsonLd />
       {dict.faq && <FAQJsonLd items={dict.faq.items} />}
+      {dict.howTo && (
+        <HowToJsonLd
+          name={dict.howTo.title}
+          description="Convert any image to a shareable URL in 3 simple steps"
+          steps={dict.howTo.steps.map((step) => ({
+            name: step.title,
+            text: step.description,
+          }))}
+        />
+      )}
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://www.imagetourl.cloud"}/${locale}` }
@@ -80,6 +92,16 @@ export default async function HomePage({
             </p>
           </div>
 
+          {/* Featured Snippet: Definition Section */}
+          {dict.intro && (
+            <div className="w-full max-w-2xl mx-auto mb-12 px-4">
+              <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                <h2 className="text-lg font-medium text-white mb-2">{dict.intro.title}</h2>
+                <p className="text-zinc-400 text-sm leading-relaxed">{dict.intro.content}</p>
+              </div>
+            </div>
+          )}
+
           <UploadZone dict={dict} />
 
           {/* Stats */}
@@ -101,6 +123,16 @@ export default async function HomePage({
             </div>
           </div>
         </main>
+
+        {/* How To Section */}
+        {dict.howTo && (
+          <HowToSection title={dict.howTo.title} steps={dict.howTo.steps} />
+        )}
+
+        {/* Trust Section */}
+        {dict.trust && (
+          <TrustSection title={dict.trust.title} subtitle={dict.trust.subtitle} />
+        )}
 
         {/* FAQ Section */}
         {dict.faq && (

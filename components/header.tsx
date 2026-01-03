@@ -100,7 +100,7 @@ export function Header({ locale, dict, children }: HeaderProps) {
                         <div className="w-9 h-9 rounded-lg overflow-hidden">
                             <img
                                 src="/favicon-32x32.png"
-                                alt="ImageToURL Logo"
+                                alt="ImageToURL - Free Image to URL Converter"
                                 className="w-full h-full object-cover"
                             />
                         </div>
@@ -193,7 +193,7 @@ export function Header({ locale, dict, children }: HeaderProps) {
                                         <div className="w-8 h-8 rounded-lg overflow-hidden">
                                             <img
                                                 src="/favicon-32x32.png"
-                                                alt="ImageToURL Logo"
+                                                alt="ImageToURL - Free Image to URL Converter"
                                                 className="w-full h-full object-cover"
                                             />
                                         </div>

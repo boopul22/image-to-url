@@ -7,9 +7,9 @@ import { LoginFeatureTooltip } from "@/components/login-feature-tooltip"
 
 export async function NavAuth({ locale, signInText }: { locale: Locale; signInText: string }) {
   const supabase = await createClient()
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
+
+  // Handle missing Supabase credentials (local dev without .env.local)
+  const user = supabase ? (await supabase.auth.getUser()).data.user : null
 
   if (user) {
     return (

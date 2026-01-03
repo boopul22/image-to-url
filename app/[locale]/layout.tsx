@@ -95,6 +95,11 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} dir={dir} className="dark" suppressHydrationWarning>
+      <head>
+        {/* Preconnect to R2 CDN for faster image loading */}
+        <link rel="preconnect" href="https://pub-141831e61e69445289222976a15b6fb3.r2.dev" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://pub-141831e61e69445289222976a15b6fb3.r2.dev" />
+      </head>
       <body className={`${inter.variable} font-sans antialiased selection:bg-brand selection:text-white overflow-x-hidden`}>
         {/* Server-side navigation for SEO crawlers */}
         <SeoNav locale={locale} />
