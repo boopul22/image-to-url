@@ -26,10 +26,16 @@ export async function generateMetadata({
       title: "PNG to URL Converter – Free Online Tool",
       description:
         "Convert PNG images into fast, shareable URLs with full transparency preserved. Free, secure, and instant.",
-      url: `/${locale}/tools/png-to-url`,
+      url: `${BASE_URL}/${locale}/tools/png-to-url`,
       siteName: "ImageToURL",
       locale: locale,
       type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          alt: "ImageToURL - Free Image Hosting",
+        },
+      ],
     },
   }
 }

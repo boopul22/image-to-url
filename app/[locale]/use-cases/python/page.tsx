@@ -23,10 +23,16 @@ export async function generateMetadata({
         openGraph: {
             title: "Image to URL Python - Convert Images in Python",
             description: "Python code examples for uploading images and getting shareable URLs.",
-            url: `/${locale}/use-cases/python`,
+            url: `${BASE_URL}/${locale}/use-cases/python`,
             siteName: "ImageToURL",
             locale: locale,
             type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          alt: "ImageToURL - Free Image Hosting",
+        },
+      ],
         },
     }
 }

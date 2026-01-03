@@ -23,10 +23,16 @@ export async function generateMetadata({
     openGraph: {
       title: "SVG to URL Converter - Free Vector Image Hosting",
       description: "Convert SVG vector images to shareable URLs instantly with perfect scalability.",
-      url: `/${locale}/tools/svg-to-url`,
+      url: `${BASE_URL}/${locale}/tools/svg-to-url`,
       siteName: "ImageToURL",
       locale: locale,
       type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          alt: "ImageToURL - Free Image Hosting",
+        },
+      ],
     },
   }
 }

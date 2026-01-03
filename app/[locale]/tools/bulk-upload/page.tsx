@@ -23,10 +23,16 @@ export async function generateMetadata({
     openGraph: {
       title: "Bulk Image Upload - Upload Multiple Images to URL",
       description: "Upload multiple images at once and get shareable URLs instantly.",
-      url: `/${locale}/tools/bulk-upload`,
+      url: `${BASE_URL}/${locale}/tools/bulk-upload`,
       siteName: "ImageToURL",
       locale: locale,
       type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          alt: "ImageToURL - Free Image Hosting",
+        },
+      ],
     },
   }
 }

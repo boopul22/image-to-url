@@ -23,10 +23,16 @@ export async function generateMetadata({
     openGraph: {
       title: "Image URLs for HTML & CSS - Free Web Image Hosting",
       description: "Get image URLs for HTML img tags and CSS backgrounds. Fast CDN delivery.",
-      url: `/${locale}/use-cases/html`,
+      url: `${BASE_URL}/${locale}/use-cases/html`,
       siteName: "ImageToURL",
       locale: locale,
       type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          alt: "ImageToURL - Free Image Hosting",
+        },
+      ],
     },
   }
 }

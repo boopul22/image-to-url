@@ -23,10 +23,16 @@ export async function generateMetadata({
     openGraph: {
       title: "Image URLs for Fantasy Sports - ESPN, Yahoo & NFL Fantasy",
       description: "Upload custom team logos for fantasy sports leagues.",
-      url: `/${locale}/use-cases/fantasy-sports`,
+      url: `${BASE_URL}/${locale}/use-cases/fantasy-sports`,
       siteName: "ImageToURL",
       locale: locale,
       type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          alt: "ImageToURL - Free Image Hosting",
+        },
+      ],
     },
   }
 }

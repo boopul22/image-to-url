@@ -23,10 +23,16 @@ export async function generateMetadata({
         openGraph: {
             title: "Image URL for VRChat - Custom Avatars & Worlds",
             description: "Upload custom images and get URLs for VRChat avatar and world creation.",
-            url: `/${locale}/use-cases/vrchat`,
+            url: `${BASE_URL}/${locale}/use-cases/vrchat`,
             siteName: "ImageToURL",
             locale: locale,
             type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          alt: "ImageToURL - Free Image Hosting",
+        },
+      ],
         },
     }
 }

@@ -23,10 +23,16 @@ export async function generateMetadata({
     openGraph: {
       title: "Free GIF to URL Converter - Instant Animated GIF Hosting",
       description: "Convert animated GIFs to shareable URLs instantly. Zero quality loss, unlimited bandwidth, perfect for Discord & social media memes.",
-      url: `/${locale}/tools/gif-to-url`,
+      url: `${BASE_URL}/${locale}/tools/gif-to-url`,
       siteName: "ImageToURL",
       locale: locale,
       type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          alt: "ImageToURL - Free Image Hosting",
+        },
+      ],
       images: [
         {
           url: `/og-gif-converter.jpg`,

@@ -23,10 +23,16 @@ export async function generateMetadata({
         openGraph: {
             title: "Image URL in React & Next.js - Display & Upload",
             description: "React and Next.js code examples for working with image URLs.",
-            url: `/${locale}/use-cases/react`,
+            url: `${BASE_URL}/${locale}/use-cases/react`,
             siteName: "ImageToURL",
             locale: locale,
             type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          alt: "ImageToURL - Free Image Hosting",
+        },
+      ],
         },
     }
 }

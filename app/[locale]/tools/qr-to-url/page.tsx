@@ -23,10 +23,16 @@ export async function generateMetadata({
     openGraph: {
       title: "QR Code Image to URL - Host QR Code Images",
       description: "Upload QR code images and get shareable URLs for easy sharing.",
-      url: `/${locale}/tools/qr-to-url`,
+      url: `${BASE_URL}/${locale}/tools/qr-to-url`,
       siteName: "ImageToURL",
       locale: locale,
       type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          alt: "ImageToURL - Free Image Hosting",
+        },
+      ],
     },
   }
 }

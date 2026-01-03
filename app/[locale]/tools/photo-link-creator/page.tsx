@@ -25,10 +25,16 @@ export async function generateMetadata({
         openGraph: {
             title: toolDict?.meta?.title || "Photo Link Creator - Create Link for Photo Online",
             description: toolDict?.meta?.description || "Create a link for your photo instantly. Free online photo link creator.",
-            url: `/${locale}/tools/photo-link-creator`,
+            url: `${BASE_URL}/${locale}/tools/photo-link-creator`,
             siteName: "ImageToURL",
             locale: locale,
             type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          alt: "ImageToURL - Free Image Hosting",
+        },
+      ],
         },
     }
 }

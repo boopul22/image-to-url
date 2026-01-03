@@ -23,10 +23,16 @@ export async function generateMetadata({
     openGraph: {
       title: "Minecraft Skin Image URLs - Host Custom Skins",
       description: "Upload Minecraft skins and get image URLs for servers and communities.",
-      url: `/${locale}/use-cases/minecraft`,
+      url: `${BASE_URL}/${locale}/use-cases/minecraft`,
       siteName: "ImageToURL",
       locale: locale,
       type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          alt: "ImageToURL - Free Image Hosting",
+        },
+      ],
     },
   }
 }

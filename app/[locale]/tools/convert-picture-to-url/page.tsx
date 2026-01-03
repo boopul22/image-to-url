@@ -25,10 +25,16 @@ export async function generateMetadata({
         openGraph: {
             title: toolDict?.meta?.title || "Convert Picture to URL - Free Online Converter",
             description: toolDict?.meta?.description || "Convert any picture to a URL link easily. Free online tool.",
-            url: `/${locale}/tools/convert-picture-to-url`,
+            url: `${BASE_URL}/${locale}/tools/convert-picture-to-url`,
             siteName: "ImageToURL",
             locale: locale,
             type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          alt: "ImageToURL - Free Image Hosting",
+        },
+      ],
         },
     }
 }

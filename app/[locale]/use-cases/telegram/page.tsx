@@ -23,10 +23,16 @@ export async function generateMetadata({
         openGraph: {
             title: "Image to URL for Telegram - Free Telegram Image Hosting",
             description: "Upload images for Telegram and get shareable URLs for bots and channels.",
-            url: `/${locale}/use-cases/telegram`,
+            url: `${BASE_URL}/${locale}/use-cases/telegram`,
             siteName: "ImageToURL",
             locale: locale,
             type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          alt: "ImageToURL - Free Image Hosting",
+        },
+      ],
         },
     }
 }

@@ -23,10 +23,16 @@ export async function generateMetadata({
         openGraph: {
             title: "Image to URL Node.js - Upload & Convert",
             description: "Node.js code examples for image uploads, base64 conversion, and URL generation.",
-            url: `/${locale}/use-cases/nodejs`,
+            url: `${BASE_URL}/${locale}/use-cases/nodejs`,
             siteName: "ImageToURL",
             locale: locale,
             type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          alt: "ImageToURL - Free Image Hosting",
+        },
+      ],
         },
     }
 }

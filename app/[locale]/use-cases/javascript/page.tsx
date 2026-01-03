@@ -23,10 +23,16 @@ export async function generateMetadata({
         openGraph: {
             title: "Image to URL JavaScript - Convert Images in JS",
             description: "JavaScript code examples for converting images to URLs and working with image data.",
-            url: `/${locale}/use-cases/javascript`,
+            url: `${BASE_URL}/${locale}/use-cases/javascript`,
             siteName: "ImageToURL",
             locale: locale,
             type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          alt: "ImageToURL - Free Image Hosting",
+        },
+      ],
         },
     }
 }

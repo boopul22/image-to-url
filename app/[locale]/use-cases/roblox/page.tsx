@@ -23,10 +23,16 @@ export async function generateMetadata({
         openGraph: {
             title: "Image URL for Roblox - Custom Decals & Textures",
             description: "Upload custom images and get URLs for Roblox game development.",
-            url: `/${locale}/use-cases/roblox`,
+            url: `${BASE_URL}/${locale}/use-cases/roblox`,
             siteName: "ImageToURL",
             locale: locale,
             type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          alt: "ImageToURL - Free Image Hosting",
+        },
+      ],
         },
     }
 }

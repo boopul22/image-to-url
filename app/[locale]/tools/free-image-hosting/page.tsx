@@ -25,10 +25,16 @@ export async function generateMetadata({
         openGraph: {
             title: toolDict?.meta?.title || "Free Image Hosting - Upload & Share",
             description: toolDict?.meta?.description || "Free image hosting with instant URL generation. No signup required.",
-            url: `/${locale}/tools/free-image-hosting`,
+            url: `${BASE_URL}/${locale}/tools/free-image-hosting`,
             siteName: "ImageToURL",
             locale: locale,
             type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          alt: "ImageToURL - Free Image Hosting",
+        },
+      ],
         },
     }
 }

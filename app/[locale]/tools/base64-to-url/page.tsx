@@ -23,10 +23,16 @@ export async function generateMetadata({
     openGraph: {
       title: "Base64 to URL Converter - Convert Base64 Images",
       description: "Convert Base64 encoded images to shareable URLs instantly.",
-      url: `/${locale}/tools/base64-to-url`,
+      url: `${BASE_URL}/${locale}/tools/base64-to-url`,
       siteName: "ImageToURL",
       locale: locale,
       type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          alt: "ImageToURL - Free Image Hosting",
+        },
+      ],
     },
   }
 }

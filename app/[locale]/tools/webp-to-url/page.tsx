@@ -25,10 +25,16 @@ export async function generateMetadata({
         openGraph: {
             title: toolDict?.meta?.title || "WebP to URL Converter - Free Online Tool",
             description: toolDict?.meta?.description || "Convert WebP images to shareable URLs instantly.",
-            url: `/${locale}/tools/webp-to-url`,
+            url: `${BASE_URL}/${locale}/tools/webp-to-url`,
             siteName: "ImageToURL",
             locale: locale,
             type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          alt: "ImageToURL - Free Image Hosting",
+        },
+      ],
         },
     }
 }

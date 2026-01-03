@@ -25,10 +25,16 @@ export async function generateMetadata({
         openGraph: {
             title: toolDict?.meta?.title || "Image to Data URL Converter - Base64 Encoder",
             description: toolDict?.meta?.description || "Convert images to Data URLs for embedding in code.",
-            url: `/${locale}/tools/image-to-data-url`,
+            url: `${BASE_URL}/${locale}/tools/image-to-data-url`,
             siteName: "ImageToURL",
             locale: locale,
             type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          alt: "ImageToURL - Free Image Hosting",
+        },
+      ],
         },
     }
 }

@@ -25,10 +25,16 @@ export async function generateMetadata({
         openGraph: {
             title: toolDict?.meta?.title || "Image URL to QR Code Generator",
             description: toolDict?.meta?.description || "Convert image URLs to scannable QR codes instantly.",
-            url: `/${locale}/tools/url-to-qr-code`,
+            url: `${BASE_URL}/${locale}/tools/url-to-qr-code`,
             siteName: "ImageToURL",
             locale: locale,
             type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          alt: "ImageToURL - Free Image Hosting",
+        },
+      ],
         },
     }
 }

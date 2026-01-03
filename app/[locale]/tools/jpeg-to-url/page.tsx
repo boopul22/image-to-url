@@ -25,10 +25,16 @@ export async function generateMetadata({
         openGraph: {
             title: toolDict?.meta?.title || "JPEG to URL Converter - Free Online Tool",
             description: toolDict?.meta?.description || "Convert JPEG images to shareable URLs instantly.",
-            url: `/${locale}/tools/jpeg-to-url`,
+            url: `${BASE_URL}/${locale}/tools/jpeg-to-url`,
             siteName: "ImageToURL",
             locale: locale,
             type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          alt: "ImageToURL - Free Image Hosting",
+        },
+      ],
         },
     }
 }

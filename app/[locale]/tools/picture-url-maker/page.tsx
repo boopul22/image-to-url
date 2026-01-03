@@ -25,10 +25,16 @@ export async function generateMetadata({
         openGraph: {
             title: toolDict?.meta?.title || "Picture URL Maker - Make URL for Picture Online",
             description: toolDict?.meta?.description || "Make a URL for any picture instantly. Free online picture URL maker.",
-            url: `/${locale}/tools/picture-url-maker`,
+            url: `${BASE_URL}/${locale}/tools/picture-url-maker`,
             siteName: "ImageToURL",
             locale: locale,
             type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          alt: "ImageToURL - Free Image Hosting",
+        },
+      ],
         },
     }
 }

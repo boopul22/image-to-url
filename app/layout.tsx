@@ -1,8 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
 export const viewport: Viewport = {
   themeColor: '#1a1a1a',
@@ -32,11 +29,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  return (
-    <html lang="en" className="dark" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans antialiased selection:bg-brand selection:text-white overflow-x-hidden`}>
-        {children}
-      </body>
-    </html>
-  )
+  // Pass-through layout - html/body rendered in locale layout with correct lang attribute
+  return children
 }
+

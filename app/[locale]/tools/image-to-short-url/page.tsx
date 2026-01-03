@@ -25,10 +25,16 @@ export async function generateMetadata({
         openGraph: {
             title: toolDict?.meta?.title || "Image to Short URL - Create Compact Shareable Links",
             description: toolDict?.meta?.description || "Convert your images to short, compact URLs instantly.",
-            url: `/${locale}/tools/image-to-short-url`,
+            url: `${BASE_URL}/${locale}/tools/image-to-short-url`,
             siteName: "ImageToURL",
             locale: locale,
             type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          alt: "ImageToURL - Free Image Hosting",
+        },
+      ],
         },
     }
 }

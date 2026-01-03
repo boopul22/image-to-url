@@ -23,10 +23,16 @@ export async function generateMetadata({
     openGraph: {
       title: "Image Hosting for Discord - Free Discord Image URLs",
       description: "Upload images for Discord and get embeddable URLs that work with bots and embeds.",
-      url: `/${locale}/use-cases/discord`,
+      url: `${BASE_URL}/${locale}/use-cases/discord`,
       siteName: "ImageToURL",
       locale: locale,
       type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          alt: "ImageToURL - Free Image Hosting",
+        },
+      ],
     },
   }
 }

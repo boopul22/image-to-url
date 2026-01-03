@@ -25,10 +25,16 @@ export async function generateMetadata({
         openGraph: {
             title: toolDict?.meta?.title || "Image Embed Code Generator",
             description: toolDict?.meta?.description || "Generate embed codes for images in multiple formats.",
-            url: `/${locale}/tools/image-embed-code`,
+            url: `${BASE_URL}/${locale}/tools/image-embed-code`,
             siteName: "ImageToURL",
             locale: locale,
             type: "website",
+      images: [
+        {
+          url: `${BASE_URL}/og-image.png`,
+          alt: "ImageToURL - Free Image Hosting",
+        },
+      ],
         },
     }
 }
