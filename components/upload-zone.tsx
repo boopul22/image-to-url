@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState, useRef, useCallback, useEffect } from "react"
+import { useState, useRef, useCallback, useEffect, useLayoutEffect } from "react"
 import { Upload, Link2, Check, AlertCircle, Shield, Zap, FileImage, X, Download, Code, QrCode } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -53,9 +53,23 @@ export function UploadZone({ dict }: { dict: Dictionary }) {
   const [qrCodeUrl, setQrCodeUrl] = useState<string | null>(null)
   const [qrLoading, setQrLoading] = useState(true)
   const fileInputRef = useRef<HTMLInputElement>(null)
+  const uploadZoneRef = useRef<HTMLDivElement>(null)
 
   // Register service worker for PWA
   useServiceWorker()
+
+  // Auto-scroll to the upload zone on page load
+  useLayoutEffect(() => {
+    const timer = setTimeout(() => {
+      if (uploadZoneRef.current) {
+        uploadZoneRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        })
+      }
+    }, 100) // Small delay to ensure page is rendered
+    return () => clearTimeout(timer)
+  }, [])
 
   // Login benefits for rotating tooltip
   const loginBenefits = [
@@ -413,7 +427,7 @@ export function UploadZone({ dict }: { dict: Dictionary }) {
       {/* PWA Install Prompt - for mobile users */}
       <PWAInstallPrompt />
 
-      <div className="w-full max-w-4xl animate-slide-up" style={{ animationDelay: "100ms" }}>
+      <div ref={uploadZoneRef} className="w-full max-w-4xl animate-slide-up" style={{ animationDelay: "100ms" }}>
         <div className="bg-surface rounded-2xl p-2 shadow-2xl shadow-black/50 border border-white/5 relative overflow-hidden">
           {/* Top gradient line */}
           <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand/50 to-transparent" />
