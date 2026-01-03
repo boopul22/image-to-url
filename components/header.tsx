@@ -2,8 +2,8 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, ChevronDown, Sparkles } from "lucide-react"
-import { useState, useEffect } from "react"
+import { Menu, ChevronDown } from "lucide-react"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetClose, SheetTitle } from "@/components/ui/sheet"
 import { LanguageSwitcher } from "@/components/language-switcher"
@@ -52,47 +52,11 @@ const toolLinks = [
 export function Header({ locale, dict, children }: HeaderProps) {
     const pathname = usePathname()
     const [isOpen, setIsOpen] = useState(false)
-    const [showBanner, setShowBanner] = useState(true)
 
     const isDashboard = pathname.includes("/dashboard")
 
-    // Auto-hide banner after 30 seconds
-    useEffect(() => {
-        const timer = setTimeout(() => setShowBanner(false), 30000)
-        return () => clearTimeout(timer)
-    }, [])
-
     return (
         <>
-            {/* Happy New Year Flash Banner */}
-            {showBanner && (
-                <div className="relative overflow-hidden bg-dark border-b border-brand/30 text-white py-2">
-                    {/* Animated sparkle background with brand color */}
-                    <div className="absolute inset-0 overflow-hidden">
-                        <div className="absolute -top-1 left-1/4 w-1 h-1 bg-brand rounded-full animate-ping" style={{ animationDuration: '1.5s' }} />
-                        <div className="absolute top-1 left-1/2 w-1.5 h-1.5 bg-brand rounded-full animate-ping" style={{ animationDuration: '2s', animationDelay: '0.3s' }} />
-                        <div className="absolute -top-0.5 left-3/4 w-1 h-1 bg-brand rounded-full animate-ping" style={{ animationDuration: '1.8s', animationDelay: '0.7s' }} />
-                        <div className="absolute top-0.5 left-1/3 w-0.5 h-0.5 bg-brand/70 rounded-full animate-ping" style={{ animationDuration: '2.2s', animationDelay: '0.5s' }} />
-                        {/* Gradient glow effect */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-brand/10 to-transparent" />
-                    </div>
-
-                    <div className="relative flex items-center justify-center gap-2 text-sm font-medium">
-                        <Sparkles className="w-4 h-4 animate-pulse text-brand" />
-                        <span className="bg-gradient-to-r from-brand via-white to-brand bg-clip-text text-transparent animate-pulse font-semibold">
-                            🎊 Happy New Year 2026! 🎊
-                        </span>
-                        <Sparkles className="w-4 h-4 animate-pulse text-brand" />
-                        <button
-                            onClick={() => setShowBanner(false)}
-                            className="absolute right-4 text-zinc-500 hover:text-white text-xs transition-colors"
-                        >
-                            ✕
-                        </button>
-                    </div>
-                </div>
-            )}
-
             <nav className="w-full z-50 glass-panel sticky top-0">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
                     {/* Logo */}

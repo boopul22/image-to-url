@@ -166,7 +166,7 @@
 
 /* Added glass panel effect - translucent navbar */
 .glass-panel {
-  background: oklch(0.145 0 0 / 0.6);
+  background: oklch(0.145 0 0 / 0.85);
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   border-bottom: 1px solid oklch(0.985 0 0 / 0.05);

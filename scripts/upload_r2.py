@@ -8,7 +8,7 @@ R2_ACCESS_KEY_ID = "4320a1be88c601209a8fef734cc436c8"
 R2_SECRET_ACCESS_KEY = "99fa05fff19ff66f44d7857e97af898234c129013282d13b87f5de81cd593ea9"
 R2_ACCOUNT_ID = "ab54ca2d01df4886aa0c3f240ace806d"
 R2_BUCKET_NAME = "imgtourl"
-R2_PUBLIC_URL = "https://pub-141831e61e69445289222976a15b6fb3.r2.dev"
+R2_PUBLIC_URL = "https://imagetourl.cloud"
 
 ENDPOINT_URL = f"https://{R2_ACCOUNT_ID}.r2.cloudflarestorage.com"
 

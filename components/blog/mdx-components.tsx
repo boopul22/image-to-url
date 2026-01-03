@@ -168,7 +168,7 @@ function OptimizedImage({
 
   if (isExternal) {
     // Check if it's an R2 image that needs proxying
-    const isR2Image = src.includes('pub-141831e61e69445289222976a15b6fb3.r2.dev')
+    const isR2Image = src.includes('pub-141831e61e69445289222976a15b6fb3.r2.dev') || src.includes('imagetourl.cloud')
     const imageSrc = isR2Image
       ? `/api/proxy-image?url=${encodeURIComponent(src)}`
       : src

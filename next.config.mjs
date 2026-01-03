@@ -14,6 +14,11 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
+        hostname: "imagetourl.cloud",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
         hostname: "pub-141831e61e69445289222976a15b6fb3.r2.dev",
         pathname: "/**",
       },
