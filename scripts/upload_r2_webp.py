@@ -36,7 +36,7 @@ s3 = boto3.client(
     aws_secret_access_key=R2_SECRET_ACCESS_KEY,
 )
 
-ARTIFACT_DIR = "/Users/bipulkumar/.gemini/antigravity/brain/5f03f224-6060-4ed3-88d7-0142c6dd4719"
+ARTIFACT_DIR = "/Users/bipulkumar/.gemini/antigravity/brain/6b112676-293c-4307-9bb6-ee19abe5800f"
 
 # Mapping: original_filename_part -> new_filename_base
 images_to_upload = [
