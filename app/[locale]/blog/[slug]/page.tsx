@@ -17,6 +17,7 @@ import { ShareButtons } from '@/components/blog/share-buttons'
 import { ReadingProgress } from '@/components/blog/reading-progress'
 import { MobileTocDrawer } from '@/components/blog/mobile-toc-drawer'
 import { TableOfContents } from '@/components/blog/table-of-contents'
+import { BlogFAQ, BlogFAQSchema } from '@/components/blog/blog-faq'
 import { getPostBySlug, getAllPostSlugs, getRelatedPosts } from '@/lib/blog/content'
 import { processMDX } from '@/lib/blog/mdx'
 
@@ -114,6 +115,7 @@ export default async function BlogPostPage({
     <>
       <ReadingProgress />
       <ArticleJsonLd post={post} locale={locale} />
+      {post.faqItems.length > 0 && <BlogFAQSchema items={post.faqItems} />}
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: `${BASE_URL}/${locale}` },
@@ -159,9 +161,14 @@ export default async function BlogPostPage({
                 <BlogHeader post={post} locale={locale} />
 
                 {/* MDX Content */}
-                <div className="prose prose-sm sm:prose-base prose-invert prose-zinc max-w-none prose-headings:scroll-mt-20 prose-p:text-zinc-300 prose-a:text-brand prose-a:no-underline hover:prose-a:underline prose-pre:bg-zinc-900 prose-pre:border prose-pre:border-zinc-800 prose-img:rounded-lg">
+                <div className="blog-content max-w-none">
                   {content}
                 </div>
+
+                {/* FAQ Section - Rendered separately for better styling */}
+                {post.faqItems.length > 0 && (
+                  <BlogFAQ items={post.faqItems} />
+                )}
 
                 {/* Share Buttons */}
                 <ShareButtons

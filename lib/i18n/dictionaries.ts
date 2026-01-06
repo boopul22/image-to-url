@@ -407,6 +407,8 @@ const dictionaries = {
       api: "API",
       pricing: "价格",
       signIn: "登录",
+      signOut: "退出",
+      dashboard: "仪表板",
       tools: "工具",
     },
     hero: {
@@ -474,10 +476,13 @@ const dictionaries = {
   hi: {
     nav: {
       home: "होम",
+      blog: "ब्लॉग",
       documentation: "दस्तावेज़ीकरण",
       api: "API",
       pricing: "मूल्य निर्धारण",
       signIn: "साइन इन करें",
+      signOut: "साइन आउट करें",
+      dashboard: "डैशबोर्ड",
       tools: "उपकरण",
     },
     hero: {
@@ -659,6 +664,8 @@ const dictionaries = {
       api: "API",
       pricing: "Precios",
       signIn: "Iniciar Sesión",
+      signOut: "Cerrar Sesión",
+      dashboard: "Panel",
       tools: "Herramientas",
     },
     hero: {
@@ -728,10 +735,13 @@ const dictionaries = {
   ar: {
     nav: {
       home: "الرئيسية",
+      blog: "مدونة",
       documentation: "التوثيق",
       api: "واجهة برمجية",
       pricing: "التسعير",
       signIn: "تسجيل الدخول",
+      signOut: "تسجيل الخروج",
+      dashboard: "لوحة التحكم",
       tools: "أدوات",
     },
     hero: {
@@ -781,6 +791,8 @@ const dictionaries = {
       api: "API",
       pricing: "Tarifs",
       signIn: "Se Connecter",
+      signOut: "Se Déconnecter",
+      dashboard: "Tableau de Bord",
       tools: "Outils",
     },
     hero: {
@@ -825,10 +837,13 @@ const dictionaries = {
   bn: {
     nav: {
       home: "হোম",
+      blog: "ব্লগ",
       documentation: "ডকুমেন্টেশন",
       api: "API",
       pricing: "মূল্য",
       signIn: "সাইন ইন",
+      signOut: "সাইন আউট",
+      dashboard: "ড্যাশবোর্ড",
       tools: "টুলস",
     },
     hero: {
@@ -873,10 +888,13 @@ const dictionaries = {
   pt: {
     nav: {
       home: "Início",
+      blog: "Blog",
       documentation: "Documentação",
       api: "API",
       pricing: "Preços",
       signIn: "Entrar",
+      signOut: "Sair",
+      dashboard: "Painel",
       tools: "Ferramentas",
     },
     hero: {
@@ -921,10 +939,13 @@ const dictionaries = {
   ru: {
     nav: {
       home: "Главная",
+      blog: "Блог",
       documentation: "Документация",
       api: "API",
       pricing: "Цены",
       signIn: "Войти",
+      signOut: "Выйти",
+      dashboard: "Панель",
       tools: "Инструменты",
     },
     hero: {
@@ -969,10 +990,13 @@ const dictionaries = {
   ur: {
     nav: {
       home: "ہوم",
+      blog: "بلاگ",
       documentation: "دستاویزات",
       api: "API",
       pricing: "قیمتیں",
       signIn: "سائن ان کریں",
+      signOut: "سائن آؤٹ کریں",
+      dashboard: "ڈیش بورڈ",
       tools: "ٹولز",
     },
     hero: {
@@ -1017,10 +1041,13 @@ const dictionaries = {
   id: {
     nav: {
       home: "Beranda",
+      blog: "Blog",
       documentation: "Dokumentasi",
       api: "API",
       pricing: "Harga",
       signIn: "Masuk",
+      signOut: "Keluar",
+      dashboard: "Dasbor",
       tools: "Alat",
     },
     hero: {
@@ -1070,6 +1097,8 @@ const dictionaries = {
       api: "API",
       pricing: "Preise",
       signIn: "Anmelden",
+      signOut: "Abmelden",
+      dashboard: "Dashboard",
       tools: "Werkzeuge",
     },
     hero: {
@@ -1119,6 +1148,8 @@ const dictionaries = {
       api: "API",
       pricing: "料金",
       signIn: "サインイン",
+      signOut: "サインアウト",
+      dashboard: "ダッシュボード",
       tools: "ツール",
     },
     hero: {
@@ -1163,10 +1194,13 @@ const dictionaries = {
   sw: {
     nav: {
       home: "Nyumbani",
+      blog: "Blogu",
       documentation: "Nyaraka",
       api: "API",
       pricing: "Bei",
       signIn: "Ingia",
+      signOut: "Ondoka",
+      dashboard: "Dashibodi",
       tools: "Zana",
     },
     hero: {
@@ -1211,10 +1245,13 @@ const dictionaries = {
   mr: {
     nav: {
       home: "होम",
+      blog: "ब्लॉग",
       documentation: "दस्तऐवजीकरण",
       api: "API",
       pricing: "किंमत",
       signIn: "साइन इन करा",
+      signOut: "साइन आउट करा",
+      dashboard: "डॅशबोर्ड",
       tools: "साधने",
     },
     hero: {
@@ -1259,10 +1296,13 @@ const dictionaries = {
   te: {
     nav: {
       home: "హోమ్",
+      blog: "బ్లాగ్",
       documentation: "డాక్యుమెంటేషన్",
       api: "API",
       pricing: "ధరలు",
       signIn: "సైన్ ఇన్",
+      signOut: "సైన్ ఔట్",
+      dashboard: "డాష్‌బోర్డ్",
       tools: "టూల్స్",
     },
     hero: {
@@ -1307,10 +1347,13 @@ const dictionaries = {
   tr: {
     nav: {
       home: "Ana Sayfa",
+      blog: "Blog",
       documentation: "Dokümantasyon",
       api: "API",
       pricing: "Fiyatlandırma",
       signIn: "Giriş Yap",
+      signOut: "Çıkış Yap",
+      dashboard: "Kontrol Paneli",
       tools: "Araçlar",
     },
     hero: {
@@ -1355,10 +1398,13 @@ const dictionaries = {
   ta: {
     nav: {
       home: "ஹோம்",
+      blog: "வலைப்பதிவு",
       documentation: "ஆவணமாக்கல்",
       api: "API",
       pricing: "விலை நிர்ணயம்",
       signIn: "உள்நுழைக",
+      signOut: "வெளியேறு",
+      dashboard: "டாஷ்போர்டு",
       tools: "கருவிகள்",
     },
     hero: {
@@ -1403,10 +1449,13 @@ const dictionaries = {
   vi: {
     nav: {
       home: "Trang chủ",
+      blog: "Blog",
       documentation: "Tài Liệu",
       api: "API",
       pricing: "Giá Cả",
       signIn: "Đăng Nhập",
+      signOut: "Đăng Xuất",
+      dashboard: "Bảng điều khiển",
       tools: "Công cụ",
     },
     hero: {
@@ -1451,10 +1500,13 @@ const dictionaries = {
   ko: {
     nav: {
       home: "홈",
+      blog: "블로그",
       documentation: "문서",
       api: "API",
       pricing: "가격",
       signIn: "로그인",
+      signOut: "로그아웃",
+      dashboard: "대시보드",
       tools: "도구",
     },
     hero: {
@@ -1499,10 +1551,13 @@ const dictionaries = {
   it: {
     nav: {
       home: "Home",
+      blog: "Blog",
       documentation: "Documentazione",
       api: "API",
       pricing: "Prezzi",
       signIn: "Accedi",
+      signOut: "Esci",
+      dashboard: "Pannello",
       tools: "Strumenti",
     },
     hero: {
@@ -1547,10 +1602,13 @@ const dictionaries = {
   th: {
     nav: {
       home: "หน้าแรก",
+      blog: "บล็อก",
       documentation: "เอกสาร",
       api: "API",
       pricing: "ราคา",
       signIn: "เข้าสู่ระบบ",
+      signOut: "ออกจากระบบ",
+      dashboard: "แดชบอร์ด",
       tools: "เครื่องมือ",
     },
     hero: {
@@ -1593,10 +1651,13 @@ const dictionaries = {
   gu: {
     nav: {
       home: "હોમ",
+      blog: "બ્લોગ",
       documentation: "દસ્તાવેજીકરણ",
       api: "API",
       pricing: "કિંમતો",
       signIn: "સાઇન ઇન કરો",
+      signOut: "સાઇન આઉટ કરો",
+      dashboard: "ડેશબોર્ડ",
       tools: "સાધનો",
     },
     hero: {
@@ -1641,10 +1702,13 @@ const dictionaries = {
   pl: {
     nav: {
       home: "Strona główna",
+      blog: "Blog",
       documentation: "Dokumentacja",
       api: "API",
       pricing: "Cennik",
       signIn: "Zaloguj się",
+      signOut: "Wyloguj się",
+      dashboard: "Panel",
       tools: "Narzędzia",
     },
     hero: {
@@ -1689,10 +1753,13 @@ const dictionaries = {
   uk: {
     nav: {
       home: "Головна",
+      blog: "Блог",
       documentation: "Документація",
       api: "API",
       pricing: "Ціни",
       signIn: "Увійти",
+      signOut: "Вийти",
+      dashboard: "Панель",
       tools: "Інструменти",
     },
     hero: {
@@ -1737,10 +1804,13 @@ const dictionaries = {
   fa: {
     nav: {
       home: "خانه",
+      blog: "وبلاگ",
       documentation: "مستندات",
       api: "API",
       pricing: "قیمت‌گذاری",
       signIn: "ورود",
+      signOut: "خروج",
+      dashboard: "داشبورد",
       tools: "ابزارها",
     },
     hero: {
@@ -1785,10 +1855,13 @@ const dictionaries = {
   ml: {
     nav: {
       home: "ഹോം",
+      blog: "ബ്ലോഗ്",
       documentation: "ഡോക്യുമെന്റേഷൻ",
       api: "API",
       pricing: "വിലനിർണ്ണയം",
       signIn: "സൈൻ ഇൻ ചെയ്യുക",
+      signOut: "സൈൻ ഔട്ട് ചെയ്യുക",
+      dashboard: "ഡാഷ്‌ബോർഡ്",
       tools: "ടൂളുകൾ",
     },
     hero: {
@@ -1833,10 +1906,13 @@ const dictionaries = {
   kn: {
     nav: {
       home: "ಹೋಮ್",
+      blog: "ಬ್ಲಾಗ್",
       documentation: "ದಾಖಲಾತಿ",
       api: "API",
       pricing: "ಬೆಲೆ",
       signIn: "ಸೈನ್ ಇನ್ ಮಾಡಿ",
+      signOut: "ಸೈನ್ ಔಟ್ ಮಾಡಿ",
+      dashboard: "ಡ್ಯಾಶ್‌ಬೋರ್ಡ್",
       tools: "ಉಪಕರಣಗಳು",
     },
     hero: {
@@ -1881,10 +1957,13 @@ const dictionaries = {
   or: {
     nav: {
       home: "ହୋମ",
+      blog: "ବ୍ଲଗ୍",
       documentation: "ଡକ୍ୟୁମେଣ୍ଟେସନ୍",
       api: "API",
       pricing: "ମୂଲ୍ୟ",
       signIn: "ସାଇନ୍ ଇନ୍ କରନ୍ତୁ",
+      signOut: "ସାଇନ୍ ଆଉଟ୍ କରନ୍ତୁ",
+      dashboard: "ଡ୍ୟାସବୋର୍ଡ",
       tools: "ଟୁଲ୍ସ",
     },
     hero: {
@@ -1929,10 +2008,13 @@ const dictionaries = {
   my: {
     nav: {
       home: "ပင်မ",
+      blog: "ဘလော့ဂ်",
       documentation: "စာရွက်စာတမ်းများ",
       api: "API",
       pricing: "စျေးနှုန်း",
       signIn: "အကောင့်ဝင်ရန်",
+      signOut: "အကောင့်ထွက်ရန်",
+      dashboard: "ဒက်ရှ်ဘုတ်",
       tools: "ကိရိယာများ",
     },
     hero: {

@@ -13,6 +13,7 @@ import type {
   BlogCategory,
   BlogTag,
   TableOfContentsItem,
+  FAQItem,
 } from './types'
 
 const POSTS_PER_PAGE = 10
@@ -43,13 +44,23 @@ function getMdxFiles(dir: string): string[] {
 
 /**
  * Extract headings from MDX content for table of contents
+ * Excludes FAQ section headings since they are rendered separately
  */
 export function extractHeadings(content: string): TableOfContentsItem[] {
+  // Remove FAQ section before extracting headings
+  const contentWithoutFAQ = content.replace(
+    /\n---\s*\n##\s+(?:FAQ|Frequently Asked Questions|FAQ Section)[^\n]*\n[\s\S]*$/i,
+    ''
+  ).replace(
+    /\n##\s+(?:FAQ|Frequently Asked Questions|FAQ Section)[^\n]*\n[\s\S]*$/i,
+    ''
+  )
+
   const headingRegex = /^(#{2,4})\s+(.+)$/gm
   const headings: TableOfContentsItem[] = []
   let match
 
-  while ((match = headingRegex.exec(content)) !== null) {
+  while ((match = headingRegex.exec(contentWithoutFAQ)) !== null) {
     const level = match[1].length
     const title = match[2].trim()
     const id = title
@@ -61,6 +72,43 @@ export function extractHeadings(content: string): TableOfContentsItem[] {
   }
 
   return headings
+}
+
+/**
+ * Extract FAQ items from MDX content
+ * Looks for FAQ section with numbered h3 headings containing questions
+ */
+export function extractFAQItems(content: string): FAQItem[] {
+  const faqItems: FAQItem[] = []
+
+  // Find the FAQ section - look for "## FAQ" or similar headers
+  const faqSectionMatch = content.match(/##\s+(?:FAQ|Frequently Asked Questions|FAQ Section)[^\n]*\n([\s\S]*?)(?=\n##\s+[^#]|$)/i)
+
+  if (!faqSectionMatch) {
+    return faqItems
+  }
+
+  const faqContent = faqSectionMatch[1]
+
+  // Match numbered questions (### 1. Question? or ### Question?)
+  // And capture everything until the next h3 or end
+  const questionRegex = /###\s+(?:\d+\.\s*)?(.+?\?)\s*\n([\s\S]*?)(?=\n###|\n##|$)/g
+  let match
+
+  while ((match = questionRegex.exec(faqContent)) !== null) {
+    const question = match[1].trim()
+    // Clean up the answer - remove extra whitespace and newlines
+    const answer = match[2]
+      .trim()
+      .replace(/\n+/g, ' ')
+      .replace(/\s+/g, ' ')
+
+    if (question && answer) {
+      faqItems.push({ question, answer })
+    }
+  }
+
+  return faqItems
 }
 
 /**
@@ -91,6 +139,7 @@ function parsePost(filePath: string, locale: Locale): Post | null {
         words: stats.words,
       },
       headings: extractHeadings(content),
+      faqItems: extractFAQItems(content),
     }
   } catch {
     return null

@@ -29,6 +29,7 @@ export interface Post {
     words: number
   }
   headings: TableOfContentsItem[]
+  faqItems: FAQItem[]
 }
 
 export interface PostMeta {
@@ -76,4 +77,9 @@ export interface SearchIndexItem {
   description: string
   category: string
   tags: string[]
+}
+
+export interface FAQItem {
+  question: string
+  answer: string
 }

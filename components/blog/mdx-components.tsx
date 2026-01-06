@@ -8,11 +8,11 @@ import { CodeBlock } from './code-block'
 
 function createHeading(level: 1 | 2 | 3 | 4) {
   const Tag = `h${level}` as const
-  const sizes = {
-    1: 'text-2xl sm:text-3xl md:text-4xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4',
-    2: 'text-xl sm:text-2xl md:text-3xl font-bold mt-6 sm:mt-8 mb-3 sm:mb-4',
-    3: 'text-lg sm:text-xl md:text-2xl font-semibold mt-5 sm:mt-6 mb-2 sm:mb-3',
-    4: 'text-base sm:text-lg md:text-xl font-semibold mt-3 sm:mt-4 mb-2',
+  const styles = {
+    1: 'text-3xl sm:text-4xl md:text-5xl font-bold mt-8 sm:mt-10 mb-4 sm:mb-6 tracking-tight',
+    2: 'text-2xl sm:text-3xl md:text-4xl font-bold mt-12 sm:mt-14 mb-4 sm:mb-6 tracking-tight border-b border-zinc-800 pb-3',
+    3: 'text-xl sm:text-2xl md:text-3xl font-semibold mt-10 sm:mt-12 mb-3 sm:mb-4 tracking-tight',
+    4: 'text-lg sm:text-xl md:text-2xl font-semibold mt-8 sm:mt-10 mb-3 sm:mb-4',
   }
 
   return function Heading({
@@ -24,7 +24,7 @@ function createHeading(level: 1 | 2 | 3 | 4) {
       <Tag
         id={id}
         className={cn(
-          sizes[level],
+          styles[level],
           'text-white scroll-mt-24',
         )}
         {...props}
@@ -53,14 +53,20 @@ function Paragraph({ children, ...props }: React.HTMLAttributes<HTMLParagraphEle
   // If children contain block-level elements like images, use div to avoid hydration errors
   if (hasBlockChildren(children)) {
     return (
-      <div className="text-zinc-300 text-base sm:text-lg leading-relaxed sm:leading-loose mb-5 sm:mb-6" {...props}>
+      <div
+        className="text-zinc-300 text-base sm:text-lg md:text-xl leading-[1.8] sm:leading-[1.9] mb-6 sm:mb-8"
+        {...props}
+      >
         {children}
       </div>
     )
   }
 
   return (
-    <p className="text-zinc-300 text-base sm:text-lg leading-relaxed sm:leading-loose mb-5 sm:mb-6" {...props}>
+    <p
+      className="text-zinc-300 text-base sm:text-lg md:text-xl leading-[1.8] sm:leading-[1.9] mb-6 sm:mb-8"
+      {...props}
+    >
       {children}
     </p>
   )
@@ -98,7 +104,10 @@ function CustomLink({
 
 function UnorderedList({ children, ...props }: React.HTMLAttributes<HTMLUListElement>) {
   return (
-    <ul className="list-disc list-outside space-y-2.5 sm:space-y-3 mb-5 sm:mb-6 text-zinc-300 ml-5 sm:ml-6 text-base sm:text-lg" {...props}>
+    <ul
+      className="my-6 sm:my-8 ml-0 space-y-3 sm:space-y-4 text-zinc-300"
+      {...props}
+    >
       {children}
     </ul>
   )
@@ -106,7 +115,11 @@ function UnorderedList({ children, ...props }: React.HTMLAttributes<HTMLUListEle
 
 function OrderedList({ children, ...props }: React.HTMLAttributes<HTMLOListElement>) {
   return (
-    <ol className="list-decimal list-outside space-y-2.5 sm:space-y-3 mb-5 sm:mb-6 text-zinc-300 ml-5 sm:ml-6 text-base sm:text-lg" {...props}>
+    <ol
+      className="my-6 sm:my-8 ml-0 space-y-3 sm:space-y-4 text-zinc-300 counter-reset-list"
+      style={{ counterReset: 'list-counter' }}
+      {...props}
+    >
       {children}
     </ol>
   )
@@ -114,8 +127,12 @@ function OrderedList({ children, ...props }: React.HTMLAttributes<HTMLOListEleme
 
 function ListItem({ children, ...props }: React.HTMLAttributes<HTMLLIElement>) {
   return (
-    <li className="text-zinc-300 leading-relaxed sm:leading-loose" {...props}>
-      {children}
+    <li
+      className="flex items-start gap-3 sm:gap-4 text-zinc-300 text-base sm:text-lg leading-relaxed"
+      {...props}
+    >
+      <span className="flex-shrink-0 w-2 h-2 mt-2.5 sm:mt-3 rounded-full bg-brand" aria-hidden="true" />
+      <span className="flex-1">{children}</span>
     </li>
   )
 }
@@ -123,10 +140,12 @@ function ListItem({ children, ...props }: React.HTMLAttributes<HTMLLIElement>) {
 function Blockquote({ children, ...props }: React.HTMLAttributes<HTMLQuoteElement>) {
   return (
     <blockquote
-      className="border-l-4 border-brand pl-4 my-6 italic text-zinc-400"
+      className="relative my-8 sm:my-10 pl-5 sm:pl-6 py-4 border-l-4 border-brand bg-zinc-900/50 rounded-r-xl"
       {...props}
     >
-      {children}
+      <div className="text-zinc-300 text-base sm:text-lg italic leading-relaxed">
+        {children}
+      </div>
     </blockquote>
   )
 }
@@ -213,9 +232,9 @@ function OptimizedImage({
 
 function Table({ children, ...props }: React.HTMLAttributes<HTMLTableElement>) {
   return (
-    <div className="overflow-x-auto my-6">
+    <div className="my-8 sm:my-10 overflow-x-auto rounded-xl border border-zinc-800">
       <table
-        className="w-full border-collapse border border-zinc-800 text-zinc-300"
+        className="w-full border-collapse text-sm sm:text-base"
         {...props}
       >
         {children}
@@ -226,19 +245,19 @@ function Table({ children, ...props }: React.HTMLAttributes<HTMLTableElement>) {
 
 function TableHead({ children, ...props }: React.HTMLAttributes<HTMLTableSectionElement>) {
   return (
-    <thead className="bg-zinc-900" {...props}>
+    <thead className="bg-zinc-900/80" {...props}>
       {children}
     </thead>
   )
 }
 
 function TableBody({ children, ...props }: React.HTMLAttributes<HTMLTableSectionElement>) {
-  return <tbody {...props}>{children}</tbody>
+  return <tbody className="divide-y divide-zinc-800" {...props}>{children}</tbody>
 }
 
 function TableRow({ children, ...props }: React.HTMLAttributes<HTMLTableRowElement>) {
   return (
-    <tr className="border-b border-zinc-800" {...props}>
+    <tr className="hover:bg-zinc-800/30 transition-colors" {...props}>
       {children}
     </tr>
   )
@@ -247,7 +266,7 @@ function TableRow({ children, ...props }: React.HTMLAttributes<HTMLTableRowEleme
 function TableHeader({ children, ...props }: React.HTMLAttributes<HTMLTableCellElement>) {
   return (
     <th
-      className="border border-zinc-800 px-4 py-2 text-left font-semibold text-white"
+      className="px-4 py-3 sm:px-5 sm:py-4 text-left font-semibold text-white border-b border-zinc-800"
       {...props}
     >
       {children}
@@ -257,7 +276,7 @@ function TableHeader({ children, ...props }: React.HTMLAttributes<HTMLTableCellE
 
 function TableCell({ children, ...props }: React.HTMLAttributes<HTMLTableCellElement>) {
   return (
-    <td className="border border-zinc-800 px-4 py-2" {...props}>
+    <td className="px-4 py-3 sm:px-5 sm:py-4 text-zinc-300" {...props}>
       {children}
     </td>
   )

@@ -5,7 +5,7 @@ from PIL import Image
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
-load_dotenv()
+load_dotenv(".env.local")
 
 # Configuration from environment variables
 R2_ACCESS_KEY_ID = os.getenv("R2_ACCESS_KEY_ID")
@@ -36,25 +36,21 @@ s3 = boto3.client(
     aws_secret_access_key=R2_SECRET_ACCESS_KEY,
 )
 
-ARTIFACT_DIR = "/Users/bipulkumar/.gemini/antigravity/brain/6b112676-293c-4307-9bb6-ee19abe5800f"
+ARTIFACT_DIR = "/Users/bipulkumar/.gemini/antigravity/brain/194e0d75-b78c-4cb7-b4be-215e23b199f5"
 
 # Mapping: original_filename_part -> new_filename_base
 images_to_upload = [
     {
-        "search": "bulk_upload_featured",
-        "new_name": "blog-bulk-upload-featured.webp"
+        "search": "edge_origin_featured",
+        "new_name": "blog-edge-vs-origin-delivery-featured.webp"
     },
     {
-        "search": "bulk_upload_steps",
-        "new_name": "blog-bulk-upload-steps.webp"
+        "search": "edge_server_architecture",
+        "new_name": "blog-edge-vs-origin-delivery-architecture.webp"
     },
     {
-        "search": "bulk_upload_usecases",
-        "new_name": "blog-bulk-upload-usecases.webp"
-    },
-    {
-        "search": "bulk_upload_comparison",
-        "new_name": "blog-bulk-upload-comparison.webp"
+        "search": "edge_performance_metrics",
+        "new_name": "blog-edge-vs-origin-delivery-performance.webp"
     }
 ]
 

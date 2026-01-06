@@ -374,3 +374,69 @@
     padding-bottom: env(safe-area-inset-bottom);
   }
 }
+
+/* Blog Content Styles - Clean, readable typography */
+.blog-content {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure proper spacing between major sections */
+.blog-content > * + * {
+  margin-top: 0;
+}
+
+/* First element after heading should have no top margin */
+.blog-content h2 + *,
+.blog-content h3 + *,
+.blog-content h4 + * {
+  margin-top: 0;
+}
+
+/* Tables inside blog content */
+.blog-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0 2rem;
+  font-size: 0.9375rem;
+}
+
+.blog-content th {
+  background: oklch(0.205 0 0);
+  color: white;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.875rem 1rem;
+  border: 1px solid oklch(0.269 0 0);
+}
+
+.blog-content td {
+  padding: 0.75rem 1rem;
+  border: 1px solid oklch(0.269 0 0);
+  color: oklch(0.708 0 0);
+}
+
+.blog-content tr:nth-child(even) {
+  background: oklch(0.18 0 0);
+}
+
+/* Mobile optimizations for blog content */
+@media (max-width: 639px) {
+  .blog-content {
+    font-size: 1rem;
+  }
+
+  .blog-content table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    font-size: 0.8125rem;
+  }
+
+  .blog-content th,
+  .blog-content td {
+    padding: 0.625rem 0.875rem;
+    white-space: nowrap;
+  }
+}
