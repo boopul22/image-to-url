@@ -1,27 +1,60 @@
 import type { MetadataRoute } from 'next'
 import { locales, defaultLocale } from '@/lib/i18n/config'
-import { getAllPosts } from '@/lib/blog/content'
-import fs from 'fs'
-import path from 'path'
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.imagetourl.cloud'
 
-// Helper function to get subdirectories from a path
-function getSubdirectories(dirPath: string): string[] {
-  try {
-    const fullPath = path.join(process.cwd(), dirPath)
-    if (!fs.existsSync(fullPath)) {
-      return []
-    }
-    return fs.readdirSync(fullPath, { withFileTypes: true })
-      .filter(dirent => dirent.isDirectory())
-      .map(dirent => dirent.name)
-  } catch {
-    return []
-  }
-}
+// Static list of tools pages (add new tools here)
+const TOOLS_ROUTES = [
+  '/tools/base64-to-url',
+  '/tools/bulk-upload',
+  '/tools/convert-image-to-link',
+  '/tools/convert-picture-to-url',
+  '/tools/create-image-url',
+  '/tools/free-image-hosting',
+  '/tools/gif-to-url',
+  '/tools/image-embed-code',
+  '/tools/image-link-generator',
+  '/tools/image-to-data-url',
+  '/tools/image-to-short-url',
+  '/tools/jpeg-to-url',
+  '/tools/jpg-to-url',
+  '/tools/pdf-to-url',
+  '/tools/photo-link-creator',
+  '/tools/photo-to-url',
+  '/tools/picture-to-link',
+  '/tools/picture-url-maker',
+  '/tools/png-to-url',
+  '/tools/qr-to-url',
+  '/tools/svg-to-url',
+  '/tools/upload-image-to-url',
+  '/tools/url-generator-for-image',
+  '/tools/url-to-qr-code',
+  '/tools/video-to-url',
+  '/tools/webp-to-url',
+]
 
-// Dynamically discover tools and use-cases pages
+// Static list of use-cases pages (add new use-cases here)
+const USE_CASES_ROUTES = [
+  '/use-cases/discord',
+  '/use-cases/espn-fantasy',
+  '/use-cases/fantasy-sports',
+  '/use-cases/html',
+  '/use-cases/javascript',
+  '/use-cases/minecraft',
+  '/use-cases/nodejs',
+  '/use-cases/python',
+  '/use-cases/react',
+  '/use-cases/roblox',
+  '/use-cases/telegram',
+  '/use-cases/vrchat',
+]
+
+// Static list of blog posts (add new blog posts here)
+const BLOG_POSTS = [
+  'best-practices-image-to-url-cdn-delivery',
+  // Add more blog post slugs as needed
+]
+
 function getPublicRoutes(): string[] {
   const staticRoutes = [
     '', // home page
@@ -33,15 +66,7 @@ function getPublicRoutes(): string[] {
     '/terms',
   ]
 
-  // Dynamically get tools routes
-  const toolsDirs = getSubdirectories('app/[locale]/tools')
-  const toolsRoutes = toolsDirs.map(dir => `/tools/${dir}`)
-
-  // Dynamically get use-cases routes
-  const useCasesDirs = getSubdirectories('app/[locale]/use-cases')
-  const useCasesRoutes = useCasesDirs.map(dir => `/use-cases/${dir}`)
-
-  return [...staticRoutes, ...toolsRoutes, ...useCasesRoutes]
+  return [...staticRoutes, ...TOOLS_ROUTES, ...USE_CASES_ROUTES]
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -74,42 +99,30 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }
 
   // Add blog posts to sitemap
-  try {
-    const posts = await getAllPosts(defaultLocale)
+  for (const slug of BLOG_POSTS) {
+    const route = `/blog/${slug}`
 
-    for (const post of posts) {
-      const route = `/blog/${post.slug}`
+    for (const locale of locales) {
+      const url = `${BASE_URL}/${locale}${route}`
 
-      for (const locale of locales) {
-        const url = `${BASE_URL}/${locale}${route}`
-
-        // Create language alternates for this blog post
-        const languages: Record<string, string> = {}
-        for (const altLocale of locales) {
-          languages[altLocale] = `${BASE_URL}/${altLocale}${route}`
-        }
-        languages['x-default'] = `${BASE_URL}/${defaultLocale}${route}`
-
-        entries.push({
-          url,
-          lastModified: post.frontmatter.updatedAt
-            ? new Date(post.frontmatter.updatedAt)
-            : new Date(post.frontmatter.publishedAt),
-          changeFrequency: 'monthly',
-          priority: locale === defaultLocale ? 0.8 : 0.6,
-          alternates: {
-            languages,
-          },
-        })
+      // Create language alternates for this blog post
+      const languages: Record<string, string> = {}
+      for (const altLocale of locales) {
+        languages[altLocale] = `${BASE_URL}/${altLocale}${route}`
       }
-    }
-  } catch (error) {
-    // Blog content may not exist yet, continue without blog posts
-    if (process.env.NODE_ENV === 'development') {
-      console.log('Sitemap: No blog posts found or error loading posts')
+      languages['x-default'] = `${BASE_URL}/${defaultLocale}${route}`
+
+      entries.push({
+        url,
+        lastModified: now,
+        changeFrequency: 'monthly',
+        priority: locale === defaultLocale ? 0.8 : 0.6,
+        alternates: {
+          languages,
+        },
+      })
     }
   }
 
   return entries
 }
-
