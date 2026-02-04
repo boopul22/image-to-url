@@ -106,7 +106,7 @@ export default async function LocaleLayout({
 
         <ThemeProvider defaultTheme="dark" storageKey="imagetourl-theme">
           <LocaleUpdater locale={locale} />
-          <CookieConsentWrapper>
+          <CookieConsentWrapper cloudflareBeaconToken={process.env.NEXT_PUBLIC_CF_BEACON_TOKEN}>
             <Script
               src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7803867089582138"
               crossOrigin="anonymous"

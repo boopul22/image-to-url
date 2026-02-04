@@ -8,14 +8,15 @@ import { ConditionalAnalytics } from "@/components/conditional-analytics"
 interface CookieConsentWrapperProps {
     children: ReactNode
     googleAnalyticsId?: string
+    cloudflareBeaconToken?: string
 }
 
-export function CookieConsentWrapper({ children, googleAnalyticsId }: CookieConsentWrapperProps) {
+export function CookieConsentWrapper({ children, googleAnalyticsId, cloudflareBeaconToken }: CookieConsentWrapperProps) {
     return (
         <CookieConsentProvider>
             {children}
             <CookieConsentBanner />
-            <ConditionalAnalytics googleAnalyticsId={googleAnalyticsId} />
+            <ConditionalAnalytics googleAnalyticsId={googleAnalyticsId} cloudflareBeaconToken={cloudflareBeaconToken} />
         </CookieConsentProvider>
     )
 }

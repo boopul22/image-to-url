@@ -1,3 +1,0 @@
-{
-    "buildCommand": "NEXT_PRIVATE_TURBOPACK=0 pnpm run build"
-}

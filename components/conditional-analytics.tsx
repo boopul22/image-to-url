@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect } from "react"
-import { Analytics } from "@vercel/analytics/next"
 import { useCookieConsent } from "@/hooks/use-cookie-consent"
 
 declare global {
@@ -13,9 +12,10 @@ declare global {
 
 interface ConditionalAnalyticsProps {
     googleAnalyticsId?: string
+    cloudflareBeaconToken?: string
 }
 
-export function ConditionalAnalytics({ googleAnalyticsId }: ConditionalAnalyticsProps) {
+export function ConditionalAnalytics({ googleAnalyticsId, cloudflareBeaconToken }: ConditionalAnalyticsProps) {
     const { hasConsented, preferences } = useCookieConsent()
 
     // Load Google Analytics only when consent is given
@@ -49,10 +49,23 @@ export function ConditionalAnalytics({ googleAnalyticsId }: ConditionalAnalytics
         }
     }, [hasConsented, preferences.analytics, googleAnalyticsId])
 
-    // Only render Vercel Analytics if consent is given
-    if (!hasConsented || !preferences.analytics) {
-        return null
-    }
+    // Load Cloudflare Web Analytics only when consent is given
+    useEffect(() => {
+        if (hasConsented && preferences.analytics && cloudflareBeaconToken) {
+            // Check if already loaded
+            if (document.querySelector(`script[src*="static.cloudflareinsights.com"]`)) {
+                return
+            }
 
-    return <Analytics />
+            // Load Cloudflare Web Analytics script
+            const script = document.createElement("script")
+            script.src = "https://static.cloudflareinsights.com/beacon.min.js"
+            script.defer = true
+            script.dataset.cfBeacon = JSON.stringify({ token: cloudflareBeaconToken })
+
+            document.head.appendChild(script)
+        }
+    }, [hasConsented, preferences.analytics, cloudflareBeaconToken])
+
+    return null
 }
