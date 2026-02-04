@@ -1,39 +1,4 @@
-import { S3Client, DeleteObjectCommand, HeadObjectCommand } from "@aws-sdk/client-s3"
-import { getMissingR2Env, getR2Env, R2_REQUIRED_STORAGE_KEYS, type R2Env } from "@/lib/r2/env"
-
-// Lazy initialization for Cloudflare Workers compatibility
-let r2Client: S3Client | null = null
-let r2EnvCache: R2Env | null = null
-
-function getR2EnvOrThrow(): R2Env {
-  if (r2EnvCache) {
-    return r2EnvCache
-  }
-
-  const env = getR2Env()
-  const missing = getMissingR2Env(env, R2_REQUIRED_STORAGE_KEYS)
-  if (missing.length > 0) {
-    throw new Error(`Missing R2 environment variables: ${missing.join(", ")}`)
-  }
-
-  r2EnvCache = env
-  return env
-}
-
-function getR2Client(): S3Client {
-  if (!r2Client) {
-    const r2Env = getR2EnvOrThrow()
-    r2Client = new S3Client({
-      region: "auto",
-      endpoint: `https://${r2Env.accountId}.r2.cloudflarestorage.com`,
-      credentials: {
-        accessKeyId: r2Env.accessKeyId!,
-        secretAccessKey: r2Env.secretAccessKey!,
-      },
-    })
-  }
-  return r2Client
-}
+import { deleteObjectFromR2, headObjectInR2 } from "@/lib/r2/storage"
 
 export interface DeleteResult {
   success: boolean
@@ -45,23 +10,7 @@ export interface DeleteResult {
  * Verifies if an object exists in R2 bucket
  */
 export async function checkObjectExists(r2Key: string): Promise<boolean> {
-  try {
-    const r2Env = getR2EnvOrThrow()
-    await getR2Client().send(
-      new HeadObjectCommand({
-        Bucket: r2Env.bucketName!,
-        Key: r2Key,
-      })
-    )
-    return true
-  } catch (error: unknown) {
-    const err = error as { name?: string }
-    if (err.name === "NotFound" || err.name === "NoSuchKey") {
-      return false
-    }
-    // Re-throw other errors (network issues, auth problems, etc.)
-    throw error
-  }
+  return headObjectInR2(r2Key)
 }
 
 /**
@@ -71,7 +20,6 @@ export async function deleteFromR2(r2Key: string): Promise<boolean> {
   const startTime = Date.now()
 
   try {
-    const r2Env = getR2EnvOrThrow()
     // Validate r2Key
     if (!r2Key || typeof r2Key !== "string" || r2Key.trim() === "") {
       console.error(`[R2 Delete] Invalid r2_key provided: "${r2Key}"`)
@@ -81,12 +29,7 @@ export async function deleteFromR2(r2Key: string): Promise<boolean> {
     console.log(`[R2 Delete] Attempting to delete: ${r2Key}`)
 
     // Send delete command
-    const response = await getR2Client().send(
-      new DeleteObjectCommand({
-        Bucket: r2Env.bucketName!,
-        Key: r2Key,
-      })
-    )
+    await deleteObjectFromR2(r2Key)
 
     const duration = Date.now() - startTime
     console.log(`[R2 Delete] Successfully deleted: ${r2Key} (${duration}ms)`)

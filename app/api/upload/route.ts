@@ -1,30 +1,19 @@
 import { type NextRequest, NextResponse } from "next/server"
-import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3"
 import { createClient } from "@/lib/supabase/server"
 import { getOrCreateSessionId } from "@/lib/auth/session"
 import { checkAnonymousUploadLimit, incrementAnonymousUploadCount } from "@/lib/auth/upload-limiter"
-import { getMissingR2Env, getR2Env, R2_REQUIRED_UPLOAD_KEYS } from "@/lib/r2/env"
+import { getMissingR2Env, getR2Env } from "@/lib/r2/env"
+import { getR2BucketBinding, getRequiredUploadEnvKeys, putObjectToR2 } from "@/lib/r2/storage"
 
 export const runtime = "nodejs"
-
-// Helper function to create R2 client (initialized per-request for Cloudflare compatibility)
-function createR2Client(r2Env: ReturnType<typeof getR2Env>) {
-  return new S3Client({
-    region: "auto",
-    endpoint: `https://${r2Env.accountId}.r2.cloudflarestorage.com`,
-    credentials: {
-      accessKeyId: r2Env.accessKeyId!,
-      secretAccessKey: r2Env.secretAccessKey!,
-    },
-  })
-}
 
 export async function POST(request: NextRequest) {
   try {
     console.log("[v0] Upload request received")
 
     const r2Env = getR2Env()
-    const missingR2 = getMissingR2Env(r2Env, R2_REQUIRED_UPLOAD_KEYS)
+    const hasBinding = Boolean(getR2BucketBinding())
+    const missingR2 = getMissingR2Env(r2Env, getRequiredUploadEnvKeys(hasBinding))
     if (missingR2.length > 0) {
       console.error("[v0] Missing R2 environment variables:", missingR2.join(", "))
       return NextResponse.json(
@@ -34,9 +23,6 @@ export async function POST(request: NextRequest) {
         { status: 500 },
       )
     }
-
-    // Initialize R2 client inside request handler for Cloudflare Workers compatibility
-    const r2Client = createR2Client(r2Env)
 
     // Check authentication and upload limits
     const supabase = await createClient()
@@ -99,22 +85,18 @@ export async function POST(request: NextRequest) {
 
     console.log("[v0] Generated filename:", fullPath)
 
-    // Convert file to buffer
+    // Convert file to arrayBuffer
     const arrayBuffer = await file.arrayBuffer()
-    const buffer = Buffer.from(arrayBuffer)
 
     console.log("[v0] Uploading to R2 bucket:", r2Env.bucketName)
 
-    // Upload to R2
-    const command = new PutObjectCommand({
-      Bucket: r2Env.bucketName!,
-      Key: fullPath,
-      Body: buffer,
-      ContentType: file.type,
-      CacheControl: "public, max-age=31536000, immutable",
+    // Upload to R2 (binding preferred, S3 fallback)
+    await putObjectToR2({
+      key: fullPath,
+      body: arrayBuffer,
+      contentType: file.type,
+      cacheControl: "public, max-age=31536000, immutable",
     })
-
-    await r2Client.send(command)
 
     console.log("[v0] Upload successful")
 

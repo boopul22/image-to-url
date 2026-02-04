@@ -24,6 +24,8 @@ export const R2_REQUIRED_UPLOAD_KEYS: (keyof R2Env)[] = [
   "publicUrl",
 ]
 
+export const R2_REQUIRED_PUBLIC_KEYS: (keyof R2Env)[] = ["publicUrl"]
+
 export const R2_REQUIRED_STORAGE_KEYS: (keyof R2Env)[] = [
   "accountId",
   "accessKeyId",
