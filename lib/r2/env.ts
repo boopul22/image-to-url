@@ -54,20 +54,42 @@ function mergeEnv(base: R2Env, override: Partial<R2Env>): R2Env {
 export function getR2Env(): R2Env {
   const base = readProcessEnv()
 
+  console.log("[R2 Env] Checking process.env:", {
+    hasAccountId: !!base.accountId,
+    hasAccessKeyId: !!base.accessKeyId,
+    hasSecretAccessKey: !!base.secretAccessKey,
+    hasBucketName: !!base.bucketName,
+    hasPublicUrl: !!base.publicUrl,
+  })
+
   if (R2_REQUIRED_UPLOAD_KEYS.every((key) => Boolean(base[key]))) {
+    console.log("[R2 Env] All keys found in process.env")
     return base
   }
 
   try {
-    const cfEnv = getCloudflareContext().env as Record<string, string | undefined>
-    return mergeEnv(base, {
+    console.log("[R2 Env] Trying getCloudflareContext()...")
+    const ctx = getCloudflareContext()
+    console.log("[R2 Env] Cloudflare context:", ctx ? "found" : "null")
+    const cfEnv = ctx.env as Record<string, string | undefined>
+    console.log("[R2 Env] Cloudflare env keys:", Object.keys(cfEnv || {}))
+    const merged = mergeEnv(base, {
       accountId: cfEnv.R2_ACCOUNT_ID,
       accessKeyId: cfEnv.R2_ACCESS_KEY_ID,
       secretAccessKey: cfEnv.R2_SECRET_ACCESS_KEY,
       bucketName: cfEnv.R2_BUCKET_NAME,
       publicUrl: cfEnv.R2_PUBLIC_URL,
     })
-  } catch {
+    console.log("[R2 Env] After merge:", {
+      hasAccountId: !!merged.accountId,
+      hasAccessKeyId: !!merged.accessKeyId,
+      hasSecretAccessKey: !!merged.secretAccessKey,
+      hasBucketName: !!merged.bucketName,
+      hasPublicUrl: !!merged.publicUrl,
+    })
+    return merged
+  } catch (error) {
+    console.error("[R2 Env] getCloudflareContext error:", error)
     return base
   }
 }
