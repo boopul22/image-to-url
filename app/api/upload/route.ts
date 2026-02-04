@@ -4,15 +4,17 @@ import { createClient } from "@/lib/supabase/server"
 import { getOrCreateSessionId } from "@/lib/auth/session"
 import { checkAnonymousUploadLimit, incrementAnonymousUploadCount } from "@/lib/auth/upload-limiter"
 
-// Initialize R2 client with Cloudflare R2 credentials
-const r2Client = new S3Client({
-  region: "auto",
-  endpoint: `https://${process.env.R2_ACCOUNT_ID || "your-account-id"}.r2.cloudflarestorage.com`,
-  credentials: {
-    accessKeyId: process.env.R2_ACCESS_KEY_ID!,
-    secretAccessKey: process.env.R2_SECRET_ACCESS_KEY!,
-  },
-})
+// Helper function to create R2 client (initialized per-request for Cloudflare compatibility)
+function createR2Client() {
+  return new S3Client({
+    region: "auto",
+    endpoint: `https://${process.env.R2_ACCOUNT_ID}.r2.cloudflarestorage.com`,
+    credentials: {
+      accessKeyId: process.env.R2_ACCESS_KEY_ID!,
+      secretAccessKey: process.env.R2_SECRET_ACCESS_KEY!,
+    },
+  })
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -22,7 +24,8 @@ export async function POST(request: NextRequest) {
       !process.env.R2_ACCESS_KEY_ID ||
       !process.env.R2_SECRET_ACCESS_KEY ||
       !process.env.R2_BUCKET_NAME ||
-      !process.env.R2_PUBLIC_URL
+      !process.env.R2_PUBLIC_URL ||
+      !process.env.R2_ACCOUNT_ID
     ) {
       console.error("[v0] Missing R2 environment variables")
       return NextResponse.json(
@@ -32,6 +35,9 @@ export async function POST(request: NextRequest) {
         { status: 500 },
       )
     }
+
+    // Initialize R2 client inside request handler for Cloudflare Workers compatibility
+    const r2Client = createR2Client()
 
     // Check authentication and upload limits
     const supabase = await createClient()
