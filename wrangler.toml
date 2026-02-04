@@ -1,20 +1,15 @@
 name = "image-to-url"
 compatibility_date = "2024-09-23"
-compatibility_flags = ["nodejs_compat"]
+compatibility_flags = ["nodejs_compat", "nodejs_compat_populate_process_env"]
 main = ".open-next/worker.js"
 
 assets = { directory = ".open-next/assets", binding = "ASSETS" }
 
-# Non-sensitive variables (can be committed)
+# Environment variables - set these in Cloudflare Dashboard under Workers & Pages > image-to-url > Settings > Variables
+# OR add them here for local development (secrets should use wrangler secret put)
 [vars]
 R2_BUCKET_NAME = "imgtourl"
-
-# Sensitive variables must be added via:
-# wrangler secret put R2_ACCOUNT_ID
-# wrangler secret put R2_ACCESS_KEY_ID
-# wrangler secret put R2_SECRET_ACCESS_KEY
-# wrangler secret put R2_PUBLIC_URL
-# wrangler secret put NEXT_PUBLIC_SUPABASE_URL
-# wrangler secret put NEXT_PUBLIC_SUPABASE_ANON_KEY
-# wrangler secret put SUPABASE_SERVICE_ROLE_KEY
-# wrangler secret put CRON_SECRET
+# R2_ACCOUNT_ID = ""      # Set in dashboard or via: wrangler secret put R2_ACCOUNT_ID
+# R2_ACCESS_KEY_ID = ""   # Set in dashboard or via: wrangler secret put R2_ACCESS_KEY_ID
+# R2_SECRET_ACCESS_KEY = "" # Set in dashboard or via: wrangler secret put R2_SECRET_ACCESS_KEY
+# R2_PUBLIC_URL = ""      # Set in dashboard or via: wrangler secret put R2_PUBLIC_URL
