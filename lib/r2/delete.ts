@@ -1,16 +1,34 @@
 import { S3Client, DeleteObjectCommand, HeadObjectCommand } from "@aws-sdk/client-s3"
+import { getMissingR2Env, getR2Env, R2_REQUIRED_STORAGE_KEYS, type R2Env } from "@/lib/r2/env"
 
 // Lazy initialization for Cloudflare Workers compatibility
 let r2Client: S3Client | null = null
+let r2EnvCache: R2Env | null = null
+
+function getR2EnvOrThrow(): R2Env {
+  if (r2EnvCache) {
+    return r2EnvCache
+  }
+
+  const env = getR2Env()
+  const missing = getMissingR2Env(env, R2_REQUIRED_STORAGE_KEYS)
+  if (missing.length > 0) {
+    throw new Error(`Missing R2 environment variables: ${missing.join(", ")}`)
+  }
+
+  r2EnvCache = env
+  return env
+}
 
 function getR2Client(): S3Client {
   if (!r2Client) {
+    const r2Env = getR2EnvOrThrow()
     r2Client = new S3Client({
       region: "auto",
-      endpoint: `https://${process.env.R2_ACCOUNT_ID}.r2.cloudflarestorage.com`,
+      endpoint: `https://${r2Env.accountId}.r2.cloudflarestorage.com`,
       credentials: {
-        accessKeyId: process.env.R2_ACCESS_KEY_ID!,
-        secretAccessKey: process.env.R2_SECRET_ACCESS_KEY!,
+        accessKeyId: r2Env.accessKeyId!,
+        secretAccessKey: r2Env.secretAccessKey!,
       },
     })
   }
@@ -28,9 +46,10 @@ export interface DeleteResult {
  */
 export async function checkObjectExists(r2Key: string): Promise<boolean> {
   try {
+    const r2Env = getR2EnvOrThrow()
     await getR2Client().send(
       new HeadObjectCommand({
-        Bucket: process.env.R2_BUCKET_NAME!,
+        Bucket: r2Env.bucketName!,
         Key: r2Key,
       })
     )
@@ -52,6 +71,7 @@ export async function deleteFromR2(r2Key: string): Promise<boolean> {
   const startTime = Date.now()
 
   try {
+    const r2Env = getR2EnvOrThrow()
     // Validate r2Key
     if (!r2Key || typeof r2Key !== "string" || r2Key.trim() === "") {
       console.error(`[R2 Delete] Invalid r2_key provided: "${r2Key}"`)
@@ -63,7 +83,7 @@ export async function deleteFromR2(r2Key: string): Promise<boolean> {
     // Send delete command
     const response = await getR2Client().send(
       new DeleteObjectCommand({
-        Bucket: process.env.R2_BUCKET_NAME!,
+        Bucket: r2Env.bucketName!,
         Key: r2Key,
       })
     )

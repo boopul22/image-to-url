@@ -3,15 +3,16 @@ import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3"
 import { createClient } from "@/lib/supabase/server"
 import { getOrCreateSessionId } from "@/lib/auth/session"
 import { checkAnonymousUploadLimit, incrementAnonymousUploadCount } from "@/lib/auth/upload-limiter"
+import { getMissingR2Env, getR2Env, R2_REQUIRED_UPLOAD_KEYS } from "@/lib/r2/env"
 
 // Helper function to create R2 client (initialized per-request for Cloudflare compatibility)
-function createR2Client() {
+function createR2Client(r2Env: ReturnType<typeof getR2Env>) {
   return new S3Client({
     region: "auto",
-    endpoint: `https://${process.env.R2_ACCOUNT_ID}.r2.cloudflarestorage.com`,
+    endpoint: `https://${r2Env.accountId}.r2.cloudflarestorage.com`,
     credentials: {
-      accessKeyId: process.env.R2_ACCESS_KEY_ID!,
-      secretAccessKey: process.env.R2_SECRET_ACCESS_KEY!,
+      accessKeyId: r2Env.accessKeyId!,
+      secretAccessKey: r2Env.secretAccessKey!,
     },
   })
 }
@@ -20,14 +21,10 @@ export async function POST(request: NextRequest) {
   try {
     console.log("[v0] Upload request received")
 
-    if (
-      !process.env.R2_ACCESS_KEY_ID ||
-      !process.env.R2_SECRET_ACCESS_KEY ||
-      !process.env.R2_BUCKET_NAME ||
-      !process.env.R2_PUBLIC_URL ||
-      !process.env.R2_ACCOUNT_ID
-    ) {
-      console.error("[v0] Missing R2 environment variables")
+    const r2Env = getR2Env()
+    const missingR2 = getMissingR2Env(r2Env, R2_REQUIRED_UPLOAD_KEYS)
+    if (missingR2.length > 0) {
+      console.error("[v0] Missing R2 environment variables:", missingR2.join(", "))
       return NextResponse.json(
         {
           error: "Server configuration error. Please ensure all R2 environment variables are set.",
@@ -37,7 +34,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Initialize R2 client inside request handler for Cloudflare Workers compatibility
-    const r2Client = createR2Client()
+    const r2Client = createR2Client(r2Env)
 
     // Check authentication and upload limits
     const supabase = await createClient()
@@ -104,11 +101,11 @@ export async function POST(request: NextRequest) {
     const arrayBuffer = await file.arrayBuffer()
     const buffer = Buffer.from(arrayBuffer)
 
-    console.log("[v0] Uploading to R2 bucket:", process.env.R2_BUCKET_NAME)
+    console.log("[v0] Uploading to R2 bucket:", r2Env.bucketName)
 
     // Upload to R2
     const command = new PutObjectCommand({
-      Bucket: process.env.R2_BUCKET_NAME!,
+      Bucket: r2Env.bucketName!,
       Key: fullPath,
       Body: buffer,
       ContentType: file.type,
@@ -120,7 +117,7 @@ export async function POST(request: NextRequest) {
     console.log("[v0] Upload successful")
 
     // Generate public URL
-    const publicUrl = `${process.env.R2_PUBLIC_URL}/${fullPath}`
+    const publicUrl = `${r2Env.publicUrl}/${fullPath}`
 
     // Save upload metadata to database
     // Images are permanent by default - no expiry unless user sets one
