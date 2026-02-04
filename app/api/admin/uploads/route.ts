@@ -3,6 +3,7 @@ import { createClient } from "@/lib/supabase/server"
 import { requireAdmin } from "@/lib/auth/admin-middleware"
 import { deleteFromR2 } from "@/lib/r2/delete"
 
+export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
 
 /**

@@ -5,6 +5,8 @@ import { getOrCreateSessionId } from "@/lib/auth/session"
 import { checkAnonymousUploadLimit, incrementAnonymousUploadCount } from "@/lib/auth/upload-limiter"
 import { getMissingR2Env, getR2Env, R2_REQUIRED_UPLOAD_KEYS } from "@/lib/r2/env"
 
+export const runtime = "nodejs"
+
 // Helper function to create R2 client (initialized per-request for Cloudflare compatibility)
 function createR2Client(r2Env: ReturnType<typeof getR2Env>) {
   return new S3Client({

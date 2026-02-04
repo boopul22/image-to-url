@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server"
 import { createClient } from "@/lib/supabase/server"
 import { deleteFromR2WithRetry } from "@/lib/r2/delete"
 
+export const runtime = "nodejs"
 export const dynamic = 'force-dynamic'
 export const maxDuration = 60
 
