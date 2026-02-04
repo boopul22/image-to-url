@@ -1,4 +1,3 @@
-import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import readingTime from 'reading-time'
@@ -19,16 +18,59 @@ import type {
 const POSTS_PER_PAGE = 10
 const CONTENT_PATH = path.join(process.cwd(), 'content', 'blog')
 
+// Check if we're in a Cloudflare Workers environment (no fs available)
+function isCloudflareWorkers(): boolean {
+  try {
+    // In Cloudflare Workers, fs operations will throw
+    return typeof process !== 'undefined' &&
+           typeof (globalThis as Record<string, unknown>).caches !== 'undefined' &&
+           typeof require === 'undefined'
+  } catch {
+    return true
+  }
+}
+
+// Safe fs wrapper that returns null/empty when fs is not available
+function safeReadFileSync(filePath: string): string | null {
+  try {
+    // Dynamic import to avoid bundling issues
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const fs = require('fs')
+    return fs.readFileSync(filePath, 'utf-8')
+  } catch {
+    return null
+  }
+}
+
+function safeExistsSync(filePath: string): boolean {
+  try {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const fs = require('fs')
+    return fs.existsSync(filePath)
+  } catch {
+    return false
+  }
+}
+
+function safeReaddirSync(dir: string): { name: string; isDirectory: () => boolean }[] {
+  try {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const fs = require('fs')
+    if (!fs.existsSync(dir)) {
+      return []
+    }
+    return fs.readdirSync(dir, { withFileTypes: true })
+  } catch {
+    return []
+  }
+}
+
 /**
  * Get all MDX files from a directory recursively
  */
 function getMdxFiles(dir: string): string[] {
-  if (!fs.existsSync(dir)) {
-    return []
-  }
-
   const files: string[] = []
-  const entries = fs.readdirSync(dir, { withFileTypes: true })
+  const entries = safeReaddirSync(dir)
 
   for (const entry of entries) {
     const fullPath = path.join(dir, entry.name)
@@ -116,7 +158,9 @@ export function extractFAQItems(content: string): FAQItem[] {
  */
 function parsePost(filePath: string, locale: Locale): Post | null {
   try {
-    const fileContent = fs.readFileSync(filePath, 'utf-8')
+    const fileContent = safeReadFileSync(filePath)
+    if (!fileContent) return null
+
     const { data, content } = matter(fileContent)
     const frontmatter = data as PostFrontmatter
 
@@ -151,7 +195,9 @@ function parsePost(filePath: string, locale: Locale): Post | null {
  */
 function parsePostMeta(filePath: string, locale: Locale): PostMeta | null {
   try {
-    const fileContent = fs.readFileSync(filePath, 'utf-8')
+    const fileContent = safeReadFileSync(filePath)
+    if (!fileContent) return null
+
     const { data, content } = matter(fileContent)
     const frontmatter = data as PostFrontmatter
 
@@ -182,6 +228,11 @@ function parsePostMeta(filePath: string, locale: Locale): PostMeta | null {
  */
 export const getAllPosts = unstable_cache(
   async (locale: Locale): Promise<PostMeta[]> => {
+    // Return empty array in Cloudflare Workers environment
+    if (isCloudflareWorkers()) {
+      return []
+    }
+
     const localePath = path.join(CONTENT_PATH, locale)
     const defaultLocalePath = path.join(CONTENT_PATH, defaultLocale)
 
@@ -228,14 +279,19 @@ export const getAllPosts = unstable_cache(
  */
 export const getPostBySlug = unstable_cache(
   async (slug: string, locale: Locale): Promise<Post | null> => {
+    // Return null in Cloudflare Workers environment
+    if (isCloudflareWorkers()) {
+      return null
+    }
+
     // Try requested locale first
     const localePath = path.join(CONTENT_PATH, locale, `${slug}.mdx`)
     const localePathMd = path.join(CONTENT_PATH, locale, `${slug}.md`)
 
-    if (fs.existsSync(localePath)) {
+    if (safeExistsSync(localePath)) {
       return parsePost(localePath, locale)
     }
-    if (fs.existsSync(localePathMd)) {
+    if (safeExistsSync(localePathMd)) {
       return parsePost(localePathMd, locale)
     }
 
@@ -244,10 +300,10 @@ export const getPostBySlug = unstable_cache(
       const defaultPath = path.join(CONTENT_PATH, defaultLocale, `${slug}.mdx`)
       const defaultPathMd = path.join(CONTENT_PATH, defaultLocale, `${slug}.md`)
 
-      if (fs.existsSync(defaultPath)) {
+      if (safeExistsSync(defaultPath)) {
         return parsePost(defaultPath, defaultLocale)
       }
-      if (fs.existsSync(defaultPathMd)) {
+      if (safeExistsSync(defaultPathMd)) {
         return parsePost(defaultPathMd, defaultLocale)
       }
     }
