@@ -4,3 +4,17 @@ compatibility_flags = ["nodejs_compat"]
 main = ".open-next/worker.js"
 
 assets = { directory = ".open-next/assets", binding = "ASSETS" }
+
+# Non-sensitive variables (can be committed)
+[vars]
+R2_BUCKET_NAME = "imgtourl"
+
+# Sensitive variables must be added via:
+# wrangler secret put R2_ACCOUNT_ID
+# wrangler secret put R2_ACCESS_KEY_ID
+# wrangler secret put R2_SECRET_ACCESS_KEY
+# wrangler secret put R2_PUBLIC_URL
+# wrangler secret put NEXT_PUBLIC_SUPABASE_URL
+# wrangler secret put NEXT_PUBLIC_SUPABASE_ANON_KEY
+# wrangler secret put SUPABASE_SERVICE_ROLE_KEY
+# wrangler secret put CRON_SECRET
