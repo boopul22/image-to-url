@@ -99,6 +99,20 @@ export default async function LocaleLayout({
         {/* Preconnect to R2 CDN for faster image loading */}
         <link rel="preconnect" href="https://pub-141831e61e69445289222976a15b6fb3.r2.dev" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://pub-141831e61e69445289222976a15b6fb3.r2.dev" />
+
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-CFY17JKKYK"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-CFY17JKKYK');
+          `}
+        </Script>
       </head>
       <body className={`${inter.variable} font-sans antialiased selection:bg-brand selection:text-white overflow-x-hidden`}>
         {/* Server-side navigation for SEO crawlers */}
