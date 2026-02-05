@@ -108,6 +108,7 @@ export async function POST(request: NextRequest) {
     try {
       const { error: dbError } = await supabase.from("uploads").insert({
         user_id: user?.id || null,
+        user_email: user?.email || null,
         session_id: sessionId,
         image_url: publicUrl,
         file_name: file.name,

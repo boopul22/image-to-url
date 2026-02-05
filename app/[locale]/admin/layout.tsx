@@ -54,6 +54,12 @@ export default async function AdminLayout({ children, params }: AdminLayoutProps
                                 All Uploads
                             </a>
                             <a
+                                href={`/${locale}/admin/settings`}
+                                className="text-sm text-zinc-400 hover:text-white transition-colors"
+                            >
+                                Settings
+                            </a>
+                            <a
                                 href={`/${locale}/dashboard`}
                                 className="text-sm text-zinc-400 hover:text-white transition-colors"
                             >

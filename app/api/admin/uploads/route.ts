@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
-import { createClient } from "@/lib/supabase/server"
+import { createAdminClient, createClient } from "@/lib/supabase/server"
 import { requireAdmin } from "@/lib/auth/admin-middleware"
 import { deleteFromR2 } from "@/lib/r2/delete"
 
@@ -27,8 +27,14 @@ export async function GET(request: NextRequest) {
 
         const offset = (page - 1) * limit
 
-        // Regular client - admin can see all uploads via RLS policy
-        const supabase = await createClient()
+        // Use admin client to bypass RLS and see all uploads
+        const supabase = createAdminClient() ?? await createClient()
+        if (!supabase) {
+            return NextResponse.json(
+                { error: "Supabase environment variables not configured" },
+                { status: 500 }
+            )
+        }
 
         // Build query
         let query = supabase
@@ -67,10 +73,31 @@ export async function GET(request: NextRequest) {
             )
         }
 
-        // Add user info to uploads (show shortened user ID)
+        // Resolve email addresses: prefer stored user_email, then admin API lookup, then fallback
+        const needsEmailLookup = (uploads || []).filter(u => u.user_id && !u.user_email)
+        let emailMap: Record<string, string> = {}
+
+        if (needsEmailLookup.length > 0) {
+            const adminClient = createAdminClient()
+            if (adminClient) {
+                try {
+                    const { data } = await adminClient.auth.admin.listUsers({ perPage: 1000 })
+                    if (data?.users) {
+                        for (const user of data.users) {
+                            emailMap[user.id] = user.email || user.phone || `User (${user.id.slice(0, 8)}...)`
+                        }
+                    }
+                } catch (err) {
+                    console.error("Error fetching user emails:", err)
+                }
+            }
+        }
+
         const uploadsWithEmail = (uploads || []).map(upload => ({
             ...upload,
-            user_email: upload.user_id ? `User (${upload.user_id.slice(0, 8)}...)` : null
+            user_email: upload.user_id
+                ? (upload.user_email || emailMap[upload.user_id] || `User (${upload.user_id.slice(0, 8)}...)`)
+                : null
         }))
 
         // Debug logging
@@ -124,7 +151,14 @@ export async function DELETE(request: NextRequest) {
             )
         }
 
-        const supabase = await createClient()
+        // Use admin client to bypass RLS and delete any user's uploads
+        const supabase = createAdminClient() ?? await createClient()
+        if (!supabase) {
+            return NextResponse.json(
+                { error: "Supabase environment variables not configured" },
+                { status: 500 }
+            )
+        }
 
         // Fetch uploads to get R2 keys
         const { data: uploads, error: fetchError } = await supabase

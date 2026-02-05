@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server"
-import { createClient } from "@/lib/supabase/server"
+import { createAdminClient, createClient } from "@/lib/supabase/server"
 import { requireAdmin } from "@/lib/auth/admin-middleware"
 
 export const dynamic = "force-dynamic"
+export const runtime = "nodejs"
 
 /**
  * GET /api/admin/stats
@@ -14,7 +15,14 @@ export async function GET() {
     if (!allowed) return authResponse
 
     try {
-        const supabase = await createClient()
+        // Use admin client to bypass RLS and see all uploads
+        const supabase = createAdminClient() ?? await createClient()
+        if (!supabase) {
+            return NextResponse.json(
+                { error: "Supabase environment variables not configured" },
+                { status: 500 }
+            )
+        }
 
         // Get total uploads count
         const { count: totalUploads, error: uploadsError } = await supabase
@@ -45,16 +53,27 @@ export async function GET() {
             totalStorage = storageData.reduce((acc, upload) => acc + (upload.file_size || 0), 0)
         }
 
-        // Get unique users count (users who uploaded)
-        const { data: usersData, error: usersError } = await supabase
-            .from("uploads")
-            .select("user_id")
-            .not("user_id", "is", null)
-
+        // Get total registered users count from auth (all users, not just uploaders)
         let uniqueUsers = 0
-        if (!usersError && usersData) {
-            const userIds = new Set(usersData.map((u) => u.user_id))
-            uniqueUsers = userIds.size
+        const adminClient = createAdminClient()
+        if (adminClient) {
+            try {
+                const { data } = await adminClient.auth.admin.listUsers({ perPage: 1000 })
+                uniqueUsers = data?.users?.length || 0
+            } catch (err) {
+                console.error("Error fetching registered users count:", err)
+            }
+        }
+        // Fallback: count distinct uploaders if admin client unavailable
+        if (uniqueUsers === 0) {
+            const { data: usersData, error: usersError } = await supabase
+                .from("uploads")
+                .select("user_id")
+                .not("user_id", "is", null)
+            if (!usersError && usersData) {
+                const userIds = new Set(usersData.map((u: { user_id: string }) => u.user_id))
+                uniqueUsers = userIds.size
+            }
         }
 
         // Get anonymous uploads count

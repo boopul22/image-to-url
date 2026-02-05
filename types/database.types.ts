@@ -14,6 +14,30 @@ export type Database = {
   }
   public: {
     Tables: {
+      banned_email_domains: {
+        Row: {
+          id: string
+          domain: string
+          reason: string | null
+          created_at: string
+          created_by: string | null
+        }
+        Insert: {
+          id?: string
+          domain: string
+          reason?: string | null
+          created_at?: string
+          created_by?: string | null
+        }
+        Update: {
+          id?: string
+          domain?: string
+          reason?: string | null
+          created_at?: string
+          created_by?: string | null
+        }
+        Relationships: []
+      }
       anonymous_upload_tracking: {
         Row: {
           created_at: string | null
@@ -86,6 +110,7 @@ export type Database = {
           status: string | null
           thumbnail_url: string | null
           uploaded_at: string | null
+          user_email: string | null
           user_id: string | null
         }
         Insert: {
@@ -102,6 +127,7 @@ export type Database = {
           status?: string | null
           thumbnail_url?: string | null
           uploaded_at?: string | null
+          user_email?: string | null
           user_id?: string | null
         }
         Update: {
@@ -118,6 +144,7 @@ export type Database = {
           status?: string | null
           thumbnail_url?: string | null
           uploaded_at?: string | null
+          user_email?: string | null
           user_id?: string | null
         }
         Relationships: []

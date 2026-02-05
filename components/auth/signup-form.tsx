@@ -36,6 +36,19 @@ export function SignupForm({ onSuccess }: { onSuccess?: () => void }) {
     }
 
     try {
+      // Check if email domain is banned before attempting signup
+      const domainCheck = await fetch("/api/auth/check-domain", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      })
+      const domainResult = await domainCheck.json()
+      if (!domainResult.allowed) {
+        setError(domainResult.message || "Registration with this email domain is not allowed.")
+        setLoading(false)
+        return
+      }
+
       const { error } = await supabase.auth.signUp({
         email,
         password,

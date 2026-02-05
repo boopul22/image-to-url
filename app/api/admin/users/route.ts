@@ -47,7 +47,8 @@ export async function GET() {
             return NextResponse.json({ users })
         }
 
-        // Fallback: derive users from uploads table if admin client isn't configured
+        // Fallback: derive users from uploads table using stored user_email
+        console.warn("[Admin Users] SUPABASE_SERVICE_ROLE_KEY not set — falling back to uploads table for user list")
         const supabase = await createClient()
         if (!supabase) {
             return NextResponse.json(
@@ -58,8 +59,8 @@ export async function GET() {
 
         const { data: uploads, error: uploadsError } = await supabase
             .from("uploads")
-            .select("user_id")
-            .not("user_id", "is", null)
+            .select("user_id, user_email")
+            .not("user_id", "is", null) as { data: { user_id: string; user_email: string | null }[] | null; error: unknown }
 
         if (uploadsError) {
             console.error("Error fetching user IDs:", uploadsError)
@@ -69,11 +70,20 @@ export async function GET() {
             )
         }
 
-        const userIds = [...new Set(uploads?.map((u) => u.user_id).filter(Boolean))]
+        // Deduplicate by user_id, prefer rows that have an email
+        const userMap = new Map<string, string>()
+        for (const u of uploads || []) {
+            if (u.user_id && !userMap.has(u.user_id)) {
+                userMap.set(u.user_id, u.user_email || `User (${String(u.user_id).slice(0, 8)}...)`)
+            } else if (u.user_id && u.user_email && !userMap.get(u.user_id)?.includes("@")) {
+                // Upgrade from fallback label to real email if found
+                userMap.set(u.user_id, u.user_email)
+            }
+        }
 
-        const users = userIds.map((id, index) => ({
-            id: id as string,
-            email: `User ${index + 1} (${String(id).slice(0, 8)}...)`,
+        const users = Array.from(userMap.entries()).map(([id, email]) => ({
+            id,
+            email,
         }))
 
         return NextResponse.json({ users })
