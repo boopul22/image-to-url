@@ -7,9 +7,7 @@ import type { Locale } from '@/lib/i18n/config'
 import { locales } from '@/lib/i18n/config'
 
 // Force static generation for SEO and Cloudflare Workers compatibility
-// No revalidate - compileMDX can't run on CF Workers runtime, so ISR would fail
 export const dynamic = 'force-static'
-export const dynamicParams = false
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { Button } from '@/components/ui/button'
