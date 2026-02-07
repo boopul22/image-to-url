@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "npm run generate:blog && next build",
-    "build:cf": "npm run generate:blog && npx opennextjs-cloudflare build",
+    "build:cf": "npm run generate:blog && npx opennextjs-cloudflare build && npx opennextjs-cloudflare populateCache remote",
     "generate:blog": "node scripts/generate-blog-json.mjs",
     "dev": "next dev",
     "lint": "eslint .",
