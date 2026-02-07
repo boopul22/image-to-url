@@ -1,7 +1,8 @@
 import path from 'path'
 import matter from 'gray-matter'
 import readingTime from 'reading-time'
-import { unstable_cache } from 'next/cache'
+// unstable_cache removed - data is read from pre-generated JSON in memory,
+// no caching needed, and unstable_cache may not work on CF Workers
 import type { Locale } from '@/lib/i18n/config'
 import { defaultLocale } from '@/lib/i18n/config'
 import type {
@@ -266,62 +267,52 @@ function getPostsFromJson(locale: Locale): GeneratedPost[] {
 
 /**
  * Get all posts for a locale, with fallback to English
- * Uses pre-generated JSON for production, filesystem for development
+ * Uses pre-generated JSON data (works in both dev and production)
  */
-export const getAllPosts = unstable_cache(
-  async (locale: Locale): Promise<PostMeta[]> => {
-    // Use pre-generated JSON data (works in both dev and production)
-    const posts = getPostsFromJson(locale)
+export async function getAllPosts(locale: Locale): Promise<PostMeta[]> {
+  const posts = getPostsFromJson(locale)
 
-    // Convert to PostMeta (without content)
-    return posts.map(post => ({
-      slug: post.slug,
-      locale: post.locale as Locale,
-      frontmatter: post.frontmatter as unknown as PostFrontmatter,
-      readingTime: {
-        text: post.readingTime.text,
-        minutes: post.readingTime.minutes,
-      },
-    }))
-  },
-  ['blog-posts'],
-  { revalidate: 3600, tags: ['blog'] }
-)
+  // Convert to PostMeta (without content)
+  return posts.map(post => ({
+    slug: post.slug,
+    locale: post.locale as Locale,
+    frontmatter: post.frontmatter as unknown as PostFrontmatter,
+    readingTime: {
+      text: post.readingTime.text,
+      minutes: post.readingTime.minutes,
+    },
+  }))
+}
 
 /**
  * Get a single post by slug with locale fallback
- * Uses pre-generated JSON for production
+ * Uses pre-generated JSON data
  */
-export const getPostBySlug = unstable_cache(
-  async (slug: string, locale: Locale): Promise<Post | null> => {
-    // Use pre-generated JSON data
-    const localePosts = blogData[locale] || []
-    const defaultPosts = blogData[defaultLocale] || []
+export async function getPostBySlug(slug: string, locale: Locale): Promise<Post | null> {
+  const localePosts = blogData[locale] || []
+  const defaultPosts = blogData[defaultLocale] || []
 
-    // Try locale-specific first
-    let post = localePosts.find(p => p.slug === slug)
+  // Try locale-specific first
+  let post = localePosts.find(p => p.slug === slug)
 
-    // Fallback to default locale
-    if (!post && locale !== defaultLocale) {
-      post = defaultPosts.find(p => p.slug === slug)
-    }
+  // Fallback to default locale
+  if (!post && locale !== defaultLocale) {
+    post = defaultPosts.find(p => p.slug === slug)
+  }
 
-    if (!post) return null
+  if (!post) return null
 
-    // Return with proper typing
-    return {
-      slug: post.slug,
-      locale: post.locale as Locale,
-      frontmatter: post.frontmatter as unknown as PostFrontmatter,
-      content: post.content,
-      readingTime: post.readingTime,
-      headings: post.headings,
-      faqItems: post.faqItems,
-    }
-  },
-  ['blog-post'],
-  { revalidate: 3600, tags: ['blog'] }
-)
+  // Return with proper typing
+  return {
+    slug: post.slug,
+    locale: post.locale as Locale,
+    frontmatter: post.frontmatter as unknown as PostFrontmatter,
+    content: post.content,
+    readingTime: post.readingTime,
+    headings: post.headings,
+    faqItems: post.faqItems,
+  }
+}
 
 /**
  * Get paginated posts

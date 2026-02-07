@@ -10,6 +10,9 @@ import { WebApplicationJsonLd, OrganizationJsonLd, FAQJsonLd, BreadcrumbJsonLd, 
 import { FAQSection } from "@/components/faq-section"
 import { HowToSection } from "@/components/how-to-section"
 import { TrustSection } from "@/components/trust-section"
+import { TestimonialsSection } from "@/components/testimonials-section"
+import { ComparisonTableSection } from "@/components/comparison-table-section"
+import { UseCasesHighlightsSection } from "@/components/use-cases-highlights-section"
 
 export default async function HomePage({
   params,
@@ -132,6 +135,31 @@ export default async function HomePage({
         {/* Trust Section */}
         {dict.trust && (
           <TrustSection title={dict.trust.title} subtitle={dict.trust.subtitle} />
+        )}
+
+        {/* Testimonials Section */}
+        {dict.testimonials && (
+          <TestimonialsSection
+            title={dict.testimonials.title}
+            testimonials={dict.testimonials.items}
+          />
+        )}
+
+        {/* Comparison Table Section */}
+        {dict.comparison && (
+          <ComparisonTableSection
+            title={dict.comparison.title}
+            subtitle={dict.comparison.subtitle}
+          />
+        )}
+
+        {/* Use Cases Highlights Section */}
+        {dict.useCasesHighlights && (
+          <UseCasesHighlightsSection
+            title={dict.useCasesHighlights.title}
+            subtitle={dict.useCasesHighlights.subtitle}
+            locale={locale}
+          />
         )}
 
         {/* FAQ Section */}

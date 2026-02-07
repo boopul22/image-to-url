@@ -7,7 +7,6 @@ import { locales } from '@/lib/i18n/config'
 
 // Force static generation for SEO and Cloudflare Workers compatibility
 export const dynamic = 'force-static'
-export const revalidate = 3600 // Revalidate every hour
 
 // Generate static params for all locales
 export function generateStaticParams() {
