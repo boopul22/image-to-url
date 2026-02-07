@@ -2329,6 +2329,17 @@ const dictionaries = {
             { title: "代码中使用", description: "在 JavaScript 中设置 img.src 或 fetch 图片。" },
           ],
         },
+        tips: {
+          title: "JavaScript 图片使用技巧",
+          items: [
+            "使用 URL.createObjectURL() 快速预览，无需 base64 开销",
+            "完成后记得调用 URL.revokeObjectURL() 释放内存",
+            "FileReader 是异步的 - 使用 promises 或 async/await 编写更清晰的代码",
+            "验证文件类型：file.type.startsWith('image/')",
+            "上传前在客户端压缩图片以节省带宽",
+            "我们的 API 返回直接链接 - 无需额外处理"
+          ],
+        },
         faq: {
           title: "JavaScript 图片常见问题",
           items: [
@@ -2357,6 +2368,15 @@ const dictionaries = {
             { title: "上传图片", description: "上传您的项目图片。" },
             { title: "获取 URL", description: "复制生成的链接。" },
             { title: "代码中使用", description: "使用 requests.get() 或直接作为 URL 使用。" },
+          ],
+        },
+        tips: {
+          title: "Python 图片使用技巧",
+          items: [
+            "使用 requests 库快速下载图片：requests.get(url).content",
+            "配合 Pillow 进行图片处理：Image.open(BytesIO(content))",
+            "在 Discord.py 中使用 embed.set_image(url=url)",
+            "在 Jupyter 中直接显示：IPython.display.Image(url=url)"
           ],
         },
         faq: {
@@ -2389,6 +2409,15 @@ const dictionaries = {
             { title: "代码中使用", description: "使用 fetch() 或 axios 获取图片。" },
           ],
         },
+        tips: {
+          title: "Node.js 图片使用技巧",
+          items: [
+            "使用 fetch() 异步获取图片数据",
+            "配合 sharp 库进行图片处理",
+            "在 Express 中使用 multer 处理上传",
+            "为 Next.js Image 组件添加域名配置"
+          ],
+        },
         faq: {
           title: "Node.js 图片常见问题",
           items: [
@@ -2417,6 +2446,15 @@ const dictionaries = {
             { title: "上传图片", description: "上传您的 React 应用图片。" },
             { title: "获取 URL", description: "复制生成的链接。" },
             { title: "组件中使用", description: "在 JSX 的 img 标签中使用 URL。" },
+          ],
+        },
+        tips: {
+          title: "React 图片使用技巧",
+          items: [
+            "使用 loading=\"lazy\" 属性实现懒加载",
+            "将 URL 存储在 state 中以便动态更新",
+            "使用 onError 处理图片加载失败",
+            "在 Next.js 中配置 next.config.js 的 images 域名"
           ],
         },
         faq: {
@@ -2449,6 +2487,15 @@ const dictionaries = {
             { title: "发送图片", description: "在机器人代码中使用 URL 发送图片。" },
           ],
         },
+        tips: {
+          title: "Telegram 图片使用技巧",
+          items: [
+            "使用 sendPhoto 方法发送图片 URL",
+            "动态 GIF 在 Telegram 中正常播放",
+            "设置合适的 caption 为图片添加说明",
+            "使用 parse_mode 支持富文本格式"
+          ],
+        },
         faq: {
           title: "Telegram 图片常见问题",
           items: [
@@ -2477,6 +2524,15 @@ const dictionaries = {
             { title: "上传图片", description: "上传您的 Roblox 相关图片。" },
             { title: "获取 URL", description: "复制生成的链接。" },
             { title: "分享使用", description: "在论坛、Discord 或社区中使用。" },
+          ],
+        },
+        tips: {
+          title: "Roblox 图片分享技巧",
+          items: [
+            "使用 PNG 格式保留透明背景",
+            "建议群组标志尺寸为 256x256 像素",
+            "在 Discord 服务器中 URL 完美嵌入",
+            "可以在 Roblox 论坛和社区中分享"
           ],
         },
         faq: {
@@ -2509,6 +2565,15 @@ const dictionaries = {
             { title: "社区分享", description: "在 Discord、论坛或社交媒体中使用。" },
           ],
         },
+        tips: {
+          title: "VRChat 图片分享技巧",
+          items: [
+            "使用高分辨率截图展示头像细节",
+            "PNG 格式支持透明背景",
+            "在 VRChat 社区 Discord 中完美嵌入",
+            "适合头像参考图和世界预览图分享"
+          ],
+        },
         faq: {
           title: "VRChat 图片常见问题",
           items: [
@@ -2537,6 +2602,15 @@ const dictionaries = {
             { title: "上传标志", description: "上传您的自定义球队标志。" },
             { title: "复制 URL", description: "获取生成的图片链接。" },
             { title: "ESPN 设置", description: "在 ESPN Fantasy 球队设置中粘贴 URL。" },
+          ],
+        },
+        tips: {
+          title: "ESPN Fantasy 使用技巧",
+          items: [
+            "使用方形图片以获得最佳显示效果",
+            "推荐尺寸为 500x500 像素",
+            "登录后获取永久链接",
+            "支持 JPG 和 PNG 格式"
           ],
         },
         faq: {
