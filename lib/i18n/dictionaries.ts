@@ -2598,6 +2598,22 @@ const dictionaries = {
       privacy: "गोपनीयता",
       terms: "शर्तें",
       cookies: "कुकीज़",
+      categories: {
+        converters: "कन्वर्टर्स",
+        useCases: "उपयोग के मामले",
+        company: "कंपनी",
+        legal: "कानूनी",
+      },
+      links: {
+        home: "होम",
+        blog: "ब्लॉग",
+        about: "हमारे बारे में",
+        discord: "Discord इमेज",
+        html: "HTML & CSS",
+        fantasy: "फैंटसी स्पोर्ट्स",
+        minecraft: "Minecraft",
+      },
+      badge: "ग्लोबल CDN द्वारा संचालित मुफ्त इमेज से URL कनवर्टर",
     },
     meta: {
       title: "मुफ्त इमेज से URL कनवर्टर - तुरंत शेयर करने योग्य फोटो लिंक | ImageToURL",

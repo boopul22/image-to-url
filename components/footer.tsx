@@ -7,13 +7,13 @@ interface FooterDict {
     privacy: string
     terms: string
     cookies: string
-    categories: {
+    categories?: {
         converters: string
         useCases: string
         company: string
         legal: string
     }
-    links: {
+    links?: {
         home: string
         blog: string
         about: string
@@ -22,7 +22,7 @@ interface FooterDict {
         fantasy: string
         minecraft: string
     }
-    badge: string
+    badge?: string
 }
 
 interface FooterProps {
@@ -30,7 +30,29 @@ interface FooterProps {
     dict: FooterDict
 }
 
+// Default fallback values
+const defaultCategories = {
+    converters: "Converters",
+    useCases: "Use Cases",
+    company: "Company",
+    legal: "Legal",
+}
+
+const defaultLinks = {
+    home: "Home",
+    blog: "Blog",
+    about: "About",
+    discord: "Discord Images",
+    html: "HTML & CSS",
+    fantasy: "Fantasy Sports",
+    minecraft: "Minecraft",
+}
+
 export function Footer({ locale, dict }: FooterProps) {
+    const categories = dict.categories || defaultCategories
+    const links = dict.links || defaultLinks
+    const badge = dict.badge || "Free image to URL converter powered by global CDN"
+
     const toolLinks = [
         { name: "Image to URL Converter", href: "/tools/image-to-url-converter" },
         { name: "JPG to URL", href: "/tools/jpg-to-url" },
@@ -42,10 +64,10 @@ export function Footer({ locale, dict }: FooterProps) {
     ]
 
     const useCaseLinks = [
-        { name: dict.links.discord, href: "/use-cases/discord" },
-        { name: dict.links.html, href: "/use-cases/html" },
-        { name: dict.links.fantasy, href: "/use-cases/fantasy-sports" },
-        { name: dict.links.minecraft, href: "/use-cases/minecraft" },
+        { name: links.discord, href: "/use-cases/discord" },
+        { name: links.html, href: "/use-cases/html" },
+        { name: links.fantasy, href: "/use-cases/fantasy-sports" },
+        { name: links.minecraft, href: "/use-cases/minecraft" },
     ]
 
     return (
@@ -55,7 +77,7 @@ export function Footer({ locale, dict }: FooterProps) {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
                     {/* Tools */}
                     <div>
-                        <h3 className="text-white text-sm font-medium mb-3">{dict.categories.converters}</h3>
+                        <h3 className="text-white text-sm font-medium mb-3">{categories.converters}</h3>
                         <ul className="space-y-2">
                             {toolLinks.map((link) => (
                                 <li key={link.href}>
@@ -72,7 +94,7 @@ export function Footer({ locale, dict }: FooterProps) {
 
                     {/* Use Cases */}
                     <div>
-                        <h3 className="text-white text-sm font-medium mb-3">{dict.categories.useCases}</h3>
+                        <h3 className="text-white text-sm font-medium mb-3">{categories.useCases}</h3>
                         <ul className="space-y-2">
                             {useCaseLinks.map((link) => (
                                 <li key={link.href}>
@@ -89,14 +111,14 @@ export function Footer({ locale, dict }: FooterProps) {
 
                     {/* Company */}
                     <div>
-                        <h3 className="text-white text-sm font-medium mb-3">{dict.categories.company}</h3>
+                        <h3 className="text-white text-sm font-medium mb-3">{categories.company}</h3>
                         <ul className="space-y-2">
                             <li>
                                 <Link
                                     href={`/${locale}`}
                                     className="text-zinc-500 hover:text-brand text-xs transition-colors"
                                 >
-                                    {dict.links.home}
+                                    {links.home}
                                 </Link>
                             </li>
                             <li>
@@ -104,7 +126,7 @@ export function Footer({ locale, dict }: FooterProps) {
                                     href={`/${locale}/blog`}
                                     className="text-zinc-500 hover:text-brand text-xs transition-colors"
                                 >
-                                    {dict.links.blog}
+                                    {links.blog}
                                 </Link>
                             </li>
                             <li>
@@ -112,7 +134,7 @@ export function Footer({ locale, dict }: FooterProps) {
                                     href={`/${locale}/about`}
                                     className="text-zinc-500 hover:text-brand text-xs transition-colors"
                                 >
-                                    {dict.links.about}
+                                    {links.about}
                                 </Link>
                             </li>
                         </ul>
@@ -120,7 +142,7 @@ export function Footer({ locale, dict }: FooterProps) {
 
                     {/* Legal */}
                     <div>
-                        <h3 className="text-white text-sm font-medium mb-3">{dict.categories.legal}</h3>
+                        <h3 className="text-white text-sm font-medium mb-3">{categories.legal}</h3>
                         <ul className="space-y-2">
                             <li>
                                 <Link
@@ -208,7 +230,7 @@ export function Footer({ locale, dict }: FooterProps) {
                 <div className="border-t border-white/5 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
                     <p className="text-zinc-500 text-xs">{dict.copyright}</p>
                     <p className="text-zinc-600 text-xs">
-                        {dict.badge}
+                        {badge}
                     </p>
                 </div>
             </div>
