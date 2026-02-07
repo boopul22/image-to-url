@@ -40,6 +40,7 @@ const navLinks = [
 ] as const
 
 const toolLinks = [
+    { name: "Image to URL Converter", href: "/tools/image-to-url-converter" },
     { name: "PNG to URL", href: "/tools/png-to-url" },
     { name: "JPG to URL", href: "/tools/jpg-to-url" },
     { name: "SVG to URL", href: "/tools/svg-to-url" },

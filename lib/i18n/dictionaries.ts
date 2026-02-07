@@ -285,6 +285,202 @@ const dictionaries = {
       ]
     },
     tools: {
+      "image-to-url": {
+        title: "Image to URL Converter",
+        subtitle: "Free Image to URL Converter Online — No Signup Required",
+        description: "Use our free image to URL converter to turn any JPG, PNG, GIF, SVG, or WebP into a shareable link in seconds. No account needed, no watermarks, instant CDN-powered URLs.",
+        introduction: {
+          title: "The Best Free Image to URL Converter",
+          paragraphs: [
+            "Looking for an image to URL converter? ImageToURL is the fastest and easiest way to convert any image into a shareable web link. Simply upload your file — whether it's a JPG, PNG, GIF, SVG, or WebP — and our image to URL converter instantly generates a permanent, CDN-backed URL you can use anywhere.",
+            "Unlike other image to URL converter tools that require signups, add watermarks, or expire links quickly, ImageToURL keeps it simple: drag, drop, and get your URL. Every image is distributed across 200+ global edge servers so your links load fast for anyone, anywhere in the world.",
+            "Our image to URL converter is trusted by web developers, marketers, e-commerce sellers, content creators, and millions of everyday users who need reliable image links for websites, emails, social media, documents, and more — all completely free.",
+          ],
+        },
+        features: {
+          title: "Why Our Image to URL Converter Is #1",
+          items: [
+            "100% free image to URL converter — no hidden costs ever",
+            "No signup or account required to convert images to URLs",
+            "Supports all major formats: JPG, PNG, GIF, SVG, WebP",
+            "Upload files up to 10MB per image",
+            "Instant URL generation — convert image to URL in under 2 seconds",
+            "Global CDN with 200+ edge locations for lightning-fast delivery",
+            "HTTPS-secured URLs for safe embedding and sharing",
+            "99.9% uptime — your image URLs never go down",
+            "Clean, short URLs optimized for sharing and embedding",
+            "Bulk image to URL converter — convert multiple images at once",
+          ],
+        },
+        howItWorks: {
+          title: "How Our Image to URL Converter Works",
+          steps: [
+            { title: "1. Upload Your Image", description: "Drag and drop any image (JPG, PNG, GIF, SVG, or WebP) into the image to URL converter, or click to browse. Accepts files up to 10MB." },
+            { title: "2. Image to URL Conversion", description: "Our converter instantly uploads your image to a global CDN and generates a permanent, shareable URL — no waiting, no processing delays." },
+            { title: "3. Copy & Use Your URL", description: "Copy your new image URL and paste it anywhere — websites, HTML, emails, social media, forums, Markdown, documents, or messaging apps." },
+          ],
+        },
+        useCases: {
+          title: "Who Uses Our Image to URL Converter?",
+          items: [
+            { title: "Web Developers", description: "Use the image to URL converter to host images for HTML, CSS, and JavaScript projects. Perfect for prototyping, testing responsive designs, and static site assets." },
+            { title: "Email Marketers", description: "Convert images to URLs for email campaigns and newsletters. Our image to URL converter ensures your images load reliably in Gmail, Outlook, and every major email client." },
+            { title: "Social Media Managers", description: "Use our image to URL converter to create direct image links that preview correctly on Twitter, Facebook, LinkedIn, Reddit, Discord, and other platforms." },
+            { title: "E-commerce Sellers", description: "Convert product photos to URLs with our image to URL converter for eBay, Etsy, Amazon, Shopify, and marketplace listings." },
+            { title: "Technical Writers", description: "Use the image to URL converter to add screenshots, diagrams, and visual guides to GitHub READMEs, wikis, Notion docs, and technical documentation." },
+            { title: "Bloggers & Forum Users", description: "Our image to URL converter makes it easy to share images on Reddit, Stack Overflow, WordPress, Medium, and community forums." },
+          ],
+        },
+        tips: {
+          title: "Get the Most Out of Our Image to URL Converter",
+          items: [
+            "Optimize your images before using the image to URL converter — tools like TinyPNG or Squoosh reduce file size without visible quality loss.",
+            "Choose the right format: JPG for photos, PNG for transparency, GIF for animations, SVG for logos, WebP for optimal compression.",
+            "Sign in free to make your image to URL converter links permanent and organize uploads in folders.",
+            "Need to convert many images at once? Use our bulk image to URL converter to process multiple files simultaneously.",
+            "Test your converted image URLs in an incognito window to verify they're publicly accessible before sharing.",
+            "Use descriptive filenames before uploading to the image to URL converter for easier organization in your dashboard.",
+          ],
+        },
+        faq: {
+          title: "Image to URL Converter — FAQ",
+          items: [
+            { question: "What is an image to URL converter?", answer: "An image to URL converter is an online tool that uploads your image file to a hosting server and gives you a shareable web link (URL). ImageToURL is a free image to URL converter that works instantly with no signup." },
+            { question: "How do I use this image to URL converter?", answer: "Using our image to URL converter is simple: drag and drop your image (JPG, PNG, GIF, SVG, or WebP) into the upload zone. The image to URL converter instantly processes your file and gives you a shareable link — completely free." },
+            { question: "Is this image to URL converter really free?", answer: "Yes, our image to URL converter is 100% free with no hidden charges. You can convert unlimited images to URLs without creating an account." },
+            { question: "What formats does the image to URL converter support?", answer: "Our image to URL converter supports JPG/JPEG, PNG, GIF (including animated GIFs), SVG, and WebP. Each file can be up to 10MB." },
+            { question: "How long do image to URL converter links stay active?", answer: "URLs created with the image to URL converter for anonymous uploads stay active for 30 days. Sign in for a free account to keep your image URLs permanently." },
+            { question: "Can I use image to URL converter links on my website?", answer: "Absolutely! URLs generated by our image to URL converter work in HTML img tags, CSS backgrounds, Markdown, email templates, social media, and any platform that supports image URLs." },
+            { question: "Does the image to URL converter reduce image quality?", answer: "No. Our image to URL converter preserves your original image exactly as uploaded — zero re-compression, no resizing, no watermarks." },
+            { question: "Can the image to URL converter handle multiple images?", answer: "Yes! Use our bulk image to URL converter feature to upload and convert multiple images simultaneously." },
+            { question: "Is the image to URL converter secure?", answer: "Yes, all URLs from our image to URL converter are served over HTTPS with SSL encryption on enterprise-grade cloud infrastructure with 99.9% uptime." },
+            { question: "What makes this the best image to URL converter?", answer: "Our image to URL converter stands out with instant conversion, no signup requirement, all major format support, global CDN delivery via 200+ edge locations, permanent links for signed-in users, and a completely free service." },
+          ],
+        },
+        relatedTools: {
+          title: "More Image to URL Converter Tools",
+          tools: [
+            { name: "JPG to URL Converter", href: "/tools/jpg-to-url", description: "Convert JPEG photos to shareable URLs instantly" },
+            { name: "PNG to URL Converter", href: "/tools/png-to-url", description: "Convert PNG images with transparency to URLs" },
+            { name: "GIF to URL Converter", href: "/tools/gif-to-url", description: "Convert animated GIFs to shareable links" },
+            { name: "SVG to URL Converter", href: "/tools/svg-to-url", description: "Convert vector graphics to shareable URLs" },
+            { name: "WebP to URL Converter", href: "/tools/webp-to-url", description: "Convert WebP images to shareable URLs" },
+            { name: "Bulk Image to URL", href: "/tools/bulk-upload", description: "Convert multiple images to URLs at once" },
+          ],
+        },
+        externalResources: {
+          title: "Learn More About Image Hosting",
+          resources: [
+            { name: "MDN: Using Images in HTML", href: "https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML", description: "Complete guide to embedding images in websites using URLs" },
+            { name: "Google: Image Optimization Guide", href: "https://web.dev/articles/choose-the-right-image-format", description: "Best practices for image formats before converting to URL" },
+            { name: "Image File Formats Explained", href: "https://en.wikipedia.org/wiki/Image_file_format", description: "Understand JPG, PNG, GIF, SVG, and WebP formats supported by our converter" },
+          ],
+        },
+        meta: {
+          title: "Image to URL Converter — Free Online Tool | ImageToURL",
+          description: "Image to URL converter — convert any image to a shareable URL for free. Upload JPG, PNG, GIF, SVG, or WebP and get an instant link. No signup, no watermarks, fast CDN delivery.",
+          keywords: "image to url converter, image to url, convert image to url, free image to url converter, online image to url converter, image to link converter, image url generator, image to url converter free, upload image to url, image to url converter online, picture to url converter",
+        },
+      },
+      "image-to-url-converter": {
+        title: "Image to URL Converter",
+        subtitle: "Best Free Image to URL Converter — Convert Images to Links Instantly",
+        description: "The #1 free image to URL converter online. Upload any JPG, PNG, GIF, SVG, or WebP image and get a shareable URL in seconds. No signup, no watermarks, no limits — powered by a global CDN.",
+        introduction: {
+          title: "Why Use an Image to URL Converter?",
+          paragraphs: [
+            "An image to URL converter transforms your local image files into publicly accessible web links. Whether you have a product photo, a screenshot, a meme, or a design mockup — our image to URL converter uploads it to the cloud and gives you a clean, permanent URL that works everywhere on the internet.",
+            "Most people search for an image to URL converter when they need to embed an image in a website, share it in an email without attachments, post it on forums, or use it in documentation. ImageToURL is built specifically for this — it's the fastest, simplest, and most reliable image to URL converter available online.",
+            "What sets our image to URL converter apart? Zero signup friction, zero cost, and zero quality loss. Your images are served from 200+ CDN edge locations worldwide, ensuring anyone who clicks your link sees the image load instantly. Developers, marketers, students, sellers — millions use our image to URL converter every month.",
+          ],
+        },
+        features: {
+          title: "Image to URL Converter Features",
+          items: [
+            "Free image to URL converter — always free, no premium plans",
+            "No registration needed — convert image to URL anonymously",
+            "All formats supported: JPG, JPEG, PNG, GIF, SVG, WebP",
+            "10MB max file size per image upload",
+            "Convert image to URL in under 2 seconds",
+            "200+ global CDN edge servers for instant loading",
+            "All image URLs are HTTPS-secured",
+            "99.9% uptime — URLs that never break",
+            "Short, clean URLs perfect for sharing anywhere",
+            "Bulk image to URL converter for multiple files",
+          ],
+        },
+        howItWorks: {
+          title: "How Does the Image to URL Converter Work?",
+          steps: [
+            { title: "Step 1: Choose Your Image", description: "Drag and drop your image into the image to URL converter above, or click to select a file. Works with JPG, PNG, GIF, SVG, and WebP up to 10MB." },
+            { title: "Step 2: Automatic Conversion", description: "The image to URL converter uploads your file to our global CDN and generates a unique, permanent URL — the entire process takes less than 2 seconds." },
+            { title: "Step 3: Copy Your Image URL", description: "Click the copy button to grab your new image URL. Paste it into websites, emails, social media, documents, code, or anywhere you need it." },
+          ],
+        },
+        useCases: {
+          title: "When Do You Need an Image to URL Converter?",
+          items: [
+            { title: "Building Websites", description: "Every web developer needs an image to URL converter. Host images for HTML pages, CSS stylesheets, React components, and static sites without configuring your own storage." },
+            { title: "Sending Emails", description: "Email clients break inline attachments. Use our image to URL converter to create reliable image links that render perfectly in Gmail, Outlook, and every newsletter platform." },
+            { title: "Social Media Posts", description: "Need a direct image link for Twitter, Discord, Reddit, or Facebook? Our image to URL converter gives you URLs that auto-preview with the correct thumbnail." },
+            { title: "Online Selling", description: "eBay, Etsy, Amazon, and Shopify sellers use our image to URL converter to host product images across multiple marketplaces." },
+            { title: "Writing Docs", description: "Add visual guides to GitHub READMEs, Confluence pages, Notion wikis, and Markdown docs using URLs from our image to URL converter." },
+            { title: "Chat & Forums", description: "Share images on Slack, WhatsApp, Telegram, Reddit, Stack Overflow, and Discord. The image to URL converter creates links that embed inline automatically." },
+          ],
+        },
+        tips: {
+          title: "Image to URL Converter Tips & Best Practices",
+          items: [
+            "Compress images before using the image to URL converter — smaller files mean faster URLs. Try TinyPNG or Squoosh.",
+            "Pick the right format: JPG for photographs, PNG for transparency, GIF for animation, SVG for vectors, WebP for smallest file size.",
+            "Create a free account to unlock permanent image URLs and folder organization in the image to URL converter.",
+            "Converting many images? Use our bulk image to URL converter mode to upload multiple files in one go.",
+            "Verify your image URL in an incognito/private browser window before sharing publicly.",
+            "Name your files descriptively before uploading to the image to URL converter for easy management.",
+          ],
+        },
+        faq: {
+          title: "Image to URL Converter — Frequently Asked Questions",
+          items: [
+            { question: "What exactly is an image to URL converter?", answer: "An image to URL converter is a web tool that takes an image file from your device, uploads it to online storage, and returns a public URL pointing to that image. ImageToURL is a free image to URL converter that does this instantly with no signup." },
+            { question: "How do I convert an image to a URL?", answer: "Open our image to URL converter, drag your image file onto the upload area or click to browse, and your URL is ready in seconds. No account needed — just instant image to URL conversion." },
+            { question: "Is this image to URL converter completely free?", answer: "Yes. Our image to URL converter is 100% free — no trials, no credit card, no premium tiers. Convert unlimited images to URLs without any charges or watermarks." },
+            { question: "Which file types does the image to URL converter accept?", answer: "The image to URL converter supports JPG, JPEG, PNG, GIF (static and animated), SVG, and WebP. Maximum file size is 10MB per image." },
+            { question: "Do image to URL converter links expire?", answer: "For anonymous uploads, image URLs are active for 30 days. Create a free account to make your image to URL converter links permanent." },
+            { question: "Can I embed image to URL converter links in HTML?", answer: "Yes! URLs from our image to URL converter work in HTML img tags, CSS background-image, Markdown, email HTML, and any platform that accepts image URLs." },
+            { question: "Will the image to URL converter compress my images?", answer: "No. Our image to URL converter serves images exactly as uploaded — original resolution, original quality, zero compression." },
+            { question: "Can the image to URL converter process batches?", answer: "Yes. Use our bulk mode to run the image to URL converter on multiple files at once." },
+            { question: "How fast is the image to URL converter?", answer: "Our image to URL converter converts and hosts your image in under 2 seconds. URLs are served from 200+ CDN edge locations worldwide." },
+            { question: "Is the image to URL converter safe?", answer: "Yes. All URLs use HTTPS encryption. Images are stored on enterprise-grade infrastructure. You can delete uploads anytime from your dashboard." },
+            { question: "Do I need to install the image to URL converter?", answer: "No installation needed. The image to URL converter runs entirely in your browser on desktop, tablet, and mobile." },
+            { question: "Why is this the best image to URL converter?", answer: "Our image to URL converter offers instant conversion, no signup, no watermarks, no quality loss, 200+ CDN locations, permanent links with free accounts, and support for all major image formats — all at zero cost." },
+          ],
+        },
+        relatedTools: {
+          title: "More Image Converter Tools",
+          tools: [
+            { name: "JPG to URL Converter", href: "/tools/jpg-to-url", description: "Convert JPEG photographs to shareable URLs" },
+            { name: "PNG to URL Converter", href: "/tools/png-to-url", description: "Convert PNG images with transparency to URLs" },
+            { name: "GIF to URL Converter", href: "/tools/gif-to-url", description: "Convert animated GIFs to shareable links" },
+            { name: "SVG to URL Converter", href: "/tools/svg-to-url", description: "Convert vector graphics to URLs" },
+            { name: "WebP to URL Converter", href: "/tools/webp-to-url", description: "Convert WebP images to URLs" },
+            { name: "Bulk Image Converter", href: "/tools/bulk-upload", description: "Convert many images to URLs at once" },
+          ],
+        },
+        externalResources: {
+          title: "Image Hosting Resources",
+          resources: [
+            { name: "MDN: HTML Image Guide", href: "https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML", description: "Learn how to use image URLs in web pages" },
+            { name: "Google: Optimize Images", href: "https://web.dev/articles/choose-the-right-image-format", description: "Choose the right format before converting to URL" },
+            { name: "Image Formats Guide", href: "https://en.wikipedia.org/wiki/Image_file_format", description: "JPG, PNG, GIF, SVG, WebP — all formats our converter supports" },
+          ],
+        },
+        meta: {
+          title: "Image to URL Converter — Free Online Tool | ImageToURL",
+          description: "Image to URL converter — the fastest way to convert any image to a shareable URL. Free online image to URL converter for JPG, PNG, GIF, SVG, WebP. No signup, instant CDN links.",
+          keywords: "image to url converter, image to url converter free, free image to url converter, image to url converter online, online image to url converter, convert image to url, image to url, image to link converter, image url converter, picture to url converter, photo to url converter",
+        },
+      },
       "jpg-to-url": {
         title: "JPG to URL Converter",
         subtitle: "Free Online JPEG Image Hosting",
@@ -902,6 +1098,101 @@ const dictionaries = {
       ]
     },
     tools: {
+      "image-to-url": {
+        title: "图片转URL转换器",
+        subtitle: "免费在线图片托管 — 将任何图片转换为可分享的链接",
+        description: "上传任何图片，立即获取可分享的URL。支持JPG、PNG、GIF、SVG和WebP格式。无需注册，免费无限转换，全球CDN加速。",
+        introduction: {
+          title: "什么是图片转URL？",
+          paragraphs: [
+            "图片转URL是将图片文件上传到在线托管服务并获取一个永久网络链接（URL）的过程，任何人都可以使用该链接查看、嵌入或分享图片。无需发送大文件附件，只需分享一个轻量级URL即可。",
+            "ImageToURL让这个过程变得轻松——拖放任何JPG、PNG、GIF、SVG或WebP文件，几秒钟内即可获得CDN加速的URL。每张图片都分布在全球边缘网络上，确保快速加载。",
+            "无论您需要用于网页开发、电子邮件营销、社交媒体发布、在线市场、文档还是个人分享的图片URL，我们的免费转换器都能满足需求。无需创建账户，无水印，无隐藏费用。",
+          ],
+        },
+        features: {
+          title: "为什么选择我们的图片转URL转换器？",
+          items: [
+            "100%免费 — 无隐藏费用",
+            "无需注册或创建账户",
+            "支持所有主流格式：JPG、PNG、GIF、SVG、WebP",
+            "每次上传最大支持10MB",
+            "2秒内即时生成URL",
+            "全球CDN，200+边缘节点加速",
+            "HTTPS安全链接",
+            "99.9%正常运行时间保证",
+            "简洁短URL，易于分享和嵌入",
+            "支持批量上传，一次转换多张图片",
+          ],
+        },
+        howItWorks: {
+          title: "如何将图片转换为URL",
+          steps: [
+            { title: "上传图片", description: "将任何图片文件（JPG、PNG、GIF、SVG或WebP）拖放到上传区域，或点击浏览文件。支持最大10MB的图片。" },
+            { title: "立即获取URL", description: "您的图片将在几秒内上传到全球CDN。自动生成永久可分享的URL，无需等待。" },
+            { title: "随处分享和嵌入", description: "复制图片URL，在任何地方使用——网站、HTML邮件、社交媒体、论坛、文档、Markdown文件或即时通讯应用。" },
+          ],
+        },
+        useCases: {
+          title: "图片URL的常见用途",
+          items: [
+            { title: "网页开发与设计", description: "在HTML、CSS和JavaScript项目中嵌入图片。非常适合原型设计和静态网站资源托管。" },
+            { title: "电子邮件营销", description: "在邮件营销活动中包含可靠的图片链接，避免附件限制和内嵌图片损坏。" },
+            { title: "社交媒体与内容创作", description: "分享高质量图片，在Twitter、Facebook、LinkedIn、Reddit和Discord上正确预览。" },
+            { title: "电商与在线市场", description: "为eBay、淘宝、亚马逊、Shopify等平台托管产品照片。" },
+            { title: "文档与技术写作", description: "在GitHub README、Wiki、Notion页面和技术文档中添加截图和图表。" },
+            { title: "论坛与博客社区", description: "在Reddit、Stack Overflow、WordPress等平台上分享图片。" },
+          ],
+        },
+        tips: {
+          title: "图片转URL专业技巧",
+          items: [
+            "上传前优化图片——使用TinyPNG或Squoosh等工具压缩文件大小。",
+            "选择正确格式：JPG用于照片，PNG用于透明背景，GIF用于动画，SVG用于图标，WebP用于最佳压缩。",
+            "免费登录以永久保留图片URL并在文件夹中整理上传内容。",
+            "使用批量上传工具一次性转换多张图片。",
+            "在无痕窗口中测试图片URL以确认其可公开访问。",
+            "上传前使用描述性文件名，便于在仪表板中组织管理。",
+          ],
+        },
+        faq: {
+          title: "常见问题",
+          items: [
+            { question: "如何免费将图片转换为URL？", answer: "只需将图片（JPG、PNG、GIF、SVG或WebP）上传到我们的转换器。图片会立即托管，您将获得一个可分享的URL——完全免费，无需注册。" },
+            { question: "支持哪些图片格式？", answer: "我们支持JPG/JPEG、PNG、GIF（包括动画GIF）、SVG和WebP。每个文件最大10MB。" },
+            { question: "图片URL能保持多久？", answer: "匿名上传保存30天。注册免费账户可永久保留图片。" },
+            { question: "可以在网站上使用图片URL吗？", answer: "可以！我们的URL适用于HTML img标签、CSS背景、Markdown、邮件模板、社交媒体等所有接受图片URL的平台。" },
+            { question: "转换图片为URL会降低质量吗？", answer: "不会。我们保留上传的原始图片——不重新压缩、不调整大小、不添加水印。" },
+            { question: "可以一次转换多张图片吗？", answer: "可以！使用我们的批量上传工具同时上传和转换多张图片。" },
+            { question: "生成的URL安全吗？", answer: "是的，所有图片URL都通过HTTPS和SSL加密提供服务，托管在企业级云基础设施上。" },
+            { question: "图片转URL和图片托管有什么区别？", answer: "本质上是一样的。图片转URL就是将图片上传到托管服务并获取网络链接。我们的服务提供可靠的托管、即时URL生成和全球CDN加速。" },
+          ],
+        },
+        relatedTools: {
+          title: "相关图片转换工具",
+          tools: [
+            { name: "JPG转URL", href: "/tools/jpg-to-url", description: "将JPEG照片转换为可分享的URL" },
+            { name: "PNG转URL", href: "/tools/png-to-url", description: "将带透明背景的PNG图片转换为URL" },
+            { name: "GIF转URL", href: "/tools/gif-to-url", description: "将动画GIF转换为可分享的链接" },
+            { name: "SVG转URL", href: "/tools/svg-to-url", description: "将矢量图形转换为URL" },
+            { name: "WebP转URL", href: "/tools/webp-to-url", description: "将WebP图片转换为URL" },
+            { name: "批量上传", href: "/tools/bulk-upload", description: "一次上传和转换多张图片" },
+          ],
+        },
+        externalResources: {
+          title: "实用资源",
+          resources: [
+            { name: "MDN：HTML中的图片", href: "https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML", description: "网页开发中使用图片的完整指南" },
+            { name: "Web.dev：图片优化", href: "https://web.dev/articles/choose-the-right-image-format", description: "Google的图片格式选择指南" },
+            { name: "图片文件格式 - 维基百科", href: "https://en.wikipedia.org/wiki/Image_file_format", description: "主要图片文件格式概述" },
+          ],
+        },
+        meta: {
+          title: "图片转URL转换器 — 免费在线图片托管 | ImageToURL",
+          description: "立即将任何图片转换为可分享的URL。免费图片转URL转换器，支持JPG、PNG、GIF、SVG和WebP。无需注册，全球CDN加速。",
+          keywords: "图片转url, 图片转链接, 图片url转换器, 免费图片托管, 上传图片获取链接, 在线图片托管",
+        },
+      },
       "jpg-to-url": {
         title: "JPG转URL转换器",
         subtitle: "免费在线 JPEG 图片托管",
@@ -1025,7 +1316,622 @@ const dictionaries = {
           keywords: "jpg转url, jpeg转url, 转换jpg为url, jpg图片转url转换器, jpg链接生成器",
         },
       },
+      "png-to-url": {
+        title: "PNG 转 URL 转换器",
+        subtitle: "免费在线 PNG 透明图片托管工具",
+        description: "轻松将 PNG 图片转换为可分享的 URL。非常适合标志、图标、UI 资源和透明背景图片。无需注册。",
+        introduction: {
+          title: "为什么 PNG 是 Web 图形的最佳选择",
+          paragraphs: [
+            "PNG（便携式网络图形）是需要透明度、锐利边缘和无损质量的 Web 图形的首选图片格式。与 JPG 不同，PNG 完全按照设计保留每个像素——非常适合清晰度至关重要的标志、图标、屏幕截图和 UI 元素。",
+            "当您将 PNG 转换为 URL 时，您正在创建一个永久的、可分享的链接，保留该格式的所有优点：透明度、清晰的文本和准确的颜色。我们的转换器将您的 PNG 上传到全球 CDN，确保无论您的受众在纽约还是东京都能快速加载。",
+            "专业设计师、开发人员和内容创作者依赖 PNG URL 在网站、应用程序和文档中嵌入资源。该格式对 Alpha 通道的支持意味着您的透明背景可以在任何彩色背景或布局上无缝工作。",
+          ],
+        },
+        features: {
+          title: "为什么选择我们的 PNG 转 URL 转换器？",
+          items: [
+            "完美保留 PNG 透明度",
+            "免费在线 PNG 托管，无需注册",
+            "上传后即时生成 URL",
+            "优化的高质量 PNG 压缩",
+            "支持高达 10MB 的 PNG 文件",
+            "快速的全球 CDN 分发",
+            "安全私密的图片处理",
+            "非常适合标志、图标和网页资源",
+          ],
+        },
+        howItWorks: {
+          title: "如何在线将 PNG 转换为 URL",
+          steps: [
+            {
+              title: "上传您的 PNG 图片",
+              description: "拖放您的 PNG 文件或从设备中选择。完全支持透明背景。",
+            },
+            {
+              title: "自动生成 URL",
+              description: "您的图片会立即上传并托管在我们的高速 CDN 上，生成唯一的可分享 URL。",
+            },
+            {
+              title: "使用或分享链接",
+              description: "将 PNG URL 嵌入网站、应用程序、HTML、CSS、电子邮件，或在线任何地方分享。",
+            },
+          ],
+        },
+        useCases: {
+          title: "PNG URL 的热门使用场景",
+          items: [
+            { title: "标志嵌入", description: "托管具有透明背景的公司标志，用于网站、电子邮件和营销材料。" },
+            { title: "应用开发", description: "将 UI 图标、按钮和设计资源存储为 URL，便于在移动和 Web 应用程序中集成。" },
+            { title: "屏幕截图和教程", description: "在文档、帮助指南和教程内容中分享清晰、高质量的屏幕截图。" },
+            { title: "Discord 和游戏", description: "为游戏社区创建具有透明背景的自定义表情、头像和服务器图标。" },
+            { title: "按需印刷", description: "为需要透明背景设计的商品平台提供 PNG 图稿 URL。" },
+            { title: "设计样稿", description: "使用直接、始终可访问的图片链接与客户和合作者分享设计资源。" },
+          ],
+        },
+        tips: {
+          title: "PNG 托管最佳实践",
+          items: [
+            "对于需要完整 Alpha 透明度的图片，使用 PNG-24；对于颜色有限的简单图形，使用 PNG-8 以节省文件大小。",
+            "使用 TinyPNG 等工具在上传前压缩大型 PNG——可以在没有可见质量损失的情况下减少高达 70% 的文件大小。",
+            "为了 Web 性能，考虑 WebP 是否可能是支持它的浏览器的更好选择，特别是对于照片。",
+            "使用描述性文件名（例如'company-logo-dark-bg.png'）以便于组织和搜索。",
+            "登录以获取永久 URL 并将您的 PNG 资源组织到文件夹中以用于长期项目。",
+            "在不同背景上测试您的 PNG URL，以确保透明度在所有上下文中按预期显示。",
+          ],
+        },
+        faq: {
+          title: "PNG 转 URL – 常见问题",
+          items: [
+            {
+              question: "这个 PNG 转 URL 转换器会保持透明度吗？",
+              answer: "是的。PNG 透明度完全保留。当您使用生成的 URL 时，透明背景保持不变。",
+            },
+            {
+              question: "PNG 转 URL 工具完全免费吗？",
+              answer: "是的，此工具 100% 免费。您可以上传高达 10MB 的 PNG 图片，无需注册或创建账号。",
+            },
+            {
+              question: "我可以在网站和应用程序中使用 PNG URL 吗？",
+              answer: "当然可以。生成的 PNG URL 非常适合网站、移动应用、HTML、CSS、电子邮件和设计工具。",
+            },
+            {
+              question: "允许的最大 PNG 文件大小是多少？",
+              answer: "您可以上传高达 10MB 的 PNG 文件。对于更大的图片，我们建议在上传前进行压缩。",
+            },
+            {
+              question: "我的 PNG 图片 URL 会保持多长时间有效？",
+              answer: "匿名上传最多保存 30 天。免费账号可以将 PNG URL 保持更长时间。",
+            },
+            {
+              question: "PNG 和 JPG 在网络使用上有什么区别？",
+              answer: "PNG 支持透明度和无损压缩，使其非常适合标志、图标和带有文本的图形。JPG 使用有损压缩，更适合照片。当您需要透明背景或清晰边缘时，请使用 PNG。",
+            },
+          ],
+        },
+        relatedTools: {
+          title: "相关图片工具",
+          tools: [
+            { name: "JPG 转 URL", href: "/tools/jpg-to-url", description: "将 JPG 图片转换为可分享的 URL" },
+            { name: "SVG 转 URL", href: "/tools/svg-to-url", description: "上传 SVG 文件并生成 URL" },
+            { name: "批量图片上传", href: "/tools/bulk-upload", description: "一次上传多张图片并获取 URL" },
+          ],
+        },
+        externalResources: {
+          title: "有用资源",
+          resources: [
+            { name: "PNG 格式 - 维基百科", href: "https://zh.wikipedia.org/wiki/PNG", description: "了解 PNG 格式规范和透明度功能" },
+            { name: "MDN: HTML 中的图片", href: "https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML", description: "在 Web 开发中使用图片的最佳实践" },
+            { name: "Web.dev: 图片优化", href: "https://web.dev/articles/choose-the-right-image-format", description: "Google 关于选择正确图片格式的指南" },
+          ],
+        },
+        meta: {
+          title: "PNG 转 URL 转换器 – 免费透明图片托管 | ImageToURL",
+          description: "上传 PNG 图片并立即转换为可分享的 URL。免费 PNG 转 URL 转换器，完全支持透明度，快速 CDN 托管，无需注册。",
+          keywords: "png转url, png图片转url, 转换png为链接, 透明png url, png在线托管, png链接生成器",
+        },
+      },
+      "gif-to-url": {
+        title: "GIF 转 URL 转换器",
+        subtitle: "免费在线动态 GIF 图片托管",
+        description: "将您的 GIF 动画转换为可分享的 URL。完美保留动画效果，无需注册即可分享。",
+        introduction: {
+          title: "了解 GIF 转 URL 转换",
+          paragraphs: [
+            "GIF（图形交换格式）是互联网上最受欢迎的动画图片格式，广泛用于表情包、教程演示和社交媒体分享。将 GIF 转换为 URL 可让您在任何平台上嵌入和分享动画内容。",
+            "我们的免费 GIF 转 URL 转换器将您的动画文件上传到全球 CDN，生成可靠的分享链接。动画帧完整保留，确保您的 GIF 在任何地方播放时都保持原始效果。",
+            "无论您是分享有趣的表情包、创建产品演示，还是制作教程动画，GIF URL 都是最便捷的分享方式。",
+          ],
+        },
+        features: {
+          title: "为什么使用我们的 GIF 转 URL 转换器？",
+          items: [
+            "完整保留 GIF 动画",
+            "支持所有 GIF 帧和循环设置",
+            "免费使用，无需注册",
+            "支持高达 10MB 的 GIF 文件",
+            "即时生成可分享链接",
+            "全球 CDN 快速加载",
+            "兼容所有社交平台",
+            "适合表情包和动画教程",
+          ],
+        },
+        howItWorks: {
+          title: "如何将 GIF 转换为 URL",
+          steps: [
+            {
+              title: "上传您的 GIF",
+              description: "拖放您的 GIF 动画文件或点击选择。我们接受高达 10MB 的 GIF 文件。",
+            },
+            {
+              title: "获取您的 URL",
+              description: "您的 GIF 会立即上传到全球 CDN，自动生成可分享的 URL。",
+            },
+            {
+              title: "随处分享",
+              description: "复制 URL 并在社交媒体、聊天应用、网站或任何支持图片的平台上使用。",
+            },
+          ],
+        },
+        useCases: {
+          title: "GIF URL 的常见用例",
+          items: [
+            { title: "社交媒体分享", description: "在 Twitter、微博、Discord 等平台分享有趣的 GIF 表情包。" },
+            { title: "产品演示", description: "创建动态产品展示，突出功能和使用方法。" },
+            { title: "教程制作", description: "制作步骤动画，帮助用户理解操作流程。" },
+            { title: "邮件营销", description: "在邮件中嵌入动态内容，提高点击率。" },
+            { title: "网站装饰", description: "为网站添加动态视觉元素，增强用户体验。" },
+            { title: "聊天表情", description: "在即时通讯中使用自定义 GIF 表情。" },
+          ],
+        },
+        tips: {
+          title: "GIF 托管专业提示",
+          items: [
+            "优化 GIF 文件大小以加快加载速度——考虑减少颜色数量或帧数。",
+            "对于较长的动画，考虑使用视频格式（MP4/WebM）以获得更小的文件大小。",
+            "确保 GIF 循环设置正确，以便在所有平台上正常播放。",
+            "使用描述性文件名帮助组织和搜索您的 GIF。",
+            "测试您的 GIF URL 在不同平台上的播放效果。",
+            "登录以获得永久 URL 和更长的保留时间。",
+          ],
+        },
+        faq: {
+          title: "常见问题解答",
+          items: [
+            {
+              question: "GIF 动画会在转换后保留吗？",
+              answer: "是的，我们完整保留 GIF 的所有动画帧和循环设置。您的动画将完美播放。",
+            },
+            {
+              question: "这个 GIF 转 URL 工具免费吗？",
+              answer: "是的，完全免费。您可以上传高达 10MB 的 GIF 文件，无需创建账号。",
+            },
+            {
+              question: "GIF URL 可以在 Discord 和微信中使用吗？",
+              answer: "是的！我们的 GIF URL 兼容所有主流平台，包括 Discord、微信、Twitter 等。",
+            },
+            {
+              question: "我的 GIF URL 会保持多久？",
+              answer: "匿名上传保存 30 天。登录即可获得更长的保留时间。",
+            },
+          ],
+        },
+        relatedTools: {
+          title: "相关工具",
+          tools: [
+            { name: "PNG 转 URL", href: "/tools/png-to-url", description: "将 PNG 图片转换为 URL" },
+            { name: "JPG 转 URL", href: "/tools/jpg-to-url", description: "将 JPG 图片转换为 URL" },
+            { name: "视频转 URL", href: "/tools/video-to-url", description: "将视频文件转换为 URL" },
+          ],
+        },
+        meta: {
+          title: "GIF 转 URL 转换器 - 免费动画图片托管 | ImageToURL",
+          description: "将 GIF 动画转换为可分享的 URL。免费在线 GIF 托管，完整保留动画效果，快速 CDN 分发，无需注册。",
+          keywords: "gif转url, gif动画托管, gif链接生成器, 动态图转链接, gif图片分享",
+        },
+      },
+      "svg-to-url": {
+        title: "SVG 转 URL 转换器",
+        subtitle: "免费在线矢量图形托管",
+        description: "将 SVG 矢量图形转换为可分享的 URL。保持无限缩放的清晰度，非常适合标志和图标。",
+        introduction: {
+          title: "了解 SVG 转 URL 转换",
+          paragraphs: [
+            "SVG（可缩放矢量图形）是一种基于 XML 的矢量图片格式，无论放大多少倍都能保持清晰。这使其成为标志、图标和需要在不同尺寸下显示的图形的理想选择。",
+            "我们的 SVG 转 URL 转换器让您可以轻松托管矢量图形并获取永久链接。SVG 文件通常很小，加载速度快，同时保持像素级完美的渲染效果。",
+            "开发人员和设计师经常使用 SVG URL 来确保他们的图标和图形在任何屏幕分辨率上都看起来清晰锐利。",
+          ],
+        },
+        features: {
+          title: "为什么使用我们的 SVG 转 URL 转换器？",
+          items: [
+            "保持矢量图形的无限可缩放性",
+            "文件大小小，加载速度快",
+            "免费使用，无需注册",
+            "支持复杂的 SVG 动画",
+            "即时生成可分享链接",
+            "全球 CDN 快速分发",
+            "适合响应式设计",
+            "完美支持透明背景",
+          ],
+        },
+        howItWorks: {
+          title: "如何将 SVG 转换为 URL",
+          steps: [
+            {
+              title: "上传您的 SVG",
+              description: "拖放您的 SVG 文件或点击选择。我们接受各种 SVG 矢量图形。",
+            },
+            {
+              title: "获取您的 URL",
+              description: "您的 SVG 会立即上传，自动生成可分享的永久 URL。",
+            },
+            {
+              title: "随处使用",
+              description: "在网站、应用程序、文档中嵌入 SVG URL，保持完美的缩放效果。",
+            },
+          ],
+        },
+        useCases: {
+          title: "SVG URL 的常见用例",
+          items: [
+            { title: "品牌标志", description: "托管公司标志，确保在任何尺寸下都保持清晰。" },
+            { title: "网站图标", description: "为响应式网站提供可缩放的图标资源。" },
+            { title: "动画图形", description: "托管 SVG 动画用于交互式用户界面。" },
+            { title: "信息图表", description: "分享可缩放的数据可视化图表。" },
+            { title: "设计资源", description: "与团队成员分享矢量设计文件。" },
+            { title: "文档插图", description: "在技术文档中嵌入清晰的图表和示意图。" },
+          ],
+        },
+        tips: {
+          title: "SVG 托管专业提示",
+          items: [
+            "优化您的 SVG 文件 - 删除不必要的元数据和空白。",
+            "使用 SVGO 等工具压缩 SVG 以减小文件大小。",
+            "确保 SVG 路径和形状正确闭合以避免渲染问题。",
+            "测试 SVG 在不同浏览器中的兼容性。",
+            "对于包含文本的 SVG，考虑将字体转换为路径。",
+            "登录以获得永久 URL 和组织功能。",
+          ],
+        },
+        faq: {
+          title: "常见问题解答",
+          items: [
+            {
+              question: "SVG 文件会保持其可缩放性吗？",
+              answer: "是的，SVG 是矢量格式，上传后仍然可以无限缩放而不失去质量。",
+            },
+            {
+              question: "SVG 转 URL 工具免费吗？",
+              answer: "是的，完全免费。您可以上传 SVG 文件而无需创建账号。",
+            },
+            {
+              question: "支持 SVG 动画吗？",
+              answer: "是的，我们支持包含 CSS 和 SMIL 动画的 SVG 文件。",
+            },
+            {
+              question: "SVG URL 的保留时间是多久？",
+              answer: "匿名上传保存 30 天。登录后可以获得永久保存。",
+            },
+          ],
+        },
+        relatedTools: {
+          title: "相关工具",
+          tools: [
+            { name: "PNG 转 URL", href: "/tools/png-to-url", description: "将 PNG 图片转换为 URL" },
+            { name: "批量上传", href: "/tools/bulk-upload", description: "一次上传多个文件" },
+            { name: "图片嵌入代码", href: "/tools/image-embed-code", description: "生成 HTML 嵌入代码" },
+          ],
+        },
+        meta: {
+          title: "SVG 转 URL 转换器 - 免费矢量图形托管 | ImageToURL",
+          description: "将 SVG 矢量图形转换为可分享的 URL。免费在线 SVG 托管，保持无限缩放清晰度，快速 CDN 分发。",
+          keywords: "svg转url, svg托管, 矢量图转链接, svg链接生成器, svg图片分享",
+        },
+      },
+      "webp-to-url": {
+        title: "WebP 转 URL 转换器",
+        subtitle: "免费在线 WebP 图片托管",
+        description: "将 WebP 图片转换为可分享的 URL。享受更小的文件大小和更快的加载速度。",
+        introduction: {
+          title: "了解 WebP 转 URL 转换",
+          paragraphs: [
+            "WebP 是 Google 开发的现代图片格式，提供比 PNG 和 JPG 更好的压缩效果，同时保持出色的图像质量。WebP 支持有损和无损压缩，以及透明度和动画。",
+            "将 WebP 转换为 URL 可以让您利用这种高效格式的优势，同时获得便捷的分享链接。我们的转换器确保您的 WebP 图片快速分发到全球。",
+            "现代浏览器广泛支持 WebP，使其成为需要在文件大小和质量之间取得平衡的 Web 项目的理想选择。",
+          ],
+        },
+        features: {
+          title: "为什么使用我们的 WebP 转 URL 转换器？",
+          items: [
+            "比 PNG/JPG 更小的文件大小",
+            "支持透明度和动画",
+            "免费使用，无需注册",
+            "支持高达 10MB 的 WebP 文件",
+            "即时生成可分享链接",
+            "全球 CDN 快速加载",
+            "保持原始图片质量",
+            "适合现代 Web 开发",
+          ],
+        },
+        howItWorks: {
+          title: "如何将 WebP 转换为 URL",
+          steps: [
+            {
+              title: "上传您的 WebP",
+              description: "拖放您的 WebP 图片文件或点击选择。",
+            },
+            {
+              title: "获取您的 URL",
+              description: "您的图片会立即上传，自动生成可分享的 URL。",
+            },
+            {
+              title: "随处分享",
+              description: "复制 URL 并在支持 WebP 的任何平台上使用。",
+            },
+          ],
+        },
+        useCases: {
+          title: "WebP URL 的常见用例",
+          items: [
+            { title: "网站优化", description: "使用 WebP 减少页面加载时间，提高 SEO 排名。" },
+            { title: "电商图片", description: "托管高质量产品图片，同时保持快速加载。" },
+            { title: "博客插图", description: "为博客文章添加优化的图片内容。" },
+            { title: "应用界面", description: "在移动和 Web 应用中使用高效的图片格式。" },
+            { title: "社交分享", description: "分享高质量但加载快速的图片。" },
+            { title: "作品展示", description: "展示设计作品同时保持页面性能。" },
+          ],
+        },
+        tips: {
+          title: "WebP 托管专业提示",
+          items: [
+            "使用 WebP 可以比 PNG 减少约 26% 的文件大小，比 JPG 减少约 25-34%。",
+            "为不支持 WebP 的旧浏览器准备 PNG/JPG 回退方案。",
+            "利用 WebP 的透明度支持替代 PNG 用于需要透明背景的图形。",
+            "对于动画内容，WebP 通常比 GIF 效率更高。",
+            "测试您的 WebP 在不同浏览器中的兼容性。",
+            "登录以获得永久 URL 和管理功能。",
+          ],
+        },
+        faq: {
+          title: "常见问题解答",
+          items: [
+            {
+              question: "所有浏览器都支持 WebP 吗？",
+              answer: "大多数现代浏览器（Chrome、Firefox、Edge、Safari 14+）都支持 WebP。对于旧浏览器，建议提供回退格式。",
+            },
+            {
+              question: "WebP 转 URL 工具免费吗？",
+              answer: "是的，完全免费。您可以上传 WebP 文件而无需创建账号。",
+            },
+            {
+              question: "WebP 动画会保留吗？",
+              answer: "是的，我们完全支持并保留 WebP 动画。",
+            },
+            {
+              question: "WebP URL 的保留时间是多久？",
+              answer: "匿名上传保存 30 天。登录后可以设置自定义保留时间。",
+            },
+          ],
+        },
+        relatedTools: {
+          title: "相关工具",
+          tools: [
+            { name: "PNG 转 URL", href: "/tools/png-to-url", description: "将 PNG 图片转换为 URL" },
+            { name: "JPG 转 URL", href: "/tools/jpg-to-url", description: "将 JPG 图片转换为 URL" },
+            { name: "GIF 转 URL", href: "/tools/gif-to-url", description: "将 GIF 动画转换为 URL" },
+          ],
+        },
+        meta: {
+          title: "WebP 转 URL 转换器 - 免费现代图片托管 | ImageToURL",
+          description: "将 WebP 图片转换为可分享的 URL。免费在线 WebP 托管，享受更小文件和更快加载，支持透明度和动画。",
+          keywords: "webp转url, webp托管, webp链接生成器, webp图片分享, 现代图片格式",
+        },
+      },
+      "base64-to-url": {
+        title: "Base64 转 URL 转换器",
+        subtitle: "将 Base64 编码图片转换为可分享链接",
+        description: "将 Base64 编码的图片数据转换为托管的图片 URL。简化您的开发工作流程。",
+        introduction: {
+          title: "了解 Base64 转 URL 转换",
+          paragraphs: [
+            "Base64 是一种将二进制数据编码为 ASCII 字符串的方法，常用于在 HTML、CSS 或 JSON 中嵌入图片。虽然方便，但 Base64 图片会增加文件大小约 33%，并且无法被浏览器缓存。",
+            "将 Base64 转换为托管 URL 可以解决这些问题：图片可以单独缓存，减少页面大小，并且可以轻松在多个地方重用同一链接。",
+            "这对于需要将内联图片迁移到 CDN 托管的开发人员特别有用，可以显著提高网站性能。",
+          ],
+        },
+        features: {
+          title: "为什么使用我们的 Base64 转 URL 转换器？",
+          items: [
+            "减少 HTML/CSS 文件大小",
+            "启用浏览器缓存优化",
+            "免费使用，无需注册",
+            "支持所有图片格式的 Base64",
+            "即时生成可分享链接",
+            "全球 CDN 快速分发",
+            "简化开发工作流程",
+            "提高网站加载速度",
+          ],
+        },
+        howItWorks: {
+          title: "如何将 Base64 转换为 URL",
+          steps: [
+            {
+              title: "粘贴 Base64 数据",
+              description: "将您的 Base64 编码图片字符串粘贴到输入框中。",
+            },
+            {
+              title: "自动解码和上传",
+              description: "我们的工具会自动解码 Base64 并将图片上传到 CDN。",
+            },
+            {
+              title: "获取托管 URL",
+              description: "复制生成的 URL 替换您代码中的 Base64 字符串。",
+            },
+          ],
+        },
+        useCases: {
+          title: "Base64 转 URL 的常见用例",
+          items: [
+            { title: "代码优化", description: "将内联 Base64 图片替换为 CDN URL 以减小代码体积。" },
+            { title: "邮件模板", description: "将邮件模板中的 Base64 图片转换为托管链接。" },
+            { title: "API 响应", description: "将 API 返回的 Base64 图片转换为可缓存的 URL。" },
+            { title: "SVG 内嵌图片", description: "将 SVG 中内嵌的 Base64 图片外部化。" },
+            { title: "CSS 背景", description: "将 CSS 中的 Base64 背景图转换为 URL。" },
+            { title: "性能优化", description: "通过外部化图片提高首次加载速度。" },
+          ],
+        },
+        tips: {
+          title: "Base64 转 URL 专业提示",
+          items: [
+            "确保 Base64 字符串包含正确的数据 URI 前缀（如 data:image/png;base64,）。",
+            "对于大型图片，使用托管 URL 可以显著减小 HTML/CSS 文件大小。",
+            "CDN URL 可以被浏览器缓存，而 Base64 需要每次重新解析。",
+            "在替换 Base64 后测试所有引用该图片的位置。",
+            "考虑批量转换所有 Base64 图片以获得最佳性能提升。",
+            "登录以获得永久 URL 和项目管理功能。",
+          ],
+        },
+        faq: {
+          title: "常见问题解答",
+          items: [
+            {
+              question: "支持哪些 Base64 格式？",
+              answer: "我们支持所有常见的图片格式 Base64，包括 PNG、JPG、GIF、WebP 和 SVG。",
+            },
+            {
+              question: "Base64 转 URL 工具免费吗？",
+              answer: "是的，完全免费。您可以无限转换 Base64 图片，无需创建账号。",
+            },
+            {
+              question: "转换会影响图片质量吗？",
+              answer: "不会。我们只是解码 Base64 并托管原始图片，没有任何质量损失。",
+            },
+            {
+              question: "URL 的保留时间是多久？",
+              answer: "匿名上传保存 30 天。登录后可以永久保存。",
+            },
+          ],
+        },
+        relatedTools: {
+          title: "相关工具",
+          tools: [
+            { name: "图片转数据 URL", href: "/tools/image-to-data-url", description: "将图片转换为 Base64" },
+            { name: "PNG 转 URL", href: "/tools/png-to-url", description: "将 PNG 图片转换为 URL" },
+            { name: "批量上传", href: "/tools/bulk-upload", description: "一次上传多张图片" },
+          ],
+        },
+        meta: {
+          title: "Base64 转 URL 转换器 - 图片托管 | ImageToURL",
+          description: "将 Base64 编码的图片转换为可分享的托管 URL。优化您的网站性能，减少代码体积，启用浏览器缓存。",
+          keywords: "base64转url, base64图片转链接, base64解码托管, 图片编码转换, 开发工具",
+        },
+      },
+      "bulk-upload": {
+        title: "批量图片上传",
+        subtitle: "一次上传多张图片获取 URL",
+        description: "同时上传多张图片并获取所有可分享的 URL。非常适合批量处理图片托管需求。",
+        introduction: {
+          title: "了解批量图片上传",
+          paragraphs: [
+            "当您需要托管多张图片时，逐一上传既耗时又低效。我们的批量上传工具让您可以同时选择多达 20 张图片，一次性获取所有分享链接。",
+            "批量上传非常适合电商卖家、博客作者、设计师和开发人员，他们经常需要同时处理多个图片资源。上传完成后，您可以一键复制所有 URL。",
+            "所有图片都会上传到我们的全球 CDN，确保快速可靠的访问。您可以选择不同的输出格式，如纯 URL 列表、Markdown 或 HTML 代码。",
+          ],
+        },
+        features: {
+          title: "为什么使用我们的批量上传工具？",
+          items: [
+            "一次上传多达 20 张图片",
+            "支持多种图片格式混合上传",
+            "免费使用，无需注册",
+            "批量复制所有 URL",
+            "多种输出格式选择",
+            "全球 CDN 快速分发",
+            "上传进度实时显示",
+            "支持拖放操作",
+          ],
+        },
+        howItWorks: {
+          title: "如何批量上传图片",
+          steps: [
+            {
+              title: "选择多张图片",
+              description: "拖放多个图片文件或使用文件选择器选择。支持 JPG、PNG、GIF、SVG、WebP 格式。",
+            },
+            {
+              title: "等待上传完成",
+              description: "观看实时进度条，所有图片会同时上传到我们的 CDN。",
+            },
+            {
+              title: "复制所有 URL",
+              description: "选择输出格式，一键复制所有图片的 URL。",
+            },
+          ],
+        },
+        useCases: {
+          title: "批量上传的常见用例",
+          items: [
+            { title: "电商产品图", description: "一次上传多个产品角度和变体的图片。" },
+            { title: "博客文章", description: "为一篇文章准备所有需要的插图和配图。" },
+            { title: "设计交付", description: "批量分享设计稿和相关资源给客户。" },
+            { title: "活动照片", description: "快速分享活动或会议的多张照片。" },
+            { title: "应用素材", description: "一次性上传应用所需的所有图标和图片。" },
+            { title: "社交媒体", description: "准备多个平台的图片内容库。" },
+          ],
+        },
+        tips: {
+          title: "批量上传专业提示",
+          items: [
+            "在上传前优化图片大小以加快上传速度。",
+            "使用描述性文件名帮助后续识别和管理。",
+            "可以混合不同格式的图片一起上传。",
+            "使用 Markdown 格式输出方便直接插入文档。",
+            "登录后可以永久保存并分组管理批量上传的图片。",
+            "大批量图片建议分批上传以确保稳定性。",
+          ],
+        },
+        faq: {
+          title: "常见问题解答",
+          items: [
+            {
+              question: "一次可以上传多少张图片？",
+              answer: "您一次最多可以上传 20 张图片。每张图片最大 10MB。",
+            },
+            {
+              question: "批量上传工具免费吗？",
+              answer: "是的，完全免费。您可以无限次使用批量上传功能，无需创建账号。",
+            },
+            {
+              question: "支持哪些图片格式？",
+              answer: "我们支持 JPG、JPEG、PNG、GIF、SVG 和 WebP 格式，可以混合上传。",
+            },
+            {
+              question: "批量上传的图片保留多久？",
+              answer: "匿名上传保存 30 天。登录后可以设置自定义保留时间。",
+            },
+            {
+              question: "可以一次复制所有 URL 吗？",
+              answer: "是的！上传完成后提供一键复制功能，可以选择纯 URL、Markdown 或 HTML 格式。",
+            },
+          ],
+        },
+        relatedTools: {
+          title: "相关工具",
+          tools: [
+            { name: "JPG 转 URL", href: "/tools/jpg-to-url", description: "单张 JPG 图片转换" },
+            { name: "PNG 转 URL", href: "/tools/png-to-url", description: "单张 PNG 图片转换" },
+            { name: "图片链接生成器", href: "/tools/image-link-generator", description: "生成各种格式的链接" },
+          ],
+        },
+        meta: {
+          title: "批量图片上传 - 多图转 URL 工具 | ImageToURL",
+          description: "同时上传多张图片并获取所有可分享的 URL。免费批量图片托管，一键复制所有链接，支持多种输出格式。",
+          keywords: "批量上传图片, 多图转url, 批量图片托管, 批量链接生成, 多图片分享",
+        },
+      },
     },
+
     pages: {
       privacy: {
         metaTitle: "隐私政策 | ImageToURL",
@@ -1236,7 +2142,415 @@ const dictionaries = {
         },
       },
     },
+    useCases: {
+      discord: {
+        title: "Discord 图片托管",
+        subtitle: "适用于机器人、嵌入和服务器的完美 URL",
+        description: "上传图片并获取在 Discord 中完美运行的 URL。非常适合机器人开发者、服务器管理员和在 Discord 分享图片的用户。",
+        benefits: {
+          title: "为什么使用我们的 Discord 图片托管？",
+          items: [
+            { title: "Discord 就绪 URL", description: "我们的 URL 在 Discord 嵌入、机器人消息和服务器帖子中完美运行。图片显示正确预览。" },
+            { title: "无过期问题", description: "与 Discord 的 CDN 不同，我们的 URL 不会意外过期。登录即可永久托管。" },
+            { title: "快速全球分发", description: "得益于我们的全球 CDN 网络，Discord 用户在全球都能快速加载图片。" },
+            { title: "非常适合机器人", description: "为 Discord 机器人提供可靠的图片 URL。以编程方式设置缩略图、图片和头像。" },
+          ],
+        },
+        steps: {
+          title: "如何获取 Discord 图片 URL",
+          items: [
+            { title: "上传您的图片", description: "拖放或点击上传。我们支持 JPG、PNG、GIF（动画！）和 WebP 格式。" },
+            { title: "复制 URL", description: "您的图片会立即上传。点击复制可分享的 URL 到剪贴板。" },
+            { title: "在 Discord 中使用", description: "将 URL 粘贴到 Discord 消息、机器人嵌入或 webhook 负载中。图片会自动嵌入。" },
+            { title: "机器人开发者", description: "在 embed.setImage()、embed.setThumbnail() 或任何 Discord.js/Pycord 方法中使用 URL。" },
+          ],
+        },
+        tips: {
+          title: "Discord 专业提示",
+          items: [
+            "使用 PNG 处理透明图片如标志",
+            "GIF 在 Discord 嵌入中正常播放动画",
+            "URL 在桌面和移动 Discord 中都有效",
+            "非常适合自定义机器人头像和缩略图",
+            "在 webhook 嵌入中使用以获得丰富的通知",
+            "登录以管理和组织机器人图片",
+          ],
+        },
+        faq: {
+          title: "Discord 图片托管常见问题",
+          items: [
+            { question: "图片会在 Discord 中显示预览吗？", answer: "是的！我们的 URL 在 Discord 中正确嵌入，在频道和私信中显示完整的图片预览。" },
+            { question: "可以用于 Discord 机器人嵌入吗？", answer: "当然！我们的 URL 适用于 Discord.js、Pycord 和所有 Discord API 库的嵌入图片和缩略图。" },
+            { question: "GIF 在 Discord 中会播放动画吗？", answer: "是的！通过我们的 URL 在 Discord 中分享时，动态 GIF 会正常播放。" },
+            { question: "Discord 服务器可以免费使用吗？", answer: "是的，完全免费。基本使用无需注册。登录即可获得无限存储。" },
+            { question: "为什么不使用 Discord 自己的 CDN？", answer: "Discord CDN URL 可能会过期或更改。我们的 URL（登录后）是永久的，对机器人可靠。" },
+          ],
+        },
+        cta: { title: "准备上传 Discord 图片？", description: "几秒钟内获取 Discord 可嵌入的图片 URL。免费、快速、可靠。" },
+      },
+      minecraft: {
+        title: "Minecraft 图片托管",
+        subtitle: "适用于服务器、皮肤和地图的图片 URL",
+        description: "为 Minecraft 服务器、皮肤展示、地图和资源包托管图片。获取可在任何地方使用的可靠 URL。",
+        benefits: {
+          title: "为什么使用我们的 Minecraft 图片托管？",
+          items: [
+            { title: "服务器横幅", description: "托管服务器横幅和图标，用于服务器列表和投票网站。" },
+            { title: "皮肤展示", description: "分享自定义皮肤预览和渲染图。" },
+            { title: "地图截图", description: "展示您的建筑和地图创作。" },
+            { title: "资源包预览", description: "为您的资源包和材质包展示预览图。" },
+          ],
+        },
+        steps: {
+          title: "如何获取 Minecraft 图片 URL",
+          items: [
+            { title: "上传您的图片", description: "拖放您的 Minecraft 截图、皮肤渲染或服务器横幅。" },
+            { title: "复制 URL", description: "获取即时可分享的链接。" },
+            { title: "在任何地方使用", description: "在服务器列表、论坛、Discord 或您的网站上使用。" },
+          ],
+        },
+        tips: {
+          title: "Minecraft 专业提示",
+          items: [
+            "使用 PNG 获得最佳的像素风格清晰度",
+            "服务器横幅通常推荐 468x60 或 600x100 像素",
+            "上传皮肤渲染时保持透明背景",
+            "登录以永久保存您的服务器横幅",
+          ],
+        },
+        faq: {
+          title: "Minecraft 图片常见问题",
+          items: [
+            { question: "可以用于 Minecraft 服务器横幅吗？", answer: "是的！我们的 URL 非常适合服务器列表和投票网站上的服务器横幅。" },
+            { question: "支持透明背景吗？", answer: "是的，我们完全支持 PNG 透明度，非常适合皮肤渲染。" },
+            { question: "图片会保存多久？", answer: "匿名上传保存 30 天。登录即可永久保存。" },
+          ],
+        },
+        cta: { title: "准备分享您的 Minecraft 创作？", description: "为您的服务器、皮肤和地图获取可靠的图片 URL。" },
+      },
+      "fantasy-sports": {
+        title: "虚拟体育图片托管",
+        subtitle: "适用于球队标志和联赛图片",
+        description: "为您的虚拟体育球队创建自定义标志和图片。获取可在 ESPN、Yahoo 和其他平台使用的 URL。",
+        benefits: {
+          title: "为什么使用我们的虚拟体育图片托管？",
+          items: [
+            { title: "自定义球队标志", description: "上传独特的标志让您的球队脱颖而出。" },
+            { title: "平台兼容", description: "我们的 URL 在 ESPN、Yahoo、Sleeper 等平台上都能使用。" },
+            { title: "联赛品牌", description: "为您的整个联赛创建统一的视觉形象。" },
+            { title: "永久链接", description: "登录后您的球队标志 URL 永不过期。" },
+          ],
+        },
+        steps: {
+          title: "如何创建虚拟球队标志 URL",
+          items: [
+            { title: "上传您的标志", description: "上传您的自定义球队标志或设计。" },
+            { title: "复制 URL", description: "获取即时可分享的链接。" },
+            { title: "粘贴到平台", description: "在 ESPN、Yahoo 或您选择的平台的设置中使用。" },
+          ],
+        },
+        tips: {
+          title: "虚拟体育专业提示",
+          items: [
+            "使用方形图片（如 500x500）以获得最佳显示效果",
+            "PNG 格式适合透明背景的标志",
+            "保持设计简洁，在小尺寸下也能清晰可见",
+            "登录以保存整个赛季的标志",
+          ],
+        },
+        faq: {
+          title: "虚拟体育常见问题",
+          items: [
+            { question: "可以用于 ESPN Fantasy 吗？", answer: "是的！我们的 URL 完美兼容 ESPN Fantasy 的自定义标志功能。" },
+            { question: "支持 Yahoo Fantasy 吗？", answer: "是的，我们的 URL 在 Yahoo Fantasy 中也能正常使用。" },
+            { question: "推荐什么尺寸？", answer: "通常建议使用 500x500 像素的方形图片以获得最佳兼容性。" },
+          ],
+        },
+        cta: { title: "准备打造您的球队品牌？", description: "为您的虚拟体育球队创建独特的标志。" },
+      },
+      html: {
+        title: "HTML 和 CSS 图片托管",
+        subtitle: "适用于 Web 开发的图片 URL",
+        description: "为您的 HTML 和 CSS 项目获取可靠的图片 URL。非常适合 img 标签、背景图和 CSS 样式。",
+        benefits: {
+          title: "为什么使用我们的 Web 开发图片托管？",
+          items: [
+            { title: "直接 URL", description: "获取可直接用于 img src 和 CSS url() 的链接。" },
+            { title: "CORS 支持", description: "我们的图片支持跨域请求，适用于各种 Web 应用。" },
+            { title: "CDN 加速", description: "全球 CDN 确保您的图片快速加载。" },
+            { title: "HTTPS 安全", description: "所有 URL 都使用 HTTPS，避免混合内容警告。" },
+          ],
+        },
+        steps: {
+          title: "如何获取 HTML 图片 URL",
+          items: [
+            { title: "上传您的图片", description: "上传您的网站图片、图标或背景图。" },
+            { title: "复制 URL", description: "获取即时可用的链接。" },
+            { title: "添加到代码", description: "在 HTML img 标签或 CSS 背景中使用。" },
+          ],
+        },
+        tips: {
+          title: "Web 开发专业提示",
+          items: [
+            "使用 loading=\"lazy\" 提高页面加载性能",
+            "为图片添加 alt 属性以提高可访问性和 SEO",
+            "考虑使用 WebP 格式减小文件大小",
+            "使用 srcset 为不同屏幕提供适当分辨率的图片",
+          ],
+        },
+        faq: {
+          title: "HTML/CSS 图片常见问题",
+          items: [
+            { question: "可以用于 CSS 背景图吗？", answer: "是的！我们的 URL 非常适合 CSS background-image 属性。" },
+            { question: "支持 CORS 吗？", answer: "是的，我们的图片支持跨域资源共享（CORS）。" },
+            { question: "URL 是 HTTPS 吗？", answer: "是的，所有 URL 都使用 HTTPS 加密。" },
+          ],
+        },
+        cta: { title: "准备为您的网站添加图片？", description: "获取可靠的图片 URL 用于您的 Web 项目。" },
+      },
+      javascript: {
+        title: "JavaScript 图片托管",
+        subtitle: "适用于 JS 应用的图片 URL",
+        description: "为您的 JavaScript 应用获取可靠的图片 URL。非常适合动态图片加载和前端开发。",
+        benefits: {
+          title: "为什么使用我们的 JavaScript 图片托管？",
+          items: [
+            { title: "动态加载", description: "URL 非常适合使用 JavaScript 动态设置图片源。" },
+            { title: "CORS 兼容", description: "支持跨域请求，适用于各种 API 调用场景。" },
+            { title: "快速响应", description: "CDN 加速确保 JavaScript 获取图片时的快速响应。" },
+            { title: "可靠稳定", description: "99.9% 的正常运行时间保证您的应用图片始终可用。" },
+          ],
+        },
+        steps: {
+          title: "如何在 JavaScript 中使用",
+          items: [
+            { title: "上传图片", description: "上传您的应用图片或资源。" },
+            { title: "获取 URL", description: "复制生成的图片链接。" },
+            { title: "代码中使用", description: "在 JavaScript 中设置 img.src 或 fetch 图片。" },
+          ],
+        },
+        faq: {
+          title: "JavaScript 图片常见问题",
+          items: [
+            { question: "可以用 fetch() 获取吗？", answer: "是的，我们的图片支持 fetch API 和 XMLHttpRequest。" },
+            { question: "支持 Canvas 绑定吗？", answer: "是的，我们的 CORS 设置允许在 Canvas 中使用图片。" },
+          ],
+        },
+        cta: { title: "为您的 JS 应用获取图片 URL", description: "可靠的图片托管，适用于任何 JavaScript 项目。" },
+      },
+      python: {
+        title: "Python 图片托管",
+        subtitle: "适用于 Python 项目的图片 URL",
+        description: "为您的 Python 项目获取图片 URL。非常适合 Discord 机器人、Web 应用和数据项目。",
+        benefits: {
+          title: "为什么使用我们的 Python 图片托管？",
+          items: [
+            { title: "HTTP 友好", description: "URL 可使用 requests、urllib 或 aiohttp 轻松获取。" },
+            { title: "机器人开发", description: "非常适合 Discord.py、Telegram Bot 等机器人框架。" },
+            { title: "数据项目", description: "在 Jupyter Notebook 和数据可视化中使用。" },
+            { title: "Web 框架", description: "在 Django、Flask、FastAPI 中使用图片 URL。" },
+          ],
+        },
+        steps: {
+          title: "如何在 Python 中使用",
+          items: [
+            { title: "上传图片", description: "上传您的项目图片。" },
+            { title: "获取 URL", description: "复制生成的链接。" },
+            { title: "代码中使用", description: "使用 requests.get() 或直接作为 URL 使用。" },
+          ],
+        },
+        faq: {
+          title: "Python 图片常见问题",
+          items: [
+            { question: "可以用于 Discord.py 机器人吗？", answer: "是的！我们的 URL 非常适合 Discord.py 的嵌入和发送图片。" },
+            { question: "支持 PIL/Pillow 吗？", answer: "是的，您可以使用我们的 URL 配合 Pillow 进行图片处理。" },
+          ],
+        },
+        cta: { title: "为您的 Python 项目获取图片 URL", description: "可靠的图片托管，适用于任何 Python 应用。" },
+      },
+      nodejs: {
+        title: "Node.js 图片托管",
+        subtitle: "适用于 Node.js 应用的图片 URL",
+        description: "为您的 Node.js 应用获取可靠的图片 URL。非常适合 Express、Next.js 等框架。",
+        benefits: {
+          title: "为什么使用我们的 Node.js 图片托管？",
+          items: [
+            { title: "异步友好", description: "URL 适合使用 fetch、axios 或 node-fetch 异步获取。" },
+            { title: "框架兼容", description: "在 Express、Koa、Fastify、Next.js 中无缝使用。" },
+            { title: "CDN 加速", description: "全球 CDN 确保快速响应时间。" },
+            { title: "Stream 支持", description: "支持流式获取图片数据。" },
+          ],
+        },
+        steps: {
+          title: "如何在 Node.js 中使用",
+          items: [
+            { title: "上传图片", description: "上传您的应用资源。" },
+            { title: "获取 URL", description: "复制生成的链接。" },
+            { title: "代码中使用", description: "使用 fetch() 或 axios 获取图片。" },
+          ],
+        },
+        faq: {
+          title: "Node.js 图片常见问题",
+          items: [
+            { question: "可以用于 Discord.js 机器人吗？", answer: "是的！我们的 URL 非常适合 Discord.js 的嵌入和附件。" },
+            { question: "支持 Next.js Image 组件吗？", answer: "是的，只需将域名添加到 next.config.js 的 images 配置中。" },
+          ],
+        },
+        cta: { title: "为您的 Node.js 应用获取图片 URL", description: "可靠的图片托管，适用于任何 Node.js 项目。" },
+      },
+      react: {
+        title: "React 图片托管",
+        subtitle: "适用于 React 应用的图片 URL",
+        description: "为您的 React 应用获取可靠的图片 URL。非常适合组件、状态管理和动态渲染。",
+        benefits: {
+          title: "为什么使用我们的 React 图片托管？",
+          items: [
+            { title: "组件友好", description: "URL 可直接用于 img 标签的 src 属性。" },
+            { title: "状态集成", description: "轻松将 URL 存储在 state 或 props 中。" },
+            { title: "懒加载", description: "配合 React 懒加载实现优化的图片加载。" },
+            { title: "SSR 兼容", description: "在 Next.js 等 SSR 框架中正常工作。" },
+          ],
+        },
+        steps: {
+          title: "如何在 React 中使用",
+          items: [
+            { title: "上传图片", description: "上传您的 React 应用图片。" },
+            { title: "获取 URL", description: "复制生成的链接。" },
+            { title: "组件中使用", description: "在 JSX 的 img 标签中使用 URL。" },
+          ],
+        },
+        faq: {
+          title: "React 图片常见问题",
+          items: [
+            { question: "可以用于动态图片吗？", answer: "是的！URL 非常适合从 state 或 API 动态加载的图片。" },
+            { question: "支持 Next.js 吗？", answer: "是的，将域名添加到 next.config.js 配置中即可使用 next/image。" },
+          ],
+        },
+        cta: { title: "为您的 React 应用获取图片 URL", description: "可靠的图片托管，适用于任何 React 项目。" },
+      },
+      telegram: {
+        title: "Telegram 图片托管",
+        subtitle: "适用于机器人和频道的图片 URL",
+        description: "为 Telegram 机器人和频道获取可靠的图片 URL。非常适合发送图片和设置预览。",
+        benefits: {
+          title: "为什么使用我们的 Telegram 图片托管？",
+          items: [
+            { title: "机器人支持", description: "URL 非常适合 python-telegram-bot 和其他机器人框架。" },
+            { title: "预览正常", description: "图片在 Telegram 中正确显示预览。" },
+            { title: "频道内容", description: "为频道帖子托管图片和媒体。" },
+            { title: "快速加载", description: "CDN 加速确保图片快速显示。" },
+          ],
+        },
+        steps: {
+          title: "如何在 Telegram 中使用",
+          items: [
+            { title: "上传图片", description: "上传您的机器人或频道图片。" },
+            { title: "获取 URL", description: "复制生成的链接。" },
+            { title: "发送图片", description: "在机器人代码中使用 URL 发送图片。" },
+          ],
+        },
+        faq: {
+          title: "Telegram 图片常见问题",
+          items: [
+            { question: "可以用于 Telegram 机器人吗？", answer: "是的！我们的 URL 非常适合 sendPhoto 和其他发送图片的方法。" },
+            { question: "GIF 会播放动画吗？", answer: "是的，动态 GIF 在 Telegram 中正常播放。" },
+          ],
+        },
+        cta: { title: "为您的 Telegram 项目获取图片 URL", description: "可靠的图片托管，适用于机器人和频道。" },
+      },
+      roblox: {
+        title: "Roblox 图片托管",
+        subtitle: "适用于 Roblox 游戏和群组的图片",
+        description: "为 Roblox 群组、游戏和社区托管图片。获取可分享的 URL 用于展示和推广。",
+        benefits: {
+          title: "为什么使用我们的 Roblox 图片托管？",
+          items: [
+            { title: "群组标志", description: "托管群组标志和横幅图片。" },
+            { title: "游戏截图", description: "分享您的游戏截图和预览。" },
+            { title: "论坛分享", description: "在 Roblox 论坛和社区中使用图片链接。" },
+            { title: "Discord 集成", description: "在 Roblox Discord 服务器中分享图片。" },
+          ],
+        },
+        steps: {
+          title: "如何获取 Roblox 图片 URL",
+          items: [
+            { title: "上传图片", description: "上传您的 Roblox 相关图片。" },
+            { title: "获取 URL", description: "复制生成的链接。" },
+            { title: "分享使用", description: "在论坛、Discord 或社区中使用。" },
+          ],
+        },
+        faq: {
+          title: "Roblox 图片常见问题",
+          items: [
+            { question: "Roblox 框架推荐使用吗？", answer: "是的，我们的 URL 可以在 Roblox 相关网站和社区中使用。" },
+            { question: "可以用于 Discord 分享吗？", answer: "是的！URL 在 Discord 中完美嵌入显示。" },
+          ],
+        },
+        cta: { title: "为您的 Roblox 项目获取图片 URL", description: "可靠的图片托管，适用于 Roblox 社区。" },
+      },
+      vrchat: {
+        title: "VRChat 图片托管",
+        subtitle: "适用于头像和世界的图片 URL",
+        description: "为 VRChat 头像、世界和社区托管图片。获取可在各平台分享的 URL。",
+        benefits: {
+          title: "为什么使用我们的 VRChat 图片托管？",
+          items: [
+            { title: "头像展示", description: "分享您的自定义头像预览和参考图。" },
+            { title: "世界预览", description: "托管您的世界截图和宣传图。" },
+            { title: "社区分享", description: "在 VRChat 社区和 Discord 中使用。" },
+            { title: "创作者友好", description: "为头像和世界创作者提供可靠的分享链接。" },
+          ],
+        },
+        steps: {
+          title: "如何获取 VRChat 图片 URL",
+          items: [
+            { title: "上传图片", description: "上传您的头像渲染或世界截图。" },
+            { title: "获取 URL", description: "复制生成的链接。" },
+            { title: "社区分享", description: "在 Discord、论坛或社交媒体中使用。" },
+          ],
+        },
+        faq: {
+          title: "VRChat 图片常见问题",
+          items: [
+            { question: "可以用于头像参考吗？", answer: "是的！我们的 URL 非常适合分享头像参考图和预览。" },
+            { question: "支持透明背景吗？", answer: "是的，PNG 透明度完全保留。" },
+          ],
+        },
+        cta: { title: "为您的 VRChat 创作获取图片 URL", description: "可靠的图片托管，适用于 VRChat 社区。" },
+      },
+      "espn-fantasy": {
+        title: "ESPN Fantasy 图片托管",
+        subtitle: "适用于 ESPN 虚拟体育球队标志",
+        description: "为您的 ESPN Fantasy 球队创建自定义标志。获取可在 ESPN 平台使用的图片 URL。",
+        benefits: {
+          title: "为什么使用我们的 ESPN Fantasy 图片托管？",
+          items: [
+            { title: "自定义标志", description: "上传独特的标志让您的球队与众不同。" },
+            { title: "ESPN 兼容", description: "我们的 URL 在 ESPN Fantasy 设置中完美运行。" },
+            { title: "永久链接", description: "登录后标志 URL 永不过期。" },
+            { title: "快速加载", description: "CDN 加速确保标志快速显示。" },
+          ],
+        },
+        steps: {
+          title: "如何设置 ESPN Fantasy 标志",
+          items: [
+            { title: "上传标志", description: "上传您的自定义球队标志。" },
+            { title: "复制 URL", description: "获取生成的图片链接。" },
+            { title: "ESPN 设置", description: "在 ESPN Fantasy 球队设置中粘贴 URL。" },
+          ],
+        },
+        faq: {
+          title: "ESPN Fantasy 常见问题",
+          items: [
+            { question: "URL 格式正确吗？", answer: "是的！我们的 URL 格式完全兼容 ESPN Fantasy 的自定义标志功能。" },
+            { question: "推荐什么尺寸？", answer: "建议使用方形图片，如 500x500 像素。" },
+          ],
+        },
+        cta: { title: "为您的 ESPN Fantasy 球队创建标志", description: "简单的自定义标志托管。" },
+      },
+    },
   },
+
   hi: {
     nav: {
       home: "होम",
@@ -1987,10 +3301,26 @@ const dictionaries = {
       latency: "レイテンシ",
     },
     footer: {
-      copyright: "© 2023 ImageToURL Cloud. 全著作権所有。",
+      copyright: "© 2024 ImageToURL Cloud. 全著作権所有。",
       privacy: "プライバシー",
       terms: "利用規約",
       cookies: "クッキー",
+      categories: {
+        converters: "画像コンバーター",
+        useCases: "使用例",
+        company: "会社情報",
+        legal: "法的情報",
+      },
+      links: {
+        home: "ホーム",
+        blog: "ブログ",
+        about: "概要",
+        discord: "Discord画像",
+        html: "HTML & CSS",
+        fantasy: "ファンタジースポーツ",
+        minecraft: "Minecraft",
+      },
+      badge: "グローバルCDNで動作する無料画像URLコンバーター",
     },
     meta: {
       title: "ImageToURL - 即座の画像ホスティング",

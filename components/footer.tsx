@@ -32,6 +32,7 @@ interface FooterProps {
 
 export function Footer({ locale, dict }: FooterProps) {
     const toolLinks = [
+        { name: "Image to URL Converter", href: "/tools/image-to-url-converter" },
         { name: "JPG to URL", href: "/tools/jpg-to-url" },
         { name: "PNG to URL", href: "/tools/png-to-url" },
         { name: "GIF to URL", href: "/tools/gif-to-url" },
