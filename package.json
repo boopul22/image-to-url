@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
-    "build:cf": "npx opennextjs-cloudflare build",
+    "build": "npm run generate:blog && next build",
+    "build:cf": "npm run generate:blog && npx opennextjs-cloudflare build",
+    "generate:blog": "node scripts/generate-blog-json.mjs",
     "dev": "next dev",
     "lint": "eslint .",
     "preview": "npm run build:cf && npx wrangler dev",

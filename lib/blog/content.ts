@@ -15,20 +15,33 @@ import type {
   FAQItem,
 } from './types'
 
+// Import pre-generated blog data for production/Cloudflare
+import generatedPosts from './generated-posts.json'
+
 const POSTS_PER_PAGE = 10
 const CONTENT_PATH = path.join(process.cwd(), 'content', 'blog')
 
-// Check if we're in a Cloudflare Workers environment (no fs available)
-function isCloudflareWorkers(): boolean {
-  try {
-    // In Cloudflare Workers, fs operations will throw
-    return typeof process !== 'undefined' &&
-           typeof (globalThis as Record<string, unknown>).caches !== 'undefined' &&
-           typeof require === 'undefined'
-  } catch {
-    return true
+// Type for the generated JSON structure (relaxed for JSON compatibility)
+type GeneratedPost = {
+  slug: string
+  locale: string
+  frontmatter: Record<string, unknown>
+  content: string
+  readingTime: {
+    text: string
+    minutes: number
+    words: number
   }
+  headings: TableOfContentsItem[]
+  faqItems: FAQItem[]
 }
+
+type GeneratedPostsData = {
+  [locale: string]: GeneratedPost[]
+}
+
+// Cast the imported JSON to proper type
+const blogData = generatedPosts as unknown as GeneratedPostsData
 
 // Safe fs wrapper that returns null/empty when fs is not available
 function safeReadFileSync(filePath: string): string | null {
@@ -224,51 +237,52 @@ function parsePostMeta(filePath: string, locale: Locale): PostMeta | null {
 }
 
 /**
+ * Get posts from pre-generated JSON (for production/Cloudflare)
+ */
+function getPostsFromJson(locale: Locale): GeneratedPost[] {
+  const localePosts = blogData[locale] || []
+  const defaultPosts = locale !== defaultLocale ? (blogData[defaultLocale] || []) : []
+
+  // Start with locale-specific posts
+  const posts = [...localePosts]
+  const seenSlugs = new Set(posts.map(p => p.slug))
+
+  // Add fallback posts from default locale
+  for (const post of defaultPosts) {
+    if (!seenSlugs.has(post.slug)) {
+      posts.push(post)
+    }
+  }
+
+  // Sort by publishedAt descending
+  return posts.sort((a, b) => {
+    const publishedAtA = a.frontmatter.publishedAt as string | undefined
+    const publishedAtB = b.frontmatter.publishedAt as string | undefined
+    const dateA = publishedAtA ? new Date(publishedAtA).getTime() : 0
+    const dateB = publishedAtB ? new Date(publishedAtB).getTime() : 0
+    return dateB - dateA
+  })
+}
+
+/**
  * Get all posts for a locale, with fallback to English
+ * Uses pre-generated JSON for production, filesystem for development
  */
 export const getAllPosts = unstable_cache(
   async (locale: Locale): Promise<PostMeta[]> => {
-    // Return empty array in Cloudflare Workers environment
-    if (isCloudflareWorkers()) {
-      return []
-    }
+    // Use pre-generated JSON data (works in both dev and production)
+    const posts = getPostsFromJson(locale)
 
-    const localePath = path.join(CONTENT_PATH, locale)
-    const defaultLocalePath = path.join(CONTENT_PATH, defaultLocale)
-
-    const posts: PostMeta[] = []
-    const seenSlugs = new Set<string>()
-
-    // First, get posts from requested locale
-    const localeFiles = getMdxFiles(localePath)
-    for (const file of localeFiles) {
-      const post = parsePostMeta(file, locale)
-      if (post) {
-        posts.push(post)
-        seenSlugs.add(post.slug)
-      }
-    }
-
-    // Then, add English posts that don't exist in requested locale
-    if (locale !== defaultLocale) {
-      const defaultFiles = getMdxFiles(defaultLocalePath)
-      for (const file of defaultFiles) {
-        const slug = path.basename(file).replace(/\.mdx?$/, '')
-        if (!seenSlugs.has(slug)) {
-          const post = parsePostMeta(file, defaultLocale)
-          if (post) {
-            posts.push(post)
-          }
-        }
-      }
-    }
-
-    // Sort by publishedAt descending
-    return posts.sort((a, b) => {
-      const dateA = a.frontmatter.publishedAt ? new Date(a.frontmatter.publishedAt).getTime() : 0
-      const dateB = b.frontmatter.publishedAt ? new Date(b.frontmatter.publishedAt).getTime() : 0
-      return dateB - dateA
-    })
+    // Convert to PostMeta (without content)
+    return posts.map(post => ({
+      slug: post.slug,
+      locale: post.locale as Locale,
+      frontmatter: post.frontmatter as unknown as PostFrontmatter,
+      readingTime: {
+        text: post.readingTime.text,
+        minutes: post.readingTime.minutes,
+      },
+    }))
   },
   ['blog-posts'],
   { revalidate: 3600, tags: ['blog'] }
@@ -276,39 +290,34 @@ export const getAllPosts = unstable_cache(
 
 /**
  * Get a single post by slug with locale fallback
+ * Uses pre-generated JSON for production
  */
 export const getPostBySlug = unstable_cache(
   async (slug: string, locale: Locale): Promise<Post | null> => {
-    // Return null in Cloudflare Workers environment
-    if (isCloudflareWorkers()) {
-      return null
+    // Use pre-generated JSON data
+    const localePosts = blogData[locale] || []
+    const defaultPosts = blogData[defaultLocale] || []
+
+    // Try locale-specific first
+    let post = localePosts.find(p => p.slug === slug)
+
+    // Fallback to default locale
+    if (!post && locale !== defaultLocale) {
+      post = defaultPosts.find(p => p.slug === slug)
     }
 
-    // Try requested locale first
-    const localePath = path.join(CONTENT_PATH, locale, `${slug}.mdx`)
-    const localePathMd = path.join(CONTENT_PATH, locale, `${slug}.md`)
+    if (!post) return null
 
-    if (safeExistsSync(localePath)) {
-      return parsePost(localePath, locale)
+    // Return with proper typing
+    return {
+      slug: post.slug,
+      locale: post.locale as Locale,
+      frontmatter: post.frontmatter as unknown as PostFrontmatter,
+      content: post.content,
+      readingTime: post.readingTime,
+      headings: post.headings,
+      faqItems: post.faqItems,
     }
-    if (safeExistsSync(localePathMd)) {
-      return parsePost(localePathMd, locale)
-    }
-
-    // Fallback to English
-    if (locale !== defaultLocale) {
-      const defaultPath = path.join(CONTENT_PATH, defaultLocale, `${slug}.mdx`)
-      const defaultPathMd = path.join(CONTENT_PATH, defaultLocale, `${slug}.md`)
-
-      if (safeExistsSync(defaultPath)) {
-        return parsePost(defaultPath, defaultLocale)
-      }
-      if (safeExistsSync(defaultPathMd)) {
-        return parsePost(defaultPathMd, defaultLocale)
-      }
-    }
-
-    return null
   },
   ['blog-post'],
   { revalidate: 3600, tags: ['blog'] }
@@ -466,15 +475,13 @@ export async function getAllPostSlugs(): Promise<
   const slugs: { slug: string; locale: Locale }[] = []
   const seenSlugs = new Set<string>()
 
-  // Get all posts from English (default) first
-  const defaultPath = path.join(CONTENT_PATH, defaultLocale)
-  const defaultFiles = getMdxFiles(defaultPath)
+  // Get all posts from pre-generated JSON
+  const defaultPosts = blogData[defaultLocale] || []
 
-  for (const file of defaultFiles) {
-    const slug = path.basename(file).replace(/\.mdx?$/, '')
-    if (!seenSlugs.has(slug)) {
-      seenSlugs.add(slug)
-      slugs.push({ slug, locale: defaultLocale })
+  for (const post of defaultPosts) {
+    if (!seenSlugs.has(post.slug)) {
+      seenSlugs.add(post.slug)
+      slugs.push({ slug: post.slug, locale: defaultLocale })
     }
   }
 

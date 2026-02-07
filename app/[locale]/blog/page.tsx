@@ -3,6 +3,16 @@ import type { Metadata } from 'next'
 import { getDictionary } from '@/lib/i18n/dictionaries'
 import { getAlternateLinks } from '@/lib/i18n/get-alternate-links'
 import type { Locale } from '@/lib/i18n/config'
+import { locales } from '@/lib/i18n/config'
+
+// Force static generation for SEO and Cloudflare Workers compatibility
+export const dynamic = 'force-static'
+export const revalidate = 3600 // Revalidate every hour
+
+// Generate static params for all locales
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }))
+}
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { Button } from '@/components/ui/button'
