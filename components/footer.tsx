@@ -7,6 +7,22 @@ interface FooterDict {
     privacy: string
     terms: string
     cookies: string
+    categories: {
+        converters: string
+        useCases: string
+        company: string
+        legal: string
+    }
+    links: {
+        home: string
+        blog: string
+        about: string
+        discord: string
+        html: string
+        fantasy: string
+        minecraft: string
+    }
+    badge: string
 }
 
 interface FooterProps {
@@ -14,23 +30,23 @@ interface FooterProps {
     dict: FooterDict
 }
 
-const toolLinks = [
-    { name: "JPG to URL", href: "/tools/jpg-to-url" },
-    { name: "PNG to URL", href: "/tools/png-to-url" },
-    { name: "GIF to URL", href: "/tools/gif-to-url" },
-    { name: "SVG to URL", href: "/tools/svg-to-url" },
-    { name: "Base64 to URL", href: "/tools/base64-to-url" },
-    { name: "Bulk Upload", href: "/tools/bulk-upload" },
-]
-
-const useCaseLinks = [
-    { name: "Discord Images", href: "/use-cases/discord" },
-    { name: "HTML & CSS", href: "/use-cases/html" },
-    { name: "Fantasy Sports", href: "/use-cases/fantasy-sports" },
-    { name: "Minecraft", href: "/use-cases/minecraft" },
-]
-
 export function Footer({ locale, dict }: FooterProps) {
+    const toolLinks = [
+        { name: "JPG to URL", href: "/tools/jpg-to-url" },
+        { name: "PNG to URL", href: "/tools/png-to-url" },
+        { name: "GIF to URL", href: "/tools/gif-to-url" },
+        { name: "SVG to URL", href: "/tools/svg-to-url" },
+        { name: "Base64 to URL", href: "/tools/base64-to-url" },
+        { name: "Bulk Upload", href: "/tools/bulk-upload" },
+    ]
+
+    const useCaseLinks = [
+        { name: dict.links.discord, href: "/use-cases/discord" },
+        { name: dict.links.html, href: "/use-cases/html" },
+        { name: dict.links.fantasy, href: "/use-cases/fantasy-sports" },
+        { name: dict.links.minecraft, href: "/use-cases/minecraft" },
+    ]
+
     return (
         <footer className="w-full border-t border-white/5 bg-[#1a1a1a] py-12 mt-auto z-10">
             <div className="max-w-6xl mx-auto px-6">
@@ -38,7 +54,7 @@ export function Footer({ locale, dict }: FooterProps) {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
                     {/* Tools */}
                     <div>
-                        <h3 className="text-white text-sm font-medium mb-3">Image Converters</h3>
+                        <h3 className="text-white text-sm font-medium mb-3">{dict.categories.converters}</h3>
                         <ul className="space-y-2">
                             {toolLinks.map((link) => (
                                 <li key={link.href}>
@@ -55,7 +71,7 @@ export function Footer({ locale, dict }: FooterProps) {
 
                     {/* Use Cases */}
                     <div>
-                        <h3 className="text-white text-sm font-medium mb-3">Use Cases</h3>
+                        <h3 className="text-white text-sm font-medium mb-3">{dict.categories.useCases}</h3>
                         <ul className="space-y-2">
                             {useCaseLinks.map((link) => (
                                 <li key={link.href}>
@@ -72,14 +88,14 @@ export function Footer({ locale, dict }: FooterProps) {
 
                     {/* Company */}
                     <div>
-                        <h3 className="text-white text-sm font-medium mb-3">Company</h3>
+                        <h3 className="text-white text-sm font-medium mb-3">{dict.categories.company}</h3>
                         <ul className="space-y-2">
                             <li>
                                 <Link
                                     href={`/${locale}`}
                                     className="text-zinc-500 hover:text-brand text-xs transition-colors"
                                 >
-                                    Home
+                                    {dict.links.home}
                                 </Link>
                             </li>
                             <li>
@@ -87,7 +103,7 @@ export function Footer({ locale, dict }: FooterProps) {
                                     href={`/${locale}/blog`}
                                     className="text-zinc-500 hover:text-brand text-xs transition-colors"
                                 >
-                                    Blog
+                                    {dict.links.blog}
                                 </Link>
                             </li>
                             <li>
@@ -95,7 +111,7 @@ export function Footer({ locale, dict }: FooterProps) {
                                     href={`/${locale}/about`}
                                     className="text-zinc-500 hover:text-brand text-xs transition-colors"
                                 >
-                                    About
+                                    {dict.links.about}
                                 </Link>
                             </li>
                         </ul>
@@ -103,7 +119,7 @@ export function Footer({ locale, dict }: FooterProps) {
 
                     {/* Legal */}
                     <div>
-                        <h3 className="text-white text-sm font-medium mb-3">Legal</h3>
+                        <h3 className="text-white text-sm font-medium mb-3">{dict.categories.legal}</h3>
                         <ul className="space-y-2">
                             <li>
                                 <Link
@@ -189,9 +205,9 @@ export function Footer({ locale, dict }: FooterProps) {
 
                 {/* Bottom Bar */}
                 <div className="border-t border-white/5 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-                    <p className="text-zinc-500 text-xs">© 2026 ImageToURL. All rights reserved.</p>
+                    <p className="text-zinc-500 text-xs">{dict.copyright}</p>
                     <p className="text-zinc-600 text-xs">
-                        Free image to URL converter powered by global CDN
+                        {dict.badge}
                     </p>
                 </div>
             </div>

@@ -9,10 +9,10 @@ import { CodeBlock } from './code-block'
 function createHeading(level: 1 | 2 | 3 | 4) {
   const Tag = `h${level}` as const
   const styles = {
-    1: 'text-3xl sm:text-4xl md:text-5xl font-bold mt-8 sm:mt-10 mb-4 sm:mb-6 tracking-tight',
-    2: 'text-2xl sm:text-3xl md:text-4xl font-bold mt-12 sm:mt-14 mb-4 sm:mb-6 tracking-tight border-b border-zinc-800 pb-3',
-    3: 'text-xl sm:text-2xl md:text-3xl font-semibold mt-10 sm:mt-12 mb-3 sm:mb-4 tracking-tight',
-    4: 'text-lg sm:text-xl md:text-2xl font-semibold mt-8 sm:mt-10 mb-3 sm:mb-4',
+    1: 'text-2xl sm:text-3xl font-bold mt-6 sm:mt-7 mb-3 sm:mb-4 tracking-tight',
+    2: 'text-xl sm:text-2xl font-bold mt-8 sm:mt-10 mb-3 sm:mb-4 tracking-tight border-b border-zinc-800 pb-3',
+    3: 'text-lg sm:text-xl font-semibold mt-7 sm:mt-8 mb-2 sm:mb-3 tracking-tight',
+    4: 'text-base sm:text-lg font-semibold mt-6 sm:mt-7 mb-2 sm:mb-3',
   }
 
   return function Heading({
@@ -54,7 +54,7 @@ function Paragraph({ children, ...props }: React.HTMLAttributes<HTMLParagraphEle
   if (hasBlockChildren(children)) {
     return (
       <div
-        className="text-zinc-300 text-base sm:text-lg md:text-xl leading-[1.8] sm:leading-[1.9] mb-6 sm:mb-8"
+        className="text-zinc-300 text-base sm:text-[17px] leading-[1.8] mb-4 sm:mb-5"
         {...props}
       >
         {children}
@@ -64,7 +64,7 @@ function Paragraph({ children, ...props }: React.HTMLAttributes<HTMLParagraphEle
 
   return (
     <p
-      className="text-zinc-300 text-base sm:text-lg md:text-xl leading-[1.8] sm:leading-[1.9] mb-6 sm:mb-8"
+      className="text-zinc-300 text-base sm:text-[17px] leading-[1.8] mb-4 sm:mb-5"
       {...props}
     >
       {children}
@@ -102,36 +102,69 @@ function CustomLink({
   )
 }
 
+import { ChevronRight } from 'lucide-react'
+
 function UnorderedList({ children, ...props }: React.HTMLAttributes<HTMLUListElement>) {
   return (
     <ul
-      className="my-6 sm:my-8 ml-0 space-y-3 sm:space-y-4 text-zinc-300"
+      className="my-6 space-y-3"
       {...props}
     >
-      {children}
+      {React.Children.map(children, (child) => {
+        if (React.isValidElement(child)) {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          return React.cloneElement(child as React.ReactElement<any>, {
+            type: 'unordered'
+          })
+        }
+        return child
+      })}
     </ul>
   )
 }
 
 function OrderedList({ children, ...props }: React.HTMLAttributes<HTMLOListElement>) {
+  let counter = 0
   return (
     <ol
-      className="my-6 sm:my-8 ml-0 space-y-3 sm:space-y-4 text-zinc-300 counter-reset-list"
-      style={{ counterReset: 'list-counter' }}
+      className="my-6 space-y-3"
       {...props}
     >
-      {children}
+      {React.Children.map(children, (child) => {
+        if (React.isValidElement(child)) {
+          counter++
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          return React.cloneElement(child as React.ReactElement<any>, {
+            type: 'ordered',
+            index: counter
+          })
+        }
+        return child
+      })}
     </ol>
   )
 }
 
-function ListItem({ children, ...props }: React.HTMLAttributes<HTMLLIElement>) {
+function ListItem({
+  children,
+  type = 'unordered',
+  index,
+  ...props
+}: React.HTMLAttributes<HTMLLIElement> & { type?: 'unordered' | 'ordered'; index?: number }) {
   return (
     <li
-      className="flex items-start gap-3 sm:gap-4 text-zinc-300 text-base sm:text-lg leading-relaxed"
+      className="flex items-start gap-3 text-zinc-200 text-base sm:text-[17px] leading-relaxed"
       {...props}
     >
-      <span className="flex-shrink-0 w-2 h-2 mt-2.5 sm:mt-3 rounded-full bg-brand" aria-hidden="true" />
+      {type === 'unordered' ? (
+        <span className="flex-shrink-0 mt-1.5 p-0.5 rounded-full bg-brand/10 text-brand">
+          <ChevronRight className="w-3.5 h-3.5" strokeWidth={3} />
+        </span>
+      ) : (
+        <span className="flex-shrink-0 flex items-center justify-center w-6 h-6 rounded-full bg-brand/10 text-brand text-xs font-bold mt-0.5 font-mono">
+          {index}
+        </span>
+      )}
       <span className="flex-1">{children}</span>
     </li>
   )
@@ -140,7 +173,7 @@ function ListItem({ children, ...props }: React.HTMLAttributes<HTMLLIElement>) {
 function Blockquote({ children, ...props }: React.HTMLAttributes<HTMLQuoteElement>) {
   return (
     <blockquote
-      className="relative my-8 sm:my-10 pl-5 sm:pl-6 py-4 border-l-4 border-brand bg-zinc-900/50 rounded-r-xl"
+      className="relative my-5 sm:my-6 pl-5 sm:pl-6 py-4 border-l-4 border-brand bg-zinc-900/50 rounded-r-xl"
       {...props}
     >
       <div className="text-zinc-300 text-base sm:text-lg italic leading-relaxed">
@@ -193,7 +226,7 @@ function OptimizedImage({
       : src
 
     return (
-      <figure className="my-6">
+      <figure className="my-5">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={imageSrc}
@@ -212,7 +245,7 @@ function OptimizedImage({
   }
 
   return (
-    <figure className="my-6">
+    <figure className="my-5">
       <Image
         src={src}
         alt={alt || ''}
@@ -232,7 +265,7 @@ function OptimizedImage({
 
 function Table({ children, ...props }: React.HTMLAttributes<HTMLTableElement>) {
   return (
-    <div className="my-8 sm:my-10 overflow-x-auto rounded-xl border border-zinc-800">
+    <div className="my-5 sm:my-6 overflow-x-auto rounded-xl border border-zinc-800">
       <table
         className="w-full border-collapse text-sm sm:text-base"
         {...props}

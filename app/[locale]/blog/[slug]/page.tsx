@@ -132,10 +132,6 @@ export default async function BlogPostPage({
       />
 
       <div className="bg-dark text-zinc-300 min-h-screen flex flex-col">
-        {/* Ambient Glow Background */}
-        <div className="fixed top-[-10%] left-[-10%] w-[50%] h-[50%] bg-brand/10 rounded-full blur-[120px] pointer-events-none opacity-40 z-0" />
-        <div className="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none opacity-20 z-0" />
-
         {/* Navigation */}
         <Header locale={locale} dict={dict.nav}>
           <Suspense
@@ -156,11 +152,11 @@ export default async function BlogPostPage({
         </Header>
 
         {/* Main Content - Responsive Grid Layout */}
-        <main className="flex-grow relative z-10 px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
+        <main className="flex-grow relative z-10 px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
           <div className="max-w-7xl mx-auto">
-            <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-12 xl:gap-16">
+            <div className="lg:grid lg:grid-cols-[1fr_280px] lg:gap-8 xl:gap-10">
               {/* Article Content - Main Column */}
-              <article className="max-w-3xl">
+              <article className="max-w-2xl">
                 <BlogHeader post={post} locale={locale} />
 
                 {/* MDX Content */}
@@ -187,7 +183,7 @@ export default async function BlogPostPage({
               {/* Desktop Sidebar - Table of Contents */}
               <aside className="hidden lg:block">
                 <div className="sticky top-24">
-                  <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-5">
+                  <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-4">
                     <TableOfContents headings={post.headings} />
                   </div>
                 </div>

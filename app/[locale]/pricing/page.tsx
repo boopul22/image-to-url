@@ -125,7 +125,7 @@ export default async function PricingPage({
                                 name: string
                                 price: string
                                 description: string
-                                features: { text: string; included: boolean }[]
+                                features: readonly { text: string; included: boolean }[]
                                 cta: string
                                 ctaLink: string
                                 highlighted: boolean

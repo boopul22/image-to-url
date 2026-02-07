@@ -13,7 +13,7 @@ interface Testimonial {
 
 interface TestimonialsSectionProps {
     title: string
-    testimonials: Testimonial[]
+    testimonials: readonly Testimonial[]
 }
 
 export function TestimonialsSection({ title, testimonials }: TestimonialsSectionProps) {

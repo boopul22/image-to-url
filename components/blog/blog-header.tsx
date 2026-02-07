@@ -22,7 +22,7 @@ export function BlogHeader({ post, locale }: BlogHeaderProps) {
   )
 
   return (
-    <header className="mb-6 sm:mb-8">
+    <header className="mb-4 sm:mb-6">
       {/* Breadcrumb - hidden on very small screens */}
       <nav className="hidden sm:flex items-center gap-2 text-sm text-zinc-500 mb-4 sm:mb-6">
         <Link href={`/${locale}`} className="hover:text-zinc-300 transition-colors">
@@ -51,17 +51,17 @@ export function BlogHeader({ post, locale }: BlogHeaderProps) {
       </Link>
 
       {/* Title */}
-      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 leading-tight">
+      <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 leading-tight">
         {frontmatter.title}
       </h1>
 
       {/* Description */}
-      <p className="text-base sm:text-lg md:text-xl text-zinc-400 mb-4 sm:mb-6 leading-relaxed">
+      <p className="text-sm sm:text-base text-zinc-400 mb-3 sm:mb-4 leading-relaxed">
         {frontmatter.description}
       </p>
 
       {/* Meta Info */}
-      <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-zinc-500 mb-4 sm:mb-6">
+      <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-zinc-500 mb-3 sm:mb-4">
         <span className="flex items-center gap-1.5 sm:gap-2">
           <User className="size-3.5 sm:size-4" />
           {frontmatter.author}
@@ -78,12 +78,12 @@ export function BlogHeader({ post, locale }: BlogHeaderProps) {
 
       {/* Tags */}
       {frontmatter.tags.length > 0 && (
-        <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-6 sm:mb-8">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-5">
           {frontmatter.tags.map((tag) => (
             <Link
               key={tag}
               href={`/${locale}/blog/tag/${tag.toLowerCase()}`}
-              className="text-xs sm:text-sm px-2.5 sm:px-3 py-1 rounded-full bg-zinc-800 text-zinc-400 hover:bg-zinc-700 hover:text-zinc-300 transition-colors"
+              className="text-xs px-2 sm:px-2.5 py-0.5 rounded-full bg-zinc-800 text-zinc-400 hover:bg-zinc-700 hover:text-zinc-300 transition-colors"
             >
               #{tag}
             </Link>
@@ -93,7 +93,7 @@ export function BlogHeader({ post, locale }: BlogHeaderProps) {
 
       {/* Cover Image */}
       {frontmatter.coverImage && (
-        <div className="relative aspect-video rounded-lg sm:rounded-xl overflow-hidden mb-6 sm:mb-8 mx-0">
+        <div className="relative aspect-video rounded-lg overflow-hidden mb-4 sm:mb-6 mx-0">
           <Image
             src={frontmatter.coverImage}
             alt={frontmatter.coverImageAlt || frontmatter.title}

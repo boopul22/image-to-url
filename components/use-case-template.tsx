@@ -46,7 +46,7 @@ interface UseCaseTemplateProps {
     }
     faq: {
       title: string
-      items: FAQItem[]
+      items: readonly FAQItem[]
     }
     cta: {
       title: string

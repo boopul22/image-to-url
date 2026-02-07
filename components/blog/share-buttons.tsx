@@ -46,11 +46,11 @@ export function ShareButtons({ url, title, description }: ShareButtonsProps) {
   }
 
   const buttonClass =
-    'size-12 sm:size-10 rounded-xl bg-zinc-800/80 text-zinc-400 hover:bg-zinc-700 hover:text-white transition-all duration-200 active:scale-95 flex items-center justify-center'
+    'size-9 sm:size-8 rounded-xl bg-zinc-800/80 text-zinc-400 hover:bg-zinc-700 hover:text-white transition-all duration-200 active:scale-95 flex items-center justify-center'
 
   return (
-    <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-zinc-800">
-      <h4 className="text-sm font-semibold text-white mb-4">Share this post</h4>
+    <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-zinc-800">
+      <h4 className="text-xs font-semibold text-white mb-3">Share this post</h4>
       <div className="flex gap-3 sm:gap-2">
         <a
           href={shareLinks.twitter}
@@ -59,7 +59,7 @@ export function ShareButtons({ url, title, description }: ShareButtonsProps) {
           className={buttonClass}
           aria-label="Share on Twitter"
         >
-          <Twitter className="size-5 sm:size-4" />
+          <Twitter className="size-4" />
         </a>
         <a
           href={shareLinks.facebook}
@@ -68,7 +68,7 @@ export function ShareButtons({ url, title, description }: ShareButtonsProps) {
           className={buttonClass}
           aria-label="Share on Facebook"
         >
-          <Facebook className="size-5 sm:size-4" />
+          <Facebook className="size-4" />
         </a>
         <a
           href={shareLinks.linkedin}
@@ -77,7 +77,7 @@ export function ShareButtons({ url, title, description }: ShareButtonsProps) {
           className={buttonClass}
           aria-label="Share on LinkedIn"
         >
-          <Linkedin className="size-5 sm:size-4" />
+          <Linkedin className="size-4" />
         </a>
         <button
           onClick={copyToClipboard}
@@ -88,9 +88,9 @@ export function ShareButtons({ url, title, description }: ShareButtonsProps) {
           aria-label={copied ? 'Copied!' : 'Copy link'}
         >
           {copied ? (
-            <Check className="size-5 sm:size-4" />
+            <Check className="size-4" />
           ) : (
-            <LinkIcon className="size-5 sm:size-4" />
+            <LinkIcon className="size-4" />
           )}
         </button>
       </div>

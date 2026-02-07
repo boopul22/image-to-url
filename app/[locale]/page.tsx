@@ -13,6 +13,8 @@ import { TrustSection } from "@/components/trust-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { ComparisonTableSection } from "@/components/comparison-table-section"
 import { UseCasesHighlightsSection } from "@/components/use-cases-highlights-section"
+import { PopularToolsSection } from "@/components/popular-tools-section"
+import { RelatedTopicsSection } from "@/components/related-topics-section"
 
 export default async function HomePage({
   params,
@@ -158,6 +160,23 @@ export default async function HomePage({
           <UseCasesHighlightsSection
             title={dict.useCasesHighlights.title}
             subtitle={dict.useCasesHighlights.subtitle}
+            locale={locale}
+          />
+        )}
+
+        {/* Popular Tools Section */}
+        {dict.popularTools && (
+          <PopularToolsSection
+            title={dict.popularTools.title}
+            subtitle={dict.popularTools.subtitle}
+            locale={locale}
+          />
+        )}
+
+        {/* Related Topics Section */}
+        {dict.relatedTopics && (
+          <RelatedTopicsSection
+            title={dict.relatedTopics.title}
             locale={locale}
           />
         )}

@@ -2,7 +2,7 @@ import { Lightbulb } from "lucide-react"
 
 interface TipsSectionProps {
   title: string
-  items: string[]
+  items: readonly string[]
 }
 
 export function TipsSection({ title, items }: TipsSectionProps) {

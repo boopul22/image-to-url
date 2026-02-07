@@ -7,12 +7,14 @@ interface CategoryListProps {
   categories: BlogCategory[]
   locale: Locale
   activeCategory?: string
+  dict: any
 }
 
 export function CategoryList({
   categories,
   locale,
   activeCategory,
+  dict,
 }: CategoryListProps) {
   if (categories.length === 0) {
     return null
@@ -29,7 +31,7 @@ export function CategoryList({
             : 'bg-zinc-800 text-zinc-400 hover:bg-zinc-700 hover:text-zinc-300'
         )}
       >
-        All
+        {dict.allPosts}
       </Link>
       {categories.map((category) => (
         <Link

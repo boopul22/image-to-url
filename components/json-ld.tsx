@@ -145,7 +145,7 @@ interface FAQItem {
     answer: string
 }
 
-export function FAQJsonLd({ items }: { items: FAQItem[] }) {
+export function FAQJsonLd({ items }: { items: readonly FAQItem[] }) {
     const schema = {
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
@@ -238,7 +238,7 @@ export function HowToJsonLd({
 }: {
     name: string
     description: string
-    steps: HowToStep[]
+    steps: readonly HowToStep[]
 }) {
     const schema = {
         '@context': 'https://schema.org',

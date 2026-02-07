@@ -34,12 +34,12 @@ export async function generateMetadata({
   params: Promise<{ locale: Locale }>
 }): Promise<Metadata> {
   const { locale } = await params
+  const dict = await getDictionary(locale)
   const languages = getAlternateLinks('/blog', locale)
 
   return {
-    title: 'Blog - Image Hosting Tips & Tutorials | ImageToURL',
-    description:
-      'Learn about image optimization, CDN performance, free image hosting, and web development best practices. Tips, tutorials, and guides for developers and creators.',
+    title: dict.blog.title + " - Image Hosting Tips & Tutorials | ImageToURL",
+    description: dict.blog.latestPosts + " about image optimization, CDN performance, free image hosting, and web development best practices.",
     keywords: [
       'image hosting blog',
       'image optimization tips',
@@ -52,17 +52,15 @@ export async function generateMetadata({
       languages,
     },
     openGraph: {
-      title: 'ImageToURL Blog - Tips & Tutorials',
-      description:
-        'Tips, tutorials, and insights about image hosting and web development.',
+      title: dict.blog.title + " - Tips & Tutorials",
+      description: dict.blog.latestPosts + " about image hosting and web development.",
       type: 'website',
       url: `${BASE_URL}/${locale}/blog`,
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'ImageToURL Blog',
-      description:
-        'Tips, tutorials, and insights about image hosting and web development.',
+      title: dict.blog.title,
+      description: dict.blog.latestPosts + " about image hosting and web development.",
     },
   }
 }
@@ -94,16 +92,12 @@ export default async function BlogPage({
       <BlogListJsonLd locale={locale} posts={posts} />
       <BreadcrumbJsonLd
         items={[
-          { name: 'Home', url: `${BASE_URL}/${locale}` },
-          { name: 'Blog', url: `${BASE_URL}/${locale}/blog` },
+          { name: dict.nav.home, url: `${BASE_URL}/${locale}` },
+          { name: dict.blog.title, url: `${BASE_URL}/${locale}/blog` },
         ]}
       />
 
       <div className="bg-dark text-zinc-300 min-h-screen flex flex-col">
-        {/* Ambient Glow Background */}
-        <div className="fixed top-[-10%] left-[-10%] w-[50%] h-[50%] bg-brand/10 rounded-full blur-[120px] pointer-events-none opacity-40 z-0" />
-        <div className="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none opacity-20 z-0" />
-
         {/* Navigation */}
         <Header locale={locale} dict={dict.nav}>
           <Suspense
@@ -124,34 +118,33 @@ export default async function BlogPage({
         </Header>
 
         {/* Main Content */}
-        <main className="flex-grow relative z-10 px-4 py-12 md:py-20">
+        <main className="flex-grow relative z-10 px-4 py-8 sm:py-12">
           <div className="max-w-6xl mx-auto">
             {/* Hero Section */}
-            <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                ImageToURL Blog
+            <div className="text-center mb-8">
+              <h1 className="text-2xl sm:text-3xl font-semibold text-white mb-3">
+                ImageToURL {dict.blog.title}
               </h1>
-              <p className="text-xl text-zinc-400 max-w-2xl mx-auto mb-8">
-                Tips, tutorials, and insights about image hosting, optimization,
-                and web development
+              <p className="text-base text-zinc-400 max-w-2xl mx-auto mb-6">
+                {dict.blog.latestPosts} {dict.blog.subtitle}
               </p>
 
               {/* Search Button */}
-              <BlogSearch searchIndex={searchIndex} locale={locale} />
+              <BlogSearch searchIndex={searchIndex} locale={locale} dict={dict.search} />
             </div>
 
             {/* Categories */}
-            <div className="mb-12">
-              <CategoryList categories={categories} locale={locale} />
+            <div className="mb-8">
+              <CategoryList categories={categories} locale={locale} dict={dict.blog} />
             </div>
 
             {/* Featured Posts */}
             {featuredPosts.length > 0 && (
-              <section className="mb-16">
-                <h2 className="text-2xl font-bold text-white mb-6">
-                  Featured Posts
+              <section className="mb-10">
+                <h2 className="text-lg font-semibold text-white mb-4">
+                  {dict.blog.featured}
                 </h2>
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
                   {featuredPosts.map((post) => (
                     <BlogCard
                       key={post.slug}
@@ -166,16 +159,16 @@ export default async function BlogPage({
 
             {/* All Posts */}
             <section>
-              <h2 className="text-2xl font-bold text-white mb-6">
-                {featuredPosts.length > 0 ? 'Latest Posts' : 'All Posts'}
-                <span className="text-zinc-500 font-normal text-lg ml-2">
+              <h2 className="text-lg font-semibold text-white mb-4">
+                {featuredPosts.length > 0 ? dict.blog.latestPosts : dict.blog.allPosts}
+                <span className="text-zinc-500 font-normal text-sm ml-2">
                   ({totalPosts})
                 </span>
               </h2>
 
               {posts.length > 0 ? (
                 <>
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
                     {posts.map((post) => (
                       <BlogCard key={post.slug} post={post} locale={locale} />
                     ))}
@@ -189,7 +182,7 @@ export default async function BlogPage({
                 </>
               ) : (
                 <div className="text-center py-20">
-                  <p className="text-zinc-500 text-lg">No posts found yet.</p>
+                  <p className="text-zinc-500 text-lg">{dict.blog.noPosts}</p>
                   <p className="text-zinc-600 mt-2">
                     Check back soon for new content!
                   </p>

@@ -7,7 +7,7 @@ interface HowToStep {
 
 interface HowToSectionProps {
   title: string
-  steps: HowToStep[]
+  steps: readonly HowToStep[]
 }
 
 const stepIcons = [Upload, Zap, Link2]

@@ -14,7 +14,7 @@ export interface FAQItem {
 }
 
 interface BlogFAQProps {
-  items: FAQItem[]
+  items: readonly FAQItem[]
   title?: string
 }
 
@@ -66,7 +66,7 @@ export function BlogFAQ({ items, title = "Frequently Asked Questions" }: BlogFAQ
 /**
  * Schema component for FAQ structured data
  */
-export function BlogFAQSchema({ items }: { items: FAQItem[] }) {
+export function BlogFAQSchema({ items }: { items: readonly FAQItem[] }) {
   if (!items || items.length === 0) return null
 
   const schema = {

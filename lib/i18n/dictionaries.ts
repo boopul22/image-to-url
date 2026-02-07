@@ -29,6 +29,18 @@ const dictionaries = {
       featured: "Featured",
       latestPosts: "Latest Posts",
       searchPosts: "Search posts...",
+      subtitle: "about image hosting, optimization, and web development",
+    },
+    search: {
+      placeholder: "Search posts, categories, tags...",
+      noResults: "No results found for",
+      startTyping: "Start typing to search...",
+      navigate: "Navigate",
+      select: "Select",
+      close: "Close",
+      typePost: "post",
+      typeCategory: "category",
+      typeTag: "tag",
     },
     auth: {
       signIn: "Sign In",
@@ -161,6 +173,13 @@ const dictionaries = {
       title: "Built for Every Use Case",
       subtitle: "From Discord bots to e-commerce, ImageToURL powers image sharing across the web",
     },
+    popularTools: {
+      title: "Popular Image Hosting Tools",
+      subtitle: "Explore our suite of free tools for converting images to shareable URLs",
+    },
+    relatedTopics: {
+      title: "Related Topics",
+    },
     upload: {
       clickToUpload: "Click to upload or drag and drop",
       fileTypes: "SVG, PNG, JPG or GIF (max. 10MB)",
@@ -185,6 +204,22 @@ const dictionaries = {
       privacy: "Privacy",
       terms: "Terms",
       cookies: "Cookies",
+      categories: {
+        converters: "Image Converters",
+        useCases: "Use Cases",
+        company: "Company",
+        legal: "Legal",
+      },
+      links: {
+        home: "Home",
+        blog: "Blog",
+        about: "About",
+        discord: "Discord Images",
+        html: "HTML & CSS",
+        fantasy: "Fantasy Sports",
+        minecraft: "Minecraft",
+      },
+      badge: "Free image to URL converter powered by global CDN",
     },
     meta: {
       title: "Image to URL Converter - Free Instant Link Generator | ImageToURL",
@@ -248,6 +283,131 @@ const dictionaries = {
           answer: "An image URL is a web link that points to your hosted image, while base64 is the image encoded as text data. URLs are better for sharing and web use as they're shorter and more efficient. Use our tools to convert between formats."
         }
       ]
+    },
+    tools: {
+      "jpg-to-url": {
+        title: "JPG to URL Converter",
+        subtitle: "Free Online JPEG Image Hosting",
+        description: "Convert your JPG and JPEG images to shareable URLs instantly. No signup required, just upload and share.",
+        introduction: {
+          title: "Understanding JPG to URL Conversion",
+          paragraphs: [
+            "JPG (Joint Photographic Experts Group) is the most widely used image format on the web, known for its excellent compression of photographs and complex images. When you need to share a JPG image online, converting it to a URL allows you to embed it anywhere—from websites and emails to social media posts and documents.",
+            "Our free JPG to URL converter instantly uploads your JPEG files to a global content delivery network (CDN), generating a permanent, shareable link. Unlike temporary file-sharing services, these URLs are designed for reliability and speed, with edge servers ensuring fast loading times for viewers worldwide.",
+            "Whether you're a blogger embedding product photos, a developer testing image displays, or simply sharing memories with friends, converting your JPG to a URL is the most efficient way to make your images accessible online without dealing with file attachments or size limits.",
+          ],
+        },
+        features: {
+          title: "Why Use Our JPG to URL Converter?",
+          items: [
+            "100% free with no hidden costs",
+            "No account or signup required",
+            "Support for JPG and JPEG formats",
+            "Files up to 10MB supported",
+            "Instant shareable links",
+            "Global CDN for fast delivery",
+            "99.9% uptime guarantee",
+            "Secure HTTPS links",
+          ],
+        },
+        howItWorks: {
+          title: "How to Convert JPG to URL",
+          steps: [
+            {
+              title: "Upload Your JPG",
+              description: "Drag and drop your JPG file or click to browse. We accept JPG and JPEG files up to 10MB.",
+            },
+            {
+              title: "Get Your URL",
+              description: "Your image is instantly uploaded to our global CDN. A shareable URL is generated automatically.",
+            },
+            {
+              title: "Share Anywhere",
+              description: "Copy the URL and use it anywhere - websites, social media, emails, or documents.",
+            },
+          ],
+        },
+        useCases: {
+          title: "Common Use Cases for JPG URLs",
+          items: [
+            { title: "Website Development", description: "Embed product images, portfolio photos, or blog illustrations directly in HTML without worrying about hosting infrastructure." },
+            { title: "Email Marketing", description: "Include reliable image links in email newsletters without hitting attachment limits or broken inline images." },
+            { title: "Social Media Sharing", description: "Share high-quality photos with direct links that preview correctly across all major platforms." },
+            { title: "Documentation & Wikis", description: "Add screenshots, diagrams, and visual aids to README files, help docs, and internal wikis." },
+            { title: "E-commerce Listings", description: "Host product images for listings on multiple marketplaces like eBay, Etsy, or Amazon." },
+            { title: "Fantasy Sports & Gaming", description: "Create custom team logos and avatars for ESPN, Yahoo Fantasy, Discord, and gaming platforms." },
+          ],
+        },
+        tips: {
+          title: "Pro Tips for JPG Hosting",
+          items: [
+            "Optimize your JPG before uploading to reduce file size without visible quality loss—tools like TinyJPG can help.",
+            "Use descriptive filenames for better organization when managing multiple images in your dashboard.",
+            "Sign in to keep your image URLs permanent and gain access to expiration controls and folder organization.",
+            "For images requiring transparent backgrounds, use PNG format instead—JPG doesn't support transparency.",
+            "Consider WebP format for even smaller file sizes while maintaining quality on modern browsers.",
+            "Test your image URLs in an incognito window to ensure they're publicly accessible before sharing.",
+          ],
+        },
+        faq: {
+          title: "Frequently Asked Questions",
+          items: [
+            {
+              question: "How do I convert a JPG image to a URL?",
+              answer: "Simply drag and drop your JPG file onto our upload zone or click to select a file. Your image will be instantly uploaded and you'll receive a shareable URL.",
+            },
+            {
+              question: "Is this JPG to URL converter free?",
+              answer: "Yes, our JPG to URL converter is 100% free. You can upload JPG images up to 10MB without creating an account.",
+            },
+            {
+              question: "What's the difference between JPG and JPEG?",
+              answer: "JPG and JPEG are the same format - JPG is just a shorter file extension. Our converter supports both .jpg and .jpeg files.",
+            },
+            {
+              question: "How long will my JPG URL stay active?",
+              answer: "Anonymous uploads are stored for 30 days. Sign in for free to keep your images indefinitely and manage expiration times.",
+            },
+            {
+              question: "Can I use the JPG URL on my website?",
+              answer: "Yes! The URLs we generate can be used anywhere - in HTML img tags, CSS backgrounds, social media, emails, and more.",
+            },
+            {
+              question: "Does converting JPG to URL compress or reduce image quality?",
+              answer: "No, we preserve your original image quality exactly as uploaded. There's no re-compression or quality loss during the conversion process. Your JPG will look identical to the original file.",
+            },
+            {
+              question: "Can I convert multiple JPG files to URLs at once?",
+              answer: "Yes! Use our Bulk Upload tool to upload multiple JPG images simultaneously. You'll receive individual URLs for each file and can copy all URLs at once for easy sharing.",
+            },
+            {
+              question: "Are the JPG URLs SEO-friendly for my website?",
+              answer: "Yes, our URLs are clean and end with proper image extensions. They include appropriate Content-Type headers and are served from fast CDN infrastructure, which helps with page load speed—an important SEO factor.",
+            },
+          ],
+        },
+        relatedTools: {
+          title: "Related Tools",
+          tools: [
+            { name: "PNG to URL", href: "/tools/png-to-url", description: "Convert PNG images to URLs" },
+            { name: "GIF to URL", href: "/tools/gif-to-url", description: "Convert animated GIFs to URLs" },
+            { name: "Bulk Upload", href: "/tools/bulk-upload", description: "Upload multiple images at once" },
+          ],
+        },
+        externalResources: {
+          title: "Helpful Resources",
+          resources: [
+            { name: "JPEG Format - Wikipedia", href: "https://en.wikipedia.org/wiki/JPEG", description: "Learn about JPEG compression and format specifications" },
+            { name: "MDN: Images in HTML", href: "https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML", description: "Best practices for using images in web development" },
+            { name: "Web.dev: Image Optimization", href: "https://web.dev/articles/choose-the-right-image-format", description: "Google's guide to choosing the right image format" },
+          ],
+        },
+        meta: {
+          title: "JPG to URL Converter - Free Online Tool | ImageToURL",
+          description: "Convert JPG images to shareable URLs instantly. Free online JPG to URL converter with no signup required. Upload JPEG files up to 10MB and get instant links.",
+          keywords: "jpg to url, jpeg to url, convert jpg to url, jpg image to url converter, jpg link generator",
+        },
+      },
     },
     pages: {
       privacy: {
@@ -478,60 +638,603 @@ const dictionaries = {
       titleGradient: "即刻获取链接",
       description: "拖放您的文件以即时生成可共享的URL。由全球边缘网络提供支持，实现闪电般的快速交付。",
     },
+    intro: {
+      title: "什么是图片转URL？",
+      content: "图片转URL是将图片文件上传到托管服务并接收可共享网页链接（URL）的过程。此URL可以嵌入网站、在社交媒体上分享，或用于电子邮件和文档。ImageToURL完全免费提供此服务，无需注册账号。",
+    },
+    blog: {
+      title: "博客",
+      readMore: "阅读更多",
+      readingTime: "{minutes} 分钟阅读",
+      postedOn: "发布于",
+      byAuthor: "作者",
+      relatedPosts: "相关文章",
+      categories: "文章分类",
+      tags: "标签",
+      sharePost: "分享文章",
+      tableOfContents: "文章目录",
+      allPosts: "全部文章",
+      noPosts: "未找到文章",
+      featured: "精选文章",
+      latestPosts: "最新文章",
+      searchPosts: "搜索文章...",
+      subtitle: "关于图片托管、优化和 Web 开发",
+    },
+    search: {
+      placeholder: "搜索文章、分类、标签...",
+      noResults: "未找到结果",
+      startTyping: "开始输入以搜索...",
+      navigate: "导航",
+      select: "选择",
+      close: "关闭",
+      typePost: "文章",
+      typeCategory: "分类",
+      typeTag: "标签",
+    },
+    auth: {
+      signIn: "登录",
+      signUp: "注册",
+      signOut: "退出",
+      email: "电子邮件",
+      password: "密码",
+      confirmPassword: "确认密码",
+      loginToAccess: "登录以访问您的上传",
+      createAccount: "创建账号",
+      alreadyHaveAccount: "已有账号？",
+      dontHaveAccount: "还没有账号？",
+    },
+    dashboard: {
+      title: "仪表板",
+      myUploads: "我的上传",
+      totalUploads: "总上传量",
+      storageUsed: "已使用存储",
+      noUploads: "暂无上传",
+      uploadFirst: "从首页上传您的第一张图片",
+      expiresIn: "过期时间",
+      setExpiry: "设置过期",
+      deleteUpload: "删除上传",
+      confirmDelete: "您确定要删除这张图片吗？",
+      deleteWarning: "这将从存储中永久删除图片。此操作无法撤销。",
+      cancel: "取消",
+      delete: "删除",
+      customExpiry: "设置自定义过期时间",
+      expiryDescription: "选择此图片应自动删除的时间",
+      quickPresets: "快速预设",
+      currentExpiry: "当前有效期",
+    },
+    uploadLimit: {
+      remaining: "您还剩 {count} 次上传机会",
+      limitReached: "已达到上传限制！登录以继续上传。",
+      benefits: "登录以便以后访问上传并管理 URL",
+      uploadsRemaining: "剩余上传次数。登录以获取无限上传！",
+    },
+    howTo: {
+      title: "如何将图片转换为URL",
+      steps: [
+        {
+          title: "选择您的图片",
+          description: "点击上传区域或拖放任何 JPG、PNG、GIF、SVG 或 WebP 文件（最大 10MB）",
+        },
+        {
+          title: "自动上传",
+          description: "您的图片会立即上传并分发到我们的全球 CDN 网络",
+        },
+        {
+          title: "复制您的 URL",
+          description: "点击复制按钮获取您的永久、可分享图片链接——随时随地使用",
+        },
+      ],
+    },
+    trust: {
+      title: "全球信任",
+      subtitle: "加入数百万依赖 ImageToURL 进行快速、安全图片托管的用户行列",
+      comingSoon: "评价即将推出",
+    },
+    testimonials: {
+      title: "用户评价",
+      items: [
+        {
+          name: "陈莎拉",
+          role: "前端开发工程师",
+          company: "TechFlow",
+          quote: "ImageToURL 已成为我工作流程中不可或缺的一部分。我每天都用它在文档和 Discord 机器人中嵌入图片。速度无与伦比！",
+          avatar: "SC",
+          rating: 5,
+        },
+        {
+          name: "马库斯·约翰逊",
+          role: "设计师",
+          company: "CreativeStudio",
+          quote: "无需注册，没有广告，只有快速的图片托管。正是我与客户快速分享原型所需的。全球 CDN 带来了巨大的差异。",
+          avatar: "MJ",
+          rating: 5,
+        },
+        {
+          name: "埃米莉·罗德里格斯",
+          role: "内容创作者",
+          company: "",
+          quote: "我试过很多图片托管服务，但 ImageToURL 是最简单的。上传，复制链接，完成。非常适合我的博客文章和社交媒体。",
+          avatar: "ER",
+          rating: 5,
+        },
+        {
+          name: "大卫·金",
+          role: "全栈开发工程师",
+          company: "StartupLabs",
+          quote: "API 清洁且文档齐全。不到一小时就集成到了我们的应用中。非常喜欢临时资产的自定义过期功能。",
+          avatar: "DK",
+          rating: 5,
+        },
+        {
+          name: "普里雅·帕特尔",
+          role: "电商经理",
+          company: "ShopWave",
+          quote: "我们在各大市场中使用 ImageToURL 托管产品图片。可靠、快速，且直接 URL 随处可用。强烈推荐！",
+          avatar: "PP",
+          rating: 4,
+        },
+        {
+          name: "亚历克斯·汤普森",
+          role: "Discord 机器人开发者",
+          company: "",
+          quote: "终于有一个能提供在 Discord 嵌入中正常工作的直接 URL 的图片托管了。不再有损坏的图片或重定向。改变游戏规则！",
+          avatar: "AT",
+          rating: 5,
+        },
+      ],
+    },
+    comparison: {
+      title: "对比我们的优势",
+      subtitle: "看看 ImageToURL 与热门图片托管服务的对比情况",
+    },
+    useCasesHighlights: {
+      title: "为每种场景而生",
+      subtitle: "从 Discord 机器人到电子商务，ImageToURL 为整个网络提供图片分享支持",
+    },
+    popularTools: {
+      title: "热门图片托管工具",
+      subtitle: "探索我们免费的图片转分享链接工具套件",
+    },
+    relatedTopics: {
+      title: "相关话题",
+    },
     upload: {
       clickToUpload: "点击上传或拖放",
-      fileTypes: "SVG、PNG、JPG或GIF（最大10MB）",
+      fileTypes: "SVG、PNG、JPG 或 GIF（最大 10MB）",
       secure: "安全加密",
-      cdn: "全球CDN",
+      cdn: "全球 CDN",
       errorInvalidType: "无效的文件类型。请上传图片。",
-      errorTooLarge: "文件太大。最大大小为10MB。",
+      errorTooLarge: "文件太大。最大大小为 10MB。",
       errorGeneral: "出现问题。",
-      shareableLink: "可共享链接",
+      shareableLink: "可分享链接",
       copy: "复制",
       copied: "已复制",
       uploadAnother: "上传另一个",
       openLink: "打开链接",
     },
     stats: {
-      imagesUploaded: "已上传图片",
+      imagesUploaded: "上传图片数量",
       uptime: "正常运行时间",
       latency: "延迟",
     },
     footer: {
-      copyright: "© 2023 ImageToURL Cloud. 保留所有权利。",
-      privacy: "隐私",
-      terms: "条款",
-      cookies: "Cookies",
+      copyright: "© 2024 ImageToURL Cloud. 保留所有权利。",
+      privacy: "隐私政策",
+      terms: "服务条款",
+      cookies: "Cookie 政策",
+      categories: {
+        converters: "图片转换器",
+        useCases: "使用场景",
+        company: "公司",
+        legal: "法律信息",
+      },
+      links: {
+        home: "首页",
+        blog: "博客",
+        about: "关于我们",
+        discord: "Discord 图片",
+        html: "HTML 和 CSS",
+        fantasy: "虚拟体育",
+        minecraft: "我的世界",
+      },
+      badge: "由全球 CDN 支持的免费图片转 URL 转换器",
     },
     meta: {
-      title: "免费图片转URL转换器 - 即时获取可分享链接 | ImageToURL",
-      description: "将任何图片即时转换为可分享的URL。100%免费图片托管，无需注册。上传JPG、PNG、GIF（最大10MB），通过全球CDN即时获取链接。",
-      keywords: "图片转url, 免费图片托管, 图片链接生成器, 图片上传获取链接, 图片转换器, 即时图片分享, 免费照片托管",
+      title: "图片转 URL 转换器 - 免费即时链接生成器 | ImageToURL",
+      description: "在几秒钟内将任何图片转换为 URL。免费图片托管，无需注册。上传最大 10MB 的 JPG、PNG、GIF、WebP。通过全球 CDN 获取即时分享链接。",
+      keywords: "图片转 URL, 转换图片为 URL, 图片 URL 转换器, 免费图片托管, 图片链接生成器, 照片转 URL, 上传图片获取链接, jpg 转 url, png 转 url, gif 转 url, 图片转链接, 图像转 URL, 在线图片托管, 可分享图片链接, 免费图片转 URL 转换器, 复制图片为 URL, 即时图片分享",
     },
     faq: {
       title: "常见问题",
       items: [
         {
-          question: "如何将图片转换为URL？",
-          answer: "只需将图片拖放到我们的上传区域或点击选择文件。您的图片将立即上传到我们的全球CDN，您将获得一个可分享的URL，可以随时随地使用。"
+          question: "如何将图片转换为 URL？",
+          answer: "只需将图片拖放到我们的上传区域或点击选择文件。您的图片将立即上传到我们的全球 CDN，您将获得一个可分享的 URL，可以随时随地使用。"
         },
         {
-          question: "ImageToURL完全免费吗？",
-          answer: "是的，ImageToURL基本使用完全免费。您可以无需创建账户上传最大10MB的图片。登录后可享受额外功能，如管理上传和设置自定义过期时间。"
+          question: "ImageToURL 完全免费吗？",
+          answer: "是的，ImageToURL 基本使用完全免费。您可以无需创建账户上传最大 10MB 的图片。登录后可享受额外功能，如管理上传和设置自定义过期时间。"
         },
         {
           question: "支持哪些图片格式？",
-          answer: "我们支持所有流行的图片格式，包括JPG/JPEG、PNG、GIF、SVG和WebP。每个文件最大可达10MB。"
+          answer: "我们支持所有流行的图片格式，包括 JPG/JPEG、PNG、GIF、SVG 和 WebP。每个文件最大可达 10MB。您可以立即将这些格式中的任何一种转换为可分享的 URL。"
         },
         {
           question: "我的图片会存储多长时间？",
-          answer: "匿名上传默认存储30天。登录用户可以设置自定义过期时间或永久保存图片。所有图片通过我们的全球CDN提供快速分发。"
+          answer: "匿名上传默认存储 30 天。登录用户可以设置自定义过期时间或永久保存图片。所有图片通过我们的全球 CDN 提供快速分发。"
         },
         {
           question: "我的数据安全吗？",
-          answer: "是的，所有上传都通过HTTPS加密传输。图片存储在企业级云基础设施上，正常运行时间达99.9%。我们不会向第三方出售或分享您的数据。"
+          answer: "是的，所有上传都通过 HTTPS 加密传输。图片存储在企业级云基础设施上，正常运行时间达 99.9%。我们不会向第三方出售或分享您的数据。"
+        },
+        {
+          question: "如何复制图片 URL？",
+          answer: "上传图片后，点击生成的 URL 旁的“复制”按钮。链接会自动复制到您的剪贴板，随时可以粘贴到任何地方——网站、电子邮件、社交媒体或文档。"
+        },
+        {
+          question: "我可以将 Base64 图片转换为 URL 吗？",
+          answer: "可以！使用我们的 Base64 转 URL 转换器工具，将 Base64 编码的图片转换为可分享的 URL。只需粘贴您的 Base64 字符串，即可获得托管在我们全球 CDN 上的即时图片链接。"
+        },
+        {
+          question: "如何为 Discord 获取图片 URL？",
+          answer: "将图片上传到 ImageToURL 并复制生成的链接。您可以直接在 Discord 聊天中粘贴此 URL，将其嵌入机器人，或用于自定义表情和服务器图标。我们的 URL 与 Discord 的图片嵌入完美兼容。"
+        },
+        {
+          question: "是否有用于图片转 URL 转换的 API？",
+          answer: "是的，我们为开发者提供了一个简单的 API，以便以编程方式上传图片并接收 URL。查看我们的 API 文档了解集成细节，包括 JavaScript、Python 等语言的代码示例。"
+        },
+        {
+          question: "如何批量上传图片并获取 URL？",
+          answer: "使用我们的批量上传工具一次上传多张图片。只需同时拖放最多 20 张图片，即可为每张图片获取分享链接。非常适合批量图片托管需求。"
+        },
+        {
+          question: "我可以将 ImageToURL 用于虚拟足球队的标志吗？",
+          answer: "当然可以！ImageToURL 非常适合为 ESPN、Yahoo 或任何虚拟体育平台创建自定义团队标志。上传您的标志图片，复制 URL，并将其粘贴到您的虚拟联赛设置中。"
+        },
+        {
+          question: "如何将图片转换为短链接？",
+          answer: "我们的图片 URL 已经过分享优化。当您上传图片时，我们会生成一个简洁的短 URL，易于分享和记忆。链接直接指向您托管的图片。"
+        },
+        {
+          question: "图片 URL 和 Base64 有什么区别？",
+          answer: "图片 URL 是指向您托管图片的网页链接，而 Base64 是将图片编码为文本数据。URL 更适合分享和网页使用，因为它们更短且更高效。使用我们的工具可以在不同格式之间转换。"
         }
       ]
+    },
+    tools: {
+      "jpg-to-url": {
+        title: "JPG转URL转换器",
+        subtitle: "免费在线 JPEG 图片托管",
+        description: "立即将您的 JPG 和 JPEG 图片转换为可分享的 URL。无需注册，只需上传并分享。",
+        introduction: {
+          title: "了解 JPG 转 URL 转换",
+          paragraphs: [
+            "JPG (Joint Photographic Experts Group) 是网络上使用最广泛的图片格式，以其对照片和复杂图片的出色压缩而闻名。当您需要在网上分享 JPG 图片时，将其转换为 URL 可以让您在任何地方嵌入——从网站和电子邮件到社交媒体帖子和文档。",
+            "我们的免费 JPG 转 URL 转换器可立即将您的 JPEG 文件上传到全球内容分发网络 (CDN)，生成永久、可分享的链接。与临时文件共享服务不同，这些 URL 旨在实现可靠性和速度，边缘服务器确保全球浏览者的快速加载时间。",
+            "无论您是嵌入产品照片的博主、测试图片显示的开发人员，还是只想与朋友分享回忆，将 JPG 转换为 URL 都是让图片在网上可访问的最有效方式，无需处理文件附件或大小限制。",
+          ],
+        },
+        features: {
+          title: "为什么使用我们的 JPG 转 URL 转换器？",
+          items: [
+            "100% 免费，无隐藏费用",
+            "无需账号或注册",
+            "支持 JPG 和 JPEG 格式",
+            "支持高达 10MB 的文件",
+            "即时生成可分享链接",
+            "全球 CDN 实现快速交付",
+            "99.9% 上线时间保证",
+            "安全 HTTPS 链接",
+          ],
+        },
+        howItWorks: {
+          title: "如何将 JPG 转换为 URL",
+          steps: [
+            {
+              title: "上传您的 JPG",
+              description: "拖放您的 JPG 文件或点击浏览。我们接受高达 10MB 的 JPG 和 JPEG 文件。",
+            },
+            {
+              title: "获取您的 URL",
+              description: "您的图片将立即上传到我们的全球 CDN。自动生成可分享的 URL。",
+            },
+            {
+              title: "随处分享",
+              description: "复制 URL 并将其用于任何地方——网站、社交媒体、电子邮件或文档。",
+            },
+          ],
+        },
+        useCases: {
+          title: "JPG URL 的常见用例",
+          items: [
+            { title: "网站开发", description: "直接在 HTML 中嵌入产品图片、作品集照片或博客插图，无需担心托管基础设施。" },
+            { title: "电子邮件营销", description: "在电子邮件简报中包含可靠的图片链接，不受附件限制或损坏的内联图片影响。" },
+            { title: "社交媒体分享", description: "分享具有直接链接的高质量照片，在所有主要平台上都能正确预览。" },
+            { title: "文档和维基", description: "向 README 文件、帮助文档和内部维基添加屏幕截图、图表和视觉辅助工具。" },
+            { title: "电子商务列表", description: "在 eBay、Etsy 或 Amazon 等多个市场平台上托管产品图片。" },
+            { title: "虚拟体育和游戏", description: "为 ESPN、Yahoo Fantasy, Discord 和游戏平台创建自定义团队标志和头像。" },
+          ],
+        },
+        tips: {
+          title: "JPG 托管专业提示",
+          items: [
+            "在上传前优化您的 JPG 以减小文件大小而无明显质量损失——TinyJPG 等工具可以提供帮助。",
+            "在仪表板中管理多张图片时，使用描述性文件名以便更好地组织。",
+            "登录以保持您的图片 URL 永久有效，并获得过期控制和文件夹管理权限。",
+            "对于需要透明背景的图片，请使用 PNG 格式——JPG 不支持透明度。",
+            "考虑使用 WebP 格式，在现代浏览器上保持质量的同时获得更小的文件大小。",
+            "在无痕窗口中测试您的图片 URL，确保它们在分享前可公开访问。",
+          ],
+        },
+        faq: {
+          title: "常见问题解答",
+          items: [
+            {
+              question: "如何将 JPG 图片转换为 URL？",
+              answer: "只需将您的 JPG 文件拖放到上传区域 or 点击选择文件。您的图片将立即上传，您将收到一个可分享的 URL。",
+            },
+            {
+              question: "这个 JPG 转 URL 转换器免费吗？",
+              answer: "是的，我们的 JPG 转 URL 转换器 100% 免费。您可以上传高达 10MB 的 JPG 图片，无需创建账号。",
+            },
+            {
+              question: "JPG 和 JPEG 有什么区别？",
+              answer: "JPG 和 JPEG 是同一种格式——JPG 只是一个较短的文件扩展名。我们的转换器支持 .jpg 和 .jpeg 文件。",
+            },
+            {
+              question: "我的 JPG URL 会保持激活多久？",
+              answer: "匿名上传保留 30 天。免费登录即可无限期保留您的图片并管理过期时间。",
+            },
+            {
+              question: "我可以在我的网站上使用 JPG URL 吗？",
+              answer: "是的！我们生成的 URL 可以用于任何地方——HTML img 标签、CSS 背景、社交媒体、电子邮件等。",
+            },
+            {
+              question: "将 JPG 转换为 URL 会压缩或降低图片质量吗？",
+              answer: "不会，我们完全按照上传的原始图片质量保存。转换过程中没有重新压缩或质量损失。您的 JPG 看起来将与原始文件完全一致。",
+            },
+            {
+              question: "我可以一次将多个 JPG 文件转换为 URL 吗？",
+              answer: "是的！使用我们的批量上传工具同时上传多个 JPG 图片。您将收到每个文件的单独 URL，并可以一次复制所有 URL 以方便分享。",
+            },
+            {
+              question: "我的网站使用 JPG URL 对 SEO 友好吗？",
+              answer: "是的，我们的 URL 是干净的，并带有正确的图片扩展名。它们包含适当的 Content-Type 头部，并从快速 CDN 基础设施提供，这有助于提高页面加载速度——这是一个重要的 SEO 因素。",
+            },
+          ],
+        },
+        relatedTools: {
+          title: "相关工具",
+          tools: [
+            { name: "PNG 转 URL", href: "/tools/png-to-url", description: "将 PNG 图片转换为 URL" },
+            { name: "GIF 转 URL", href: "/tools/gif-to-url", description: "将动态 GIF 转换为 URL" },
+            { name: "批量上传", href: "/tools/bulk-upload", description: "一次上传多张图片" },
+          ],
+        },
+        externalResources: {
+          title: "有用资源",
+          resources: [
+            { name: "JPEG 格式 - 维基百科", href: "https://en.wikipedia.org/wiki/JPEG", description: "了解 JPEG 压缩和格式规范" },
+            { name: "MDN: HTML 中的图片", href: "https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML", description: "在 Web 开发中使用图片的最佳实践" },
+            { name: "Web.dev: 图片优化", href: "https://web.dev/articles/choose-the-right-image-format", description: "Google 关于选择正确图片格式的指南" },
+          ],
+        },
+        meta: {
+          title: "JPG 转 URL 转换器 - 免费在线工具 | ImageToURL",
+          description: "立即将 JPG 图片转换为可分享的 URL。免费在线 JPG 转 URL 转换器，无需注册。上传高达 10MB 的 JPEG 文件并获取即时链接。",
+          keywords: "jpg转url, jpeg转url, 转换jpg为url, jpg图片转url转换器, jpg链接生成器",
+        },
+      },
+    },
+    pages: {
+      privacy: {
+        metaTitle: "隐私政策 | ImageToURL",
+        metaDescription: "了解 ImageToURL 如何收集、使用和保护您的个人信息。",
+        title: "隐私政策",
+        lastUpdated: "最近更新：2024年12月",
+        sections: [
+          { title: "我们收集的信息", content: "我们收集您直接提供的信息，例如您登录时的电子邮件地址。我们还会在您使用我们的服务时自动收集某些信息，包括您的 IP 地址和浏览器类型。" },
+          { title: "我们如何使用您的信息", content: "我们使用收集的信息来提供和改进我们的图片托管服务，就您的账号与您沟通，并确保我们平台的安全。" },
+          { title: "数据存储", content: "您上传的图片存储在具有加密功能的工业级云基础设施上。匿名上传会在 30 天后自动删除。登录用户可以管理其上传保留设置。" },
+          { title: "Cookies", content: "我们使用必要的 Cookie 来启用核心功能，如用户身份验证。我们不使用跟踪 Cookie 进行广告目的。" },
+          { title: "第三方服务", content: "我们使用 Cloudflare 提供 CDN 和安全服务，使用 Supabase 进行身份验证。这些服务有其自身的隐私政策。" },
+          { title: "您的权利", content: "您可以随时联系我们，要求访问、更正或删除您的个人数据。" },
+          { title: "联系我们", content: "如果您对本隐私政策有疑问，请通过 privacy@imagetourl.cloud 联系我们" }
+        ]
+      },
+      terms: {
+        metaTitle: "服务条款 | ImageToURL",
+        metaDescription: "阅读使用 ImageToURL 图片托管服务的条款和条件。",
+        title: "服务条款",
+        lastUpdated: "最近更新：2024年12月",
+        sections: [
+          { title: "接受条款", content: "访问或使用 ImageToURL，即表示您同意受这些服务条款的约束。如果您不同意这些条款，请不要使用我们的服务。" },
+          { title: "服务说明", content: "ImageToURL 提供免费的图片托管和 URL 生成服务。我们保留随时修改、暂停或终止服务任何部分的权利。" },
+          { title: "用户责任", content: "您对您上传的所有内容负责。您不得上传非法内容、恶意软件或侵犯他人知识产权的内容。" },
+          { title: "禁止内容", content: "严禁上传以下内容：非法材料、恶意软件或病毒、侵犯版权的内容、涉及未成年人的成人内容、宣传暴力或仇恨的内容。" },
+          { title: "账号终止", content: "我们保留终止违反这些条款、上传禁止内容或以任何方式滥用服务的账号的权利。" },
+          { title: "责任限制", content: "ImageToURL 按“原样”提供，不作任何保证。我们不对因您使用服务而导致的任何数据丢失、服务中断或损害负责。" },
+          { title: "条款变更", content: "我们可能会不时更新这些条款。变更后继续使用服务即视为接受新条款。" }
+        ]
+      },
+      cookies: {
+        metaTitle: "Cookie 政策 | ImageToURL",
+        metaDescription: "了解 ImageToURL 如何在我们的网站上使用 Cookie。",
+        title: "Cookie 政策",
+        lastUpdated: "最近更新：2024年12月",
+        intro: "本 Cookie 政策解释了当您访问我们的网站时，ImageToURL 如何使用 Cookie 和类似技术。",
+        sections: [
+          { title: "什么是 Cookie？", content: "Cookie 是您访问网站时存储在您设备上的小文本文件。它们帮助网站记住您的偏好并改善您的体验。" },
+          { title: "必要 Cookie", content: "我们使用必要的 Cookie 使网站正常运行。这些包括用于保持您登录状态的身份验证 Cookie 和用于防范威胁的安全 Cookie。" },
+          { title: "功能性 Cookie", content: "我们使用功能性 Cookie 来记住您的偏好，例如您选择的语言和主题（明亮/黑暗模式）。" },
+          { title: "分析", content: "我们使用 Vercel Analytics 来了解访问者如何与我们的网站互动。这有助于我们改善用户体验。这些分析以隐私为中心，不使用 Cookie 进行跟踪。" },
+          { title: "第三方 Cookie", content: "我们不使用第三方广告 Cookie。我们的身份验证服务 (Supabase) 可能会为会话管理设置 Cookie。" },
+          { title: "管理 Cookie", content: "您可以通过浏览器设置控制 Cookie。请注意，禁用必要 Cookie 可能会影响网站的功能。" }
+        ]
+      },
+      about: {
+        metaTitle: "关于 ImageToURL - 免费图片托管服务",
+        metaDescription: "了解 ImageToURL，这是一个提供由全球 CDN 支持的即时可分享链接的免费图片托管平台。",
+        title: "关于 ImageToURL",
+        subtitle: "免费、快速且可靠的图片托管",
+        mission: { title: "我们的使命", content: "我们相信分享图片应该是简单、快速且免费的。ImageToURL 旨在为开发者、设计师和普通用户提供一种轻松的方式来上传图片并获得即时可分享的链接。" },
+        features: [
+          { icon: "globe", title: "全球 CDN", description: "图片从全球边缘节点提供，确保在任何地方都能闪电般快速交付。" },
+          { icon: "zap", title: "即时链接", description: "上传任何图片，几秒钟内即可获得可分享的 URL。无需等待，无需复杂操作。" },
+          { icon: "shield", title: "安全私密", description: "所有上传均经过加密。我们不会出售您的数据，也不会通过广告跟踪您。" },
+          { icon: "clock", title: "灵活保留", description: "登录即可管理图片的存储时长，从 1 小时到永久。" }
+        ],
+        team: { title: "用心打造", content: "ImageToURL 是一个专注于简单性和用户体验的个人项目。我们不断根据用户反馈进行改进。" },
+        contact: { title: "联系我们", content: "有问题、反馈或合作咨询？我们很乐意听到您的声音。", email: "contact@imagetourl.cloud" }
+      },
+      pricing: {
+        metaTitle: "价格与功能 - ImageToURL",
+        metaDescription: "探索 ImageToURL 功能。为登录用户提供无限上传的免费图片托管。",
+        title: "简单透明的价格",
+        subtitle: "从免费开始，一直免费。ImageToURL 旨在让每个人都能使用。",
+        plans: [
+          {
+            name: "匿名用户",
+            price: "免费",
+            description: "无需账号",
+            features: [
+              { text: "每天 5 次上传", included: true },
+              { text: "每个文件最大 10MB", included: true },
+              { text: "30 天保留期", included: true },
+              { text: "全球 CDN 分发", included: true },
+              { text: "管理上传", included: false },
+              { text: "自定义过期", included: false }
+            ],
+            cta: "开始上传",
+            ctaLink: "/",
+            highlighted: false
+          },
+          {
+            name: "登录用户",
+            price: "免费",
+            description: "创建一个免费账号",
+            features: [
+              { text: "无限次上传", included: true },
+              { text: "每个文件最大 10MB", included: true },
+              { text: "自定义保留时间 (1小时 - 永久)", included: true },
+              { text: "全球 CDN 分发", included: true },
+              { text: "管理所有上传", included: true },
+              { text: "访问仪表板", included: true }
+            ],
+            cta: "免费注册",
+            ctaLink: "/auth/login",
+            highlighted: true
+          }
+        ],
+        faq: { title: "有问题？", content: "对我们的功能有疑问吗？查看主页上的常见问题或联系我们。" }
+      }
+    },
+    aboutBoopul: {
+      meta: {
+        title: "关于 Boopul | AI 创作者与无代码探索者",
+        description: "了解 Boopul - 一位专注于 AI 工作流、自动化和个人发展的 AI 驱动创作者、无代码探索者和自律建设者。",
+        keywords: "AI 创作者, 无代码, Web 开发, 自动化, 个人发展, 健身, 自律",
+        ogTitle: "关于 Boopul | AI 创作者与无代码探索者",
+        ogDescription: "了解 Boopul - 一位专注于 AI 工作流、自动化和个人发展的 AI 驱动创作者、无代码探索者和自律建设者。",
+      },
+      hero: {
+        badge: "充满热情地打造",
+        title: "嗨，我是 Boopul 👋",
+        description: "我是一个 AI 驱动的创作者、无代码探索者和自律的建设者，我相信坚持胜过天赋，行动胜过意图。",
+      },
+      story: {
+        title: "我的故事",
+        subtitle: "塑造今日之我的旅程",
+        content: "我的旅程并非一帆风顺，也没有什么特权。我自幼资源有限，早期学业艰辛，通过坚持和自学支付了自己的大学学费。这些经历塑造了我今天的思考、工作和建设方式——保持清晰、韧性并专注于长期增长。",
+      },
+      whatIDo: {
+        title: "我的工作",
+        subtitle: "我喜欢在 AI、无代码工具、设计、自动化和个人发展的交汇点工作",
+        cards: {
+          apps: {
+            title: "应用与工具",
+            description: "利用 AI、无代码和轻量化技术构建小型应用、工具和网站",
+          },
+          ai: {
+            title: "AI 工作流",
+            description: "尝试通过 AI 工作流实现创意自动化，简化复杂任务",
+          },
+          digital: {
+            title: "数字资产",
+            description: "设计并为数字资产和创意项目做出贡献",
+          },
+          self: {
+            title: "自我提升",
+            description: "创作关于自律、健身、自我提升和斯多葛学派思考的内容",
+          },
+          discipline: {
+            title: "自律与健身",
+            description: "定期训练，遵循规律作息，将身体健康视为一切的基础",
+          },
+          comm: {
+            title: "沟通交流",
+            description: "不断提高英语沟通能力和思维的清晰度",
+          },
+        },
+        footer: "我偏好实践执行而非理论，偏好整洁系统而非噪音，偏好稳步前进而非走捷径。",
+      },
+      philosophy: {
+        title: "个人哲学",
+        items: [
+          "从小处着手。",
+          "保持一致性。",
+          "默默建设。",
+          "让结果说话。",
+        ],
+      },
+      projects: {
+        title: "我的其他项目",
+        visit: "访问 {title}",
+        items: {
+          extractpics: {
+            title: "ExtractPics",
+            description: "立即从任何网站提取并下载图片。支持最多 5 个 URL 的批量处理，快速与深度扫描模式，按文件类型和尺寸进行智能过滤。",
+          },
+          imagetourl: {
+            title: "ImageToURL",
+            description: "立即将任何图片转换为 URL。免费图片托管，无需注册。上传最大 10MB 的 JPG、PNG、GIF、SVG、WebP，并通过全球 CDN 交付。",
+          },
+          storiespdf: {
+            title: "StoriesPDF",
+            description: "发现适合所有年龄段的迷人故事。随时随地下载并享受精心制作的 PDF 故事。非常适合睡前阅读和讲故事。",
+          },
+          tamilkathai: {
+            title: "TamilKathai",
+            description: "欢迎来到 Tamil Kathai - 精彩的泰米尔故事合集。探索丰富的文化叙事和泰米尔语的传统故事。",
+          },
+        },
+      },
+      connect: {
+        title: "建立联系",
+        description: "如果您对 AI、无代码工具、创意技术、健身自律或个人成长感兴趣——欢迎，您找对地方了。",
+        items: {
+          github: {
+            title: "GitHub",
+            description: "项目、实验与代码",
+          },
+          instaPersonal: {
+            title: "个人 Instagram",
+            description: "生活、健身与日常点滴",
+          },
+          instaDev: {
+            title: "开发者 Instagram",
+            description: "无代码、AI 实验、创作者生活",
+          },
+          email: {
+            title: "电子邮件",
+            description: "blog.boopul@gmail.com",
+          },
+          portfolio: {
+            title: "作品集",
+            description: "查看我的完整作品和项目",
+          },
+        },
+      },
     },
   },
   hi: {
@@ -552,6 +1255,10 @@ const dictionaries = {
       titleGradient: "तुरंत लिंक प्राप्त करें।",
       description:
         "तुरंत साझा करने योग्य URL उत्पन्न करने के लिए अपनी फ़ाइलों को ड्रैग और ड्रॉप करें। बिजली-तेज़ वितरण के लिए वैश्विक एज नेटवर्क द्वारा संचालित।",
+    },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
     },
     upload: {
       clickToUpload: "अपलोड करने के लिए क्लिक करें या ड्रैग और ड्रॉप करें",
@@ -736,6 +1443,10 @@ const dictionaries = {
       description:
         "Arrastra y suelta tus archivos para generar una URL compartible al instante. Impulsado por una red edge global para entrega ultrarrápida.",
     },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
+    },
     upload: {
       clickToUpload: "Haz clic para subir o arrastra y suelta",
       fileTypes: "SVG, PNG, JPG o GIF (máx. 10MB)",
@@ -812,6 +1523,10 @@ const dictionaries = {
       description:
         "اسحب وأفلت ملفاتك لإنشاء عنوان URL قابل للمشاركة على الفور. مدعوم بشبكة حافة عالمية للتسليم فائق السرعة.",
     },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
+    },
     upload: {
       clickToUpload: "انقر للتحميل أو اسحب وأفلت",
       fileTypes: "SVG أو PNG أو JPG أو GIF (بحد أقصى 10 ميجابايت)",
@@ -862,6 +1577,10 @@ const dictionaries = {
       titleGradient: "obtenez des liens instantanés.",
       description:
         "Glissez et déposez vos fichiers pour générer une URL partageable instantanément. Propulsé par un réseau edge mondial pour une livraison ultra-rapide.",
+    },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
     },
     upload: {
       clickToUpload: "Cliquez pour télécharger ou glisser-déposer",
@@ -914,6 +1633,10 @@ const dictionaries = {
       description:
         "তাৎক্ষণিকভাবে শেয়ারযোগ্য URL তৈরি করতে আপনার ফাইলগুলি ড্র্যাগ এবং ড্রপ করুন। বিদ্যুৎ-দ্রুত ডেলিভারির জন্য একটি বৈশ্বিক এজ নেটওয়ার্ক দ্বারা চালিত।",
     },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
+    },
     upload: {
       clickToUpload: "আপলোড করতে ক্লিক করুন বা ড্র্যাগ এবং ড্রপ করুন",
       fileTypes: "SVG, PNG, JPG বা GIF (সর্বোচ্চ 10MB)",
@@ -964,6 +1687,10 @@ const dictionaries = {
       titleGradient: "obtenha links instantâneos.",
       description:
         "Arraste e solte seus arquivos para gerar um URL compartilhável instantaneamente. Alimentado por uma rede edge global para entrega ultrarrápida.",
+    },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
     },
     upload: {
       clickToUpload: "Clique para enviar ou arraste e solte",
@@ -1016,6 +1743,10 @@ const dictionaries = {
       description:
         "Перетащите файлы, чтобы мгновенно создать общедоступный URL. Работает на глобальной пограничной сети для молниеносной доставки.",
     },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
+    },
     upload: {
       clickToUpload: "Нажмите для загрузки или перетащите",
       fileTypes: "SVG, PNG, JPG или GIF (макс. 10МБ)",
@@ -1066,6 +1797,10 @@ const dictionaries = {
       titleGradient: "فوری لنکس حاصل کریں۔",
       description:
         "فوری طور پر قابل اشتراک URL بنانے کے لیے اپنی فائلوں کو ڈریگ اور ڈراپ کریں۔ بجلی کی تیز رفتار ترسیل کے لیے عالمی ایج نیٹ ورک سے تقویت یافتہ۔",
+    },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
     },
     upload: {
       clickToUpload: "اپ لوڈ کرنے کے لیے کلک کریں یا ڈریگ اور ڈراپ کریں",
@@ -1118,6 +1853,10 @@ const dictionaries = {
       description:
         "Seret dan jatuhkan file Anda untuk menghasilkan URL yang dapat dibagikan secara instan. Didukung oleh jaringan edge global untuk pengiriman secepat kilat.",
     },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
+    },
     upload: {
       clickToUpload: "Klik untuk mengunggah atau seret dan jatuhkan",
       fileTypes: "SVG, PNG, JPG atau GIF (maks. 10MB)",
@@ -1168,6 +1907,10 @@ const dictionaries = {
       titleGradient: "sofort Links erhalten.",
       description:
         "Ziehen Sie Ihre Dateien per Drag & Drop, um sofort eine teilbare URL zu generieren. Betrieben von einem globalen Edge-Netzwerk für blitzschnelle Lieferung.",
+    },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
     },
     upload: {
       clickToUpload: "Klicken Sie zum Hochladen oder ziehen Sie per Drag & Drop",
@@ -1220,6 +1963,10 @@ const dictionaries = {
       description:
         "ファイルをドラッグ&ドロップして、共有可能なURLを即座に生成します。グローバルエッジネットワークによる超高速配信。",
     },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
+    },
     upload: {
       clickToUpload: "クリックしてアップロードまたはドラッグ&ドロップ",
       fileTypes: "SVG、PNG、JPGまたはGIF（最大10MB）",
@@ -1270,6 +2017,10 @@ const dictionaries = {
       titleGradient: "pata viungo papo hapo.",
       description:
         "Kokota na udondoshe faili zako ili kutengeneza URL inayoweza kushirikiwa papo hapo. Inaendeshwa na mtandao wa kimataifa wa edge kwa utoaji wa haraka kama umeme.",
+    },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
     },
     upload: {
       clickToUpload: "Bonyeza ili kupakia au kokota na udondoshe",
@@ -1322,6 +2073,10 @@ const dictionaries = {
       description:
         "त्वरित शेअर करण्यायोग्य URL तयार करण्यासाठी तुमच्या फायली ड्रॅग आणि ड्रॉप करा. विजेच्या वेगाने वितरणासाठी जागतिक एज नेटवर्कद्वारे समर्थित.",
     },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
+    },
     upload: {
       clickToUpload: "अपलोड करण्यासाठी क्लिक करा किंवा ड्रॅग आणि ड्रॉप करा",
       fileTypes: "SVG, PNG, JPG किंवा GIF (कमाल 10MB)",
@@ -1372,6 +2127,10 @@ const dictionaries = {
       titleGradient: "తక్షణ లింక్‌లను పొందండి.",
       description:
         "తక్షణమే షేర్ చేయగల URL ను రూపొందించడానికి మీ ఫైల్‌లను డ్రాగ్ మరియు డ్రాప్ చేయండి. మెరుపు-వేగ డెలివరీ కోసం ప్రపంచ ఎడ్జ్ నెట్‌వర్క్ ద్వారా శక్తివంతం.",
+    },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
     },
     upload: {
       clickToUpload: "అప్‌లోడ్ చేయడానికి క్లిక్ చేయండి లేదా డ్రాగ్ మరియు డ్రాప్ చేయండి",
@@ -1424,6 +2183,10 @@ const dictionaries = {
       description:
         "Anında paylaşılabilir bir URL oluşturmak için dosyalarınızı sürükleyip bırakın. Şimşek hızında teslimat için küresel bir edge ağı tarafından desteklenmektedir.",
     },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
+    },
     upload: {
       clickToUpload: "Yüklemek için tıklayın veya sürükleyip bırakın",
       fileTypes: "SVG, PNG, JPG veya GIF (maks. 10MB)",
@@ -1474,6 +2237,10 @@ const dictionaries = {
       titleGradient: "உடனடி இணைப்புகளைப் பெறுங்கள்.",
       description:
         "பகிரக்கூடிய URL ஐ உடனடியாக உருவாக்க உங்கள் கோப்புகளை இழுத்து விடவும். மின்னல் வேக விநியோகத்திற்கு உலகளாவிய எட்ஜ் நெட்வொர்க் மூலம் இயங்குகிறது.",
+    },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
     },
     upload: {
       clickToUpload: "பதிவேற்ற கிளிக் செய்யவும் அல்லது இழுத்து விடவும்",
@@ -1526,6 +2293,10 @@ const dictionaries = {
       description:
         "Kéo và thả tệp của bạn để tạo URL có thể chia sẻ ngay lập tức. Được hỗ trợ bởi mạng lưới edge toàn cầu để phân phối nhanh như chớp.",
     },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
+    },
     upload: {
       clickToUpload: "Nhấp để tải lên hoặc kéo và thả",
       fileTypes: "SVG, PNG, JPG hoặc GIF (tối đa 10MB)",
@@ -1576,6 +2347,10 @@ const dictionaries = {
       titleGradient: "즉시 링크를 받으세요.",
       description:
         "파일을 드래그 앤 드롭하여 즉시 공유 가능한 URL을 생성하세요. 초고속 전송을 위한 글로벌 엣지 네트워크로 구동됩니다.",
+    },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
     },
     upload: {
       clickToUpload: "클릭하여 업로드하거나 드래그 앤 드롭하세요",
@@ -1628,6 +2403,10 @@ const dictionaries = {
       description:
         "Trascina e rilascia i tuoi file per generare un URL condivisibile istantaneamente. Alimentato da una rete edge globale per una consegna velocissima.",
     },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
+    },
     upload: {
       clickToUpload: "Clicca per caricare o trascina e rilascia",
       fileTypes: "SVG, PNG, JPG o GIF (max. 10MB)",
@@ -1678,6 +2457,10 @@ const dictionaries = {
       titleGradient: "รับลิงก์ทันที",
       description: "ลากและวางไฟล์ของคุณเพื่อสร้าง URL ที่แชร์ได้ทันที ขับเคลื่อนโดยเครือข่ายเอดจ์ทั่วโลกเพื่อการส่งมอบที่รวดเร็วเหมือนฟ้าแลบ",
     },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
+    },
     upload: {
       clickToUpload: "คลิกเพื่ออัปโหลดหรือลากและวาง",
       fileTypes: "SVG, PNG, JPG หรือ GIF (สูงสุด 10MB)",
@@ -1727,6 +2510,10 @@ const dictionaries = {
       titleGradient: "તાત્કાલિક લિંક્સ મેળવો.",
       description:
         "તાત્કાલિક શેર કરી શકાય તેવા URL બનાવવા માટે તમારી ફાઇલોને ખેંચો અને મૂકો. વીજળી-ઝડપી વિતરણ માટે વૈશ્વિક એજ નેટવર્ક દ્વારા સંચાલિત.",
+    },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
     },
     upload: {
       clickToUpload: "અપલોડ કરવા માટે ક્લિક કરો અથવા ખેંચો અને મૂકો",
@@ -1779,6 +2566,10 @@ const dictionaries = {
       description:
         "Przeciągnij i upuść pliki, aby natychmiast wygenerować możliwy do udostępnienia adres URL. Zasilane przez globalną sieć brzegową dla błyskawicznej dostawy.",
     },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
+    },
     upload: {
       clickToUpload: "Kliknij, aby przesłać lub przeciągnij i upuść",
       fileTypes: "SVG, PNG, JPG lub GIF (maks. 10MB)",
@@ -1829,6 +2620,10 @@ const dictionaries = {
       titleGradient: "отримуйте миттєві посилання.",
       description:
         "Перетягніть файли, щоб миттєво створити загальнодоступне посилання. Працює на глобальній граничній мережі для блискавичної доставки.",
+    },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
     },
     upload: {
       clickToUpload: "Натисніть для завантаження або перетягніть",
@@ -1881,6 +2676,10 @@ const dictionaries = {
       description:
         "فایل‌های خود را بکشید و رها کنید تا فوراً یک URL قابل اشتراک‌گذاری ایجاد شود. توسط یک شبکه لبه جهانی برای تحویل فوق‌سریع پشتیبانی می‌شود.",
     },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
+    },
     upload: {
       clickToUpload: "برای آپلود کلیک کنید یا بکشید و رها کنید",
       fileTypes: "SVG، PNG، JPG یا GIF (حداکثر 10MB)",
@@ -1931,6 +2730,10 @@ const dictionaries = {
       titleGradient: "തൽക്ഷണ ലിങ്കുകൾ നേടുക.",
       description:
         "പങ്കിടാവുന്ന URL തൽക്ഷണം സൃഷ്‌ടിക്കുന്നതിന് നിങ്ങളുടെ ഫയലുകൾ വലിച്ചിടുക. മിന്നൽ വേഗത്തിലുള്ള ഡെലിവറിക്കായി ആഗോള എഡ്ജ് നെറ്റ്‌വർക്ക് നൽകുന്നു.",
+    },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
     },
     upload: {
       clickToUpload: "അപ്‌ലോഡ് ചെയ്യാൻ ക്ലിക്ക് ചെയ്യുക അല്ലെങ്കിൽ വലിച്ചിടുക",
@@ -1983,6 +2786,10 @@ const dictionaries = {
       description:
         "ತಕ್ಷಣ ಹಂಚಿಕೊಳ್ಳಬಹುದಾದ URL ಅನ್ನು ರಚಿಸಲು ನಿಮ್ಮ ಫೈಲ್‌ಗಳನ್ನು ಡ್ರ್ಯಾಗ್ ಮತ್ತು ಡ್ರಾಪ್ ಮಾಡಿ. ಮಿಂಚಿನ ವೇಗದ ವಿತರಣೆಗಾಗಿ ಜಾಗತಿಕ ಎಡ್ಜ್ ನೆಟ್‌ವರ್ಕ್‌ನಿಂದ ಚಾಲಿತ.",
     },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
+    },
     upload: {
       clickToUpload: "ಅಪ್‌ಲೋಡ್ ಮಾಡಲು ಕ್ಲಿಕ್ ಮಾಡಿ ಅಥವಾ ಡ್ರ್ಯಾಗ್ ಮತ್ತು ಡ್ರಾಪ್ ಮಾಡಿ",
       fileTypes: "SVG, PNG, JPG ಅಥವಾ GIF (ಗರಿಷ್ಠ 10MB)",
@@ -2033,6 +2840,10 @@ const dictionaries = {
       titleGradient: "ତୁରନ୍ତ ଲିଙ୍କ୍ ପାଆନ୍ତୁ।",
       description:
         "ତୁରନ୍ତ ଶେୟାର କରିବା ଯୋଗ୍ୟ URL ସୃଷ୍ଟି କରିବାକୁ ଆପଣଙ୍କର ଫାଇଲଗୁଡ଼ିକୁ ଡ୍ରାଗ୍ ଏବଂ ଡ୍ରପ୍ କରନ୍ତୁ। ବିଦ୍ୟୁତ୍-ଦ୍ରୁତ ବିତରଣ ପାଇଁ ବିଶ୍ୱବ୍ୟାପୀ ଏଜ୍ ନେଟୱାର୍କ ଦ୍ୱାରା ଚାଳିତ।",
+    },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
     },
     upload: {
       clickToUpload: "ଅପଲୋଡ୍ କରିବାକୁ କ୍ଲିକ୍ କରନ୍ତୁ କିମ୍ବା ଡ୍ରାଗ୍ ଏବଂ ଡ୍ରପ୍ କରନ୍ତୁ",
@@ -2085,6 +2896,10 @@ const dictionaries = {
       description:
         "ချက်ချင်းမျှဝေနိုင်သော URL ကိုဖန်တီးရန် သင့်ဖိုင်များကို ဆွဲထည့်ပါ။ မြန်ဆန်သောပို့ဆောင်မှုအတွက် ကမ္ဘာလုံးဆိုင်ရာ edge ကွန်ရက်ဖြင့် စွမ်းအားပေးထားသည်။",
     },
+    intro: {
+      title: "What is Image to URL?",
+      content: "Image to URL is the process of uploading an image file to a hosting service and receiving a shareable web link (URL) that anyone can access. This URL can be embedded in websites, shared on social media, or used in emails and documents. ImageToURL provides this service completely free with no account required.",
+    },
     upload: {
       clickToUpload: "တင်ရန် နှိပ်ပါ သို့မဟုတ် ဆွဲထည့်ပါ",
       fileTypes: "SVG, PNG, JPG သို့မဟုတ် GIF (အများဆုံး 10MB)",
@@ -2119,8 +2934,12 @@ const dictionaries = {
   },
 } as const
 
-export async function getDictionary(locale: Locale) {
-  return dictionaries[locale] || dictionaries.en
+type EnDictionary = (typeof dictionaries)["en"]
+
+export async function getDictionary(locale: Locale): Promise<EnDictionary> {
+  const dict = dictionaries[locale] || dictionaries.en
+  // Spread English defaults so missing top-level keys (e.g. faq) fall back to English
+  return { ...dictionaries.en, ...dict } as EnDictionary
 }
 
-export type Dictionary = Awaited<ReturnType<typeof getDictionary>>
+export type Dictionary = EnDictionary

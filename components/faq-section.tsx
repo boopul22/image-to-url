@@ -14,7 +14,7 @@ interface FAQItem {
 
 interface FAQSectionProps {
   title: string
-  items: FAQItem[]
+  items: readonly FAQItem[]
 }
 
 export function FAQSection({ title, items }: FAQSectionProps) {

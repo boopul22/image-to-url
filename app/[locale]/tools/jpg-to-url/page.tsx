@@ -13,19 +13,21 @@ export async function generateMetadata({
   params: Promise<{ locale: Locale }>
 }): Promise<Metadata> {
   const { locale } = await params
+  const dict = await getDictionary(locale)
+  const toolDict = dict.tools?.["jpg-to-url"] || defaultToolContent
   const languages = getAlternateLinks("/tools/jpg-to-url", locale)
 
   return {
-    title: "JPG to URL Converter - Free Online Tool | ImageToURL",
-    description: "Convert JPG images to shareable URLs instantly. Free online JPG to URL converter with no signup required. Upload JPEG files up to 10MB and get instant links.",
-    keywords: "jpg to url, jpeg to url, convert jpg to url, jpg image to url converter, jpg link generator",
+    title: toolDict.meta.title,
+    description: toolDict.meta.description,
+    keywords: toolDict.meta.keywords,
     alternates: {
       canonical: `https://www.imagetourl.cloud/${locale}/tools/jpg-to-url`,
       languages,
     },
     openGraph: {
-      title: "JPG to URL Converter - Free Online Tool",
-      description: "Convert JPG images to shareable URLs instantly.",
+      title: toolDict.meta.title,
+      description: toolDict.meta.description,
       url: `${BASE_URL}/${locale}/tools/jpg-to-url`,
       siteName: "ImageToURL",
       locale: locale,
@@ -174,7 +176,7 @@ export default async function JpgToUrlPage({
 }) {
   const { locale } = await params
   const dict = await getDictionary(locale)
-  const toolDict = defaultToolContent
+  const toolDict = dict.tools?.["jpg-to-url"] || defaultToolContent
 
   return (
     <>
@@ -196,9 +198,9 @@ export default async function JpgToUrlPage({
       <FAQJsonLd items={toolDict.faq.items} />
       <BreadcrumbJsonLd
         items={[
-          { name: "Home", url: `${BASE_URL}/${locale}` },
+          { name: dict.nav.home, url: `${BASE_URL}/${locale}` },
           { name: "Tools", url: `${BASE_URL}/${locale}/tools` },
-          { name: "JPG to URL", url: `${BASE_URL}/${locale}/tools/jpg-to-url` },
+          { name: toolDict.title, url: `${BASE_URL}/${locale}/tools/jpg-to-url` },
         ]}
       />
       <ToolPageTemplate locale={locale} dict={dict} toolDict={toolDict} />

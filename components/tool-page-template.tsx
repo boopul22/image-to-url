@@ -38,35 +38,35 @@ interface ToolPageTemplateProps {
     description: string
     introduction?: {
       title: string
-      paragraphs: string[]
+      paragraphs: readonly string[]
     }
     features: {
       title: string
-      items: string[]
+      items: readonly string[]
     }
     howItWorks: {
       title: string
-      steps: { title: string; description: string }[]
+      steps: readonly { title: string; description: string }[]
     }
     useCases?: {
       title: string
-      items: { title: string; description: string }[]
+      items: readonly { title: string; description: string }[]
     }
     tips?: {
       title: string
-      items: string[]
+      items: readonly string[]
     }
     faq: {
       title: string
-      items: FAQItem[]
+      items: readonly FAQItem[]
     }
     relatedTools: {
       title: string
-      tools: RelatedTool[]
+      tools: readonly RelatedTool[]
     }
     externalResources?: {
       title: string
-      resources: ExternalResource[]
+      resources: readonly ExternalResource[]
     }
   }
 }

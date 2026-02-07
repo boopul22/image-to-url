@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdSense Approval Analysis: What Your Competitor Did Right</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #0a0a0a;
+            color: #e2e8f0;
+            line-height: 1.75;
+        }
+
+        .container {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+
+        h1 {
+            font-size: 26px;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            color: #71717a;
+            font-size: 14px;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: #f97316;
+            margin: 40px 0 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #27272a;
+            letter-spacing: 0.5px;
+        }
+
+        h3 {
+            font-size: 15px;
+            color: #fafafa;
+            margin: 16px 0 8px;
+        }
+
+        p {
+            margin-bottom: 12px;
+            color: #a1a1aa;
+            font-size: 14px;
+        }
+
+        strong {
+            color: #e4e4e7;
+        }
+
+        .highlight {
+            background: #18181b;
+            border: 1px solid #27272a;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+
+        .highlight.critical {
+            border-left: 4px solid #ef4444;
+        }
+
+        .highlight.info {
+            border-left: 4px solid #3b82f6;
+        }
+
+        .highlight.success {
+            border-left: 4px solid #22c55e;
+        }
+
+        .highlight.warning {
+            border-left: 4px solid #f59e0b;
+        }
+
+        .ad-format-card {
+            background: #18181b;
+            border: 1px solid #27272a;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 16px 0;
+        }
+
+        .ad-format-header {
+            background: #1c1c1e;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid #27272a;
+        }
+
+        .ad-format-header .num {
+            background: #f97316;
+            color: #000;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 13px;
+            flex-shrink: 0;
+        }
+
+        .ad-format-header .title {
+            color: #fff;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .ad-format-header .tag {
+            background: #22c55e20;
+            color: #22c55e;
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            margin-left: auto;
+        }
+
+        .ad-format-body {
+            padding: 16px 20px;
+        }
+
+        .ad-format-body p {
+            font-size: 13.5px;
+        }
+
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 16px 0;
+        }
+
+        .comp-card {
+            background: #18181b;
+            border: 1px solid #27272a;
+            border-radius: 10px;
+            padding: 16px;
+        }
+
+        .comp-card.good {
+            border-top: 3px solid #22c55e;
+        }
+
+        .comp-card.bad {
+            border-top: 3px solid #ef4444;
+        }
+
+        .comp-card .label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .comp-card.good .label {
+            color: #22c55e;
+        }
+
+        .comp-card.bad .label {
+            color: #ef4444;
+        }
+
+        .comp-card .stat {
+            font-size: 28px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .comp-card .desc {
+            font-size: 12px;
+            color: #71717a;
+            margin-top: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 13.5px;
+        }
+
+        th {
+            background: #18181b;
+            color: #71717a;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #1c1c1e;
+            color: #a1a1aa;
+        }
+
+        tr:hover td {
+            background: #18181b60;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .badge-yes {
+            background: #22c55e18;
+            color: #22c55e;
+        }
+
+        .badge-no {
+            background: #ef444418;
+            color: #ef4444;
+        }
+
+        .badge-partial {
+            background: #f59e0b18;
+            color: #f59e0b;
+        }
+
+        .step-list {
+            list-style: none;
+            padding: 0;
+            counter-reset: steps;
+        }
+
+        .step-list li {
+            padding: 14px 0;
+            border-bottom: 1px solid #1c1c1e;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        .step-list li:last-child {
+            border-bottom: none;
+        }
+
+        .step-num {
+            background: #f97316;
+            color: #000;
+            min-width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 13px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .step-num.urgent {
+            background: #ef4444;
+            color: #fff;
+        }
+
+        .content-section {
+            margin: 8px 0;
+            padding: 8px 14px;
+            background: #1c1c1e;
+            border-radius: 6px;
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .content-section .name {
+            color: #d4d4d8;
+        }
+
+        .content-section .count {
+            color: #71717a;
+            font-size: 12px;
+        }
+
+        code {
+            background: #27272a;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 12.5px;
+            color: #f97316;
+        }
+
+        @media (max-width: 640px) {
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>🔍 Why image2url.com Got AdSense Approved (And You Didn't)</h1>
+        <p class="subtitle">Deep analysis focused on what actually helped them get approval — content, structure & ad
+            formats</p>
+
+        <!-- ===================== -->
+        <h2>⊕ THE PLUS BUTTON & POPUP AD — What Is It?</h2>
+
+        <div class="highlight info">
+            <h3>This is Google AdSense "Auto Ads" with Multiple Formats</h3>
+            <p>The <strong>⊕ plus button</strong> at the bottom-right and the popup that opens when you click it are
+                <strong>NOT custom-built features</strong> by your competitor. They are automatic Google AdSense ad
+                formats that Google places on the page after approval. Here's how it works:</p>
+            <p>Your competitor only added <strong>ONE single script tag</strong> to their site:</p>
+            <p><code>&lt;script src="adsbygoogle.js?client=ca-pub-XXXXX" crossorigin&gt;&lt;/script&gt;</code></p>
+            <p>Google's "Auto Ads" system then <strong>automatically scans the page</strong> and places multiple ad
+                formats in optimal positions. That's why you see 10 ad units, 8 auto-placed, and 9 Google iframes — all
+                from one script. The ⊕ plus button, the "Discover more" related topics, the banner at the bottom, the
+                in-content display ads — <strong>all are automatically placed by Google after approval</strong>.</p>
+        </div>
+
+        <h3>All the Ad Formats Google Auto-Placed on Their Site:</h3>
+
+        <div class="ad-format-card">
+            <div class="ad-format-header">
+                <span class="num">1</span>
+                <span class="title">⊕ Plus Button (Bottom-Right Expandable)</span>
+                <span class="tag">AUTO</span>
+            </div>
+            <div class="ad-format-body">
+                <p>The small pill-shaped button at the bottom-right (e.g., "⊕ Graphic design tools") is a
+                    <strong>Related Search for Content (RSC)</strong> ad unit. When clicked, it opens a popup showing an
+                    ad "based on your other interests." This is a Google-controlled ad format — your competitor did NOT
+                    build this. Google places it automatically after AdSense approval when "Auto Ads" is enabled.</p>
+            </div>
+        </div>
+
+        <div class="ad-format-card">
+            <div class="ad-format-header">
+                <span class="num">2</span>
+                <span class="title">"Discover More" Related Topics Section</span>
+                <span class="tag">AUTO</span>
+            </div>
+            <div class="ad-format-body">
+                <p>The section showing related topic links like "Image editing software", "Photo storage solution",
+                    "Share images easily" — this is another <strong>AdSense Related Search ad format</strong>. Each link
+                    opens a Google search results page with ads. Again, placed automatically by Google, not built by the
+                    competitor.</p>
+            </div>
+        </div>
+
+        <div class="ad-format-card">
+            <div class="ad-format-header">
+                <span class="num">3</span>
+                <span class="title">Anchor/Sticky Banner Ad (Bottom)</span>
+                <span class="tag">AUTO</span>
+            </div>
+            <div class="ad-format-body">
+                <p>The display banner stuck to the bottom of the viewport (Adobe Creative Cloud ad, etc.) is an
+                    <strong>Anchor ad</strong>. It has a collapse arrow (⌄) to minimize. Also placed automatically by
+                    Google Auto Ads.</p>
+            </div>
+        </div>
+
+        <div class="ad-format-card">
+            <div class="ad-format-header">
+                <span class="num">4</span>
+                <span class="title">In-Content Display Ads (Multiple)</span>
+                <span class="tag">AUTO</span>
+            </div>
+            <div class="ad-format-body">
+                <p>Display ads injected between content sections (between testimonials, below comparison table, etc.) —
+                    8 auto-placed ad slots throughout the page. Google's algorithm decides where to insert them based on
+                    page content flow.</p>
+            </div>
+        </div>
+
+        <div class="ad-format-card">
+            <div class="ad-format-header">
+                <span class="num">5</span>
+                <span class="title">Vignette/Popup Ad on Click</span>
+                <span class="tag">AUTO</span>
+            </div>
+            <div class="ad-format-body">
+                <p>The full-screen popup ad that appears when you first interact with the page — this is a
+                    <strong>Vignette ad</strong>. It shows between page loads or on first interaction. Another automatic
+                    Google placement.</p>
+            </div>
+        </div>
+
+        <div class="highlight warning">
+            <h3>⚡ Key Takeaway</h3>
+            <p style="margin-bottom:0;"><strong>You don't need to build ANY of these ad features yourself.</strong> Once
+                Google approves your AdSense account and you enable "Auto Ads," Google will automatically place all of
+                these formats on your site. The real question is: <strong>what did your competitor do to get APPROVED in
+                    the first place?</strong> That's what we need to focus on below.</p>
+        </div>
+
+        <!-- ===================== -->
+        <h2>📊 Content Comparison — What Got Them Approved</h2>
+
+        <div class="comparison">
+            <div class="comp-card good">
+                <div class="label">image2url.com</div>
+                <div class="stat">3,800+</div>
+                <div class="desc">Total words across homepage</div>
+            </div>
+            <div class="comp-card bad">
+                <div class="label">imagetourl.cloud (yours)</div>
+                <div class="stat">557</div>
+                <div class="desc">Total words across homepage</div>
+            </div>
+        </div>
+
+        <div class="comparison">
+            <div class="comp-card good">
+                <div class="label">image2url.com</div>
+                <div class="stat">43+</div>
+                <div class="desc">Total indexed pages</div>
+            </div>
+            <div class="comp-card bad">
+                <div class="label">imagetourl.cloud (yours)</div>
+                <div class="stat">~33</div>
+                <div class="desc">Internal links (mostly thin)</div>
+            </div>
+        </div>
+
+        <div class="comparison">
+            <div class="comp-card good">
+                <div class="label">image2url.com</div>
+                <div class="stat">3</div>
+                <div class="desc">Blog posts with images, tags & authors</div>
+            </div>
+            <div class="comp-card bad">
+                <div class="label">imagetourl.cloud (yours)</div>
+                <div class="stat">0</div>
+                <div class="desc">Blog says "No posts found yet"</div>
+            </div>
+        </div>
+
+        <h3>Competitor's Homepage Content Sections (What Google Sees):</h3>
+
+        <div class="content-section"><span class="name">H1: "Image to URL Converter"</span><span class="count">Clear
+                primary topic</span></div>
+        <div class="content-section"><span class="name">Quick Answer Box</span><span class="count">~50 words
+                summary</span></div>
+        <div class="content-section"><span class="name">Upload Tool + Guide</span><span class="count">Functional
+                tool</span></div>
+        <div class="content-section"><span class="name">"Trusted by 245,633 Users" + 6 Testimonials</span><span
+                class="count">~300 words</span></div>
+        <div class="content-section"><span class="name">"Why Choose ImageToURL?" — 3 features</span><span
+                class="count">~100 words</span></div>
+        <div class="content-section"><span class="name">Comparison Table vs Imgur & Google Photos</span><span
+                class="count">~150 words</span></div>
+        <div class="content-section"><span class="name">"Popular Tools" — 8 tools with descriptions</span><span
+                class="count">~200 words</span></div>
+        <div class="content-section"><span class="name">Related Topics Tags (keyword-rich)</span><span class="count">~20
+                tags</span></div>
+        <div class="content-section"><span class="name">"Frequently Asked Questions" — multiple Q&As</span><span
+                class="count">~400 words</span></div>
+        <div class="content-section"><span class="name">Use Cases Section (Developer, Blogger, etc.)</span><span
+                class="count">~150 words</span></div>
+        <div class="content-section"><span class="name">Footer with legal pages, tools links</span><span
+                class="count">Full navigation</span></div>
+
+        <h3>Your Homepage Content Sections:</h3>
+
+        <div class="content-section"><span class="name">"What is Image to URL?" intro</span><span class="count">~50
+                words</span></div>
+        <div class="content-section"><span class="name">Upload Tool</span><span class="count">Functional tool</span>
+        </div>
+        <div class="content-section"><span class="name">"How to Convert" — 3 steps</span><span class="count">~40
+                words</span></div>
+        <div class="content-section"><span class="name">"Trusted Worldwide" — 4 badges only</span><span
+                class="count">~20 words, no testimonials</span></div>
+        <div class="content-section"><span class="name">FAQ — 8 questions</span><span class="count">~200 words</span>
+        </div>
+        <div class="content-section"><span class="name">Footer links</span><span class="count">Basic navigation</span>
+        </div>
+
+        <!-- ===================== -->
+        <h2>✅ Full Approval Checklist — What They Have vs What You're Missing</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>AdSense Approval Factor</th>
+                    <th>image2url.com</th>
+                    <th>Your Site</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Blog with original articles</strong></td>
+                    <td><span class="badge badge-yes">3 posts (800+ words each)</span></td>
+                    <td><span class="badge badge-no">0 posts — EMPTY</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Homepage word count</strong></td>
+                    <td><span class="badge badge-yes">3,800+ words</span></td>
+                    <td><span class="badge badge-no">557 words</span></td>
+                </tr>
+                <tr>
+                    <td><strong>User testimonials / social proof</strong></td>
+                    <td><span class="badge badge-yes">6 testimonials with names, roles</span></td>
+                    <td><span class="badge badge-no">None</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Comparison content (vs competitors)</strong></td>
+                    <td><span class="badge badge-yes">Table vs Imgur & Google Photos</span></td>
+                    <td><span class="badge badge-no">None</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Multiple tool pages</strong></td>
+                    <td><span class="badge badge-yes">8+ tools (compressor, HEIC, sketch, crop, B&W)</span></td>
+                    <td><span class="badge badge-partial">Few (JPG, PNG, GIF converters)</span></td>
+                </tr>
+                <tr>
+                    <td><strong>FAQ section</strong></td>
+                    <td><span class="badge badge-yes">Detailed with long answers</span></td>
+                    <td><span class="badge badge-partial">8 questions but short answers</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Localized content</strong></td>
+                    <td><span class="badge badge-yes">en-IN, en-US etc. with local testimonials</span></td>
+                    <td><span class="badge badge-partial">Language selector but same content</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Use cases / audience targeting</strong></td>
+                    <td><span class="badge badge-yes">Developers, Bloggers, eCommerce, Students</span></td>
+                    <td><span class="badge badge-no">Not present</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Quick Answer / featured snippet box</strong></td>
+                    <td><span class="badge badge-yes">Yes — summarizes tool in 50 words</span></td>
+                    <td><span class="badge badge-no">Not present</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Privacy Policy</strong></td>
+                    <td><span class="badge badge-yes">Yes</span></td>
+                    <td><span class="badge badge-yes">Yes ✅</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Terms of Service</strong></td>
+                    <td><span class="badge badge-partial">Not visible</span></td>
+                    <td><span class="badge badge-yes">Yes ✅</span></td>
+                </tr>
+                <tr>
+                    <td><strong>About page</strong></td>
+                    <td><span class="badge badge-yes">Yes</span></td>
+                    <td><span class="badge badge-yes">Yes ✅</span></td>
+                </tr>
+                <tr>
+                    <td><strong>External presence (GitHub, social)</strong></td>
+                    <td><span class="badge badge-yes">GitHub (23 repos), DEV.to, X, npm, WordPress plugin</span></td>
+                    <td><span class="badge badge-no">Not found</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Blog categories & tags</strong></td>
+                    <td><span class="badge badge-yes">Performance, Tutorials, Research</span></td>
+                    <td><span class="badge badge-no">N/A (no blog posts)</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Author attribution on content</strong></td>
+                    <td><span class="badge badge-yes">"Image2URL Team" with avatar</span></td>
+                    <td><span class="badge badge-no">None</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Related topics / keyword richness</strong></td>
+                    <td><span class="badge badge-yes">20+ related topic tags on homepage</span></td>
+                    <td><span class="badge badge-no">None</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- ===================== -->
+        <h2>🎯 Exactly What You Need to Do (Priority Order)</h2>
+
+        <ol class="step-list">
+            <li>
+                <span class="step-num urgent">1</span>
+                <div>
+                    <h3>Write 10+ Blog Posts — This Is #1 Priority</h3>
+                    <p>Your blog page literally shows "No posts found yet." This is an instant AdSense rejection. Write
+                        original articles (800-1500 words each) in your niche. Copy your competitor's approach:</p>
+                    <p><strong>Blog post ideas:</strong> "Getting Started with Image Optimization 2026", "How to Convert
+                        Images to Base64: Complete Guide", "Image Hosting for Discord — Best Practices", "PNG vs JPG vs
+                        WebP — Which Format to Use", "How to Embed Images in HTML Emails", "Free Image CDN Options
+                        Compared", "How to Use Image URLs in Markdown", "Optimizing Images for Website Speed", "Image
+                        URL Security Best Practices", "Base64 vs URL — When to Use What"</p>
+                    <p>Each post should have: <strong>custom images/screenshots, categories (Performance, Tutorials,
+                            Guides), author name with avatar, tags, and reading time</strong>.</p>
+                </div>
+            </li>
+            <li>
+                <span class="step-num urgent">2</span>
+                <div>
+                    <h3>Add Rich Content Sections to Homepage</h3>
+                    <p>Your homepage has 557 words — your competitor has 3,800+. Add these missing sections:</p>
+                    <p>• <strong>Testimonials section</strong> — 6 user reviews with names, roles, and companies (like
+                        "Rahul Sharma, Freelance Blogger")</p>
+                    <p>• <strong>Comparison table</strong> — ImageToURL vs Imgur vs Google Photos vs Imgbb (features,
+                        limits, privacy)</p>
+                    <p>• <strong>Quick Answer box</strong> — A highlighted summary paragraph at the top explaining the
+                        tool in 2-3 sentences</p>
+                    <p>• <strong>"Popular Tools" section</strong> — Grid showing all your tools with descriptions</p>
+                    <p>• <strong>Use Cases section</strong> — "For Developers", "For Bloggers", "For eCommerce", "For
+                        Students"</p>
+                    <p>• <strong>Related topics tags</strong> — Links like "Image hosting", "CDN delivery", "URL
+                        shortening", etc.</p>
+                </div>
+            </li>
+            <li>
+                <span class="step-num urgent">3</span>
+                <div>
+                    <h3>Add 5+ More Tool Pages with Unique Content</h3>
+                    <p>Your competitor has 8 tool pages (Image Compressor, HEIC to PNG, Square Image, Black & White,
+                        Pencil Sketch, Circle Crop, Privacy Cleaner, PPT to URL) — each with its own content, FAQ, and
+                        description. Add tools like:</p>
+                    <p><strong>Image Compressor, Image Resizer, Image to WebP Converter, Image to Base64, Screenshot to
+                            URL, QR Code Generator, Image Watermark Tool</strong></p>
+                    <p>Each page needs 300+ words of descriptive content (not just the tool itself).</p>
+                </div>
+            </li>
+            <li>
+                <span class="step-num">4</span>
+                <div>
+                    <h3>Expand FAQ Answers</h3>
+                    <p>Your FAQ has 8 questions but short answers. Expand each to 50-100 words with detailed, helpful
+                        information. Look at how your competitor answers similar questions with specific details about
+                        file formats, CDN delivery, API usage, etc.</p>
+                </div>
+            </li>
+            <li>
+                <span class="step-num">5</span>
+                <div>
+                    <h3>Build External Presence</h3>
+                    <p>Your competitor has GitHub (23 repos), DEV.to, X/Twitter, npm package, WordPress plugin, Figma
+                        plugin, and Blender plugin. This signals to Google that it's a legitimate, established project.
+                        At minimum:</p>
+                    <p>• Create a GitHub organization with your project<br>
+                        • Publish an npm package for your API<br>
+                        • Write 1-2 posts on DEV.to or Medium linking to your site<br>
+                        • Submit to Product Hunt and tool directories</p>
+                </div>
+            </li>
+            <li>
+                <span class="step-num">6</span>
+                <div>
+                    <h3>Enable Auto Ads After Approval</h3>
+                    <p>Once approved, you don't need to manually place ad units. Just go to AdSense → Ads → "Auto Ads" →
+                        Turn ON. Google will automatically place all the formats you see on your competitor's site (the
+                        ⊕ button, Discover More, anchor ads, in-content ads). Your existing script tag
+                        <code>ca-pub-7803867089582138</code> is already on your site — you just need the approval.</p>
+                </div>
+            </li>
+        </ol>
+
+        <!-- ===================== -->
+        <div class="highlight success" style="margin-top: 36px;">
+            <h3>💡 Summary</h3>
+            <p>The ⊕ plus button, the "Discover more" section, anchor ads, and in-content ads are all
+                <strong>automatically placed by Google Auto Ads after approval</strong> — your competitor didn't build
+                them. What they DID build was a <strong>content-rich website</strong> that Google deemed valuable enough
+                to approve: 3,800+ words on homepage, 3 blog posts, 6 testimonials, comparison tables, 8 tool pages, use
+                cases, and external presence across GitHub/npm/social. <strong>Your site's empty blog and thin content
+                    (~557 words) is the primary reason for rejection.</strong> Fix the content first, then AdSense
+                approval (and all those ad formats) will follow.</p>
+            <p style="margin-bottom:0; color: #22c55e;"><strong>Estimated time to get approved: 2-4 weeks after adding
+                    blog posts and enriching content.</strong></p>
+        </div>
+
+    </div>
+</body>
+
+</html>

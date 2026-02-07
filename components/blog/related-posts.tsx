@@ -20,7 +20,7 @@ export function RelatedPosts({
   }
 
   return (
-    <section className="mt-10 sm:mt-16 pt-6 sm:pt-8 border-t border-zinc-800">
+    <section className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-zinc-800">
       <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">{title}</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {posts.map((post) => (
@@ -50,11 +50,11 @@ export function RelatedPosts({
               </div>
 
               {/* Content */}
-              <div className="p-3 sm:p-4">
+              <div className="p-2.5 sm:p-3">
                 <span className="text-xs text-brand font-medium uppercase tracking-wide">
                   {post.frontmatter.category}
                 </span>
-                <h3 className="text-sm sm:text-base text-white font-semibold mt-1 line-clamp-2 group-hover:text-brand transition-colors">
+                <h3 className="text-sm text-white font-semibold mt-1 line-clamp-2 group-hover:text-brand transition-colors">
                   {post.frontmatter.title}
                 </h3>
                 <div className="flex items-center gap-1 text-xs text-zinc-500 mt-2">

@@ -19,6 +19,7 @@ interface SearchDialogProps {
   locale: Locale
   open: boolean
   onOpenChange: (open: boolean) => void
+  dict: any
 }
 
 interface SearchResult {
@@ -33,6 +34,7 @@ export function SearchDialog({
   locale,
   open,
   onOpenChange,
+  dict,
 }: SearchDialogProps) {
   const [query, setQuery] = useState('')
   const [results, setResults] = useState<SearchResult[]>([])
@@ -135,17 +137,28 @@ export function SearchDialog({
     }
   }
 
+  const getTypeLabel = (type: SearchResult['type']) => {
+    switch (type) {
+      case 'post':
+        return dict.typePost
+      case 'category':
+        return dict.typeCategory
+      case 'tag':
+        return dict.typeTag
+    }
+  }
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-xl p-0" showCloseButton={false}>
         <DialogHeader className="sr-only">
-          <DialogTitle>Search blog posts</DialogTitle>
+          <DialogTitle>{dict.placeholder}</DialogTitle>
         </DialogHeader>
 
         <div className="flex items-center border-b border-zinc-800 px-4">
           <Search className="size-5 text-zinc-500 mr-3" />
           <Input
-            placeholder="Search posts, categories, tags..."
+            placeholder={dict.placeholder}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleKeyDown}
@@ -191,7 +204,7 @@ export function SearchDialog({
                     )}
                   </div>
                   <span className="text-xs text-zinc-600 capitalize">
-                    {result.type}
+                    {getTypeLabel(result.type)}
                   </span>
                 </button>
               </li>
@@ -199,11 +212,11 @@ export function SearchDialog({
           </ul>
         ) : query ? (
           <div className="py-12 text-center text-zinc-500">
-            <p>No results found for &ldquo;{query}&rdquo;</p>
+            <p>{dict.noResults} &ldquo;{query}&rdquo;</p>
           </div>
         ) : (
           <div className="py-12 text-center text-zinc-500">
-            <p>Start typing to search...</p>
+            <p>{dict.startTyping}</p>
           </div>
         )}
 
@@ -212,19 +225,19 @@ export function SearchDialog({
             <kbd className="px-1.5 py-0.5 rounded bg-zinc-800 text-zinc-400">
               ↑↓
             </kbd>
-            <span>Navigate</span>
+            <span>{dict.navigate}</span>
           </div>
           <div className="flex items-center gap-2">
             <kbd className="px-1.5 py-0.5 rounded bg-zinc-800 text-zinc-400">
               ↵
             </kbd>
-            <span>Select</span>
+            <span>{dict.select}</span>
           </div>
           <div className="flex items-center gap-2">
             <kbd className="px-1.5 py-0.5 rounded bg-zinc-800 text-zinc-400">
               Esc
             </kbd>
-            <span>Close</span>
+            <span>{dict.close}</span>
           </div>
         </div>
       </DialogContent>

@@ -1,6 +1,6 @@
 interface IntroductionSectionProps {
   title: string
-  paragraphs: string[]
+  paragraphs: readonly string[]
 }
 
 export function IntroductionSection({ title, paragraphs }: IntroductionSectionProps) {

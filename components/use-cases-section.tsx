@@ -7,7 +7,7 @@ interface UseCaseItem {
 
 interface UseCasesSectionProps {
   title: string
-  items: UseCaseItem[]
+  items: readonly UseCaseItem[]
 }
 
 const iconMap = [Briefcase, Code, Share2, FileText, ShoppingCart, Gamepad2]
