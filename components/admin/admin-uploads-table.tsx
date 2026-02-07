@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect, useCallback, memo } from "react"
 import Image from "next/image"
 import {
     Search,
@@ -26,6 +26,34 @@ import {
 } from "@/components/ui/select"
 import { BulkActionsBar } from "./bulk-actions-bar"
 import { BulkDeleteDialog } from "./bulk-delete-dialog"
+import { ImageIcon } from "lucide-react"
+
+// Thumbnail component with error handling
+const ImageThumbnail = memo(function ImageThumbnail({ src, alt }: { src: string; alt: string }) {
+    const [error, setError] = useState(false)
+
+    if (error || !src) {
+        return (
+            <div className="w-12 h-12 rounded-lg bg-zinc-900 border border-white/10 flex items-center justify-center">
+                <ImageIcon size={16} className="text-zinc-600" />
+            </div>
+        )
+    }
+
+    return (
+        <div className="relative w-12 h-12 rounded-lg overflow-hidden bg-zinc-900 border border-white/10">
+            <Image
+                src={src}
+                alt={alt}
+                fill
+                className="object-cover"
+                sizes="48px"
+                unoptimized
+                onError={() => setError(true)}
+            />
+        </div>
+    )
+})
 
 interface Upload {
     id: string
@@ -359,16 +387,7 @@ export function AdminUploadsTable() {
                                             />
                                         </td>
                                         <td className="p-4">
-                                            <div className="relative w-12 h-12 rounded-lg overflow-hidden bg-zinc-900 border border-white/10">
-                                                <Image
-                                                    src={upload.image_url}
-                                                    alt={upload.file_name}
-                                                    fill
-                                                    className="object-cover"
-                                                    sizes="48px"
-                                                    unoptimized
-                                                />
-                                            </div>
+                                            <ImageThumbnail src={upload.image_url} alt={upload.file_name} />
                                         </td>
                                         <td className="p-4">
                                             <p className="text-white font-medium truncate max-w-xs" title={upload.file_name}>
